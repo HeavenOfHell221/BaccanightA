@@ -2,12 +2,12 @@ window.addEventListener('load', () => {
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
 
-    const topMargin = 0.05*window.innerHeight;
+    const topMargin = 0.25*window.innerHeight;
     var clientX;
     var clientY;
 
     //Resizing
-    canvas.height = window.innerHeight - topMargin;
+    canvas.height = window.innerWidth;
     canvas.width = window.innerWidth;
     ctx.lineWidth = 10;      // taille tracé
     ctx.lineCap = "round";   // Forme tracé
@@ -33,7 +33,9 @@ window.addEventListener('load', () => {
         ctx.stroke();
         ctx.beginPath();
         ctx.moveTo(clientX, clientY);
+        
     }
+    //canvas.style.background = "red";
     
     //EventListenners
     /* POUR NAVIGATEUR WEB
