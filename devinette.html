@@ -13,16 +13,19 @@
     </head>
 
     <body class = "bg-secondary">
+
+        <!-- barre en haut avec le burger pour acceder aux options -->
         <div class = "container-fluid bg-dark topBar" style = "color: white;">
-            <div class = "row bg-dark">
+            <div class = "row bg-dark pt-2">
                 <div class = "col" onclick = "toggleON('MENU')">
                     <div class ="burgerMenu"></div>
                     <div class ="burgerMenu"></div>
                     <div class ="burgerMenu"></div>
-                
+                </div>
             </div>
         </div>
 
+        <!-- block central où le dessin est affiché -->
         <div class = "container-fluid middleBar">
             <div class = "row">
                 <div class = "col-12 pt-3">
@@ -31,6 +34,7 @@
             </div>
         </div>
 
+        <!-- block du bas avec le champ pour le nom de l'oeuvre et le bouton -->
         <div class = "container-fluid bottomBar">
             <div class = "row">
                 <div class = "col-8">
@@ -44,7 +48,7 @@
             </div>           
         </div>
 
-
+        <!-- Block du menu Information / Option -->
         <div class = "container-fluid bg-dark" id="MENU">
             <div class = "row topBar" > 
                 <div class = "col-12">
@@ -68,6 +72,7 @@
             </div>
         </div>
 
+        <!-- Block du menu VOTE transition à travailler -->
         <div class = "infoMenu border rounded bg-dark" id = 'INFO'>
                 <div class = "container">
                         <div class ="row pb-5">

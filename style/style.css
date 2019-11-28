@@ -4,6 +4,11 @@
     background-color : #2c2c2cd7;
 }
 
+
+/* -----              ----- */
+/* --- menu none/block ---- */
+/* -----              ----- */
+
 .infoMenu{
     position : absolute ; 
     top: 5vh;
@@ -22,6 +27,27 @@
 
 #INFO{
   display : none;
+}
+
+/* -----              ----- */
+/* -----  menu option ----- */
+/* -----              ----- */
+
+.burgerMenu {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+#MENU {
+  position : absolute;
+  top : 0px;
+  left : -100vw;
+  height : 100vh;
+  width : 100vw;
+  transition: all 0.5s ease-out;
 }
 
 /* -----              ----- */
@@ -48,30 +74,6 @@ input{
   max-width: 100%;
   max-height: 100%;
 }
-/* -----              ----- */
-/* ----- bouton menu  ----- */
-/* -----              ----- */
-
-.burgerMenu {
-  width: 8vw;
-  height: 0.5vh;
-  background-color: white;
-  margin-top: 1vh;
-  cursor: pointer;
-}
-
-#MENU {
-  position : absolute;
-  top : 0px;
-  left : -100vw;
-  height : 100vh;
-  width : 100vw;
-}
-
-
-
-
-
 
 /* -----              ----- */
 /* ----- bouton close ----- */

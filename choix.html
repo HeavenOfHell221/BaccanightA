@@ -13,29 +13,31 @@
     </head>
 
     <body class = "bg-secondary">
+
+        <!-- barre en haut avec le burger pour acceder aux options -->
         <div class = "container-fluid bg-dark topBar" style = "color: white;">
-            <div class = "row bg-dark">
+            <div class = "row bg-dark pt-2">
                 <div class = "col" onclick = "toggleON('MENU')">
                     <div class ="burgerMenu"></div>
                     <div class ="burgerMenu"></div>
-                    <div class ="burgerMenu"></div>
-                
+                    <div class ="burgerMenu"></div>                
             </div>
         </div>
 
+        <!-- contenu principale de la page avec toutes les miniatures -->
         <div class = "container-fluid middleBar bg_light">
             <div class = "container">
                 <div class ="row">
                     <div class = "col-12">
-                        choisi une oeuvre à reproduire en cliquand sur la miniature!!
+                        choisi une oeuvre à reproduire en cliquant sur la miniature!!
                         (on te recommande de te déplacé dans le musée pour bien voir l'oeuvre)
                     </div>
                 </div>
             </div>
-            <div class ="container overflow-auto" >
+            <div class ="container overflow-auto" > <!-- overflow -> pour scroll, ne fonctionne pas actuellement à travailler -->
                 <div class = "row">                    
                     <div class = "col-5">
-                        <a href="dessin.html"><img class = "pt-1" src="images/p1.jpg"  alt = "p1"/></a>
+                        <a href="dessin.html"><img class = "pt-1" src="images/p1.jpg"  alt = "p1"/></a> <!-- il faut essayer de placer la balise <a> afin d'englober toute la div -->
                     </div>
                     <div class = "col-7 text-center pt-2">Nom de l'oeuvre n°1</div>                    
                 </div>
@@ -68,7 +70,7 @@
         </div>
 
 
-
+        <!-- Block du menu Information / Option -->
         <div class = "container-fluid bg-dark" id="MENU">
             <div class = "row topBar" > 
                 <div class = "col-12">
