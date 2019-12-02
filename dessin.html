@@ -27,26 +27,30 @@
         <div class = "container-fluid middleBar pl-0 pr-0 pb-0">
             <div class = "row ml-0 pl-0 mr-0 pr-0">
                 <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
-                        <button class="btn buttonDraw" role="button" ><img class="pt-1 button-draw" src="images/pen.png" alt="p1" /></button>
+                        <button class="btn buttonDraw" role="button" id="buttonPen"><img class="pt-1 button-draw" src="images/pen.png" alt="p1" /></button>
                 </div>
                 <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
-                        <button class="btn buttonDraw" role="button" ><img class="pt-1 button-draw" src="images/color_choice.png" alt="p1" /></button>
+                        <button class="btn buttonDraw" role="button" id="buttonColor"><img class="pt-1 button-draw" src="images/color_choice.png" alt="p1" /></button>
                 </div>
                 <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
-                        <button class="btn buttonDraw" role="button" ><img class="pt-1 button-draw" src="images/rubber.png" alt="p1" /></button>
+                        <button class="btn buttonDraw" role="button" id="buttonRubber"><img class="pt-1 button-draw" src="images/rubber.png" alt="p1" /></button>
                 </div>
                 <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
-                        <button class="btn buttonDraw" role="button" ><img class="pt-1 button-draw" src="images/measure.png" alt="p1" /></button>
+                        <button class="btn buttonDraw" role="button" id="buttonSize"><img class="pt-1 button-draw" src="images/measure.png" alt="p1" /></button>
                 </div>
                 <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
-                        <button class="btn buttonDraw" role="button" ><img class="pt-1 button-draw" src="images/return.png" alt="p1" /></button>
+                        <button class="btn buttonDraw" role="button" id="buttonReturn"><img class="pt-1 button-draw" src="images/return.png" alt="p1" /></button>
                 </div>
                 <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
-                        <button class="btn buttonDraw" role="button" ><img class="pt-1 button-draw" src="images/back_paint.png" alt="p1" /></button>
+                        <button class="btn buttonDraw" role="button" id="buttonPaint"><img class="pt-1 button-draw" src="images/back_paint.png" alt="p1" /></button>
                 </div>
             </div>
             <div class = "row ml-0 pl-0 mr-0 pr-0">
-                <p>Ici il y aura les choix de couleur, taille et tout quand on appuye sur un bouton</p>
+                <div class = "slidecontainer pt-1">
+                    <input type="range" min="1" max="30" value="10" class="slider" id="sizeRange" />
+                    <div id="displayDrawSize"></div>
+                    <!--p class="drawSize">Taille: <span id="sizeRangeValue"></span></p-->
+                </div>
             </div>
             <div class = "row pt-0 pl-0 pr-0 pb-0">
                 <canvas class = "col-0 pl-0 pr-0 ml-0 mr-0" id="canvas">
