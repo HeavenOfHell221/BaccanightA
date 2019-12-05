@@ -12,8 +12,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
 
-    <body class = "bg-secondary">
-        <!-- barre en haut avec le burger pour acceder aux options -->
+    <body class = "mainBackground">
+        <!-- Bouton "burger" pour accéder aux options -->
         <div class = "container-fluid bg-dark topBar" style = "color: white;">
             <div class = "row bg-dark pt-2">
                 <div class = "col" onclick = "toggleON('MENU')">
@@ -22,32 +22,35 @@
                     <div class ="burgerMenu"></div>
             </div>
         </div>
-
         
-        <!-- tout les beaux boutons de JC sont iiciiii -->
+        <!-- Boutons créés par Jean-Christophe ici : ne pas modifier / le laisser faire -->
         <div class = "container-fluid middleBar pl-0 pr-0 pb-0">
             <div class = "row ml-0 pl-0 mr-0 pr-0">
-                <div class = "col-2 pt-2 pb-2 pl-0 pr-0">
-                        <button class="btn btn-secondary" role="button" ><img class="pt-1 button-draw" src="images/pen.png" alt="p1" /></button>
+                <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
+                        <button class="btn buttonDraw" role="button" id="buttonPen"><img class="pt-1 button-draw" src="images/pen.png" alt="p1" /></button>
                 </div>
-                <div class = "col-2 pt-2 pb-2 pl-0 pr-0">
-                        <button class="btn btn-secondary" role="button" ><img class="pt-1 button-draw" src="images/color_choice.png" alt="p1" /></button>
+                <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
+                        <button class="btn buttonDraw" role="button" id="buttonColor"><img class="pt-1 button-draw" src="images/color_choice.png" alt="p1" /></button>
                 </div>
-                <div class = "col-2 pt-2 pb-2 pl-0 pr-0">
-                        <button class="btn btn-secondary" role="button" ><img class="pt-1 button-draw" src="images/rubber.png" alt="p1" /></button>
+                <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
+                        <button class="btn buttonDraw" role="button" id="buttonRubber"><img class="pt-1 button-draw" src="images/rubber.png" alt="p1" /></button>
                 </div>
-                <div class = "col-2 pt-2 pb-2 pl-0 pr-0">
-                        <button class="btn btn-secondary" role="button" ><img class="pt-1 button-draw" src="images/measure.png" alt="p1" /></button>
+                <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
+                        <button class="btn buttonDraw" role="button" id="buttonSize"><img class="pt-1 button-draw" src="images/measure.png" alt="p1" /></button>
                 </div>
-                <div class = "col-2 pt-2 pb-2 pl-0 pr-0">
-                        <button class="btn btn-secondary" role="button" ><img class="pt-1 button-draw" src="images/return.png" alt="p1" /></button>
+                <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
+                        <button class="btn buttonDraw" role="button" id="buttonReturn"><img class="pt-1 button-draw" src="images/return.png" alt="p1" /></button>
                 </div>
-                <div class = "col-2 pt-2 pb-2 pl-0 pr-0">
-                        <button class="btn btn-secondary" role="button" ><img class="pt-1 button-draw" src="images/back_paint.png" alt="p1" /></button>
+                <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
+                        <button class="btn buttonDraw" role="button" id="buttonPaint"><img class="pt-1 button-draw" src="images/back_paint.png" alt="p1" /></button>
                 </div>
             </div>
             <div class = "row ml-0 pl-0 mr-0 pr-0">
-                <p>Ici il y aura les choix de couleur, taille et tout quand on appuye sur un bouton</p>
+                <div class = "slidecontainer pt-1">
+                    <input type="range" min="1" max="30" value="10" class="slider" id="sizeRange" />
+                    <div id="displayDrawSize"></div>
+                    <!--p class="drawSize">Taille: <span id="sizeRangeValue"></span></p-->
+                </div>
             </div>
             <div class = "row pt-0 pl-0 pr-0 pb-0">
                 <canvas class = "col-0 pl-0 pr-0 ml-0 mr-0" id="canvas">

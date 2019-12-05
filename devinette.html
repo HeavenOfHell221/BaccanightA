@@ -14,9 +14,9 @@
 
     <body class = "bg-secondary">
 
-        <!-- barre en haut avec le burger pour acceder aux options -->
+        <!-- Bouton "burger" permettant d'accéder aux options -->
         <div class = "container-fluid bg-dark topBar" style = "color: white;">
-            <div class = "row bg-dark pt-2">
+            <div class = "row bg-dark pt-2 pb-2">
                 <div class = "col" onclick = "toggleON('MENU')">
                     <div class ="burgerMenu"></div>
                     <div class ="burgerMenu"></div>
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <!-- block central où le dessin est affiché -->
+        <!-- Block central où le dessin est affiché -->
         <div class = "container-fluid middleBar">
             <div class = "row">
                 <div class = "col-12 pt-3">
@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <!-- block du bas avec le champ pour le nom de l'oeuvre et le bouton -->
+        <!-- Block du bas avec le champ pour le nom de l'oeuvre et le bouton -->
         <div class = "container-fluid bottomBar">
             <div class = "row">
                 <div class = "col-8">
@@ -64,15 +64,15 @@
                     <a href="mainMenu.html" class="btn btn-secondary btn-lg btn-block" role="button" aria-pressed="true">MENU PRINCIPALE</a>
                 </div>
                 <div class = "col-12 pt-5">
-                    plein de truc interressant!!!
+                    Quelques indications importantes ou intéressantes sur l'explication des points (par exemple) / sur la progression des gains
                 </div>
                 <div class = "col-12 pt-5">
-                    un systeme d indice avec des PO.
+                    Un systeme d'indice avec des PO / barre de progression des récompenses du joueur
                 </div>
             </div>
         </div>
 
-        <!-- Block du menu VOTE transition à travailler -->
+        <!-- Block du menu VOTE : transition à travailler, but : empêcher l'utilisateur de revenir sur son dessin ou en arrière, deux options : like & dislike + possibilité d'ignorer et ne pas voter -->
         <div class = "infoMenu border rounded bg-dark" id = 'INFO'>
                 <div class = "container">
                         <div class ="row pb-5">
@@ -86,7 +86,7 @@
                         </div>
                     <div class ="row">
                         <div class = "col-12 pb-5">
-                                <h3 class = "test text-center">Bravo note l'oeuvre</h3>
+                                <h3 class = "test text-center">Bravo ! Like ou dislike l'oeuvre :</h3> <!-- savoir s'il faut afficher le pseudo du dessinateur ou pas + remplir l'intégralité de la page pour cacher dessous -->
                         </div>
                     </div>
                     <div class = "row">
