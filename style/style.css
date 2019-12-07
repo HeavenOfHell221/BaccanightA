@@ -134,11 +134,15 @@ input{
 }
 
 .buttonDraw {
-  background-color: rgba(0,0,0,0);
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 5%;
 }
 
 .buttonDraw:hover {
-  background-color: rgba(0,0,0,0.3);
+  width: 100%;
+  margin-left: 0%;
+  margin-top: 0%;
 }
 
 .slidecontainer {
