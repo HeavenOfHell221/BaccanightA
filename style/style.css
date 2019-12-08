@@ -189,6 +189,7 @@ input{
   float: right;
 }
 
-.buttonFinish {
+.buttonChart {
   background-color: #FEFEE2;
+  color: Black;
 }
