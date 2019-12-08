@@ -188,3 +188,7 @@ input{
   border: 1px solid #FEFEE2;
   float: right;
 }
+
+.buttonFinish {
+  background-color: #FEFEE2;
+}
