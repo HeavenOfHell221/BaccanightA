@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8"/>
@@ -13,7 +13,7 @@
         <link rel="icon" type="image/jpg" href="images/test.jpg" />
 
     </head>
-    <body class = "bg-secondary">
+    <body class = "bg-secondary, mainBackground">
         <!-- Block principale avec tout les boutons -->
         <div class = "container-fluid ">
             <div class = "container">
@@ -31,17 +31,17 @@
 
                     <div class = "row pt-5">
                     <div class = "col-12">
-                        <a href="choix.html" class="btn btn-dark btn-lg btn-block" role="button" aria-pressed="true">DESSINES ...</a>
+                        <a href="choix.html" class="btn buttonChart btn-lg btn-block" role="button" aria-pressed="true">DESSINES ...</a>
                     </div>
                 </div>
                 <div class = "row pt-5">
                     <div class = "col-12">
-                        <a href="devinette.html" class="btn btn-dark btn-lg btn-block" role="button" aria-pressed="true">... DEVINES </a>
+                        <a href="devinette.html" class="btn buttonChart btn-lg btn-block" role="button" aria-pressed="true">... DEVINES </a>
                     </div>
                 </div>
                 <div class = "row pt-5">
                     <div class = "col-12">
-                        <button onclick = "toggleBLOCK('INFO')" class="btn btn-dark btn-lg btn-block" role="button" >CLASSEMENT</button>
+                        <button onclick = "toggleBLOCK('INFO')" class="btn buttonChart btn-lg btn-block" role="button" >CLASSEMENT</button>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@
         </div>
 
         <!-- Block du menu classement || temporaire, à modifier -->
-        <div class = "infoMenu border rounded bg-dark" id = 'INFO'>
+        <div class = "infoMenu border rounded bg-dark, mainBackground" id = 'INFO'>
             <div class = "container">
                     <div class ="row pb-5">
                         <div class ="col-10"></div>
