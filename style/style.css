@@ -129,6 +129,7 @@ input{
 {
     position: absolute;
     top:25%;
+    width: 100%;
     border: 2px solid black;
     background: white;
 }
@@ -142,6 +143,7 @@ input{
 .buttonDraw:hover {
   width: 100%;
   margin-left: 0%;
+  margin-right: 0%;
   margin-top: 0%;
 }
 
@@ -187,6 +189,7 @@ input{
   height: 10px;
   border: 1px solid #FEFEE2;
   float: right;
+  margin-right: 5%;
 }
 
 .buttonChart {

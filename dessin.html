@@ -16,7 +16,7 @@
         <!-- barre en haut avec le burger pour acceder aux options -->
         <div class = "container-fluid bg-dark topBar" style = "color: white;">
             <div class = "row bg-dark pt-2">
-                <div class = "col" onclick = "toggleON('MENU')">
+                <div class = "col-12" onclick = "toggleON('MENU')">
                     <div class ="burgerMenu"></div>
                     <div class ="burgerMenu"></div>
                     <div class ="burgerMenu"></div>
@@ -57,7 +57,7 @@
                     <!--p class="drawSize">Taille: <span id="sizeRangeValue"></span></p-->
                 </div>
             </div>
-            <div class = "row pt-0 pl-0 pr-0 pb-0">
+            <div class = "row pt-0 pl-0 pr-0 pb-0 mr-0 ml-0">
                 <canvas class = "col-0 pl-0 pr-0 ml-0 mr-0" id="canvas">
                     <p>Le canvas ne s'affiche pas</p>
                 </canvas>
@@ -72,7 +72,7 @@
 
         <!-- Block du menu Information / Option --> <!-- a revoir / repenser -->
         <div class = "container-fluid bg-dark" id="MENU">
-            <div class = "row topBar" > 
+            <div class = "row topBar" >
                 <div class = "col-12">
                     <div class="close-container" onclick = "toggleOFF('MENU')">
                         <div class="leftright"></div>
