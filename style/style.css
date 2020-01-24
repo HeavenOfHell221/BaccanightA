@@ -1,3 +1,7 @@
+:root {
+  --slider-width: 10px;
+}
+
 .mainBackground{
     height : 100%;
     width : 100%;
@@ -158,7 +162,7 @@ input{
 
 .slider {
   -webkit-appearance: none;
-  width: 80%;
+  width: 100%;
   height: 10px;
   border-radius: 5px;  
   background: #FEFEE2;
@@ -172,16 +176,16 @@ input{
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: var(--slider-width);
+  height: var(--slider-width);
   border-radius: 50%; 
   background: #4CAF50;
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
+  width: var(--slider-width);
+  height: var(--slider-width);
   border-radius: 50%;
   background: rgb(228, 241, 229);
   cursor: pointer;

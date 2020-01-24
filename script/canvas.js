@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
     var buttonSize = document.getElementById("buttonSize");
     var buttonReturn = document.getElementById("buttonReturn");
     var buttonPaint = document.getElementById("buttonPaint");
-    var sizeRange = document.getElementById("sizeRange");
+    var sizeRange = document.getElementById("sliderBar");
     var outputRange = document.getElementById("displayDrawSize");
     
 
@@ -83,6 +83,7 @@ window.addEventListener('load', () => {
         ctx.lineWidth = this.value;
         outputRange.style.width = ctx.lineWidth+"px"; //Affiche la valeur par défaut du slider
         outputRange.style.height = ctx.lineWidth+"px";
+        document.documentElement.style.setProperty('--slider-width', ctx.lineWidth+"px");
     }
     //canvas.style.background = "red";
     
