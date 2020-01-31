@@ -11,11 +11,11 @@ window.addEventListener('load', () => {
     var buttonPen = document.getElementById("buttonPen");
     var buttonColor = document.getElementById("buttonColor");
     var buttonRubber = document.getElementById("buttonRubber");
-    var buttonSize = document.getElementById("buttonSize");
+    //var buttonSize = document.getElementById("buttonSize");
     var buttonReturn = document.getElementById("buttonReturn");
     var buttonPaint = document.getElementById("buttonPaint");
     var sizeRange = document.getElementById("sliderBar");
-    var outputRange = document.getElementById("displayDrawSize");
+    //var outputRange = document.getElementById("displayDrawSize");
     
 
     //Resizing
@@ -25,8 +25,8 @@ window.addEventListener('load', () => {
     ctx.lineCap = "round";   // Forme tracé
     ctx.strokeStyle = penColor; // Couleur
 
-    outputRange.style.width = ctx.lineWidth; //Affiche la valeur par défaut du slider
-    outputRange.style.height = ctx.lineWidth;
+    //outputRange.style.width = ctx.lineWidth; //Affiche la valeur par défaut du slider
+    //outputRange.style.height = ctx.lineWidth;
 
     //variables
     let painting = true;
@@ -52,26 +52,26 @@ window.addEventListener('load', () => {
 
     /************** BOUTONS **************/
     buttonPen.onclick = function() {
-        sizeRange.style.display="none";
+        //sizeRange.style.display="none";
         ctx.strokeStyle = penColor;
     }
     buttonColor.onclick = function() {
-        sizeRange.style.display="none";
+        //sizeRange.style.display="none";
     }
     buttonRubber.onclick = function() {
-        sizeRange.style.display="none";
+        //sizeRange.style.display="none";
         ctx.strokeStyle = backgroundColor;
     }
     /*** Slider taille ***/
-    buttonSize.onclick = function() {
+    /*buttonSize.onclick = function() {
         sizeRange.style.display="initial";
-    }
+    }*/
 
     buttonReturn.onclick = function() {
-        sizeRange.style.display="none";
+        //sizeRange.style.display="none";
     }
     buttonPaint.onclick = function() {
-        sizeRange.style.display="none";
+        //sizeRange.style.display="none";
         if(backgroundColor == "red")
         backgroundColor = "white";
         else
@@ -81,8 +81,8 @@ window.addEventListener('load', () => {
 
     sizeRange.oninput = function() {
         ctx.lineWidth = this.value;
-        outputRange.style.width = ctx.lineWidth+"px"; //Affiche la valeur par défaut du slider
-        outputRange.style.height = ctx.lineWidth+"px";
+        //outputRange.style.width = ctx.lineWidth+"px"; //Affiche la valeur par défaut du slider
+        //outputRange.style.height = ctx.lineWidth+"px";
         document.documentElement.style.setProperty('--slider-width', ctx.lineWidth+"px");
     }
     //canvas.style.background = "red";

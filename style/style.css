@@ -170,7 +170,7 @@ input{
   opacity: 1;
   -webkit-transition: .2s;
   transition: opacity .2s;
-  display: none;
+  /*display: none;*/
 }
 
 .slider::-webkit-slider-thumb {
@@ -191,7 +191,7 @@ input{
   cursor: pointer;
 }
 
-#displayDrawSize{
+/*#displayDrawSize{
   background:#000000;
   border-radius:50%;
   width: 10px;
@@ -199,7 +199,7 @@ input{
   border: 1px solid #FEFEE2;
   float: right;
   margin-right: 5%;
-}
+}*/
 
 .buttonChart {
   font-size: 100%;
