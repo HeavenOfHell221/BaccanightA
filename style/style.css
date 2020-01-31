@@ -10,7 +10,7 @@
 
 @font-face{
   font-family: 'Frankfurt';
-  src: url('style/Frankfurt.ttf');
+  src: url('Frankfurt.ttf');
 }
 
 
@@ -204,32 +204,35 @@ input{
 .buttonChart {
   font-size: 100%;
   height: 100%;
-  border-radius: 14px;
   background-color: #FEFEE2;
-  color: Black;
+  color: #00144B;
   box-shadow: 0px 8px 5px black;
+  border-radius: 37px!important;
+  line-height: 600%!important;
 }
 .buttonChart:hover {
   color: royalblue;
 }
 
+/* Polices du menu d'accueil */
 .titleText {
   font-family: Frankfurt;
-  font-size: 380%;
+  font-size: 500%;
   text-align: center;
   color: #FEFEE2;
   text-shadow: 0px 8px 5px black;
+  border: 2px dotted #FEFEE2;
+  border-radius: 42px;
 }
 .menuText {
   font-family: Frankfurt;
-  font-size: 310%;
+  font-size: 380%;
   text-shadow: 0px 8px 5px grey;
-  border-radius: 14px;
 }
 .mT2 {
-  font-size: 220%
+  font-size: 270%
 }
 
 .textChoix {
-    color: #FEFEE2;
+  color: #FEFEE2;
 }
