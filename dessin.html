@@ -14,8 +14,8 @@
 
     <body class = "mainBackground">
         <!-- barre en haut avec le burger pour acceder aux options -->
-        <div class = "container-fluid bg-dark topBar" style = "color: white;">
-            <div class = "row bg-dark pt-2">
+        <div class = "container-fluid bg-dark topBar" style = "height: 5vh;color: white;">
+            <div class = "row bg-dark pt1">
                 <div class = "col-12" onclick = "toggleON('MENU')">
                     <div class ="burgerMenu"></div>
                     <div class ="burgerMenu"></div>
@@ -25,17 +25,17 @@
         </div>
 
         <!-- Boutons créés par Jean-Christophe ici : ne pas modifier / le laisser faire -->
-        <div class = "container-fluid middleBar pl-0 pr-0 pb-0">
+        <div class = "container-fluid middleBar pl-0 pr-0 pb-0 pt-0" style = "height: 87vh">
             <div! class = "row ml-0 pl-0 mr-0 pr-0">
-                <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
+                <div class = "pt-4 pb-2 pl-0 pr-0" style="width: 20vw;">
                         <!--button class="btn btn-circle btn-lg" role="button" id="buttonPen"><img class="pt-1 button-draw" src="images/pen.png" alt="p1" /></button-->
                         <img class="buttonDraw" src="images/pen.png" alt="p1" id="buttonPen" />
                 </div>
-                <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
+                <div class = "pt-4 pb-2 pl-0 pr-0" style="width: 20vw;">
                         <!--button class="btn buttonDraw" role="button" id="buttonColor"><img class="pt-1 button-draw" src="images/color_choice.png" alt="p1" /></button-->
                         <img class="buttonDraw" src="images/color_choice.png" alt="p1" id="buttonColor" />
                 </div>
-                <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
+                <div class = "pt-4 pb-2 pl-0 pr-0" style="width: 20vw;">
                         <!--button class="btn buttonDraw" role="button" id="buttonRubber"><img class="button-draw" src="images/rubber.png" alt="p1" /></button-->
                         <img class="buttonDraw" src="images/rubber.png" alt="p1" id="buttonRubber"  />
                 </div>
@@ -43,22 +43,21 @@
                         <button class="btn buttonDraw" role="button" id="buttonSize"><img class="pt-1 button-draw" src="images/measure.png" alt="p1" /></button>
                         <img class="buttonDraw" src="images/measure.png" alt="p1" id="buttonSize" />
                 </div-->
-                <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
+                <div class = "pt-4 pb-2 pl-0 pr-0" style="width: 20vw;">
                         <!--button class="btn buttonDraw" role="button" id="buttonReturn"><img class="pt-1 button-draw" src="images/return.png" alt="p1" /></button-->
                         <img class="buttonDraw" src="images/return.png" alt="p1" id="buttonReturn" />               
                 </div>
-                <div class = "col-2 pt-4 pb-2 pl-0 pr-0">
+                <div class = "pt-4 pb-2 pl-0 pr-0" style="width: 20vw;">
                         <!--button class="btn buttonDraw" role="button" id="buttonPaint"><img class="pt-1 button-draw" src="images/back_paint.png" alt="p1" /></button-->
                         <img class="buttonDraw" src="images/back_paint.png" alt="p1" id="buttonPaint" />
                 </div>
-            </div>
-            <div class = "row ml-0 pl-0 mr-0 pr-0">
                 <div class = "slidecontainer pt-1">
                     <input type="range" min="1" max="30" value="10" class="slider" id="sliderBar" />
                     <!--div id="displayDrawSize"></div-->
                     <!--p class="drawSize">Taille: <span id="sizeRangeValue"></span></p-->
                 </div>
             </div>
+
             <div class = "row pt-0 pl-0 pr-0 pb-0 mr-0 ml-0">
                 <canvas class = "col-0 pl-0 pr-0 ml-0 mr-0" id="canvas">
                     <p>Le canvas ne s'affiche pas</p>
@@ -68,8 +67,8 @@
         </div>
 
         <!-- juste pour la ligne du bas avec le bouton valider -->
-        <div class = "container-fluid bottomBar" style="text-align: right;">
-            <button class="buttonChart">Valider</button>
+        <div class = "container-fluid bottomBar pb-0 pt-0" style="text-align: right; height: 7vh;">
+            <button class="buttonValidDraw"><div class="menuText" style="font-size: 4vh; text-shadow: 0px 3px 2px grey;">Valider</div></button>
         </div>
 
         <!-- Block du menu Information / Option --> <!-- a revoir / repenser -->

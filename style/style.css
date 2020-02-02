@@ -201,6 +201,14 @@ input{
   margin-right: 5%;
 }*/
 
+.buttonValidDraw {
+  font-size: 100%;
+  height: 100%;
+  background-color: #FEFEE2;
+  color: #00144B;
+  border-radius: 37px!important;
+}
+
 .buttonChart {
   font-size: 100%;
   height: 100%;
@@ -210,6 +218,7 @@ input{
   border-radius: 37px!important;
   line-height: 600%!important;
 }
+
 .buttonChart:hover {
   color: royalblue;
 }
