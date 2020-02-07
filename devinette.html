@@ -22,7 +22,11 @@
                     <div class ="burgerMenu"></div>
                     <div class ="burgerMenu"></div>
                 </div>
-                <div class ="col-8"> ... DEVINE</div>
+                <div class = "col-12">
+                    <div class = "devTitleText" >
+                        DEVINE ...
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -32,16 +36,16 @@
                 <!-- <div class = "col-12 pt-3">
                         <img class = "pt-1" src="images/Parchemin.jpeg"  alt = ""/>
                 </div> -->
-                <div class = "col-12 pt-3">
-                    <img class = "pt-1" src="images/painting.jpg"  alt = "test painting"/>
+                <div class = "col-12 pt-5">
+                    <img class = "pt-5" src="images/painting.jpg"  alt = "test painting"/>
                 </div>
             </div>
         </div>
 
         <!-- Block du bas avec le champ pour le nom de l'oeuvre et le bouton -->
-        <div class = "container-fluid bottomBar">
+        <div class = "container-fluid middleBar">
             <div class = "row">
-                <div class = "col-8">
+                <div class = "col-6">
                     <form method="post" action="traitement.php">
                         <p><input type = "text" name="pseudo" placeholder="Nom de l'oeuvre"/></p>
                     </form>
@@ -78,34 +82,43 @@
 
         <!-- Block du menu VOTE : transition à travailler, but : empêcher l'utilisateur de revenir sur son dessin ou en arrière, deux options : like & dislike + possibilité d'ignorer et ne pas voter -->
         <div class = "infoMenu border rounded bg-dark" id = 'INFO'>
-                <div class = "container">
-                        <div class ="row pb-5">
-                            <div class ="col-10"></div>
-                            <div class = "col-2">
-                                <div class="close-container" onclick = "toggleNONE('INFO')">
-                                    <div class="leftright"></div>
-                                    <div class="rightleft"></div>
-                                </div>
+            <div class = "container">
+                    <div class ="row pb-5">
+                        <div class ="col-10"></div>
+                        <div class = "col-2">
+                            <div class="close-container" onclick = "toggleNONE('INFO')">
+                                <div class="leftright"></div>
+                                <div class="rightleft"></div>
                             </div>
                         </div>
-                    <div class ="row">
-                        <div class = "col-12 pb-5">
-                                <h3 class = "test text-center">Bravo ! Like ou dislike l'oeuvre :</h3> <!-- savoir s'il faut afficher le pseudo du dessinateur ou pas + remplir l'intégralité de la page pour cacher dessous -->
-                        </div>
                     </div>
-                    <div class = "row">
-                        <div class = "col-4">
-                            <a href="mainMenu.html"><input type="image" src="images/icBroken.png"/></a>
-                        </div>
-                        <div class = "col-4">
-                            <a href="mainMenu.html"><input type="image" src="images/icCross.png"/></a>
-                        </div>
-                        <div class = "col-4">
-                            <a href="mainMenu.html"><input type="image" src="images/icHeart.png"/></a>
-                        </div>
+                <div class ="row">
+                    <div class = "col-12 pb-5">
+                        <h3 class = "test text-center">Bravo ! Like ou dislike l'oeuvre :</h3> <!-- savoir s'il faut afficher le pseudo du dessinateur ou pas + remplir l'intégralité de la page pour cacher dessous -->
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col-4">
+                        <a href="mainMenu.html"><input type="image" src="images/icBroken.png"/></a>
+                    </div>
+                    <div class = "col-4">
+                        <a href="mainMenu.html"><input type="image" src="images/icCross.png"/></a>
+                    </div>
+                    <div class = "col-4">
+                        <a href="mainMenu.html"><input type="image" src="images/icHeart.png"/></a>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Block du popup transition -->
+        <div class = "container-fluid bg-dark transiPop" id="TRANSI" onclick = "toggleNONE('TRANSI')" >
+            <div class = "row" style = "height : 90vh">
+                <div class = "col-12 pt-5 interrogation">
+                    ?
+                </div>
+            </div>
+        </div>
 
 
 
