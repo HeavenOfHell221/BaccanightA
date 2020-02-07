@@ -191,6 +191,34 @@ input{
   margin-right: 5%;
 }*/
 
+/* -----                   ----- */
+/* -----  MENU DEVINETTES  ----- */
+/* -----                   ----- */
+
+.transiPop {
+  position : absolute ; 
+  top: 0vh;
+  bottom: 0vh;
+  left: 0vw;
+  right: 0vw;
+  height: 100vh;
+  width: 100vw;
+}
+.interrogation {
+  font-size: 2000%;
+  text-align: center;
+  text-shadow: 0px 8px 5px black;
+}
+
+#TRANSI {
+  position : absolute;
+  top : 0px;
+  left : -100vw;
+  height : 100vh;
+  width : 100vw;
+  transition: all 0.5s ease-out;
+}
+
 /* -----           ----- */
 /* -----  BOUTONS  ----- */
 /* -----           ----- */
@@ -259,4 +287,11 @@ input{
 /* Police des boutons de retour au menu principal */
 .goToMenuText {
   font-size: 200%;
+}
+
+/* Police du menu devinette */
+.devTitleText {
+  text-align: center;
+  font-size: 150%;
+  text-shadow: 0px 8px 5px black;
 }
