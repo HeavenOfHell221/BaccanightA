@@ -8,17 +8,30 @@ function toggleNONE(ID){
     cible.style.display = "none";
 }
 
-function toggleON(ID){
+/* -----      ----- */
+/* -----  ON  ----- */
+/* -----      ----- */
+
+function toggleON_Menu(ID){
     var cible = document.getElementById(ID);    
     cible.style.left = "0vw";      
 }
 
-function toggleOFF(ID){
+function toggleON_Devine(ID){
+    var cible = document.getElementById(ID);    
+    cible.style.top = "0vw";      
+}
+
+/* -----       ----- */
+/* -----  OFF  ----- */
+/* -----       ----- */
+
+function toggleOFF_Menu(ID){
     var cible = document.getElementById(ID);    
     cible.style.left = "-100vw";      
 }
 
-function toggleOFF_up(ID){
+function toggleOFF_Devine(ID){
     var cible = document.getElementById(ID);    
     cible.style.top = "-100vh";      
 }
