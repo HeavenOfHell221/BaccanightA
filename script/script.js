@@ -18,4 +18,9 @@ function toggleOFF(ID){
     cible.style.left = "-100vw";      
 }
 
+function toggleOFF_up(ID){
+    var cible = document.getElementById(ID);    
+    cible.style.top = "-100vh";      
+}
+
 
