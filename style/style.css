@@ -253,14 +253,17 @@ input{
 
 /* Boutons du menu principal */
 .menuButton {
-  font-size: 100%;
   background-color: #FEFEE2;
   box-shadow: 0px 8px 5px black;
   border-radius: 37px!important;
-  line-height: 600%!important;
+  line-height: 14vh!important;
+  margin-top: -2vh;
 }
 .menuButton:hover {
   color: royalblue;
+}
+.mB23 {
+  margin-top: 0.1vh;
 }
 
 /* Boutons de validation */
@@ -288,21 +291,21 @@ input{
 /* -----  Polices  ----- */
 /* -----           ----- */
 
-/* Polices du menu principal */
 .menuText {
   color: #00144B;
-  font-size: 380%;
+  font-size: 14vmin;
   text-shadow: 0px 8px 5px grey;
+  text-align: center;
 }
 .titleText {
-  font-size: 500%;
+  font-size: 8vh;
   text-align: center;
   text-shadow: 0px 8px 5px black;
   border: 2px dotted #FEFEE2;
   border-radius: 42px;
 }
 .mT2 {
-  font-size: 270%
+  font-size: 11vmin;
 }
 
 /* Police du bouton valider */
@@ -314,7 +317,7 @@ input{
 
 /* Police des boutons de retour au menu principal */
 .goToMenuText {
-  font-size: 200%;
+  font-size: 10vw;
 }
 
 /* Police du menu devinette */
