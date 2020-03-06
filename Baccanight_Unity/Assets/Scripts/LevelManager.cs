@@ -27,7 +27,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         {
             if (obj.GetComponent<Door>().getDoorId() == doorId)
             {
-                Debug.Log(obj.GetComponent<Door>().getSpawnPosition());
+                //Debug.Log(obj.GetComponent<Door>().getSpawnPosition());
                 player.transform.position = obj.GetComponent<Door>().getSpawnPosition();
                 testDoor = !testDoor;
                 break;
