@@ -134,7 +134,7 @@ public abstract class MovementControllerGround : MovementController
 			m_aimedVelocity = MyRigidbody.velocity;
 			m_aimedVelocity.x = Mathf.Lerp(m_aimedVelocity.x, Move.x * m_speed, m_smoothSpeed);
 			MyRigidbody.velocity = m_aimedVelocity;
-            Debug.Log(m_aimedVelocity);
+            //Debug.Log(m_aimedVelocity);
 		}
 		else
 		{
