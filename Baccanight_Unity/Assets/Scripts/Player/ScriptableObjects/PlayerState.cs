@@ -19,15 +19,15 @@ public class PlayerState : ScriptableObject
 	private GameState m_state = GameState.inMainMenu;
 
 #pragma warning restore 0649
-	#endregion
+    #endregion
 
-	#region Getters / Setters
+    #region Getters / Setters
 
-	public GameState State { get => m_state; set => m_state = value; }
+    public GameState State { get => m_state; set => m_state = value; }
 
-	#endregion
+    #endregion
 
-	public void Reset()
+    public void Reset()
 	{
 		m_state = GameState.inMainMenu;
 	}

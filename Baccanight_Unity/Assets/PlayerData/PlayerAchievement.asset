@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e7453cfa3882d04087cbb8c9b4d72d2, type: 3}
   m_Name: PlayerAchievement
   m_EditorClassIdentifier: 
-  m_succes: []
+  m_succes:
+  - m_key: 0
+    m_isUnlocked: 0
+    m_value: 0
+    m_succesToUnlock: 

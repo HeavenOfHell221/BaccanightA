@@ -37,9 +37,9 @@ public class PlayerAchievement : ScriptableObject
     public bool HaveSucces(KeySucces index) => m_succes[(int)index].m_value;
     public bool IsUnlockedSucces(KeySucces index) => m_succes[(int)index].m_isUnlocked;
     public void UnlockSucces(KeySucces index) => m_succes[(int)index].m_isUnlocked = true;
-    
+
     #endregion
-    
+
     public void ValidSucces(KeySucces index, bool force = false)
     {
         Succes succes = m_succes[(int)index];

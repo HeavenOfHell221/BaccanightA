@@ -4,21 +4,48 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : SingletonBehaviour<LevelManager>
-{
+{ 
+    #region Variables
+
+    private int m_idBehindDoor;
+    private int m_idLevelAimed;
+    #endregion
 
 
-    public void ChangeScene(int build)
+    private void Start()
+    {
+        BehindDoor(-1, -1);
+    }
+
+    public void BehindDoor(int idDoor, int idLevelAimed)
+    {
+        m_idBehindDoor = idDoor;
+        m_idLevelAimed = idLevelAimed;
+    }
+
+    public void LoadScene(int build)
     {
         SceneManager.LoadScene(build);
     }
 
-    public void ChangeScene(int build, int doorId)
+    public void OnInteract()
     {
-        StartCoroutine(TeleportPlayer(build, doorId));
+        if (LevelManager.Instance.GetId() != -1)
+        {
+            LevelManager.Instance.ChangeScene();
+        }
+    }
+
+    public void ChangeScene()
+    {
+        StartCoroutine(TeleportPlayer(m_idLevelAimed, m_idBehindDoor));
+        BehindDoor(-1, -1);
+
     }
 
     public IEnumerator TeleportPlayer(int build, int doorId)
     {
+        //Debug.Log("Salut");
         yield return SceneManager.LoadSceneAsync(build);
 
         GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
@@ -37,11 +64,17 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         }
         if (testDoor) Debug.Log("Aucune porte n'a été trouvé");
         yield return 0;
-
     }
 
-    public void reloadScene()
+    
+
+    public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public int GetId()
+    {
+        return m_idBehindDoor;
     }
 }
