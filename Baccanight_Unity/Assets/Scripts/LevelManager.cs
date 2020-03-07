@@ -30,7 +30,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
 
     public void OnInteract()
     {
-        if (LevelManager.Instance.GetId() != -1)
+        if (LevelManager.Instance.isIdValid())
         {
             LevelManager.Instance.ChangeScene();
         }
@@ -73,8 +73,8 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public int GetId()
+    public bool isIdValid()
     {
-        return m_idBehindDoor;
+        return (m_idBehindDoor != -1 && m_idLevelAimed != -1);
     }
 }

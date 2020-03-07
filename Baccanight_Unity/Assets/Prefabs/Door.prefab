@@ -48,7 +48,7 @@ MonoBehaviour:
   m_DoorId: -1
   m_RightToLeft: 1
   m_LevelIdAimed: -1
-  m_offsetSpawnX: 1
+  m_offsetSpawnX: 0
 --- !u!61 &5612893509172908107
 BoxCollider2D:
   m_ObjectHideFlags: 0
