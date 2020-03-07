@@ -41,20 +41,20 @@ public class Door : MonoBehaviour
         if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.UpArrow))
         {
             
-            changeLevel();
+            ChangeLevel();
         }
     }
 
-    public void changeLevel()
+    public void ChangeLevel()
     {
-        LevelManager.Instance.changeScene(m_LevelIdAimed, m_DoorId);
+        LevelManager.Instance.ChangeScene(m_LevelIdAimed, m_DoorId);
     }
 
-    public int getDoorId()
+    public int GetDoorId()
     {
         return m_DoorId;
     }
-    public Vector3 getSpawnPosition()
+    public Vector3 GetSpawnPosition()
     {
         return m_spawnPoint;
     }

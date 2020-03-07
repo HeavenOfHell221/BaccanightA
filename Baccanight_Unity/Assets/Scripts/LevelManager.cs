@@ -5,17 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : SingletonBehaviour<LevelManager>
 {
-    public void changeScene(int build)
+
+
+    public void ChangeScene(int build)
     {
         SceneManager.LoadScene(build);
     }
 
-    public void changeScene(int build, int doorId)
+    public void ChangeScene(int build, int doorId)
     {
-        StartCoroutine(teleportPlayer(build, doorId));
+        StartCoroutine(TeleportPlayer(build, doorId));
     }
 
-    public IEnumerator teleportPlayer(int build, int doorId)
+    public IEnumerator TeleportPlayer(int build, int doorId)
     {
         yield return SceneManager.LoadSceneAsync(build);
 
@@ -25,10 +27,10 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         
         foreach (GameObject obj in doors)
         {
-            if (obj.GetComponent<Door>().getDoorId() == doorId)
+            if (obj.GetComponent<Door>().GetDoorId() == doorId)
             {
                 //Debug.Log(obj.GetComponent<Door>().getSpawnPosition());
-                player.transform.position = obj.GetComponent<Door>().getSpawnPosition();
+                player.transform.position = obj.GetComponent<Door>().GetSpawnPosition();
                 testDoor = !testDoor;
                 break;
             }
