@@ -345,53 +345,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1458631213, guid: 2ea7d6a54d8663445b54c40f8ecd65fa, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.8900002
-      objectReference: {fileID: 0}
-    - target: {fileID: 1458631213, guid: 2ea7d6a54d8663445b54c40f8ecd65fa, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1458631215, guid: 2ea7d6a54d8663445b54c40f8ecd65fa, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 115802604502298660, guid: 2ea7d6a54d8663445b54c40f8ecd65fa,
         type: 3}
       propertyPath: m_Name
       value: 'Player And Cam '
-      objectReference: {fileID: 0}
-    - target: {fileID: 262642269567260688, guid: 2ea7d6a54d8663445b54c40f8ecd65fa,
-        type: 3}
-      propertyPath: m_OnInteract.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 262642269567260688, guid: 2ea7d6a54d8663445b54c40f8ecd65fa,
-        type: 3}
-      propertyPath: m_OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1319936556764343978, guid: e62564756d2bc1e4cb2ac2b34038bc03,
-        type: 3}
-    - target: {fileID: 262642269567260688, guid: 2ea7d6a54d8663445b54c40f8ecd65fa,
-        type: 3}
-      propertyPath: m_OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnInteract
-      objectReference: {fileID: 0}
-    - target: {fileID: 262642269567260688, guid: 2ea7d6a54d8663445b54c40f8ecd65fa,
-        type: 3}
-      propertyPath: m_OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 262642269567260688, guid: 2ea7d6a54d8663445b54c40f8ecd65fa,
-        type: 3}
-      propertyPath: m_OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 262642269567260688, guid: 2ea7d6a54d8663445b54c40f8ecd65fa,
-        type: 3}
-      propertyPath: m_OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2697420166612076223, guid: 2ea7d6a54d8663445b54c40f8ecd65fa,
         type: 3}
