@@ -26,6 +26,9 @@ public abstract class MovementControllerGround : MovementController
 	[SerializeField]
 	protected LayerMask whatIsGround;
 
+    [SerializeField]
+    private float m_jumpCooldown;
+
 #pragma warning restore 0649
 	#endregion
 
@@ -37,6 +40,8 @@ public abstract class MovementControllerGround : MovementController
 	protected bool m_isGrounded;
 	protected bool m_isGroundedLeft;
 	protected bool m_isGroundedRight;
+    protected float m_jumpTimer;
+    protected bool m_hasJump = false;
 	#endregion
 
 	#region Getters / Setters
@@ -52,7 +57,11 @@ public abstract class MovementControllerGround : MovementController
 
 	public virtual void OnJump()
 	{
-        m_jumpTrigger = true;
+        if (Time.time > m_jumpTimer + m_jumpCooldown)
+        {
+            if(!m_hasJump)
+                m_jumpTrigger = true;
+        }
 	}
 
 	virtual protected void FixedUpdate()
@@ -61,7 +70,7 @@ public abstract class MovementControllerGround : MovementController
 		if (m_canMove)
 		{
 			ApplyMovement();
-			if (m_jumpTrigger && IsGrounded)
+			if (m_jumpTrigger && IsGrounded && !m_hasJump)
 			{
 				ApplyJump();
 			}
@@ -72,8 +81,9 @@ public abstract class MovementControllerGround : MovementController
 	{
         MyRigidbody.AddForce(Vector2.up * m_jumpForce, ForceMode2D.Impulse);
   		IsGrounded = false;
-		m_jumpTrigger = false;
-	}
+        m_jumpTrigger = false;
+        m_hasJump = true;
+    }
 
 	protected void CheckGround()
 	{
@@ -95,6 +105,11 @@ public abstract class MovementControllerGround : MovementController
 		else
 		{
 			MyRigidbody.sharedMaterial = m_GroundPhysicMaterial;
+            if(m_hasJump)
+            {
+                m_hasJump = false;
+                m_jumpTimer = Time.time;
+            }
 		}
 	}
 
@@ -102,7 +117,7 @@ public abstract class MovementControllerGround : MovementController
 	{
 		m_isGroundedLeft = false;
 		//calcul de hitbox avec le sol
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_groundCheckLeft.position, .1f, whatIsGround);
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_groundCheckLeft.position, .05f, whatIsGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
 			if (colliders[i].gameObject != gameObject)
@@ -116,7 +131,7 @@ public abstract class MovementControllerGround : MovementController
 	{
 		m_isGroundedRight = false;
 		//calcul de hitbox avec le sol
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_groundCheckRight.position, .1f, whatIsGround);
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_groundCheckRight.position, .05f, whatIsGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
 			if (colliders[i].gameObject != gameObject)
@@ -134,7 +149,7 @@ public abstract class MovementControllerGround : MovementController
 			m_aimedVelocity = MyRigidbody.velocity;
 			m_aimedVelocity.x = Mathf.Lerp(m_aimedVelocity.x, Move.x * m_speed, m_smoothSpeed);
 			MyRigidbody.velocity = m_aimedVelocity;
-            Debug.Log(m_aimedVelocity);
+            //Debug.Log(m_aimedVelocity);
 		}
 		else
 		{

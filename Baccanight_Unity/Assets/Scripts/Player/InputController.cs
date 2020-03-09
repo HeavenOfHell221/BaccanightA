@@ -88,6 +88,8 @@ public class InputController : MonoBehaviour
 	{
 		InitialyseGamePad();
 		Debug.LogFormat("GamePad : {0} ", HaveGamePad);
+        PlayerManager.Instance.PlayerReference = gameObject;
+        m_OnInteract.AddListener(LevelManager.Instance.OnInteract);
 	}
 
 	void Update()
@@ -122,7 +124,7 @@ public class InputController : MonoBehaviour
 
 	private void GetJumpDown()
 	{
-		if (Input.GetButtonDown(GameConstants.k_Jump))
+		if (Input.GetButton(GameConstants.k_Jump))
 		{
 			m_OnJump.Invoke();
 		}
