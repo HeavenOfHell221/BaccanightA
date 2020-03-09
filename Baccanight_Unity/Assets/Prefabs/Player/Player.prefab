@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851043498714158726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4202, y: -0.4991, z: 0}
+  m_LocalPosition: {x: 0.395, y: -0.4991, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1851043499719964768}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851043499308263472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4262, y: -0.4991, z: 0}
+  m_LocalPosition: {x: -0.395, y: -0.4991, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1851043499719964768}
@@ -167,7 +167,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  m_jumpCooldown: 0.2
+  m_jumpCooldown: 0.1
   m_PlayerMotion: {fileID: 11400000, guid: 8d25be83bd41b1745b10d7b8110c1547, type: 2}
 --- !u!114 &1851043499719964798
 MonoBehaviour:
@@ -215,19 +215,7 @@ MonoBehaviour:
         m_CallState: 2
   m_OnInteract:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1319936556764343978, guid: e62564756d2bc1e4cb2ac2b34038bc03,
-          type: 3}
-        m_MethodName: OnInteract
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnAttackEnter:
     m_PersistentCalls:
       m_Calls: []

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DoorId: -1
   m_RightToLeft: 1
-  m_LevelIdAimed: -1
+  m_LevelIdAimed: 3
   m_offsetSpawnX: 0
 --- !u!61 &5612893509172908107
 BoxCollider2D:
@@ -100,7 +100,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3333501458789985111}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.04, y: 0.18, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 3333501458674323917}

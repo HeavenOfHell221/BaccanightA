@@ -6,15 +6,18 @@ using UnityEngine.SceneManagement;
 public class LevelManager : SingletonBehaviour<LevelManager>
 { 
     #region Variables
-
     private int m_idBehindDoor;
     private int m_idLevelAimed;
     #endregion
 
+    #region Getters / Setters
+    public int ScenePersistentPlayer { get; } = 1;
+    #endregion
 
     private void Start()
     {
-        BehindDoor(-1, -1);
+        PlayerSpawn(2);
+        BehindDoor(-1, -1); 
     }
 
     public void BehindDoor(int idDoor, int idLevelAimed)
@@ -30,9 +33,9 @@ public class LevelManager : SingletonBehaviour<LevelManager>
 
     public void OnInteract()
     {
-        if (LevelManager.Instance.isIdValid())
+        if (IsIdValid())
         {
-            LevelManager.Instance.ChangeScene();
+            ChangeScene();
         }
     }
 
@@ -45,21 +48,36 @@ public class LevelManager : SingletonBehaviour<LevelManager>
 
     public IEnumerator TeleportPlayer(int build, int doorId)
     {
-        //Debug.Log("Salut");
-        yield return SceneManager.LoadSceneAsync(build);
+        for(int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            Scene scene = SceneManager.GetSceneAt(i);
+            if(scene.buildIndex != ScenePersistentPlayer && scene.buildIndex != build)
+            {
+                SceneManager.UnloadSceneAsync(scene.buildIndex);
+            }
+        }
+
+        yield return SceneManager.LoadSceneAsync(build, LoadSceneMode.Additive);
 
         GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
         bool testDoor = true;
         
         foreach (GameObject obj in doors)
         {
-            if (obj.GetComponent<Door>().GetDoorId() == doorId)
+            Door door = obj.GetComponent<Door>();
+            if(door)
             {
-                //Debug.Log(obj.GetComponent<Door>().getSpawnPosition());
-                player.transform.position = obj.GetComponent<Door>().GetSpawnPosition();
-                testDoor = !testDoor;
-                break;
+                if (door.GetDoorId() == doorId)
+                {
+                    GameObject player = PlayerManager.Instance.PlayerReference;
+                    if(player)
+                    {
+                        player.transform.position = obj.GetComponent<Door>().GetSpawnPosition();
+                        PlayerManager.Instance.CameraReference.TeleportCamera(player.transform);
+                        testDoor = !testDoor;
+                    }
+                    break;
+                }
             }
         }
         if (testDoor) Debug.Log("Aucune porte n'a été trouvé");
@@ -67,14 +85,19 @@ public class LevelManager : SingletonBehaviour<LevelManager>
     }
 
     
-
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public bool isIdValid()
+    public bool IsIdValid()
     {
         return (m_idBehindDoor != -1 && m_idLevelAimed != -1);
+    }
+
+    public void PlayerSpawn(int build)
+    {
+        SceneManager.LoadScene(build, LoadSceneMode.Single);
+        SceneManager.LoadScene(ScenePersistentPlayer, LoadSceneMode.Additive);
     }
 }

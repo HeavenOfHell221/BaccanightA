@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458631212}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.8900002, z: -10}
+  m_LocalPosition: {x: 0, y: -0.89000034, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2697420166612076223}
@@ -323,6 +323,7 @@ GameObject:
   - component: {fileID: 4957396631045339085}
   - component: {fileID: 6344266162374033946}
   - component: {fileID: 2057321990896989936}
+  - component: {fileID: 7539896011511590342}
   m_Layer: 0
   m_Name: VirtualCameraPlayer
   m_TagString: Untagged
@@ -338,7 +339,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6160694013042441062}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.8900002, z: -10}
+  m_LocalPosition: {x: 0, y: -0.89000034, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3240441866944744994}
@@ -397,6 +398,18 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 5988359767042062656}
   m_ConfineScreenEdges: 1
   m_Damping: 1
+--- !u!114 &7539896011511590342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6160694013042441062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7b4f864baf31254da0ec00a8fac0fce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1879458455129268334
 PrefabInstance:
   m_ObjectHideFlags: 0

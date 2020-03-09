@@ -117,7 +117,7 @@ public abstract class MovementControllerGround : MovementController
 	{
 		m_isGroundedLeft = false;
 		//calcul de hitbox avec le sol
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_groundCheckLeft.position, .1f, whatIsGround);
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_groundCheckLeft.position, .05f, whatIsGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
 			if (colliders[i].gameObject != gameObject)
@@ -131,7 +131,7 @@ public abstract class MovementControllerGround : MovementController
 	{
 		m_isGroundedRight = false;
 		//calcul de hitbox avec le sol
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_groundCheckRight.position, .1f, whatIsGround);
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_groundCheckRight.position, .05f, whatIsGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
 			if (colliders[i].gameObject != gameObject)

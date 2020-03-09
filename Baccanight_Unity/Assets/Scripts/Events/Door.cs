@@ -35,15 +35,11 @@ public class Door : MonoBehaviour
         if (m_LevelIdAimed == -1) Debug.LogError("Porte " + this.name + " Level Id aimed NOT CORRECT");
     }
 
-    
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            //Debug.Log(m_DoorId + " " + m_LevelIdAimed);
-            LevelManager.Instance.BehindDoor(m_DoorId, m_LevelIdAimed);
-            
+            LevelManager.Instance.BehindDoor(m_DoorId, m_LevelIdAimed);    
         }
     }
 
