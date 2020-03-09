@@ -4,7 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : SingletonBehaviour<LevelManager>
-{ 
+{
+    [SerializeField]
+    private GameObject m_fonduBegin;
+
+    [SerializeField]
+    private GameObject m_fonduEnd;
+
+    [SerializeField]
+    private PlayerState m_playerState;
+
     #region Variables
     private int m_idBehindDoor;
     private int m_idLevelAimed;
@@ -33,21 +42,29 @@ public class LevelManager : SingletonBehaviour<LevelManager>
 
     public void OnInteract()
     {
-        if (IsIdValid())
+        int idBehind = m_idBehindDoor;
+        int idLevel = m_idLevelAimed;
+
+        if (IsIdValid(idBehind, idLevel))
         {
-            ChangeScene();
+            ChangeScene(idBehind,idLevel);
         }
     }
 
-    public void ChangeScene()
+    public void ChangeScene(int idBehindDoor, int idLevelAimed)
     {
-        StartCoroutine(TeleportPlayer(m_idLevelAimed, m_idBehindDoor));
+        StartCoroutine(TeleportPlayer(idLevelAimed, idBehindDoor));
         BehindDoor(-1, -1);
 
     }
 
     public IEnumerator TeleportPlayer(int build, int doorId)
     {
+        m_playerState.State = GameState.inLoading;
+        Instantiate(m_fonduBegin);
+
+        yield return new WaitForSeconds(1f);
+
         for(int i = 0; i < SceneManager.sceneCount; i++)
         {
             Scene scene = SceneManager.GetSceneAt(i);
@@ -58,7 +75,8 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         }
 
         yield return SceneManager.LoadSceneAsync(build, LoadSceneMode.Additive);
-
+        Instantiate(m_fonduEnd);
+        
         GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
         bool testDoor = true;
         
@@ -81,6 +99,11 @@ public class LevelManager : SingletonBehaviour<LevelManager>
             }
         }
         if (testDoor) Debug.Log("Aucune porte n'a été trouvé");
+
+        yield return new WaitForSeconds(1f);
+
+        m_playerState.State = GameState.inGame;
+
         yield return 0;
     }
 
@@ -90,9 +113,9 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public bool IsIdValid()
+    public bool IsIdValid(int idBehindDoor, int idLevelAimed)
     {
-        return (m_idBehindDoor != -1 && m_idLevelAimed != -1);
+        return (idBehindDoor != -1 && idLevelAimed != -1);
     }
 
     public void PlayerSpawn(int build)

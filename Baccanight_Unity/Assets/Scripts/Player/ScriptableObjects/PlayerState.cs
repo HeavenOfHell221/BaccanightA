@@ -6,7 +6,8 @@ public enum GameState
 	inPause,
 	inGame,
 	inDialog,
-	inDie
+	inDie,
+    inLoading
 }
 
 [CreateAssetMenu(fileName = "PlayerState", menuName = "AssetProject/PlayerState")]
