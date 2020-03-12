@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3333501458674323917}
   - component: {fileID: 3333501458674323916}
+  - component: {fileID: -4607244094441628766}
   - component: {fileID: 5612893509172908107}
   m_Layer: 0
   m_Name: Door
@@ -49,6 +50,22 @@ MonoBehaviour:
   m_RightToLeft: 1
   m_LevelIdAimed: 3
   m_offsetSpawnX: 0
+--- !u!114 &-4607244094441628766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3333501458674323919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e004e0d1244c14da7609689934d447, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OpenCondition: 0
+  m_PlayerAchievement: {fileID: 11400000, guid: f35f955f37505b74ebe4977c92c5bbc0,
+    type: 2}
+  AllwaysOpen: 0
 --- !u!61 &5612893509172908107
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -56,7 +73,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3333501458674323919}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
