@@ -98,7 +98,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
                 }
             }
         }
-        if (testDoor) Debug.Log("Aucune porte n'a été trouvé");
+        if (testDoor) Debug.LogError("Aucune porte n'a été trouvé");
 
         yield return new WaitForSeconds(1f);
 
@@ -107,7 +107,6 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         yield return 0;
     }
 
-    
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

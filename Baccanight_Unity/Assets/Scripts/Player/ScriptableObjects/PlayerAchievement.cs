@@ -13,10 +13,9 @@ public class Succes
 
 public enum KeySucces
 {
-    A,
-    B,
-    C,
-    D,
+    Niveau1_Done,
+    Niveau2_Done,
+    Ouverture_Niveau2,
 }
 
 [CreateAssetMenu(fileName = "PlayerAchievement", menuName = "AssetProject/PlayerAchievement")]
