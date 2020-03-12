@@ -4754,6 +4754,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3062530037027660364}
     m_Modifications:
+    - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: AllwaysOpen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3333501458674323916, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_DoorId
@@ -4839,6 +4844,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3062530037027660364}
     m_Modifications:
+    - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: AllwaysOpen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3333501458674323916, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_DoorId
