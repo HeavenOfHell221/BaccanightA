@@ -30,7 +30,7 @@ public class EventScriptTrigger : MonoBehaviour
 		GetComponent<Collider2D>().isTrigger = true;
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
+	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (((1 << other.gameObject.layer) & Layers) != 0)
 		{
@@ -38,12 +38,20 @@ public class EventScriptTrigger : MonoBehaviour
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D other)
+	private void OnTriggerExit2D(Collider2D other)
 	{
 		if (((1 << other.gameObject.layer) & Layers) != 0)
 		{
 			OnExitDetect.Invoke(other.gameObject);
 		}
 	}
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (((1 << other.gameObject.layer) & Layers) != 0)
+        {
+            OnStayDetect.Invoke(other.gameObject);
+        }
+    }
 }
 
