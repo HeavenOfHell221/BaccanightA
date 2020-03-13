@@ -13,14 +13,23 @@ public class Succes
 
 public enum KeySucces
 {
+    #region Levels
+
     Level1,
     Level2,
     LevelBoss,
+
+    #endregion
+
+    #region Fragments
+
     Fragment1,
     Fragment2,
     Fragment3,
     Fragment4,
     Fragment5,
+
+    #endregion
 }
 
 [CreateAssetMenu(fileName = "PlayerAchievement", menuName = "AssetProject/PlayerAchievement")]

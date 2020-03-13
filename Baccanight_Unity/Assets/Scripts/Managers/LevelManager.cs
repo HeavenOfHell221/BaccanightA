@@ -25,7 +25,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
 
     private void Start()
     {
-        PlayerSpawn(2);
+        StartCoroutine(PlayerSpawn(2));
         BehindDoor(-1, -1); 
     }
 
@@ -117,9 +117,18 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         return (idBehindDoor != -1 && idLevelAimed != -1);
     }
 
-    public void PlayerSpawn(int build)
+    public IEnumerator PlayerSpawn(int build)
     {
         SceneManager.LoadScene(build, LoadSceneMode.Single);
-        SceneManager.LoadScene(ScenePersistentPlayer, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(ScenePersistentPlayer, LoadSceneMode.Additive);
+
+        while(!SceneManager.GetSceneByBuildIndex(build).isLoaded)
+        {
+            yield return null;
+        }
+
+        Instantiate(m_fonduEnd);
+
+       
     }
 }

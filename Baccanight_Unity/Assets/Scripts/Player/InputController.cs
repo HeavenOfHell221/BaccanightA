@@ -22,9 +22,6 @@ public class InputController : MonoBehaviour
 	private FloatEvent m_OnMoveHorizontal;
 
 	[SerializeField]
-	private Vector2Event m_OnAim;
-
-	[SerializeField]
 	private UnityEvent m_OnJump;
 
 	[SerializeField]
@@ -57,13 +54,13 @@ public class InputController : MonoBehaviour
 	#region Getters / Setters
 
 	public FloatEvent OnMoveHorizontal => m_OnMoveHorizontal;
-	public Vector2Event OnLook => m_OnAim;
 	public UnityEvent OnJump => m_OnJump;
 	public UnityEvent OnEscape => m_OnCancel;
 	public UnityEvent OnAttackEnter => m_OnAttackEnter;
 	public UnityEvent OnAttackExit => m_OnAttackExit;
 	public UnityEvent OnSubmit => m_OnSubmit;
 	public UnityEvent OnCancel => m_OnCancel;
+    public UnityEvent OnInteract => m_OnInteract;
 	public static bool HaveGamePad { get; set; }
 
 	#endregion
