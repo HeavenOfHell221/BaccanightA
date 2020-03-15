@@ -10,18 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e7453cfa3882d04087cbb8c9b4d72d2, type: 3}
-  m_Name: PlayerAchievement
+  m_Name: Fragment
   m_EditorClassIdentifier: 
-  m_succes:
-  - m_key: 0
-    m_isUnlocked: 1
-    m_value: 0
-    m_succesToUnlock: 
-  - m_key: 1
-    m_isUnlocked: 1
-    m_value: 0
-    m_succesToUnlock: 
-  - m_key: 2
-    m_isUnlocked: 1
-    m_value: 0
-    m_succesToUnlock: 
+  m_playerSuccesFragmentInit:
+  - Key: 0
+    Value: 0
+  - Key: 1
+    Value: 0
+  - Key: 2
+    Value: 0
+  - Key: 3
+    Value: 0

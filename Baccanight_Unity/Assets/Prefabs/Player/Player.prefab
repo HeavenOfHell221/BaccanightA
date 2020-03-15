@@ -196,9 +196,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnAim:
-    m_PersistentCalls:
-      m_Calls: []
   m_OnJump:
     m_PersistentCalls:
       m_Calls:

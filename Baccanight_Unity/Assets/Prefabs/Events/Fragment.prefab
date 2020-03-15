@@ -199,6 +199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89384b384a5aae429492907fc98bd7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playerFragmentSucces: {fileID: 11400000, guid: e257367e6b682734bb78ccd24550f7d8,
+  m_playerSuccesFragment: {fileID: 11400000, guid: c99805020b76fd346aa872328fdd2789,
     type: 2}
-  m_succes: 3
+  m_fragment: 0

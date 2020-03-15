@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : SingletonBehaviour<LevelManager>
 {
+    #region Inspector
+#pragma warning disable 0649
     [SerializeField]
     private GameObject m_fonduBegin;
 
@@ -13,6 +15,8 @@ public class LevelManager : SingletonBehaviour<LevelManager>
 
     [SerializeField]
     private PlayerState m_playerState;
+#pragma warning restore 0649
+    #endregion
 
     #region Variables
     private int m_idBehindDoor;
@@ -25,8 +29,9 @@ public class LevelManager : SingletonBehaviour<LevelManager>
 
     private void Start()
     {
-        StartCoroutine(PlayerSpawn(2));
-        BehindDoor(-1, -1); 
+        StartCoroutine(PlayerFirstSpawn(2));
+        BehindDoor(-1, -1);
+        PlayerManager.Instance.ResetPlayerData();
     }
 
     public void BehindDoor(int idDoor, int idLevelAimed)
@@ -55,7 +60,6 @@ public class LevelManager : SingletonBehaviour<LevelManager>
     {
         StartCoroutine(TeleportPlayer(idLevelAimed, idBehindDoor));
         BehindDoor(-1, -1);
-
     }
 
     public IEnumerator TeleportPlayer(int build, int doorId)
@@ -117,7 +121,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         return (idBehindDoor != -1 && idLevelAimed != -1);
     }
 
-    public IEnumerator PlayerSpawn(int build)
+    public IEnumerator PlayerFirstSpawn(int build)
     {
         SceneManager.LoadScene(build, LoadSceneMode.Single);
         SceneManager.LoadSceneAsync(ScenePersistentPlayer, LoadSceneMode.Additive);
@@ -129,6 +133,8 @@ public class LevelManager : SingletonBehaviour<LevelManager>
 
         Instantiate(m_fonduEnd);
 
-       
+        yield return new WaitForSeconds(1f);
+
+        m_playerState.State = GameState.inGame;
     }
 }

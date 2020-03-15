@@ -84,9 +84,8 @@ public class InputController : MonoBehaviour
 	private void Start()
 	{
 		InitialyseGamePad();
-		Debug.LogFormat("GamePad : {0} ", HaveGamePad);
         PlayerManager.Instance.PlayerReference = gameObject;
-        m_OnInteract.AddListener(LevelManager.Instance.OnInteract);
+        PlayerManager.Instance.PlayerinputController = this;
 	}
 
 	void Update()

@@ -4,23 +4,30 @@ using UnityEngine;
 
 public class DoorManager : MonoBehaviour
 {
+    #region Inspector
     [SerializeField]
-    private KeySucces m_OpenCondition;
-
+    private PlayerSuccesLevels m_playerSuccesLevels;
     [SerializeField]
-    private PlayerAchievement m_PlayerAchievement;
+    private KeyLevels m_succesForOpenDoor;
+    #endregion
 
+    #region Variables
     private BoxCollider2D m_DoorCollider;
+    #endregion
 
     [SerializeField]
-    private bool AllwaysOpen;
+    private bool m_allwaysOpen;
 
-    void Start()
+    void Start() 
     {
         m_DoorCollider = gameObject.GetComponent<BoxCollider2D>();
-        if (m_PlayerAchievement.HaveSucces(m_OpenCondition) || AllwaysOpen)
+        if (m_allwaysOpen || m_playerSuccesLevels.HaveSucces(m_succesForOpenDoor))
         {
             OpenDoor();
+        }
+        else
+        {
+            CloseDoor();
         }
     }
 
@@ -34,5 +41,15 @@ public class DoorManager : MonoBehaviour
     {
         m_DoorCollider.enabled = false;
         //Affichage de porte fermée
+    }
+
+    public void PlayerEnter()
+    {
+        PlayerManager.Instance.PlayerinputController.OnInteract.AddListener(LevelManager.Instance.OnInteract);
+    }
+
+    public void PlayerExit()
+    {
+        PlayerManager.Instance.PlayerinputController.OnInteract.RemoveListener(LevelManager.Instance.OnInteract);
     }
 }
