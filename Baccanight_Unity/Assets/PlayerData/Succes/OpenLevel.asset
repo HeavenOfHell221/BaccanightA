@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e7453cfa3882d04087cbb8c9b4d72d2, type: 3}
-  m_Name: Fragment
+  m_Name: OpenLevel
   m_EditorClassIdentifier: 
   m_playerSuccesInit:
-  - Key: Fragment 1
+  - Key: Level 1
     Value: 0
-  - Key: Fragment 2
+  - Key: Level 2
     Value: 0
-  - Key: Fragment 3
-    Value: 0
-  - Key: Fragment 4
+  - Key: Boss 1
     Value: 0

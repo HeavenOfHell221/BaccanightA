@@ -6,9 +6,9 @@ public class FragmentRetrieve : MonoBehaviour
 {
     #region Inspector
     [SerializeField]
-    private PlayerSuccesFragment m_playerSuccesFragment;
+    private PlayerSucces m_playerSuccesFragment;
     [SerializeField]
-    private KeyFragment m_fragment;
+    private string m_fragment;
     #endregion
 
     #region Variables

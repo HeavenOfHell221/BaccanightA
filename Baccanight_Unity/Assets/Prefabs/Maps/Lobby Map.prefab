@@ -17550,13 +17550,13 @@ PrefabInstance:
     - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_succesForOpenDoor
-      value: 4
+      value: Level 2
       objectReference: {fileID: 0}
     - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_playerSuccesLevels
       value: 
-      objectReference: {fileID: 11400000, guid: a66b9edd25c5c884fb927b275be0ae30,
+      objectReference: {fileID: 11400000, guid: 5b684fdf51f96ac40aff73d99b197752,
         type: 2}
     - target: {fileID: 3333501458674323916, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
@@ -17681,13 +17681,19 @@ PrefabInstance:
     - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_succesForOpenDoor
-      value: 3
+      value: Level 1
       objectReference: {fileID: 0}
     - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_allwaysOpen
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_playerSuccesLevels
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b684fdf51f96ac40aff73d99b197752,
+        type: 2}
     - target: {fileID: 3333501458674323916, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_DoorId
@@ -17786,8 +17792,14 @@ PrefabInstance:
     - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_succesForOpenDoor
-      value: 5
+      value: Boss 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_playerSuccesLevels
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b684fdf51f96ac40aff73d99b197752,
+        type: 2}
     - target: {fileID: 3333501458674323916, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_DoorId

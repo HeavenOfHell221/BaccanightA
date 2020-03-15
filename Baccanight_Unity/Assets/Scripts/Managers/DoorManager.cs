@@ -6,18 +6,18 @@ public class DoorManager : MonoBehaviour
 {
     #region Inspector
     [SerializeField]
-    private PlayerSuccesLevels m_playerSuccesLevels;
+    private PlayerSucces m_playerSuccesLevels;
     [SerializeField]
-    private KeyLevels m_succesForOpenDoor;
+    private string m_succesForOpenDoor;
+    [SerializeField]
+    private bool m_allwaysOpen;
     #endregion
 
     #region Variables
     private BoxCollider2D m_DoorCollider;
     #endregion
 
-    [SerializeField]
-    private bool m_allwaysOpen;
-
+    
     void Start() 
     {
         m_DoorCollider = gameObject.GetComponent<BoxCollider2D>();

@@ -4762,13 +4762,19 @@ PrefabInstance:
     - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_succesForOpenDoor
-      value: 5
+      value: Boss 1
       objectReference: {fileID: 0}
     - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_allwaysOpen
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_playerSuccesLevels
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b684fdf51f96ac40aff73d99b197752,
+        type: 2}
     - target: {fileID: 3333501458674323916, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_DoorId
@@ -4862,8 +4868,14 @@ PrefabInstance:
     - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_succesForOpenDoor
-      value: 2
+      value: Boss 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_playerSuccesLevels
+      value: 
+      objectReference: {fileID: 11400000, guid: 5a28f0d5b1fe2834996b1143220efde4,
+        type: 2}
     - target: {fileID: 3333501458674323916, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_DoorId
