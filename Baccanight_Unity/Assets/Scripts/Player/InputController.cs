@@ -112,6 +112,7 @@ public class InputController : MonoBehaviour
 	private void GetMotion()
 	{
 		float rawMotion = Mathf.Clamp(Input.GetAxisRaw(GameConstants.k_AxisHorizontal), -1, 1);
+        //Debug.Log(rawMotion);
 		//if (m_MoveThreshold < Mathf.Abs(rawMotion))
 		//{
 			m_OnMoveHorizontal.Invoke(rawMotion);

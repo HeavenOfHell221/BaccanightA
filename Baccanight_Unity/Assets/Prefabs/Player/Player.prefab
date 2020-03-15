@@ -110,7 +110,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.28}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -121,7 +121,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.6, y: 1.45}
   m_EdgeRadius: 0
 --- !u!50 &1851043499719964770
 Rigidbody2D:
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 5.5
   m_jumpForce: 1100
-  m_smoothSpeed: 0.3
+  m_smoothSpeed: 0.6
   m_GroundPhysicMaterial: {fileID: 6200000, guid: d2690fcbea4980d4ea71f26b6df4b614,
     type: 2}
   m_AirPhysicMaterial: {fileID: 6200000, guid: f04310e341f8a0147970dd592a98f917, type: 2}
@@ -167,7 +167,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  m_jumpCooldown: 0.1
+  m_jumpCooldown: 0.05
   m_PlayerMotion: {fileID: 11400000, guid: 8d25be83bd41b1745b10d7b8110c1547, type: 2}
 --- !u!114 &1851043499719964798
 MonoBehaviour:
@@ -279,7 +279,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
