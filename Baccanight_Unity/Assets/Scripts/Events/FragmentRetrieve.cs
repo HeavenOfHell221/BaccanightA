@@ -15,6 +15,10 @@ public class FragmentRetrieve : MonoBehaviour
     private InputController m_inputController = null;
     #endregion
 
+    #region Getters / Setters
+    public string FramentID { get => m_fragment; private set => m_fragment = value; }
+    #endregion
+
 
     public void PlayerEnter()
     {

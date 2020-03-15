@@ -36,4 +36,17 @@ public class PlayerSucces : ScriptableObject
     {
         return m_playerSucces[key].Value;
     }
+
+    public bool HaveAllSucces()
+    {
+        var values = m_playerSucces.Values;
+        foreach(Succes succes in values)
+        {
+            if(!succes.Value)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 }

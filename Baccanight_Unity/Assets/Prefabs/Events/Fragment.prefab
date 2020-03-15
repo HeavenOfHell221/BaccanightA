@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8529819904643851309}
   m_Layer: 0
   m_Name: Fragment
-  m_TagString: Untagged
+  m_TagString: Fragment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,4 +201,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerSuccesFragment: {fileID: 11400000, guid: c99805020b76fd346aa872328fdd2789,
     type: 2}
-  m_fragment: 0
+  m_fragment: 
