@@ -7,6 +7,12 @@ public class Succes
 {
     public string Key;
     public bool Value;
+
+    public Succes(string key, bool value)
+    {
+        Key = key;
+        Value = value;
+    }
 }
 
 [CreateAssetMenu(fileName = "PlayerSucces", menuName = "AssetProject/PlayerSucces")]
@@ -15,15 +21,16 @@ public class PlayerSucces : ScriptableObject
     [SerializeField]
     private Succes[] m_playerSuccesInit;
 
-    private Dictionary<string, Succes> m_playerSucces;
+    public Dictionary<string, Succes> m_playerSucces;
 
     public void Reset()
     {
         m_playerSucces = new Dictionary<string, Succes>();
 
-        foreach(var s in m_playerSuccesInit)
+        foreach(Succes s in m_playerSuccesInit)
         {
-            m_playerSucces.Add(s.Key, s);
+            Succes newSucces = new Succes(s.Key, s.Value);
+            m_playerSucces.Add(newSucces.Key, newSucces);
         }
     }
 

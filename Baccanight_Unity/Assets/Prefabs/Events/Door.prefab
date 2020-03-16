@@ -50,7 +50,7 @@ MonoBehaviour:
   m_DoorId: -1
   m_RightToLeft: 1
   m_LevelIdAimed: 3
-  m_offsetSpawnX: 0
+  m_offsetSpawn: {x: 0, y: 1}
 --- !u!114 &-4607244094441628766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e004e0d1244c14da7609689934d447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playerSuccesLevels: {fileID: 0}
+  m_playerSucces: {fileID: 11400000, guid: 5a28f0d5b1fe2834996b1143220efde4, type: 2}
   m_succesForOpenDoor: 
   m_allwaysOpen: 0
 --- !u!61 &5612893509172908107
@@ -207,7 +207,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8448348940915924363, guid: 5d1a7b72e1679034f92298b9e254c9a6,
     type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}

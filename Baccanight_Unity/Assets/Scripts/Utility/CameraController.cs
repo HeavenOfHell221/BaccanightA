@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
 
     public void TeleportCamera(Transform player)
     {
-        Vector2 delta = player.transform.position - transform.position;
+        Vector3 delta = player.transform.position - transform.position;
         cvc.OnTargetObjectWarped(player, delta);
     }
 }

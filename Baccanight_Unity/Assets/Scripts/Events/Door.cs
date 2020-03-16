@@ -18,7 +18,7 @@ public class Door : MonoBehaviour
     private int m_LevelIdAimed; // pour chercher la scene to be loaded
 
     [SerializeField]
-    private float m_offsetSpawnX = 2;
+    private Vector2 m_offsetSpawn;
 
 #pragma warning restore 0649
     #endregion
@@ -30,7 +30,8 @@ public class Door : MonoBehaviour
         GetComponent<Collider2D>().isTrigger = true;
         m_spawnPoint = transform.position;
         int dir = m_RightToLeft ? -1 : 1;
-        m_spawnPoint.x += m_offsetSpawnX * dir;
+        m_spawnPoint.x += m_offsetSpawn.x * dir;
+        m_spawnPoint.y += m_offsetSpawn.y;
         if (m_DoorId == -1) Debug.LogError("Porte " + this.name + " ID NOT CORRECT");
         if (m_LevelIdAimed == -1) Debug.LogError("Porte " + this.name + " Level Id aimed NOT CORRECT");
     }

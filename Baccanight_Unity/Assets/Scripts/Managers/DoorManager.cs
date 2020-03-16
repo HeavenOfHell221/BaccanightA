@@ -6,7 +6,7 @@ public class DoorManager : MonoBehaviour
 {
     #region Inspector
     [SerializeField]
-    private PlayerSucces m_playerSuccesLevels;
+    private PlayerSucces m_playerSucces;
     [SerializeField]
     private string m_succesForOpenDoor;
     [SerializeField]
@@ -21,14 +21,7 @@ public class DoorManager : MonoBehaviour
     void Start() 
     {
         m_DoorCollider = gameObject.GetComponent<BoxCollider2D>();
-        if (m_allwaysOpen || m_playerSuccesLevels.HaveSucces(m_succesForOpenDoor))
-        {
-            OpenDoor();
-        }
-        else
-        {
-            CloseDoor();
-        }
+        StartCoroutine(TestDoor());
     }
 
     public void OpenDoor()
@@ -51,5 +44,20 @@ public class DoorManager : MonoBehaviour
     public void PlayerExit()
     {
         PlayerManager.Instance.PlayerinputController.OnInteract.RemoveListener(LevelManager.Instance.OnInteract);
+    }
+
+    private IEnumerator TestDoor()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        if (m_allwaysOpen || m_playerSucces.HaveSucces(m_succesForOpenDoor))
+        {
+            OpenDoor();
+        }
+        else
+        {
+            StartCoroutine(TestDoor());
+        }
+        
     }
 }

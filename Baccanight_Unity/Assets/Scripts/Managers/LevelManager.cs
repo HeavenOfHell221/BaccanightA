@@ -7,11 +7,6 @@ public class LevelManager : SingletonBehaviour<LevelManager>
 {
     #region Inspector
 #pragma warning disable 0649
-    [SerializeField]
-    private GameObject m_fonduBegin;
-
-    [SerializeField]
-    private GameObject m_fonduEnd;
 
     [SerializeField]
     private PlayerState m_playerState;
@@ -65,9 +60,6 @@ public class LevelManager : SingletonBehaviour<LevelManager>
     public IEnumerator TeleportPlayer(int build, int doorId)
     {
         m_playerState.State = GameState.inLoading;
-        Instantiate(m_fonduBegin);
-
-        yield return new WaitForSeconds(1f);
 
         for(int i = 0; i < SceneManager.sceneCount; i++)
         {
@@ -79,7 +71,6 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         }
 
         yield return SceneManager.LoadSceneAsync(build, LoadSceneMode.Additive);
-        Instantiate(m_fonduEnd);
         
         GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
         bool testDoor = true;
@@ -104,8 +95,6 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         }
         if (testDoor) Debug.LogError("Aucune porte n'a été trouvé");
 
-        yield return new WaitForSeconds(1f);
-
         m_playerState.State = GameState.inGame;
 
         yield return 0;
@@ -124,16 +113,12 @@ public class LevelManager : SingletonBehaviour<LevelManager>
     public IEnumerator PlayerFirstSpawn(int build)
     {
         SceneManager.LoadScene(build, LoadSceneMode.Single);
-        SceneManager.LoadSceneAsync(ScenePersistentPlayer, LoadSceneMode.Additive);
+        SceneManager.LoadScene(ScenePersistentPlayer, LoadSceneMode.Additive);
 
         while(!SceneManager.GetSceneByBuildIndex(build).isLoaded)
         {
             yield return null;
         }
-
-        Instantiate(m_fonduEnd);
-
-        yield return new WaitForSeconds(1f);
 
         m_playerState.State = GameState.inGame;
     }

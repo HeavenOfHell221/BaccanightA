@@ -141,41 +141,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2977428749001497148, guid: c879433634ac61f49b16f7cb3896daf2,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2977428749001497148, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2977428749001497148, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2977428749001497148, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2977428749001497148, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2977428749001497148, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2977428749001497148, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2977428749001497148, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
@@ -213,6 +178,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086647967884702567, guid: c879433634ac61f49b16f7cb3896daf2,
+        type: 3}
+      propertyPath: m_levelIDFinish
+      value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086647967884702567, guid: c879433634ac61f49b16f7cb3896daf2,
+        type: 3}
+      propertyPath: m_LevelIDOpenDoor
+      value: Level 2
       objectReference: {fileID: 0}
     - target: {fileID: 8943652987580465956, guid: c879433634ac61f49b16f7cb3896daf2,
         type: 3}

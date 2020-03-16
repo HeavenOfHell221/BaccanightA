@@ -11,7 +11,13 @@ public class RetrieveAllFragments : MonoBehaviour
     private PlayerSucces m_succesFinishLevel;
 
     [SerializeField]
-    private string m_levelID;
+    private PlayerSucces m_succesOpenLevel;
+
+    [SerializeField]
+    private string m_levelIDFinish;
+
+    [SerializeField]
+    private string m_LevelIDOpenDoor;
 
     private FragmentRetrieve[] m_fragments;
 
@@ -36,7 +42,8 @@ public class RetrieveAllFragments : MonoBehaviour
 
         if(test)
         {
-            m_succesFinishLevel.SetSucces(m_levelID, true);
+            m_succesFinishLevel.SetSucces(m_levelIDFinish, true);
+            m_succesOpenLevel.SetSucces(m_LevelIDOpenDoor, true);
         }
 
         yield return new WaitForSeconds(0.5f);

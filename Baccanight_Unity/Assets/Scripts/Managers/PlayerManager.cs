@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerManager : SingletonBehaviour<PlayerManager>
 {
     #region Inspector
-    public GameObject PlayerReference;
-    public CameraController CameraReference;
-    public InputController PlayerinputController;
+    [HideInInspector] public GameObject PlayerReference;
+    [HideInInspector] public CameraController CameraReference;
+    [HideInInspector] public InputController PlayerinputController;
 
     [SerializeField] private PlayerMotion m_playerMotion;
     [SerializeField] private PlayerSound m_playerSound;
