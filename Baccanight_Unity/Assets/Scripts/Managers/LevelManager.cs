@@ -16,6 +16,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
     #region Variables
     private int m_idBehindDoor;
     private int m_idLevelAimed;
+    private int m_sceneActive;
     #endregion
 
     #region Getters / Setters
@@ -33,11 +34,6 @@ public class LevelManager : SingletonBehaviour<LevelManager>
     {
         m_idBehindDoor = idDoor;
         m_idLevelAimed = idLevelAimed;
-    }
-
-    public void LoadScene(int build)
-    {
-        SceneManager.LoadScene(build);
     }
 
     public void OnInteract()
@@ -61,17 +57,19 @@ public class LevelManager : SingletonBehaviour<LevelManager>
     {
         m_playerState.State = GameState.inLoading;
 
-        for(int i = 0; i < SceneManager.sceneCount; i++)
-        {
-            Scene scene = SceneManager.GetSceneAt(i);
-            if(scene.buildIndex != ScenePersistentPlayer && scene.buildIndex != build)
-            {
-                SceneManager.UnloadSceneAsync(scene.buildIndex);
-            }
-        }
+        GameObject levelLoader = GameObject.FindGameObjectWithTag("LevelLoader");
+        DontDestroyOnLoad(levelLoader);
+        Animator animator = levelLoader.GetComponentInChildren<Animator>();
+        animator.SetTrigger("Start");
+
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.UnloadSceneAsync(m_sceneActive);
 
         yield return SceneManager.LoadSceneAsync(build, LoadSceneMode.Additive);
-        
+
+        Destroy(levelLoader);
+
         GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
         bool testDoor = true;
         
@@ -95,9 +93,9 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         }
         if (testDoor) Debug.LogError("Aucune porte n'a été trouvé");
 
+        m_sceneActive = build;
+        yield return new WaitForSeconds(1f);
         m_playerState.State = GameState.inGame;
-
-        yield return 0;
     }
 
     public void ReloadScene()
@@ -112,10 +110,12 @@ public class LevelManager : SingletonBehaviour<LevelManager>
 
     public IEnumerator PlayerFirstSpawn(int build)
     {
+        m_sceneActive = build;
         SceneManager.LoadScene(build, LoadSceneMode.Single);
         SceneManager.LoadScene(ScenePersistentPlayer, LoadSceneMode.Additive);
 
-        while(!SceneManager.GetSceneByBuildIndex(build).isLoaded)
+        while (!SceneManager.GetSceneByBuildIndex(build).isLoaded
+            || !SceneManager.GetSceneByBuildIndex(ScenePersistentPlayer).isLoaded)
         {
             yield return null;
         }
