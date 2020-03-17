@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    private float ArrowSpeed = 20f;
+    private float ArrowSpeed = 0.1f;
 
 	[SerializeField]
 	private LayerMask whatIsGround;
