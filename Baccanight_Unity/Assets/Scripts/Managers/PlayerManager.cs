@@ -16,8 +16,11 @@ public class PlayerManager : SingletonBehaviour<PlayerManager>
     [SerializeField] private PlayerSucces[] m_playerSucces;
     #endregion
 
-    #region Variables
-    
+    #region Variables 
+    #endregion
+
+    #region Getters / Setters
+    public bool IsPlayerLookHeadIsLeft = true;
     #endregion
 
     public void ResetPlayerData()

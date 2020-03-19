@@ -48,11 +48,13 @@ public class PlayerAnimatorController : MonoBehaviour
 		if (m_playerMotion.Motion.x > 0.1f)
 		{
 			sprite.flipX = false;
+            PlayerManager.Instance.IsPlayerLookHeadIsLeft = true;
 		}
 
 		else if (m_playerMotion.Motion.x < -0.1f)
 		{
 			sprite.flipX = true;
-		}
+            PlayerManager.Instance.IsPlayerLookHeadIsLeft = false;
+        }
 	}
 }

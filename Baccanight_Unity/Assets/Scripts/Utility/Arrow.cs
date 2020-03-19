@@ -4,24 +4,39 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    private float ArrowSpeed = 0.3f;
+    [SerializeField]
+    private Vector2 m_arrowSpeed;
 
-	[SerializeField]
-	private LayerMask whatIsGround;
-	[SerializeField]
-	private LayerMask whatIsBoss;
+    [SerializeField]
+    private Rigidbody2D m_rigidbody;
 
-	private LayerMask HitMask;
+    [SerializeField]
+    private SpriteRenderer m_sprite;
 
-	[SerializeField]
-	private Transform m_HitCheck;
+	//[SerializeField]
+	//private LayerMask whatIsGround;
+	//[SerializeField]
+	//private LayerMask whatIsBoss;
+
+	//private LayerMask HitMask;
+
+	//[SerializeField]
+	//private Transform m_HitCheck;
 
 	void Start()
     {
-		HitMask = whatIsBoss | whatIsGround;
+        //HitMask = whatIsBoss | whatIsGround;
+        if(!PlayerManager.Instance.IsPlayerLookHeadIsLeft)
+        {
+            m_arrowSpeed *= -1;
+            m_sprite.flipX = true;
+
+        }
+
+        m_rigidbody.AddForce(m_arrowSpeed, ForceMode2D.Force);
     }
 
-    void FixedUpdate()
+    /*void FixedUpdate()
     {
 		transform.position = new Vector3(transform.position.x+ArrowSpeed, transform.position.y, transform.position.z);
 		CheckHit();
@@ -41,5 +56,16 @@ public class Arrow : MonoBehaviour
 				Destroy(gameObject);
 			}
 		}
-	}
+	}*/
+
+    public void OnEnter(GameObject target)
+    {
+        /*
+         * Si le layer de target c'est le boss alors récupérer faire les dégâts
+         * Si le layer c'est le stage alors faire disparaitre la flèche
+         * 
+         */
+        Debug.Log("Je suis entrée en contact avec le layer : " + target.layer);
+        Destroy(gameObject, .05f);
+    }
 }
