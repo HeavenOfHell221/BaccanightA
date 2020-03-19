@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    private float ArrowSpeed = 0.1f;
+    private float ArrowSpeed = 0.3f;
 
 	[SerializeField]
 	private LayerMask whatIsGround;
@@ -23,13 +23,13 @@ public class Arrow : MonoBehaviour
 
     void FixedUpdate()
     {
-		transform.position = transform.forward * ArrowSpeed;
+		transform.position = new Vector3(transform.position.x+ArrowSpeed, transform.position.y, transform.position.z);
 		CheckHit();
     }
 
-	protected void CheckHit()
+	private void CheckHit()
 	{
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_HitCheck.position, .05f, HitMask);
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_HitCheck.position, 0.15f, HitMask);
 		for (int i = 0; i < colliders.Length; i++)
 		{
 			if (colliders[i].gameObject != gameObject)

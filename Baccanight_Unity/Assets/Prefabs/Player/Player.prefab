@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 1851043499719964770}
   - component: {fileID: 1851043499719964769}
   - component: {fileID: 1851043499719964798}
+  - component: {fileID: 6062258731765549822}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -215,7 +216,18 @@ MonoBehaviour:
       m_Calls: []
   m_OnAttackEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6062258731765549822}
+        m_MethodName: OnShoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnAttackExit:
     m_PersistentCalls:
       m_Calls: []
@@ -228,6 +240,19 @@ MonoBehaviour:
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6062258731765549822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851043499719964773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8754483dae05ca4eab1e6d691eeb9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Arrow: {fileID: 2711305812942450987, guid: 88bb93a2be17f14408458579de004291, type: 3}
 --- !u!1 &7410049786189491482
 GameObject:
   m_ObjectHideFlags: 0
