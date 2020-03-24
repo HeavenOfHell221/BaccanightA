@@ -33,6 +33,8 @@ public class Arrow : MonoBehaviour
 
         }
 
+        m_arrowSpeed.y = Random.Range(-0.01f, 0.01f);
+
         m_rigidbody.AddForce(m_arrowSpeed, ForceMode2D.Force);
     }
 
@@ -65,7 +67,7 @@ public class Arrow : MonoBehaviour
          * Si le layer c'est le stage alors faire disparaitre la flèche
          * 
          */
-        Debug.Log("Je suis entrée en contact avec le layer : " + target.layer);
-        Destroy(gameObject, .05f);
+        m_rigidbody.velocity = Vector2.zero;
+        Destroy(gameObject, 0.5f);
     }
 }

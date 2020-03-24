@@ -22,6 +22,7 @@ public class PlayerMotion : ScriptableObject
 	public bool IsGrounded { get => m_isGrounded; set => m_isGrounded = value; }
     public bool CanJump { get => m_canJump; set => m_canJump = value; }
 
+
 	#endregion
 
 	public void Reset()
