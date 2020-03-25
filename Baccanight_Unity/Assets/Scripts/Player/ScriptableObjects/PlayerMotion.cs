@@ -14,6 +14,9 @@ public class PlayerMotion : ScriptableObject
     [SerializeField]
     private bool m_canJump;
 
+    [SerializeField]
+    private bool m_pushObject;
+
 	#endregion
 
 	#region Getters / Setters
@@ -21,6 +24,7 @@ public class PlayerMotion : ScriptableObject
 	public Vector2 Motion { get => m_motion; set => m_motion = value; }
 	public bool IsGrounded { get => m_isGrounded; set => m_isGrounded = value; }
     public bool CanJump { get => m_canJump; set => m_canJump = value; }
+    public bool IsPushObject { get => m_pushObject; set => m_pushObject = value; }
 
 
 	#endregion
@@ -29,5 +33,6 @@ public class PlayerMotion : ScriptableObject
 	{
 		m_motion = Vector2.zero;
 		m_isGrounded = false;
+        m_pushObject = false;
 	}
 }

@@ -44,6 +44,7 @@ public class PlayerAnimatorController : MonoBehaviour
 		m_Animator.SetBool("OnGround", m_playerMotion.IsGrounded);
 		m_Animator.SetFloat("SpeedOny", playerRigidbody.velocity.y);
 		m_Animator.SetFloat("SpeedOnx", Mathf.Abs(m_playerMotion.Motion.x));
+        m_Animator.SetBool("IsPushObject", m_playerMotion.IsPushObject);
 
 		if (m_playerMotion.Motion.x > 0.1f)
 		{
