@@ -13,9 +13,17 @@ MonoBehaviour:
   m_Name: FinishLevel
   m_EditorClassIdentifier: 
   m_playerSuccesInit:
-  - Key: Level 1
+  - Key: Level 1.0
     Value: 0
-  - Key: Level 2
+  - Key: Level 1.1
     Value: 0
   - Key: Boss 1
+    Value: 0
+  - Key: Level 1.2
+    Value: 0
+  - Key: Level 2.0
+    Value: 0
+  - Key: Level 2.1
+    Value: 0
+  - Key: Level 2.2
     Value: 0
