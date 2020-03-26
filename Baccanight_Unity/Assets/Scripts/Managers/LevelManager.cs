@@ -25,9 +25,13 @@ public class LevelManager : SingletonBehaviour<LevelManager>
 
     private void Start()
     {
-        StartCoroutine(PlayerFirstSpawn(2));
         BehindDoor(-1, -1);
         PlayerManager.Instance.ResetPlayerData();
+    }
+
+    public void Play()
+    {
+        StartCoroutine(PlayerFirstSpawn(2));
     }
 
     public void BehindDoor(int idDoor, int idLevelAimed)
