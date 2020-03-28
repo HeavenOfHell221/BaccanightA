@@ -580,7 +580,7 @@ MonoBehaviour:
   m_BoundingVolume: {fileID: 0}
   m_BoundingShape2D: {fileID: 5988359767042062656}
   m_ConfineScreenEdges: 1
-  m_Damping: 0
+  m_Damping: 0.5
 --- !u!114 &7539896011511590342
 MonoBehaviour:
   m_ObjectHideFlags: 0
