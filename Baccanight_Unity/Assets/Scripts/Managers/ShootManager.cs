@@ -14,6 +14,6 @@ public class ShootManager : MonoBehaviour
 
     public void OnShoot()
     {
-        Instantiate(Arrow, gameObject.transform.position, new Quaternion());
+        Instantiate(Arrow, gameObject.transform.position, new Quaternion());;
     }
 }
