@@ -7,6 +7,7 @@ TagManager:
   - Door
   - Fragment
   - LevelLoader
+  - DialogBox
   layers:
   - Default
   - TransparentFX

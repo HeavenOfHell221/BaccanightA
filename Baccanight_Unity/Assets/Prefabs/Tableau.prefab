@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2686511703167566140}
   - component: {fileID: 4545758590324547645}
-  - component: {fileID: 6091707178681234857}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3993839518400612536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6634189035616858320}
@@ -82,24 +81,112 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6091707178681234857
+--- !u!1 &7558170660313059297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6574371872788856810}
+  - component: {fileID: 302794539902986946}
+  - component: {fileID: 7519213084712095527}
+  - component: {fileID: 5386605518361320842}
+  m_Layer: 0
+  m_Name: DetectionPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6574371872788856810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7558170660313059297}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6634189035616858320}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &302794539902986946
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7558170660313059297}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6, y: 8}
+  m_EdgeRadius: 0
+--- !u!114 &7519213084712095527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3993839518400612536}
-  m_Enabled: 0
+  m_GameObject: {fileID: 7558170660313059297}
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 457cbd68526da5a4b973949ceb445008, type: 3}
+  m_Script: {fileID: 11500000, guid: e720c47edf3bb684599a0ba90f5bfdef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_useRandomAngle: 1
-  m_timeLerp: 0.01
-  m_timeWaitBeforeNext: 0.1
-  m_angleMax: 45
-  m_deltaAngleBeforeNext: 0.1
-  m_speedRotation: 1
+  OnEnterDetect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5386605518361320842}
+        m_MethodName: EnterPlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnStayDetect:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExitDetect:
+    m_PersistentCalls:
+      m_Calls: []
+  Layers:
+    serializedVersion: 2
+    m_Bits: 512
+--- !u!114 &5386605518361320842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7558170660313059297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a867c8191abbd31438cebd980d871d40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8380861894364963480
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,10 +196,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6634189035616858320}
-  - component: {fileID: 1461430912693613928}
-  - component: {fileID: 5689850947743594586}
   m_Layer: 0
-  m_Name: Tableau Rotate
+  m_Name: Tableau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,40 +215,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2686511703167566140}
+  - {fileID: 6574371872788856810}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1461430912693613928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8380861894364963480}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 457cbd68526da5a4b973949ceb445008, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_useRandomAngle: 1
-  m_timeLerp: 0.005
-  m_timeWaitBeforeNext: 0.1
-  m_angleMax: 45
-  m_deltaAngleBeforeNext: 2
-  m_speedRotation: -2
---- !u!114 &5689850947743594586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8380861894364963480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 062ad40cf75d1ba41bdef18077f87117, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_maxValue: 3
-  m_timeLerp: 0.05
-  m_timeWaitBeforeStartCoroutine: 0.1
-  m_distanceMinBeforeNext: 0.1
