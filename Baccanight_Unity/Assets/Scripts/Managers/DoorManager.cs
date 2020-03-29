@@ -48,7 +48,7 @@ public class DoorManager : MonoBehaviour
 
     private IEnumerator TestDoor()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
 
         if (m_allwaysOpen || m_playerSucces.HaveSucces(m_succesForOpenDoor))
         {
