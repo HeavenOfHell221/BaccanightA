@@ -24,7 +24,7 @@ public class PaintingMovement : MonoBehaviour
 
     private void UpdateDestination()
     {
-        float dist = Mathf.Abs(m_destination.x - transform.position.x);
+        float dist = Vector3.Distance(m_destination, transform.position);
         if(dist < 0.1f)
         {
             m_destination = m_path.GetNextPathNode();

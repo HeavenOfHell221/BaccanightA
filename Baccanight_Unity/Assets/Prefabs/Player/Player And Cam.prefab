@@ -350,7 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8106899700368139052}
   m_Layer: 0
-  m_Name: Graphics
+  m_Name: '### Graphics ###'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -603,7 +603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7875291446247363206}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: '### Camera ###'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

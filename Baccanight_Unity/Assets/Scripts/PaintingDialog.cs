@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class PaintingDialog : MonoBehaviour
 {
-    private DialogBox m_dialogBox;
+    [SerializeField]
+    [TextArea(2, 10)]
+    private string m_dialog;
 
     private void Start()
     {
-        GameObject box = GameObject.FindGameObjectWithTag("DialogBox");
-        if(box)
-        {
-            m_dialogBox = box.GetComponent<DialogBox>();
-        }
+
     }
 
+    public void EnterPlayer()
+    {
+        
+    }
 
-    public void EnterPlayer(GameObject player)
+    public void ExitPlayer()
     {
 
     }
