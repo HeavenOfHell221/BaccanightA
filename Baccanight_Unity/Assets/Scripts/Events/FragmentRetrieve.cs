@@ -23,7 +23,6 @@ public class FragmentRetrieve : MonoBehaviour
     public void PlayerEnter()
     {
         PlayerManager.Instance.PlayerinputController.OnInteract.AddListener(GetFragment);
-        Debug.Log("player enter in " + m_fragment);
     }
 
     public void PlayerExit()

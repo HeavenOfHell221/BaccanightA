@@ -46,16 +46,8 @@ public class PlayerAnimatorController : MonoBehaviour
 		m_Animator.SetFloat("SpeedOnx", Mathf.Abs(m_playerMotion.Motion.x));
         m_Animator.SetBool("IsPushObject", m_playerMotion.IsPushObject);
 
-		if (m_playerMotion.Motion.x > 0.1f)
-		{
-			sprite.flipX = false;
-            PlayerManager.Instance.IsPlayerLookHeadIsLeft = true;
-		}
+        m_playerMotion.FlipSprite = m_playerMotion.Motion.x > 0.1f ? 1 : m_playerMotion.Motion.x < -0.1f ? -1 : m_playerMotion.FlipSprite;
 
-		else if (m_playerMotion.Motion.x < -0.1f)
-		{
-			sprite.flipX = true;
-            PlayerManager.Instance.IsPlayerLookHeadIsLeft = false;
-        }
+        gameObject.transform.localScale = new Vector3(m_playerMotion.FlipSprite, 1, 1);
 	}
 }

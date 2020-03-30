@@ -17,6 +17,9 @@ public class PlayerMotion : ScriptableObject
     [SerializeField]
     private bool m_pushObject;
 
+    [SerializeField]
+    private int m_flipSprite; // -1 = gauche; 1 = droite
+
 	#endregion
 
 	#region Getters / Setters
@@ -25,7 +28,7 @@ public class PlayerMotion : ScriptableObject
 	public bool IsGrounded { get => m_isGrounded; set => m_isGrounded = value; }
     public bool CanJump { get => m_canJump; set => m_canJump = value; }
     public bool IsPushObject { get => m_pushObject; set => m_pushObject = value; }
-
+    public int FlipSprite { get => m_flipSprite; set => m_flipSprite = value; }
 
 	#endregion
 
@@ -34,5 +37,6 @@ public class PlayerMotion : ScriptableObject
 		m_motion = Vector2.zero;
 		m_isGrounded = false;
         m_pushObject = false;
+        m_flipSprite = 1;
 	}
 }
