@@ -19,7 +19,7 @@ public abstract class MovementController : MonoBehaviour
     [SerializeField]
     protected float m_jumpForce;
 
-	[Range(.1f, 1f)]
+    [Range(.1f, 1f)]
 	[SerializeField]
 	protected float m_smoothSpeed;
 

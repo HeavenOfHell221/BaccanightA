@@ -101,7 +101,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         }
 
         m_sceneActive = build;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.9f);
         m_playerState.State = GameState.inGame;
     }
 

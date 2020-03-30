@@ -121,7 +121,7 @@ public class InputController : MonoBehaviour
 
 	private void GetJumpDown()
 	{
-		if (Input.GetButton(GameConstants.k_Jump))
+		if (Input.GetButtonDown(GameConstants.k_Jump))
 		{
 			m_OnJump.Invoke();
 		}

@@ -159,18 +159,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ea58cb5a93cf8b44bcfab4c20f550d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 5.5
-  m_jumpForce: 1050
+  m_speed: 7
+  m_jumpForce: 13
   m_smoothSpeed: 0.6
   m_GroundPhysicMaterial: {fileID: 6200000, guid: d2690fcbea4980d4ea71f26b6df4b614,
     type: 2}
   m_AirPhysicMaterial: {fileID: 6200000, guid: f04310e341f8a0147970dd592a98f917, type: 2}
   m_groundCheckLeft: {fileID: 1851043499308263473}
   m_groundCheckRight: {fileID: 1851043498714158727}
-  whatIsGround:
+  m_whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  m_jumpCooldown: 0.05
+  m_jumpSteps: 15
+  m_jumpThreshold: 5
+  m_maxFallSpeed: 30
+  m_maxJumpSpeed: 30
   m_PlayerMotion: {fileID: 11400000, guid: 8d25be83bd41b1745b10d7b8110c1547, type: 2}
 --- !u!114 &1851043499719964798
 MonoBehaviour:

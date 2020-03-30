@@ -24,10 +24,21 @@ public abstract class MovementControllerGround : MovementController
 	protected Transform m_groundCheckRight;
 
 	[SerializeField]
-	protected LayerMask whatIsGround;
+	protected LayerMask m_whatIsGround;
 
     [SerializeField]
-    private float m_jumpCooldown;
+    private int m_jumpSteps = 20;
+
+    [SerializeField]
+    private int m_jumpThreshold = 7;
+
+    [SerializeField]
+    [Min(0)]
+    private float m_maxFallSpeed = 30f;
+
+    [SerializeField]
+    [Min(0)]
+    private float m_maxJumpSpeed = 10f;
 
 #pragma warning restore 0649
 	#endregion
@@ -35,13 +46,11 @@ public abstract class MovementControllerGround : MovementController
 	#region Variables
 
 	protected bool m_jumpTrigger = false;
-	protected Vector2 m_aimedVelocity;
-
 	protected bool m_isGrounded;
 	protected bool m_isGroundedLeft;
 	protected bool m_isGroundedRight;
-    protected float m_jumpTimer;
     protected bool m_hasJump = false;
+    protected int m_jumpNumberCounter;
 	#endregion
 
 	#region Getters / Setters
@@ -57,39 +66,100 @@ public abstract class MovementControllerGround : MovementController
 
 	public virtual void OnJump()
 	{
-        if (Time.time > m_jumpTimer + m_jumpCooldown)
+        if (IsGrounded)
         {
-            if(!m_hasJump)
-                m_jumpTrigger = true;
+            m_jumpTrigger = true;
         }
-	}
+    }
 
 	virtual protected void FixedUpdate()
 	{
-		CheckGround();
 		if (m_canMove)
 		{
 			ApplyMovement();
-			if (m_jumpTrigger && IsGrounded && !m_hasJump)
-			{
-				ApplyJump();
-			}
+            ApplyJump();
 		}
+       
 	}
 
-	public void ApplyJump()
-	{
-        MyRigidbody.AddForce(Vector2.up * m_jumpForce, ForceMode2D.Impulse);
-  		IsGrounded = false;
-        m_jumpTrigger = false;
-        m_hasJump = true;
+    virtual protected void Update()
+    {
+        CheckGround();
+
+        if(!Input.GetButton(GameConstants.k_Jump) && m_jumpTrigger)
+        {
+            if(m_jumpNumberCounter < m_jumpSteps && m_jumpNumberCounter > m_jumpThreshold)
+            {
+                StopJumpSlow();
+            }
+            else
+            {
+                StopJumpQuick();
+            }
+        }
     }
 
-	protected void CheckGround()
+    private void StopJumpQuick()
+    {
+        m_jumpNumberCounter = 0;
+        m_jumpTrigger = false;
+        MyRigidbody.velocity = new Vector2(MyRigidbody.velocity.x, 0f);
+    }
+
+    private void StopJumpSlow()
+    {
+        m_jumpNumberCounter = 0;
+        m_jumpTrigger = false;
+    }
+
+    public void ApplyJump()
+	{
+        /*if(m_jumpTrigger && IsGrounded && !m_hasJump)
+        {
+            m_jumpNumberCounter = m_jumpNumber;
+            m_hasJump = true;
+            m_jumpTrigger = false;
+            MyRigidbody.AddForce(Vector2.up * m_jumpForceGround, ForceMode2D.Impulse);
+        }
+
+        if (Input.GetButtonUp(GameConstants.k_Jump))
+        {
+            m_hasJump = false;
+        }
+
+        if(Input.GetButton(GameConstants.k_Jump) && m_hasJump)
+        {
+            if(m_jumpNumberCounter > 0)
+            {
+                MyRigidbody.AddForce(Vector2.up * m_jumpForceAir, ForceMode2D.Force);
+                m_jumpNumberCounter -= 1;
+            }
+            else
+            {
+                m_hasJump = false;
+            }
+        }
+        */
+        
+        if(m_jumpTrigger)
+        {
+            if(m_jumpNumberCounter < m_jumpSteps)
+            {
+                MyRigidbody.velocity = new Vector2(MyRigidbody.velocity.x, m_jumpForce);
+                m_jumpNumberCounter++;
+            }
+            else
+            {
+                StopJumpSlow();
+            }
+        }
+    }
+
+	protected bool CheckGround()
 	{
         IsGrounded = true;
-        CheckGroundLeft();
-        CheckGroundRight();
+        m_isGroundedLeft = CheckGround(m_groundCheckLeft.position);
+        m_isGroundedRight = CheckGround(m_groundCheckRight.position);
 
         // Si aucun des deux pieds est au sol, alors on ne touche pas le sol
         if (!m_isGroundedLeft && !m_isGroundedRight)
@@ -105,57 +175,39 @@ public abstract class MovementControllerGround : MovementController
 		else
 		{
 			MyRigidbody.sharedMaterial = m_GroundPhysicMaterial;
-            if(m_hasJump)
-            {
-                m_hasJump = false;
-                m_jumpTimer = Time.time;
-            }
 		}
+
+        return IsGrounded;
 	}
 
-	protected void CheckGroundLeft()
+	protected bool CheckGround(Vector3 groundCheckPosition)
 	{
-		m_isGroundedLeft = false;
 		//calcul de hitbox avec le sol
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_groundCheckLeft.position, .1f, whatIsGround);
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckPosition, 0.1f, m_whatIsGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
 			if (colliders[i].gameObject != gameObject)
 			{
-				m_isGroundedLeft = true;
-				break;
+                return true;
 			}
 		}
-	}
-	protected void CheckGroundRight()
-	{
-		m_isGroundedRight = false;
-		//calcul de hitbox avec le sol
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_groundCheckRight.position, .05f, whatIsGround);
-		for (int i = 0; i < colliders.Length; i++)
-		{
-			if (colliders[i].gameObject != gameObject)
-			{
-				m_isGroundedRight = true;
-				break;
-			}
-		}
+        return false;
 	}
 
 	override protected void ApplyMovement()
 	{
 		if (Mathf.Abs(Move.x) > GameConstants.LimitDicretePosition)
 		{
-			m_aimedVelocity = MyRigidbody.velocity;
-			m_aimedVelocity.x = Mathf.Lerp(m_aimedVelocity.x, Move.x * m_speed, m_smoothSpeed);
-			MyRigidbody.velocity = m_aimedVelocity;
-            //Debug.Log(m_aimedVelocity);
-		}
+            float velocityX = Mathf.Lerp(MyRigidbody.velocity.x, Move.x * m_speed, m_smoothSpeed);
+            MyRigidbody.velocity = new Vector2(velocityX, 
+                MyRigidbody.velocity.y < -m_maxFallSpeed ? -m_maxFallSpeed : 
+                MyRigidbody.velocity.y > m_maxJumpSpeed ? m_maxJumpSpeed : MyRigidbody.velocity.y);
+        }
 		else
 		{
-			m_aimedVelocity = MyRigidbody.velocity;
-			m_aimedVelocity.x = 0f;
-			MyRigidbody.velocity = m_aimedVelocity;
-		}
+            MyRigidbody.velocity = new Vector2(0f,
+                MyRigidbody.velocity.y < -m_maxFallSpeed ? -m_maxFallSpeed :
+                MyRigidbody.velocity.y > m_maxJumpSpeed ? m_maxJumpSpeed : MyRigidbody.velocity.y);
+        }
 	}
 }

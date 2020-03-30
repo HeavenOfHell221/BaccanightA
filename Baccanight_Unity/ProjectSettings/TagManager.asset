@@ -8,6 +8,8 @@ TagManager:
   - Fragment
   - LevelLoader
   - DialogBox
+  - Painting
+  - PlayerAndCam
   layers:
   - Default
   - TransparentFX
