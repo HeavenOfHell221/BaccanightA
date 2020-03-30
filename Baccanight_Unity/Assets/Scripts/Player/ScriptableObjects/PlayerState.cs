@@ -5,7 +5,6 @@ public enum GameState
 	inMainMenu,
 	inPause,
 	inGame,
-	inDialog,
 	inDie,
     inLoading
 }

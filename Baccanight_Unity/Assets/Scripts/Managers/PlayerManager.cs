@@ -19,10 +19,6 @@ public class PlayerManager : SingletonBehaviour<PlayerManager>
     #region Variables 
     #endregion
 
-    #region Getters / Setters
-    public bool IsPlayerLookHeadIsLeft = true;
-    #endregion
-
     public void ResetPlayerData()
     {        
         m_playerHealth.Reset();

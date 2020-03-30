@@ -79,7 +79,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         
         foreach (GameObject obj in doors)
         {
-            Door door = obj.GetComponent<Door>();
+            DoorTeleportation door = obj.GetComponent<DoorTeleportation>();
             if(door)
             {
                 if (door.GetDoorId() == doorId)
@@ -87,7 +87,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
                     GameObject player = PlayerManager.Instance.PlayerReference;
                     if(player)
                     {
-                        player.transform.position = obj.GetComponent<Door>().GetSpawnPosition();
+                        player.transform.position = door.GetSpawnPosition();
                         PlayerManager.Instance.CameraReference.TeleportCamera(player.transform);
                         testDoor = !testDoor;
                     }
@@ -95,7 +95,10 @@ public class LevelManager : SingletonBehaviour<LevelManager>
                 }
             }
         }
-        if (testDoor) Debug.LogError("Aucune porte n'a été trouvé");
+        if (testDoor)
+        {
+            Debug.LogError("Aucune porte n'a été trouvé");
+        }
 
         m_sceneActive = build;
         yield return new WaitForSeconds(1f);
