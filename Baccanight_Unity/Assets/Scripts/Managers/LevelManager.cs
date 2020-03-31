@@ -66,12 +66,12 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         Animator animator = levelLoader.GetComponentInChildren<Animator>();
         animator.SetTrigger("Start");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.9f);
 
         SceneManager.UnloadSceneAsync(m_sceneActive);
 
         yield return SceneManager.LoadSceneAsync(build, LoadSceneMode.Additive);
-
+        PlayerManager.Instance.CameraReference.StartGetConfinerCamera();
         Destroy(levelLoader);
 
         GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
