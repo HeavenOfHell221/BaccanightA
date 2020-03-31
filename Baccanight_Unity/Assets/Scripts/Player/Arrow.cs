@@ -13,60 +13,43 @@ public class Arrow : MonoBehaviour
     [SerializeField]
     private PlayerMotion m_playerMotion;
 
-	//[SerializeField]
-	//private LayerMask whatIsGround;
-	//[SerializeField]
-	//private LayerMask whatIsBoss;
-
-	//private LayerMask HitMask;
-
-	//[SerializeField]
-	//private Transform m_HitCheck;
-
-	void Start()
+    private void OnEnable()
     {
-        //HitMask = whatIsBoss | whatIsGround;
-        if(m_playerMotion.FlipSprite == -1)
+        Flip();
+        ApplySpeed();
+    }
+
+    private void Flip()
+    {
+        if (m_playerMotion.FlipSprite == -1)
         {
-            m_arrowSpeed *= -1;
-            gameObject.transform.localScale = new Vector3(-1, 1, 1); 
+            m_arrowSpeed.x *= -1;
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
         }
-
-        m_arrowSpeed.y = Random.Range(-0.01f, 0.01f);
-
-        m_rigidbody.AddForce(m_arrowSpeed, ForceMode2D.Force);
     }
 
-    /*void FixedUpdate()
+    private void ApplySpeed()
     {
-		transform.position = new Vector3(transform.position.x+ArrowSpeed, transform.position.y, transform.position.z);
-		CheckHit();
-    }
+        m_arrowSpeed.y = Random.Range(-0.5f, 0.5f);
 
-	private void CheckHit()
-	{
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_HitCheck.position, 0.15f, HitMask);
-		for (int i = 0; i < colliders.Length; i++)
-		{
-			if (colliders[i].gameObject != gameObject)
-			{
-				if (colliders[i].gameObject.layer == whatIsBoss)
-				{
-					//Deal Damage
-				}
-				Destroy(gameObject);
-			}
-		}
-	}*/
+        m_rigidbody.velocity = m_arrowSpeed;
+
+        float angle = Mathf.Atan2(m_rigidbody.velocity.y, m_rigidbody.velocity.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        StartCoroutine(Disable(10f));
+    }
 
     public void OnEnter(GameObject target)
     {
-        /*
-         * Si le layer de target c'est le boss alors récupérer faire les dégâts
-         * Si le layer c'est le stage alors faire disparaitre la flèche
-         * 
-         */
         m_rigidbody.velocity = Vector2.zero;
-        Destroy(gameObject, 0.5f);
+        StartCoroutine(Disable(2f));
+    }
+
+    private IEnumerator Disable(float time)
+    {
+        yield return new WaitForSeconds(time);
+        gameObject.SetActive(false);
+        StopAllCoroutines();
     }
 }

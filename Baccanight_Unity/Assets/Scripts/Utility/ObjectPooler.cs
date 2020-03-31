@@ -38,27 +38,27 @@ public class ObjectPooler : SingletonBehaviour<ObjectPooler>
 
 		public GameObject GetObject(Vector3 position, Quaternion rotation)
 		{
-			GameObject obj = null;
-			foreach (GameObject o in m_Pool)
+			GameObject objectRequested = null;
+			foreach (GameObject obj in m_Pool)
 			{
-				if (o == null)
+				if (obj == null)
 				{
 					break;
 				}
-				else if (!o.activeInHierarchy) // S'il y a un objet non actif, on le récupère et on n'agrandit pas la pool
+				else if (!obj.activeInHierarchy) // S'il y a un objet non actif, on le récupère et on n'agrandit pas la pool
 				{
-					obj = o;
+					objectRequested = obj;
 					break;
 				}
 			}
 
-			if (obj == null)
+			if (objectRequested == null)
 			{
-				obj = SpawnObject();
+				objectRequested = SpawnObject();
 			}
 
-			ActiveObject(obj, position, rotation);
-			return obj;
+			ActiveObject(objectRequested, position, rotation);
+			return objectRequested;
 		}
 	}
 
