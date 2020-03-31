@@ -13,6 +13,12 @@ public class Arrow : MonoBehaviour
     [SerializeField]
     private PlayerMotion m_playerMotion;
 
+    private void Start()
+    {
+        Flip();
+        ApplySpeed();
+    }
+
     private void OnEnable()
     {
         Flip();
@@ -24,18 +30,19 @@ public class Arrow : MonoBehaviour
         if (m_playerMotion.FlipSprite == -1)
         {
             m_arrowSpeed.x *= -1;
+            Debug.Log(m_arrowSpeed);
             gameObject.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
     private void ApplySpeed()
     {
-        m_arrowSpeed.y = Random.Range(-0.5f, 0.5f);
+        m_arrowSpeed.y = Random.Range(-0.25f, 0.25f);
 
         m_rigidbody.velocity = m_arrowSpeed;
 
-        float angle = Mathf.Atan2(m_rigidbody.velocity.y, m_rigidbody.velocity.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        //float angle = Mathf.Atan2(m_rigidbody.velocity.y, m_rigidbody.velocity.x) * Mathf.Rad2Deg;
+        //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         StartCoroutine(Disable(10f));
     }

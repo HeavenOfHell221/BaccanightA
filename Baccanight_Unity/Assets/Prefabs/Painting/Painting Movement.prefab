@@ -47,32 +47,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 48, y: 30}
   m_EdgeRadius: 0
---- !u!61 &4704900380905067083
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5783118484468101008}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: d2690fcbea4980d4ea71f26b6df4b614, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
-  m_EdgeRadius: 0
 --- !u!114 &-7562905555864595032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +77,52 @@ MonoBehaviour:
   m_NextRelativeIndex: 1
   m_pingPongPatrol: 0
   m_actualNodeIndex: 0
+--- !u!114 &6181430451335432457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5783118484468101008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e720c47edf3bb684599a0ba90f5bfdef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnterDetect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7562905555864595032}
+        m_MethodName: AddPlayerInChildren
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnStayDetect:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExitDetect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7562905555864595032}
+        m_MethodName: RemovePlayerInChildren
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Layers:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1001 &6025334803090916076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -110,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: d2690fcbea4980d4ea71f26b6df4b614, type: 2}
     - target: {fileID: 279092934156955004, guid: 38a07194408621c4c88a6fb549bc83cc,
         type: 3}
       propertyPath: m_Name
@@ -170,13 +194,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4786884499996830900, guid: 38a07194408621c4c88a6fb549bc83cc,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: d2690fcbea4980d4ea71f26b6df4b614, type: 2}
-    m_RemovedComponents:
-    - {fileID: 4786884499996830900, guid: 38a07194408621c4c88a6fb549bc83cc, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38a07194408621c4c88a6fb549bc83cc, type: 3}
 --- !u!1 &5783118484468101008 stripped
 GameObject:

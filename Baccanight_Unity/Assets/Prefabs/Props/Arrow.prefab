@@ -47,10 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc51ee96e33439b409f59eaf0287a605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_arrowSpeed: {x: 5, y: 0}
+  m_arrowSpeed: {x: 20, y: 0}
   m_rigidbody: {fileID: 2546145947217007058}
   m_playerMotion: {fileID: 11400000, guid: 8d25be83bd41b1745b10d7b8110c1547, type: 2}
-  m_model: {fileID: 8177638713634757412}
 --- !u!50 &2546145947217007058
 Rigidbody2D:
   serializedVersion: 4
