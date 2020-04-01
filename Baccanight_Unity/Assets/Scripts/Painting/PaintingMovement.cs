@@ -6,22 +6,32 @@ public class PaintingMovement : MonoBehaviour
 {
     [SerializeField]
     private float m_speed = 1f;
+
+    [SerializeField]
+    private float m_timeWait = 0.1f;
+
+    [SerializeField]
+    private bool m_canMove = true;
     
     private PatrolPath m_path;
     private Vector3 m_destination;
-    private Rigidbody2D rb;
 
     private void Start()
     {
-        m_path = GetComponent<PatrolPath>();
-        rb = GetComponent<Rigidbody2D>();
-        m_destination = m_path.GetPathNodeByIndex(0);
-        StartCoroutine(UpdateDestination());
+        if (m_canMove)
+        {
+            m_path = GetComponent<PatrolPath>();
+            m_destination = m_path.GetPathNodeByIndex(0);
+            StartCoroutine(UpdateDestination());
+        }
     }
 
     private void FixedUpdate()
     {
-        ApplyMovement();
+        if (m_canMove)
+        {
+            ApplyMovement();
+        }
     }
 
     private IEnumerator UpdateDestination()
@@ -29,16 +39,17 @@ public class PaintingMovement : MonoBehaviour
         float dist = Vector3.Distance(m_destination, transform.position);
         if(dist < 0.1f)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(m_timeWait);
             m_destination = m_path.GetNextPathNode();
         }
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         StartCoroutine(UpdateDestination());
     }
-
+    
     private void ApplyMovement()
     {
-        transform.position = Vector3.MoveTowards(transform.position, m_destination, m_speed * Time.fixedDeltaTime);
+        Vector3 newPos = Vector3.MoveTowards(transform.position, m_destination, m_speed * Time.fixedDeltaTime);
+        transform.localPosition = newPos;
     }
 
     public void AddPlayerInChildren(GameObject player)
@@ -49,6 +60,6 @@ public class PaintingMovement : MonoBehaviour
     public void RemovePlayerInChildren(GameObject player)
     {
         player.transform.SetParent(GameObject.FindGameObjectWithTag("PlayerAndCam").transform, true);
-        player.transform.localScale = new Vector3(1, 1, 1);
+        player.transform.localScale = new Vector3(1, 1, 1); 
     }
 }

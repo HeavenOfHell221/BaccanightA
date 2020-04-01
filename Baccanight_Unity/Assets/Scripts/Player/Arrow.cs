@@ -13,14 +13,18 @@ public class Arrow : MonoBehaviour
     [SerializeField]
     private PlayerMotion m_playerMotion;
 
+    private Vector2 m_speed;
+
     private void Start()
     {
+        ResetTransform();
         Flip();
         ApplySpeed();
     }
 
     private void OnEnable()
     {
+        ResetTransform();
         Flip();
         ApplySpeed();
     }
@@ -29,20 +33,19 @@ public class Arrow : MonoBehaviour
     {
         if (m_playerMotion.FlipSprite == -1)
         {
-            m_arrowSpeed.x *= -1;
-            Debug.Log(m_arrowSpeed);
+            m_speed.x *= -1;
             gameObject.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
     private void ApplySpeed()
     {
-        m_arrowSpeed.y = Random.Range(-0.25f, 0.25f);
+        m_speed.y = Random.Range(-0.25f, 0.25f);
 
-        m_rigidbody.velocity = m_arrowSpeed;
+        m_rigidbody.velocity = m_speed;
 
-        //float angle = Mathf.Atan2(m_rigidbody.velocity.y, m_rigidbody.velocity.x) * Mathf.Rad2Deg;
-        //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        float angle = Mathf.Atan2(m_rigidbody.velocity.y, m_rigidbody.velocity.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         StartCoroutine(Disable(10f));
     }
@@ -58,5 +61,12 @@ public class Arrow : MonoBehaviour
         yield return new WaitForSeconds(time);
         gameObject.SetActive(false);
         StopAllCoroutines();
+    }
+
+    private void ResetTransform()
+    {
+        m_speed = m_arrowSpeed;
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
+        gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 }

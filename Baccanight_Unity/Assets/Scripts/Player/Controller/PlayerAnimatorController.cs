@@ -14,7 +14,11 @@ public class PlayerAnimatorController : MonoBehaviour
 	[SerializeField]
 	private PlayerMotion m_playerMotion;
 
-	public Rigidbody2D playerRigidbody;
+    [SerializeField]
+	public Rigidbody2D m_playerRigidbody;
+
+    [SerializeField]
+    private GameObject m_player;
 
 #pragma warning restore 0649
 	#endregion
@@ -42,12 +46,17 @@ public class PlayerAnimatorController : MonoBehaviour
 	public void UpdateAnimator()
 	{
 		m_Animator.SetBool("OnGround", m_playerMotion.IsGrounded);
-		m_Animator.SetFloat("SpeedOny", playerRigidbody.velocity.y);
+		m_Animator.SetFloat("SpeedOny", m_playerRigidbody.velocity.y);
 		m_Animator.SetFloat("SpeedOnx", Mathf.Abs(m_playerMotion.Motion.x));
         m_Animator.SetBool("IsPushObject", m_playerMotion.IsPushObject);
 
         m_playerMotion.FlipSprite = m_playerMotion.Motion.x > 0.1f ? 1 : m_playerMotion.Motion.x < -0.1f ? -1 : m_playerMotion.FlipSprite;
 
-        gameObject.transform.localScale = new Vector3(m_playerMotion.FlipSprite, 1, 1);
+        switch(m_playerMotion.FlipSprite)
+        {
+            case -1: m_player.transform.rotation = new Quaternion(0f, -180f, 0f, m_player.transform.rotation.w); break;
+            case 1: m_player.transform.rotation = new Quaternion(0f, 0f, 0f, m_player.transform.rotation.w); break;
+            default: break;
+        }
 	}
 }

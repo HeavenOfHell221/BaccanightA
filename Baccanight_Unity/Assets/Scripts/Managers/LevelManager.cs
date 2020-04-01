@@ -66,11 +66,12 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         Animator animator = levelLoader.GetComponentInChildren<Animator>();
         animator.SetTrigger("Start");
 
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(1f);
 
         SceneManager.UnloadSceneAsync(m_sceneActive);
 
         yield return SceneManager.LoadSceneAsync(build, LoadSceneMode.Additive);
+
         PlayerManager.Instance.CameraReference.StartGetConfinerCamera();
         Destroy(levelLoader);
 
@@ -101,7 +102,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         }
 
         m_sceneActive = build;
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(1f);
         m_playerState.State = GameState.inGame;
     }
 
