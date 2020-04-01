@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8355387569437429631
+--- !u!1 &4835114727062541859
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8355387569437429629}
-  - component: {fileID: 8355387569437429630}
+  - component: {fileID: 8084531584578718555}
+  - component: {fileID: 8579554317100208254}
   m_Layer: 0
-  m_Name: LevelManager
+  m_Name: Player Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8355387569437429629
+--- !u!4 &8084531584578718555
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8355387569437429631}
+  m_GameObject: {fileID: 4835114727062541859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,18 +31,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8355387569437429630
+--- !u!114 &8579554317100208254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8355387569437429631}
+  m_GameObject: {fileID: 4835114727062541859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38e590808482f334898e0bd8456dac30, type: 3}
+  m_Script: {fileID: 11500000, guid: 68a69c67982ce5e4a878c3845e75655e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dontDestroyOnLoad: 1
+  m_dontDestroyOnLoad: 0
+  PlayerReference: {fileID: 0}
+  CameraReference: {fileID: 0}
+  PlayerinputController: {fileID: 0}
+  m_playerMotion: {fileID: 11400000, guid: 8d25be83bd41b1745b10d7b8110c1547, type: 2}
+  m_playerSound: {fileID: 11400000, guid: d9b30c2a62cdce842bc77e17715fc0fc, type: 2}
+  m_playerHealth: {fileID: 11400000, guid: d16ca2a153cc2c84ab0d889ad4db5bbc, type: 2}
   m_playerState: {fileID: 11400000, guid: 60a73ace185f3b24e82f4d18dc44a284, type: 2}
-  m_transition: {fileID: 0}
+  m_playerSucces:
+  - {fileID: 11400000, guid: 5a28f0d5b1fe2834996b1143220efde4, type: 2}
+  - {fileID: 11400000, guid: c99805020b76fd346aa872328fdd2789, type: 2}
+  - {fileID: 11400000, guid: 5b684fdf51f96ac40aff73d99b197752, type: 2}
