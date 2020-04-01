@@ -14,4 +14,10 @@ public class GameConstants
 
 	//Values
 	public static float LimitDicretePosition = .2f;
+
+    // Scene
+    public const int SceneMainMenu = 0;
+    public const int ScenePersistentPlayer = 1;
+    public const int SceneLobby  = 2;
+    
 }

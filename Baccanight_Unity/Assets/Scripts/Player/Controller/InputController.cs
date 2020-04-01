@@ -83,16 +83,16 @@ public class InputController : MonoBehaviour
 
 	private void Start()
 	{
-		InitialyseGamePad();
         PlayerManager.Instance.PlayerReference = gameObject;
-        PlayerManager.Instance.PlayerinputController = this;
+        PlayerManager.Instance.PlayerInputController = this;
+		InitialyseGamePad();
 	}
 
 	void Update()
 	{
 		switch (m_playerState.State)
 		{
-			case GameState.inGame:
+			case GamePlayerState.inGame:
 				GetEscapeDown();
 				GetInteractDown();
 				GetAttackDown();
@@ -100,7 +100,7 @@ public class InputController : MonoBehaviour
 				GetMotion();
 				GetJumpDown();
 				break;
-			case GameState.inMainMenu:
+			case GamePlayerState.inMainMenu:
 				GetCancelDown();
 				GetSubmitDown();
 				break;
@@ -112,11 +112,7 @@ public class InputController : MonoBehaviour
 	private void GetMotion()
 	{
 		float rawMotion = Mathf.Clamp(Input.GetAxisRaw(GameConstants.k_AxisHorizontal), -1, 1);
-        //Debug.Log(rawMotion);
-		//if (m_MoveThreshold < Mathf.Abs(rawMotion))
-		//{
-			m_OnMoveHorizontal.Invoke(rawMotion);
-		//}
+	    m_OnMoveHorizontal.Invoke(rawMotion);
 	}
 
 	private void GetJumpDown()

@@ -10,8 +10,11 @@ TagManager:
   - DialogBox
   - Painting
   - PlayerAndCam
-  - ConfinerCamera
   - Pool
+  - ConfinerCamera
+  - LookAt
+  - ConfinerCamera0
+  - ConfinerCamera1
   layers:
   - Default
   - TransparentFX

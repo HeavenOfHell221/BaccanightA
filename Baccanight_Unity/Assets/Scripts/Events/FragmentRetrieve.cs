@@ -22,12 +22,12 @@ public class FragmentRetrieve : MonoBehaviour
 
     public void PlayerEnter()
     {
-        PlayerManager.Instance.PlayerinputController.OnInteract.AddListener(GetFragment);
+        PlayerManager.Instance.PlayerInputController.OnInteract.AddListener(GetFragment);
     }
 
     public void PlayerExit()
     {
-        PlayerManager.Instance.PlayerinputController.OnInteract.RemoveListener(GetFragment);
+        PlayerManager.Instance.PlayerInputController.OnInteract.RemoveListener(GetFragment);
     }
 
     private void GetFragment()

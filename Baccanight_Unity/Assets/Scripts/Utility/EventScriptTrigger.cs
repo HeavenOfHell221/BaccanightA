@@ -4,7 +4,6 @@
 /// <summary>
 /// Handle trigger detection for invoke events in response.
 /// </summary>
-[RequireComponent(typeof(Collider2D))]
 public class EventScriptTrigger : MonoBehaviour
 {
 	#region Inspector

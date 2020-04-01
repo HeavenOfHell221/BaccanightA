@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerShootController : MonoBehaviour
 {
+
+    #region Inspector
+#pragma warning disable 0649
     [SerializeField]
     private GameObject m_arrow;
 
@@ -12,6 +15,8 @@ public class PlayerShootController : MonoBehaviour
 
     [SerializeField]
     private Transform m_fire;
+#pragma warning restore 0649
+    #endregion
 
     private float m_cooldownCounter;
     private float m_lastShoot = 0;

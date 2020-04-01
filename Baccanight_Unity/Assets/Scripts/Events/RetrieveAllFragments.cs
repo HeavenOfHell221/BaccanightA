@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RetrieveAllFragments : MonoBehaviour
 {
+#pragma warning disable 0649
     [SerializeField]
     private PlayerSucces m_succesFragment;
 
@@ -12,6 +13,7 @@ public class RetrieveAllFragments : MonoBehaviour
 
     [SerializeField]
     private string m_levelIDFinish;
+#pragma warning restore 0649
 
     private FragmentRetrieve[] m_fragments;
 

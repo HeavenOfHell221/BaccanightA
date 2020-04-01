@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
+    #region Inspector
+#pragma warning disable 0649
     [SerializeField]
     private Vector2 m_arrowSpeed;
 
@@ -12,6 +14,8 @@ public class Arrow : MonoBehaviour
 
     [SerializeField]
     private PlayerMotion m_playerMotion;
+#pragma warning restore 0649
+    #endregion
 
     private Vector2 m_speed;
 

@@ -5,12 +5,14 @@ using UnityEngine;
 public class DoorRequirement : MonoBehaviour
 {
     #region Inspector
+#pragma warning disable 0649
     [SerializeField]
     private PlayerSucces m_playerSucces;
     [SerializeField]
     private string m_succesForOpenDoor;
     [SerializeField]
     private bool m_allwaysOpen;
+#pragma warning restore 0649
     #endregion
 
     #region Variables
@@ -38,12 +40,12 @@ public class DoorRequirement : MonoBehaviour
 
     public void PlayerEnter()
     {
-        PlayerManager.Instance.PlayerinputController.OnInteract.AddListener(LevelManager.Instance.OnInteract);
+        PlayerManager.Instance.PlayerInputController.OnInteract.AddListener(LevelManager.Instance.OnInteract);
     }
 
     public void PlayerExit()
     {
-        PlayerManager.Instance.PlayerinputController.OnInteract.RemoveListener(LevelManager.Instance.OnInteract);
+        PlayerManager.Instance.PlayerInputController.OnInteract.RemoveListener(LevelManager.Instance.OnInteract);
     }
 
     private IEnumerator TestDoor()

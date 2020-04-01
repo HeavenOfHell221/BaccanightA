@@ -47,6 +47,7 @@ MonoBehaviour:
   PlayerReference: {fileID: 0}
   CameraReference: {fileID: 0}
   PlayerinputController: {fileID: 0}
+  m_playerCamera: {fileID: 11400000, guid: fb97422d2c027aa4f8a46c6bc92c34e8, type: 2}
   m_playerMotion: {fileID: 11400000, guid: 8d25be83bd41b1745b10d7b8110c1547, type: 2}
   m_playerSound: {fileID: 11400000, guid: d9b30c2a62cdce842bc77e17715fc0fc, type: 2}
   m_playerHealth: {fileID: 11400000, guid: d16ca2a153cc2c84ab0d889ad4db5bbc, type: 2}

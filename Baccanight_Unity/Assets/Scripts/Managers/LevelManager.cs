@@ -17,21 +17,22 @@ public class LevelManager : SingletonBehaviour<LevelManager>
     private int m_idBehindDoor;
     private int m_idLevelAimed;
     private int m_sceneActive;
+    private GameObject m_levelLoader;
     #endregion
 
     #region Getters / Setters
-    public int ScenePersistentPlayer { get; } = 1;
+
     #endregion
 
     private void Start()
     {
-        BehindDoor(-1, -1);
         PlayerManager.Instance.ResetPlayerData();
+        BehindDoor(-1, -1);
     }
 
     public void Play()
     {
-        StartCoroutine(PlayerFirstSpawn(2));
+        StartCoroutine(PlayerFirstSpawn(GameConstants.SceneLobby));
     }
 
     public void BehindDoor(int idDoor, int idLevelAimed)
@@ -57,53 +58,51 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         BehindDoor(-1, -1);
     }
 
-    public IEnumerator TeleportPlayer(int build, int doorId)
+    private void LevelLoaderStart()
     {
-        m_playerState.State = GameState.inLoading;
+        m_levelLoader = GameObject.FindGameObjectWithTag("LevelLoader");
+        DontDestroyOnLoad(m_levelLoader);
+        m_levelLoader.GetComponentInChildren<Animator>().SetTrigger("Start");     
+    }
 
-        GameObject levelLoader = GameObject.FindGameObjectWithTag("LevelLoader");
-        DontDestroyOnLoad(levelLoader);
-        Animator animator = levelLoader.GetComponentInChildren<Animator>();
-        animator.SetTrigger("Start");
-
-        yield return new WaitForSeconds(1f);
-
-        SceneManager.UnloadSceneAsync(m_sceneActive);
-
-        yield return SceneManager.LoadSceneAsync(build, LoadSceneMode.Additive);
-
-        PlayerManager.Instance.CameraReference.StartGetConfinerCamera();
-        Destroy(levelLoader);
-
+    private void SetDoors(int doorId)
+    {
         GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
-        bool testDoor = true;
-        
+        bool testDoor = false;
+        GameObject player = PlayerManager.Instance.PlayerReference;
+
         foreach (GameObject obj in doors)
         {
             DoorTeleportation door = obj.GetComponent<DoorTeleportation>();
-            if(door)
+            if (door.GetDoorId() == doorId)
             {
-                if (door.GetDoorId() == doorId)
-                {
-                    GameObject player = PlayerManager.Instance.PlayerReference;
-                    if(player)
-                    {
-                        player.transform.position = door.GetSpawnPosition();
-                        PlayerManager.Instance.CameraReference.TeleportCamera(player.transform);
-                        testDoor = !testDoor;
-                    }
-                    break;
-                }
+                player.transform.position = door.GetSpawnPosition();
+                testDoor = true;
+                break;
             }
         }
-        if (testDoor)
+        if (!testDoor)
         {
             Debug.LogError("Aucune porte n'a été trouvé");
         }
+    }
+
+    public IEnumerator TeleportPlayer(int build, int doorId)
+    {
+        m_playerState.State = GamePlayerState.inLoading;
+        LevelLoaderStart();
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.UnloadSceneAsync(m_sceneActive);
+        yield return SceneManager.LoadSceneAsync(build, LoadSceneMode.Additive);
+
+        Destroy(m_levelLoader);
+
+        SetDoors(doorId);
 
         m_sceneActive = build;
         yield return new WaitForSeconds(1f);
-        m_playerState.State = GameState.inGame;
+        m_playerState.State = GamePlayerState.inGame;
     }
 
     public void ReloadScene()
@@ -120,14 +119,13 @@ public class LevelManager : SingletonBehaviour<LevelManager>
     {
         m_sceneActive = build;
         SceneManager.LoadScene(build, LoadSceneMode.Single);
-        SceneManager.LoadScene(ScenePersistentPlayer, LoadSceneMode.Additive);
+        SceneManager.LoadScene(GameConstants.ScenePersistentPlayer, LoadSceneMode.Additive);
 
-        while (!SceneManager.GetSceneByBuildIndex(build).isLoaded
-            || !SceneManager.GetSceneByBuildIndex(ScenePersistentPlayer).isLoaded)
+        while (!SceneManager.GetSceneByBuildIndex(build).isLoaded || !SceneManager.GetSceneByBuildIndex(GameConstants.ScenePersistentPlayer).isLoaded)
         {
             yield return null;
         }
 
-        m_playerState.State = GameState.inGame;
+        m_playerState.State = GamePlayerState.inGame;
     }
 }
