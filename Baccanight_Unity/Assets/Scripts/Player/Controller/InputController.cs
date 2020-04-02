@@ -81,10 +81,14 @@ public class InputController : MonoBehaviour
 		HaveGamePad = false;
 	}
 
-	private void Start()
-	{
+    private void Awake()
+    {
         PlayerManager.Instance.PlayerReference = gameObject;
         PlayerManager.Instance.PlayerInputController = this;
+    }
+
+    private void Start()
+	{
 		InitialyseGamePad();
 	}
 

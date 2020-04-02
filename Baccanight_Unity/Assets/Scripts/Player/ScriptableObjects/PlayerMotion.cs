@@ -12,6 +12,9 @@ public class PlayerMotion : ScriptableObject
 	private bool m_isGrounded = false;
 
     [SerializeField]
+    private bool m_isRoofed = false;
+
+    [SerializeField]
     private bool m_canJump;
 
     [SerializeField]
@@ -26,6 +29,7 @@ public class PlayerMotion : ScriptableObject
 
 	public Vector2 Motion { get => m_motion; set => m_motion = value; }
 	public bool IsGrounded { get => m_isGrounded; set => m_isGrounded = value; }
+    public bool IsRoofed { get => m_isRoofed; set => m_isRoofed = value; }
     public bool CanJump { get => m_canJump; set => m_canJump = value; }
     public bool IsPushObject { get => m_pushObject; set => m_pushObject = value; }
     public int FlipSprite { get => m_flipSprite; set => m_flipSprite = value; }
@@ -36,6 +40,7 @@ public class PlayerMotion : ScriptableObject
 	{
 		m_motion = Vector2.zero;
 		m_isGrounded = false;
+        m_isRoofed = false;
         m_pushObject = false;
         m_flipSprite = 1;
 	}

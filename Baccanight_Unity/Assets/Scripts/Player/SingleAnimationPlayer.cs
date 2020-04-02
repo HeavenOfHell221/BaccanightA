@@ -11,9 +11,6 @@ public class SingleAnimationPlayer : MonoBehaviour
 	[SerializeField]
 	private UnityEvent m_AfterAnimation;
 
-    [SerializeField]
-    private string stateAnimatorToPlay;
-
 	[SerializeField]
 	private bool m_playOnce;
 
@@ -34,16 +31,16 @@ public class SingleAnimationPlayer : MonoBehaviour
 		anim.enabled = false;
 	}
 
-	public void Play()
+	public void Play(string stateAnimatorToPlay)
 	{
 		if (have_played && m_playOnce)
 			return;
 
 		if (!isPlayingAnimation)
-			StartCoroutine(_Play());
+			StartCoroutine(_Play(stateAnimatorToPlay));
 	}
 
-	IEnumerator _Play()
+	IEnumerator _Play(string stateAnimatorToPlay)
 	{
 		isPlayingAnimation = true;
 		anim.enabled = true;

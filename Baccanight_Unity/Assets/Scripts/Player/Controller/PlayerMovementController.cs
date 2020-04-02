@@ -23,6 +23,7 @@ public class PlayerMovementController : MovementControllerGround
 		
 		m_PlayerMotion.Motion = Move;
 		m_PlayerMotion.IsGrounded = IsGrounded;
+        m_PlayerMotion.IsRoofed = IsRoofed;
 
 		m_move = Vector2.zero;
 	}

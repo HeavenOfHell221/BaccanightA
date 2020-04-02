@@ -23,7 +23,13 @@ public abstract class MovementControllerGround : MovementController
 	[SerializeField]
 	protected Transform m_groundCheckRight;
 
-	[SerializeField]
+    [SerializeField]
+    protected Transform m_roofCheckLeft;
+
+    [SerializeField]
+    protected Transform m_roofCheckRight;
+
+    [SerializeField]
 	protected LayerMask m_whatIsGround;
 
     [SerializeField]
@@ -49,6 +55,9 @@ public abstract class MovementControllerGround : MovementController
 	protected bool m_isGrounded;
 	protected bool m_isGroundedLeft;
 	protected bool m_isGroundedRight;
+    protected bool m_isRoofed;
+    protected bool m_isRoofedLeft;
+    protected bool m_isRoofedRight;
     protected bool m_hasJump = false;
     protected int m_jumpNumberCounter;
 	#endregion
@@ -56,10 +65,11 @@ public abstract class MovementControllerGround : MovementController
 	#region Getters / Setters
 
 	public bool IsGrounded { get => m_isGrounded; set => m_isGrounded = value; }
+    public bool IsRoofed { get => m_isRoofed; set => m_isRoofed = value; }
 
-	#endregion
+    #endregion
 
-	public void OnMove(float motion)
+    public void OnMove(float motion)
 	{
 		m_move.x = motion;
 	}
@@ -113,37 +123,10 @@ public abstract class MovementControllerGround : MovementController
     }
 
     public void ApplyJump()
-	{
-        /*if(m_jumpTrigger && IsGrounded && !m_hasJump)
-        {
-            m_jumpNumberCounter = m_jumpNumber;
-            m_hasJump = true;
-            m_jumpTrigger = false;
-            MyRigidbody.AddForce(Vector2.up * m_jumpForceGround, ForceMode2D.Impulse);
-        }
-
-        if (Input.GetButtonUp(GameConstants.k_Jump))
-        {
-            m_hasJump = false;
-        }
-
-        if(Input.GetButton(GameConstants.k_Jump) && m_hasJump)
-        {
-            if(m_jumpNumberCounter > 0)
-            {
-                MyRigidbody.AddForce(Vector2.up * m_jumpForceAir, ForceMode2D.Force);
-                m_jumpNumberCounter -= 1;
-            }
-            else
-            {
-                m_hasJump = false;
-            }
-        }
-        */
-        
+	{        
         if(m_jumpTrigger)
         {
-            if(m_jumpNumberCounter < m_jumpSteps)
+            if(m_jumpNumberCounter < m_jumpSteps && CheckRoof())
             {
                 MyRigidbody.velocity = new Vector2(MyRigidbody.velocity.x, m_jumpForce);
                 m_jumpNumberCounter++;
@@ -158,8 +141,8 @@ public abstract class MovementControllerGround : MovementController
 	protected bool CheckGround()
 	{
         IsGrounded = true;
-        m_isGroundedLeft = CheckGround(m_groundCheckLeft.position);
-        m_isGroundedRight = CheckGround(m_groundCheckRight.position);
+        m_isGroundedLeft = CheckCollider(m_groundCheckLeft.position);
+        m_isGroundedRight = CheckCollider(m_groundCheckRight.position);
 
         // Si aucun des deux pieds est au sol, alors on ne touche pas le sol
         if (!m_isGroundedLeft && !m_isGroundedRight)
@@ -180,7 +163,22 @@ public abstract class MovementControllerGround : MovementController
         return IsGrounded;
 	}
 
-	protected bool CheckGround(Vector3 groundCheckPosition)
+    protected bool CheckRoof()
+    {
+        IsRoofed = false;
+        m_isRoofedLeft = CheckCollider(m_roofCheckLeft.position);
+        m_isRoofedRight = CheckCollider(m_roofCheckRight.position);
+
+        // Si aucun des deux pieds est au sol, alors on ne touche pas le sol
+        if (!m_isRoofedLeft || !m_isRoofedRight)
+        {
+            IsRoofed = true;
+        }
+
+        return IsRoofed;
+    }
+
+	protected bool CheckCollider(Vector3 groundCheckPosition)
 	{
 		//calcul de hitbox avec le sol
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckPosition, 0.1f, m_whatIsGround);

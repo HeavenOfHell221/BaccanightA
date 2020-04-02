@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class LevelManager : SingletonBehaviour<LevelManager>
 {
@@ -18,6 +19,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
     private int m_idLevelAimed;
     private int m_sceneActive;
     private GameObject m_levelLoader;
+    private DoorTeleportation m_door;
     #endregion
 
     #region Getters / Setters
@@ -55,7 +57,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
     public void ChangeScene(int idBehindDoor, int idLevelAimed)
     {
         StartCoroutine(TeleportPlayer(idLevelAimed, idBehindDoor));
-        BehindDoor(-1, -1);
+        //BehindDoor(-1, -1);
     }
 
     private void LevelLoaderStart()
@@ -78,6 +80,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
             {
                 player.transform.position = door.GetSpawnPosition();
                 testDoor = true;
+                m_door = door;
                 break;
             }
         }
@@ -90,24 +93,29 @@ public class LevelManager : SingletonBehaviour<LevelManager>
     public IEnumerator TeleportPlayer(int build, int doorId)
     {
         m_playerState.State = GamePlayerState.inLoading;
+        CinemachineBrain brain = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CinemachineBrain>();       
+        brain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
         LevelLoaderStart();
         yield return new WaitForSeconds(1f);
+
+        PlayerManager.Instance.ResetCameraReference();
 
         SceneManager.UnloadSceneAsync(m_sceneActive);
         yield return SceneManager.LoadSceneAsync(build, LoadSceneMode.Additive);
 
         Destroy(m_levelLoader);
-
         SetDoors(doorId);
-
         m_sceneActive = build;
+
         yield return new WaitForSeconds(1f);
+        brain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.EaseInOut;
+
         m_playerState.State = GamePlayerState.inGame;
     }
 
     public void ReloadScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        StartCoroutine(TeleportPlayer(m_sceneActive, m_door.GetDoorId()));
     }
 
     public bool IsIdValid(int idBehindDoor, int idLevelAimed)

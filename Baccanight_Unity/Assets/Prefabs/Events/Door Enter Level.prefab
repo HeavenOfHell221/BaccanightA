@@ -50,7 +50,7 @@ MonoBehaviour:
   m_DoorId: -1
   m_RightToLeft: 1
   m_LevelIdAimed: 3
-  m_offsetSpawn: {x: 0, y: 1}
+  m_offsetSpawn: {x: 0, y: 0}
 --- !u!114 &-4607244094441628766
 MonoBehaviour:
   m_ObjectHideFlags: 0

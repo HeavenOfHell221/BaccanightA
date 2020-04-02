@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerManager : SingletonBehaviour<PlayerManager>
 {
@@ -17,18 +18,28 @@ public class PlayerManager : SingletonBehaviour<PlayerManager>
     #region Variables 
     public GameObject PlayerReference { get; set; }
     public InputController PlayerInputController { get; set; }
-    public GameObject CameraReference { get; set; }
+    public GameObject CameraReference { get; private set; }
+    public GameObject LastCamera { get; set; }
     #endregion
 
-    public void SetCameraReference(GameObject camera)
+    public IEnumerator SetCameraReference(GameObject camera)
     {
-        if(CameraReference)
-        {
-            CameraReference.SetActive(false);
-        }
-
+        LastCamera = CameraReference;
         CameraReference = camera;
         camera.SetActive(true);
+
+        yield return null;
+
+        if (LastCamera)
+        {
+            LastCamera.SetActive(false);
+        }
+    }
+
+    public void ResetCameraReference()
+    {
+        CameraReference = null;
+        LastCamera = null;
     }
 
     public void ResetPlayerData()
