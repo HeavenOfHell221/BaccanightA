@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2D Renderer Data
   m_EditorClassIdentifier: 
   m_RendererFeatures: []
-  m_TransparencySortMode: 0
+  m_TransparencySortMode: 2
   m_TransparencySortAxis: {x: 0, y: 1, z: 0}
   m_HDREmulationScale: 1
   m_LightBlendStyles:
@@ -26,29 +26,29 @@ MonoBehaviour:
       multiplicative: 0
       additive: 0
   - enabled: 0
-    name: Blend Style 1
+    name: Additive
     maskTextureChannel: 0
     renderTextureScale: 1
-    blendMode: 1
+    blendMode: 0
     customBlendFactors:
       multiplicative: 0
       additive: 0
   - enabled: 0
-    name: Blend Style 2
+    name: Substractive
     maskTextureChannel: 0
     renderTextureScale: 1
-    blendMode: 1
+    blendMode: 2
     customBlendFactors:
       multiplicative: 0
       additive: 0
   - enabled: 0
-    name: Blend Style 3
+    name: Custom
     maskTextureChannel: 0
     renderTextureScale: 1
-    blendMode: 1
+    blendMode: 99
     customBlendFactors:
-      multiplicative: 0
-      additive: 0
+      multiplicative: 0.5
+      additive: 0.19
   m_UseDepthStencilBuffer: 1
   m_DefaultMaterialType: 2
   m_DefaultCustomMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3,
