@@ -9,17 +9,10 @@ public class EventScriptTrigger : MonoBehaviour
 	#region Inspector
 #pragma warning disable 0649
 
-	[SerializeField]
-	private GameObjectEvent OnEnterDetect;
-
-	[SerializeField]
-	private GameObjectEvent OnStayDetect;
-
-	[SerializeField]
-	private GameObjectEvent OnExitDetect;
-
-	[SerializeField]
-	private LayerMask Layers;
+	[SerializeField] private GameObjectEvent OnEnterDetect;
+    [SerializeField] private GameObjectEvent OnStayDetect;
+    [SerializeField] private GameObjectEvent OnExitDetect;
+    [SerializeField] private LayerMask Layers;
 
 #pragma warning restore 0649
 	#endregion
