@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4661696151614091637}
   - component: {fileID: 8965001196865225390}
+  - component: {fileID: 3397448212897451955}
   m_Layer: 0
   m_Name: BoxCollider
   m_TagString: Untagged
@@ -57,6 +58,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &3397448212897451955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2874591628702233142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1591389ce10db44193bbab450d50364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_collider: {fileID: 8965001196865225390}
+  Layers:
+    serializedVersion: 2
+    m_Bits: 512
+  m_textMeshPro: {fileID: 3010307678325461253}
+  m_fadeSpeed: 0.05
 --- !u!1 &3333501458674323919
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,7 +89,6 @@ GameObject:
   - component: {fileID: -4607244094441628766}
   - component: {fileID: 5612893509172908107}
   - component: {fileID: 1715052497213539906}
-  - component: {fileID: 8436443480405735069}
   m_Layer: 0
   m_Name: Door Enter Level
   m_TagString: Door
@@ -198,24 +216,6 @@ MonoBehaviour:
   Layers:
     serializedVersion: 2
     m_Bits: 512
---- !u!114 &8436443480405735069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3333501458674323919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1591389ce10db44193bbab450d50364, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_collider: {fileID: 8965001196865225390}
-  Layers:
-    serializedVersion: 2
-    m_Bits: 512
-  m_textMeshPro: {fileID: 3010307678325461253}
-  m_fadeSpeed: 0.05
 --- !u!1 &3333501458789985111
 GameObject:
   m_ObjectHideFlags: 0

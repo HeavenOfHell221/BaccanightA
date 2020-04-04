@@ -9478,6 +9478,11 @@ PrefabInstance:
       propertyPath: m_offsetSpawn.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2612263904238964282, guid: a3677d7b59329d640917e04b468768c4,
+        type: 3}
+      propertyPath: m_DoorId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2612263904238964283, guid: a3677d7b59329d640917e04b468768c4,
         type: 3}
       propertyPath: m_LocalPosition.x
