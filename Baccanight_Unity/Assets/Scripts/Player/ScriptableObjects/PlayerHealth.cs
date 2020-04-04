@@ -6,10 +6,10 @@ public class PlayerHealth : ScriptableObject
 	#region Inspector
 #pragma warning disable 0649
 	[SerializeField]
-	private float m_maxHealth = 6;
+	private int m_maxHealth = 6;
 
 	[SerializeField]
-	private float m_currentHealth;
+	private int m_currentHealth;
 
 	[SerializeField]
 	private bool m_isDead = false;
@@ -22,8 +22,8 @@ public class PlayerHealth : ScriptableObject
 
 	#region Getters / Setters
 
-	public float CurrentHealth { get => m_currentHealth; set => m_currentHealth = value; }
-	public float MaxHealth { get => m_maxHealth; set => m_maxHealth = value; }
+	public int CurrentHealth { get => m_currentHealth; set => m_currentHealth = value; }
+	public int MaxHealth { get => m_maxHealth; set => m_maxHealth = value; }
 	public bool IsDead { get => m_isDead; set => m_isDead = value; }
 	public bool IsInvincible { get => m_isInvincible; set => m_isInvincible = value; }
 

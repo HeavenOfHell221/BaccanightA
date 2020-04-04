@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField]
+    /*[SerializeField]
     private Image foregroundImage;
 
     // Start is called before the first frame update
@@ -24,6 +24,6 @@ public class HealthBar : MonoBehaviour
     {
         foregroundImage.fillAmount = pct;
         yield return null;
-    }
+    }*/
 
 }
