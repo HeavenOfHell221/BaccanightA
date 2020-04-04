@@ -35,25 +35,25 @@ public abstract class MovementController : MonoBehaviour
 	#endregion
 
 	#region Getters / Setters
-	public Rigidbody2D MyRigidbody { get; protected set; }
+	public Rigidbody2D Rigidbody { get; protected set; }
 	public Vector2 Move { get => m_move; protected set => m_move = value; }
 	#endregion
 
 	private void Awake()
 	{
-		MyRigidbody = GetComponent<Rigidbody2D>();
+		Rigidbody = GetComponent<Rigidbody2D>();
 	}
 
 	public void ActivateMovement(bool state)
 	{
 		m_canMove = state;
-		MyRigidbody.velocity = Vector2.zero;
+		Rigidbody.velocity = Vector2.zero;
 	}
 
 	public void DestinationToMove(Vector2 destination)
 	{
 		m_destination = destination;
-		m_move = (destination - new Vector2(MyRigidbody.transform.position.x, MyRigidbody.transform.position.y));
+		m_move = (destination - new Vector2(Rigidbody.transform.position.x, Rigidbody.transform.position.y));
 		if (m_move.magnitude > 1f)
 		{
 			m_move.Normalize();

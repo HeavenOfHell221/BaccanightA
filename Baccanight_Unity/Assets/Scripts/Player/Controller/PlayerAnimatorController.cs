@@ -50,13 +50,21 @@ public class PlayerAnimatorController : MonoBehaviour
 		m_Animator.SetFloat("SpeedOnx", Mathf.Abs(m_playerMotion.Motion.x));
         m_Animator.SetBool("IsPushObject", m_playerMotion.IsPushObject);
 
-        m_playerMotion.FlipSprite = m_playerMotion.Motion.x > 0.1f ? 1 : m_playerMotion.Motion.x < -0.1f ? -1 : m_playerMotion.FlipSprite;
+        bool lastFlip = m_playerMotion.FlipSprite;
+        m_playerMotion.FlipSprite = m_playerMotion.Motion.x > 0.1f ? true : m_playerMotion.Motion.x < -0.1f ? false : m_playerMotion.FlipSprite;
 
-        switch(m_playerMotion.FlipSprite)
+        if(lastFlip != m_playerMotion.FlipSprite)
         {
-            case -1: m_player.transform.rotation = new Quaternion(0f, -180f, 0f, m_player.transform.rotation.w); break;
-            case 1: m_player.transform.rotation = new Quaternion(0f, 0f, 0f, m_player.transform.rotation.w); break;
-            default: break;
+            Flip();
         }
 	}
+
+    private void Flip()
+    {
+        m_player.transform.rotation = new Quaternion(
+            m_player.transform.rotation.x,
+            m_player.transform.rotation.y == 0f ? 180f : 0f,
+            m_player.transform.rotation.z,
+            m_player.transform.rotation.w);
+    }
 }

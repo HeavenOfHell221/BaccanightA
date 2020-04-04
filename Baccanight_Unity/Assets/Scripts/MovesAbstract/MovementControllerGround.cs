@@ -113,7 +113,7 @@ public abstract class MovementControllerGround : MovementController
     {
         m_jumpNumberCounter = 0;
         m_jumpTrigger = false;
-        MyRigidbody.velocity = new Vector2(MyRigidbody.velocity.x, 0f);
+        Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, 0f);
     }
 
     private void StopJumpSlow()
@@ -128,7 +128,7 @@ public abstract class MovementControllerGround : MovementController
         {
             if(m_jumpNumberCounter < m_jumpSteps && CheckRoof())
             {
-                MyRigidbody.velocity = new Vector2(MyRigidbody.velocity.x, m_jumpForce);
+                Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, m_jumpForce);
                 m_jumpNumberCounter++;
             }
             else
@@ -153,11 +153,11 @@ public abstract class MovementControllerGround : MovementController
         // Changement du physicMaterial
         if (!IsGrounded)
 		{
-			MyRigidbody.sharedMaterial = m_AirPhysicMaterial;
+			Rigidbody.sharedMaterial = m_AirPhysicMaterial;
 		}
 		else
 		{
-			MyRigidbody.sharedMaterial = m_GroundPhysicMaterial;
+			Rigidbody.sharedMaterial = m_GroundPhysicMaterial;
 		}
 
         return IsGrounded;
@@ -196,16 +196,16 @@ public abstract class MovementControllerGround : MovementController
 	{
 		if (Mathf.Abs(Move.x) > GameConstants.LimitDicretePosition)
 		{
-            float velocityX = Mathf.Lerp(MyRigidbody.velocity.x, Move.x * m_speed, m_smoothSpeed);
-            MyRigidbody.velocity = new Vector2(velocityX, 
-                MyRigidbody.velocity.y < -m_maxFallSpeed ? -m_maxFallSpeed : 
-                MyRigidbody.velocity.y > m_maxJumpSpeed ? m_maxJumpSpeed : MyRigidbody.velocity.y);
+            float velocityX = Mathf.Lerp(Rigidbody.velocity.x, Move.x * m_speed, m_smoothSpeed);
+            Rigidbody.velocity = new Vector2(velocityX, 
+                Rigidbody.velocity.y < -m_maxFallSpeed ? -m_maxFallSpeed : 
+                Rigidbody.velocity.y > m_maxJumpSpeed ? m_maxJumpSpeed : Rigidbody.velocity.y);
         }
 		else
 		{
-            MyRigidbody.velocity = new Vector2(0f,
-                MyRigidbody.velocity.y < -m_maxFallSpeed ? -m_maxFallSpeed :
-                MyRigidbody.velocity.y > m_maxJumpSpeed ? m_maxJumpSpeed : MyRigidbody.velocity.y);
+            Rigidbody.velocity = new Vector2(0f,
+                Rigidbody.velocity.y < -m_maxFallSpeed ? -m_maxFallSpeed :
+                Rigidbody.velocity.y > m_maxJumpSpeed ? m_maxJumpSpeed : Rigidbody.velocity.y);
         }
 	}
 }

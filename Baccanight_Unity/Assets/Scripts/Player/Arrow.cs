@@ -6,14 +6,11 @@ public class Arrow : MonoBehaviour
 {
     #region Inspector
 #pragma warning disable 0649
-    [SerializeField]
-    private Vector2 m_arrowSpeed;
+    [SerializeField] private float m_arrowSpeedX;
+    [SerializeField] private Rigidbody2D m_rigidbody;
+    [SerializeField] private PlayerMotion m_playerMotion;
+    [SerializeField] private float m_angleMaxY;
 
-    [SerializeField]
-    private Rigidbody2D m_rigidbody;
-
-    [SerializeField]
-    private PlayerMotion m_playerMotion;
 #pragma warning restore 0649
     #endregion
 
@@ -21,31 +18,31 @@ public class Arrow : MonoBehaviour
 
     private void Start()
     {
-        ResetTransform();
-        Flip();
+        ResetArrow();
         ApplySpeed();
     }
 
     private void OnEnable()
     {
-        ResetTransform();
-        Flip();
+        ResetArrow();
         ApplySpeed();
     }
 
     private void Flip()
     {
-        if (m_playerMotion.FlipSprite == -1)
+        if (!m_playerMotion.FlipSprite)
         {
             m_speed.x *= -1;
-            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+            transform.rotation = new Quaternion(
+            transform.rotation.x,
+            180f,
+            transform.rotation.z,
+            transform.rotation.w);
         }
     }
 
     private void ApplySpeed()
     {
-        m_speed.y = Random.Range(-0.25f, 0.25f);
-
         m_rigidbody.velocity = m_speed;
 
         float angle = Mathf.Atan2(m_rigidbody.velocity.y, m_rigidbody.velocity.x) * Mathf.Rad2Deg;
@@ -67,10 +64,10 @@ public class Arrow : MonoBehaviour
         StopAllCoroutines();
     }
 
-    private void ResetTransform()
+    private void ResetArrow()
     {
-        m_speed = m_arrowSpeed;
-        gameObject.transform.localScale = new Vector3(1, 1, 1);
+        m_speed = new Vector2(m_arrowSpeedX, Random.Range(-m_angleMaxY, m_angleMaxY));
         gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
+        Flip();
     }
 }

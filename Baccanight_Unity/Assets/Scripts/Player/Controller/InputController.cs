@@ -18,23 +18,13 @@ public class InputController : MonoBehaviour
 
 	private float m_MoveThreshold = .2f;
 
-	[SerializeField]
-	private FloatEvent m_OnMoveHorizontal;
-
-	[SerializeField]
-	private UnityEvent m_OnJump;
-
-	[SerializeField]
-	private UnityEvent m_OnInteract;
-
-	[SerializeField]
-	private UnityEvent m_OnAttackEnter;
-
-	[SerializeField]
-	private UnityEvent m_OnAttackExit;
-
-	[SerializeField]
-	private UnityEvent m_OnEscape;
+    [SerializeField] private FloatEvent m_OnMoveHorizontal;
+	[SerializeField] private UnityEvent m_OnJump;
+	[SerializeField] private UnityEvent m_OnInteract;
+	[SerializeField] private UnityEvent m_OnAttackEnter;
+	[SerializeField] private UnityEvent m_OnAttackExit;
+    [SerializeField] private UnityEvent m_OnAttackContinue;
+    [SerializeField] private UnityEvent m_OnEscape;
 
 	#endregion
 
@@ -58,10 +48,11 @@ public class InputController : MonoBehaviour
 	public UnityEvent OnEscape => m_OnCancel;
 	public UnityEvent OnAttackEnter => m_OnAttackEnter;
 	public UnityEvent OnAttackExit => m_OnAttackExit;
-	public UnityEvent OnSubmit => m_OnSubmit;
+    public UnityEvent OnAttackContinue => m_OnAttackContinue;
+    public UnityEvent OnSubmit => m_OnSubmit;
 	public UnityEvent OnCancel => m_OnCancel;
     public UnityEvent OnInteract => m_OnInteract;
-	public static bool HaveGamePad { get; set; }
+	public static bool HaveGamePad { get; private set; }
 
 	#endregion
 
@@ -99,8 +90,9 @@ public class InputController : MonoBehaviour
 			case GamePlayerState.inGame:
 				GetEscapeDown();
 				GetInteractDown();
-				GetAttackDown();
-				GetAttackUp();
+				//GetAttackDown();
+				//GetAttackUp();
+                GetAttackContinue();
 				GetMotion();
 				GetJumpDown();
 				break;
@@ -150,7 +142,16 @@ public class InputController : MonoBehaviour
 			m_OnAttackExit.Invoke();
 		}
 	}
-	private void GetEscapeDown()
+
+    private void GetAttackContinue()
+    {
+        if (Input.GetButton(GameConstants.k_Attack))
+        {
+            m_OnAttackContinue.Invoke();
+        }
+    }
+
+    private void GetEscapeDown()
 	{
 		if (Input.GetButtonDown(GameConstants.k_Cancel))
 		{

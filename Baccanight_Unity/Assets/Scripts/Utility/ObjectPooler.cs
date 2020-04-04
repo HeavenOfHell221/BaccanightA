@@ -17,9 +17,9 @@ public class ObjectPooler : SingletonBehaviour<ObjectPooler>
 
 		public GameObject SpawnObject()
 		{
-			GameObject obj = Instantiate(m_PrefabToPool);
-			obj.SetActive(false);
-			return obj;
+            GameObject obj = Instantiate(m_PrefabToPool);
+            obj.SetActive(false);
+            return obj;
 		}
 
 		private void ActiveObject(GameObject obj, Vector3 position, Quaternion rotation)
@@ -62,7 +62,7 @@ public class ObjectPooler : SingletonBehaviour<ObjectPooler>
 		}
 	}
 
-	#region Variables
+    #region Variables
 	private Dictionary<GameObject, Pool> poolDictionary;
 	#endregion
 

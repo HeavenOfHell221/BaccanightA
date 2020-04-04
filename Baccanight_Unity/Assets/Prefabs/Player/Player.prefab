@@ -242,6 +242,20 @@ MonoBehaviour:
   m_OnAttackExit:
     m_PersistentCalls:
       m_Calls: []
+  m_OnAttackContinue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6062258731765549822}
+        m_MethodName: OnShoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnEscape:
     m_PersistentCalls:
       m_Calls: []
@@ -264,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_arrow: {fileID: 3298689659147394698, guid: daaedf5b4effe3a48bdc1b250695a055, type: 3}
-  m_cooldown: 0.5
+  m_cooldown: 0.2
   m_fire: {fileID: 1349584073448261983}
 --- !u!114 &5746767297165005067
 MonoBehaviour:
@@ -679,7 +693,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &4848293459693861544
