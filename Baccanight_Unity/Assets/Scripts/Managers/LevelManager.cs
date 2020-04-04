@@ -20,6 +20,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
     private int m_sceneActive;
     private GameObject m_levelLoader;
     private DoorTeleportation m_door;
+    private bool m_changeSceneInProgress = false;
     #endregion
 
     #region Getters / Setters
@@ -48,14 +49,17 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         int idBehind = m_idBehindDoor;
         int idLevel = m_idLevelAimed;
 
-        if (IsIdValid(idBehind, idLevel))
+        if (IsIdValid(idBehind, idLevel) && !m_changeSceneInProgress)
         {
+            PlayerManager.Instance.PlayerInputController.OnInteract.RemoveListener(OnInteract);
+            m_changeSceneInProgress = true;
             ChangeScene(idBehind,idLevel);
         }
     }
 
     public void ChangeScene(int idBehindDoor, int idLevelAimed)
     {
+       
         StartCoroutine(TeleportPlayer(idLevelAimed, idBehindDoor));
         //BehindDoor(-1, -1);
     }
@@ -111,6 +115,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         brain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.EaseInOut;
 
         m_playerState.State = GamePlayerState.inGame;
+        m_changeSceneInProgress = false;
     }
 
     public void ReloadScene()

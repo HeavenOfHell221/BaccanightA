@@ -13,8 +13,6 @@ TagManager:
   - Pool
   - ConfinerCamera
   - LookAt
-  - ConfinerCamera0
-  - ConfinerCamera1
   layers:
   - Default
   - TransparentFX

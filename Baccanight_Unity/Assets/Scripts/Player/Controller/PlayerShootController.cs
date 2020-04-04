@@ -7,6 +7,10 @@ public class PlayerShootController : MonoBehaviour
 
     #region Inspector
 #pragma warning disable 0649
+
+    [SerializeField]
+    private PlayerMotion m_playerMotion;
+        
     [SerializeField]
     private GameObject m_arrow;
 
@@ -23,7 +27,7 @@ public class PlayerShootController : MonoBehaviour
 
     public void OnShoot()
     {
-        if (m_arrow && (Time.time - m_lastShoot) > m_cooldown)
+        if (m_playerMotion.UseWings && m_arrow && (Time.time - m_lastShoot) > m_cooldown)
         {
             m_lastShoot = Time.time;
             ObjectPooler.Instance.SpawnFromPool(m_arrow, m_fire.position, Quaternion.identity);

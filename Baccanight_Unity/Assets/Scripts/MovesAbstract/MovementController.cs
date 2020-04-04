@@ -36,7 +36,7 @@ public abstract class MovementController : MonoBehaviour
 
 	#region Getters / Setters
 	public Rigidbody2D Rigidbody { get; protected set; }
-	public Vector2 Move { get => m_move; protected set => m_move = value; }
+	public Vector2 Move { get => m_move; set => m_move = value; }
 	#endregion
 
 	private void Awake()
@@ -60,10 +60,7 @@ public abstract class MovementController : MonoBehaviour
 		}
 	}
 
-	public void OnMove(Vector2 motion)
-	{
-		Move = motion.normalized;
-	}
+    abstract public void OnMove(Vector2 motion);
 
 	abstract protected void ApplyMovement();
 }

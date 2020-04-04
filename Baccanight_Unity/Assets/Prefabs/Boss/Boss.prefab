@@ -111,6 +111,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2785219362792485516}
+  - component: {fileID: 1387102921752016282}
+  - component: {fileID: 8198711157667756216}
+  - component: {fileID: 6955683734697834229}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -133,3 +136,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1387102921752016282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2785219362792485491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e057e28ee833c1418b1e92b39604c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_transformToFlip: {fileID: 2785219362792485516}
+  m_movementController: {fileID: 6955683734697834229}
+  m_rigidbody: {fileID: 8198711157667756216}
+  m_animator: {fileID: 2785219362762407428}
+--- !u!50 &8198711157667756216
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2785219362792485491}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 100
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!114 &6955683734697834229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2785219362792485491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c176dcdae8e0bd9458ee40651d03be9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_speed: 5
+  m_jumpForce: 0
+  m_smoothSpeed: 0.5

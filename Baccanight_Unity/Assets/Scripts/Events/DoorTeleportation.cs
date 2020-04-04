@@ -40,6 +40,7 @@ public class DoorTeleportation : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            PlayerManager.Instance.PlayerInputController.OnInteract.AddListener(LevelManager.Instance.OnInteract);
             LevelManager.Instance.BehindDoor(m_DoorId, m_LevelIdAimed);    
         }
     }
@@ -48,6 +49,7 @@ public class DoorTeleportation : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            PlayerManager.Instance.PlayerInputController.OnInteract.RemoveListener(LevelManager.Instance.OnInteract);
             LevelManager.Instance.BehindDoor(-1, -1);
         }
     }

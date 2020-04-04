@@ -18,8 +18,8 @@ public class InputController : MonoBehaviour
 
 	private float m_MoveThreshold = .2f;
 
-    [SerializeField] private FloatEvent m_OnMoveHorizontal;
-	[SerializeField] private UnityEvent m_OnJump;
+    [SerializeField] private Vector2Event m_OnMove;
+    [SerializeField] private UnityEvent m_OnJump;
 	[SerializeField] private UnityEvent m_OnInteract;
 	[SerializeField] private UnityEvent m_OnAttackEnter;
 	[SerializeField] private UnityEvent m_OnAttackExit;
@@ -43,8 +43,8 @@ public class InputController : MonoBehaviour
 
 	#region Getters / Setters
 
-	public FloatEvent OnMoveHorizontal => m_OnMoveHorizontal;
-	public UnityEvent OnJump => m_OnJump;
+	public Vector2Event OnMove => m_OnMove;
+    public UnityEvent OnJump => m_OnJump;
 	public UnityEvent OnEscape => m_OnCancel;
 	public UnityEvent OnAttackEnter => m_OnAttackEnter;
 	public UnityEvent OnAttackExit => m_OnAttackExit;
@@ -85,33 +85,38 @@ public class InputController : MonoBehaviour
 
 	void Update()
 	{
-		switch (m_playerState.State)
-		{
-			case GamePlayerState.inGame:
-				GetEscapeDown();
-				GetInteractDown();
-				//GetAttackDown();
-				//GetAttackUp();
-                GetAttackContinue();
-				GetMotion();
-				GetJumpDown();
-				break;
-			case GamePlayerState.inMainMenu:
-				GetCancelDown();
-				GetSubmitDown();
-				break;
-			default:
-				break;
-		}
+        UpdateInputs();
 	}
+
+    private void UpdateInputs()
+    {
+        switch (m_playerState.State)
+        {
+            case GamePlayerState.inGame:
+                GetEscapeDown();
+                GetInteractDown();
+                GetAttackContinue();
+                GetMotion();
+                GetJumpDown();
+                break;
+            case GamePlayerState.inMainMenu:
+                GetCancelDown();
+                GetSubmitDown();
+                break;
+            default:
+                break;
+        }
+    }
 
 	private void GetMotion()
 	{
-		float rawMotion = Mathf.Clamp(Input.GetAxisRaw(GameConstants.k_AxisHorizontal), -1, 1);
-	    m_OnMoveHorizontal.Invoke(rawMotion);
+		float rawMotionX = Mathf.Clamp(Input.GetAxisRaw(GameConstants.k_AxisHorizontal), -1, 1);
+        float rawMotionY = Mathf.Clamp(Input.GetAxisRaw(GameConstants.k_AxisVertical), -1, 1);
+
+        m_OnMove.Invoke(new Vector2(rawMotionX, rawMotionY));
 	}
 
-	private void GetJumpDown()
+    private void GetJumpDown()
 	{
 		if (Input.GetButtonDown(GameConstants.k_Jump))
 		{

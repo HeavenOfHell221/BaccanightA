@@ -23,6 +23,7 @@ public class PlayerMotion : ScriptableObject
     public bool CanJump { get => m_canJump; set => m_canJump = value; }
     public bool IsPushObject { get => m_pushObject; set => m_pushObject = value; }
     public bool FlipSprite { get => m_flipSprite; set => m_flipSprite = value; }
+    public bool UseWings { get => m_useWings; set => m_useWings = value; }
 
 	#endregion
 

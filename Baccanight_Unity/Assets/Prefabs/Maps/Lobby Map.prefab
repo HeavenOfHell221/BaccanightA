@@ -9508,6 +9508,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5336095045528372308, guid: a3677d7b59329d640917e04b468768c4,
+        type: 3}
+      propertyPath: m_succesForOpenDoor
+      value: Level 3.0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3677d7b59329d640917e04b468768c4, type: 3}
 --- !u!4 &3818953648452903006 stripped

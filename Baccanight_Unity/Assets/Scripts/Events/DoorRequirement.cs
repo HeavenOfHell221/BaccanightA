@@ -37,17 +37,6 @@ public class DoorRequirement : MonoBehaviour
         m_DoorCollider.enabled = false;
         //Affichage de porte fermée
     }
-
-    public void PlayerEnter()
-    {
-        PlayerManager.Instance.PlayerInputController.OnInteract.AddListener(LevelManager.Instance.OnInteract);
-    }
-
-    public void PlayerExit()
-    {
-        PlayerManager.Instance.PlayerInputController.OnInteract.RemoveListener(LevelManager.Instance.OnInteract);
-    }
-
     private IEnumerator TestDoor()
     {
         yield return new WaitForSeconds(0.5f);

@@ -17,12 +17,12 @@ public class BossAIController : MonoBehaviour
     #endregion
 
     #region Getters / Setters
-    public BossActionType CurrentState { get; private set; } = BossActionType.Idle;
+    public BossActionType CurrentState { get; private set; }
     #endregion
 
     private void Start()
     {
-
+        CurrentState = BossActionType.Idle;
     }
 
     private void Update()

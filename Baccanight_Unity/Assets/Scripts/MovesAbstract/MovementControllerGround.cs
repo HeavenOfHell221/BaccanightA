@@ -69,12 +69,12 @@ public abstract class MovementControllerGround : MovementController
 
     #endregion
 
-    public void OnMove(float motion)
-	{
-		m_move.x = motion;
-	}
+    public override void OnMove(Vector2 motion)
+    {
+        Move = new Vector2(motion.x, Move.y);
+    }
 
-	public virtual void OnJump()
+    public virtual void OnJump()
 	{
         if (IsGrounded)
         {
@@ -89,7 +89,6 @@ public abstract class MovementControllerGround : MovementController
 			ApplyMovement();
             ApplyJump();
 		}
-       
 	}
 
     virtual protected void Update()

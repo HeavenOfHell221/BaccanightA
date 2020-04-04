@@ -88,7 +88,6 @@ GameObject:
   - component: {fileID: 3333501458674323916}
   - component: {fileID: -4607244094441628766}
   - component: {fileID: 5612893509172908107}
-  - component: {fileID: 1715052497213539906}
   m_Layer: 0
   m_Name: Door Enter Level
   m_TagString: Door
@@ -170,52 +169,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 3}
   m_EdgeRadius: 0
---- !u!114 &1715052497213539906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3333501458674323919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e720c47edf3bb684599a0ba90f5bfdef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnEnterDetect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -4607244094441628766}
-        m_MethodName: PlayerEnter
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnStayDetect:
-    m_PersistentCalls:
-      m_Calls: []
-  OnExitDetect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -4607244094441628766}
-        m_MethodName: PlayerExit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  Layers:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!1 &3333501458789985111
 GameObject:
   m_ObjectHideFlags: 0

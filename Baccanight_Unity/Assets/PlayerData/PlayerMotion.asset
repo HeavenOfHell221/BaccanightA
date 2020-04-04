@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_motion: {x: 0, y: 0}
   m_isGrounded: 1
+  m_isRoofed: 0
   m_canJump: 1
+  m_pushObject: 0
+  m_flipSprite: 1
+  m_useWings: 1
