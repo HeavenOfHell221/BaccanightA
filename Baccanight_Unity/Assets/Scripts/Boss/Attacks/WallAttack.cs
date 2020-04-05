@@ -32,6 +32,7 @@ public class WallAttack : BossAttack
     #region Variables
 
     private int m_loopToDo;
+    private int m_loopDone;
     private int m_line;
     #endregion
 
@@ -45,6 +46,7 @@ public class WallAttack : BossAttack
     public override void StartAttack()
     {
         IsStarted = true;
+        m_loopDone = m_loopToDo;
         StartCoroutine(HandleAttack());
     } 
 
@@ -55,13 +57,16 @@ public class WallAttack : BossAttack
         //Debug.Log(line);
         TransformLine();
         InProgress = false;
-        m_loopToDo--;
+        m_loopDone--;
         yield return new WaitForSeconds(m_cooldown);
-        if (m_loopToDo != 0)
+        if (m_loopDone > 0)
         {
             StartCoroutine(HandleAttack());
         }
-        else EndAttack();
+        else
+        { 
+            EndAttack();
+        }
        
     }
 
