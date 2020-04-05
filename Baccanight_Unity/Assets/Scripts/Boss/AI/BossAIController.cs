@@ -6,14 +6,17 @@ public class BossAIController : MonoBehaviour
 {
     #region Inspector
 #pragma warning disable 0649
+    [Header("General")]
     [SerializeField] private Transform m_transformToFlip;
     [SerializeField] private MovementController m_movementController;
     [SerializeField] private Rigidbody2D m_rigidbody;
     [SerializeField] private Animator m_animator;
+    [SerializeField] private float m_distanceStartBattle;
 #pragma warning restore 0649
     #endregion
 
     #region Variables
+    private Transform m_player;
     #endregion
 
     #region Getters / Setters
@@ -23,18 +26,12 @@ public class BossAIController : MonoBehaviour
     private void Start()
     {
         CurrentState = BossActionType.Idle;
+        m_player = PlayerManager.Instance.PlayerReference.transform;
     }
 
     private void Update()
     {
-        UpdateStates();
         UpdateIABehaviour();
-    }
-
-    
-    private void UpdateStates()
-    {
-
     }
 
     private void UpdateIABehaviour()
@@ -59,12 +56,23 @@ public class BossAIController : MonoBehaviour
             case BossActionType.Enraging:
                 HandleEnragingState();
                 break;
+            case BossActionType.StartBattle:
+                HandleStartBattleState();
+                break;
         }
+    }
+
+    private void HandleStartBattleState()
+    {
+
     }
 
     private void HandleIdleState()
     {
-
+        if(DistanceFromPlayer() < m_distanceStartBattle)
+        {
+            CurrentState = BossActionType.StartBattle;
+        }
     }
 
     private void HandleMovingState()
@@ -101,4 +109,9 @@ public class BossAIController : MonoBehaviour
             m_transformToFlip.rotation.w);
     }
         
+
+    private float DistanceFromPlayer()
+    {
+        return Vector2.Distance(transform.position, m_player.position);
+    }
 }

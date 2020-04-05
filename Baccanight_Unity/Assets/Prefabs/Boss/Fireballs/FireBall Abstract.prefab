@@ -135,8 +135,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.16938975, y: -0.032778025}
-  m_Size: {x: 1.5504677, y: 1.0548736}
+  m_Offset: {x: -0.08960934, y: -0.012868306}
+  m_Size: {x: 0.6319227, y: 0.4079824}
   m_Direction: 1
 --- !u!1 &7821456986364428375
 GameObject:
@@ -238,14 +238,14 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -6607481912129624618, guid: f2163f8edf974244a9dcee32b514253c,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.4328063, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

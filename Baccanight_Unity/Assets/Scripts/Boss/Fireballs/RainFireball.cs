@@ -13,7 +13,7 @@ public class RainFireball : Fireball
     #region Variables
     #endregion
 
-    private void Start()
+    protected override void Start()
     {
         StartCoroutine(_Move());
     }

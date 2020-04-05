@@ -16,14 +16,33 @@ public abstract class Fireball : MonoBehaviour
     #region Getters / Setters
     public Rigidbody2D Rigidbody { get; private set; }
     public float Speed { get => m_speed; private set => m_speed = value; }
+    public void SetSpeed(float speed) => m_speed = speed;
     #endregion
+
+    protected abstract void Start();
+    protected abstract void Move();
+    protected void OnEnable()
+    {
+        Start();
+        Invoke("DesactiveObject", 6f);
+    }
 
     protected void Awake()
     {
         Rigidbody = GetComponent<Rigidbody2D>();
+        Invoke("DesactiveObject", 10f);
     }
 
-    protected abstract void Move();
-    public virtual void OnEnterPlayer(GameObject player) => Destroy(gameObject);
-    public void SetSpeed(float speed) => m_speed = speed;
+    public virtual void OnEnterPlayer(GameObject player)
+    {
+        player.GetComponent<Health>().ModifyHealth(-1, gameObject);
+        CancelInvoke();
+        DesactiveObject();
+    }
+
+    private void DesactiveObject()
+    {
+        Rigidbody.velocity = Vector2.zero;
+        gameObject.SetActive(false);     
+    }
 }

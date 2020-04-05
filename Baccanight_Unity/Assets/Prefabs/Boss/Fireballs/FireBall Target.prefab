@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444729060601296703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1468555688429997649}
@@ -42,10 +42,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bde59a472218a4c923fe5ece114ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 8
+  m_speed: 10
   m_timeBeforeMove: 0.1
   m_backward: {fileID: 3189087833982937265}
-  m_DecreaseVelocityPercentage: 0.95
+  m_DecreaseVelocityPercentage: 0.96
   m_forceBack: 10
   m_timeBack: 0.5
 --- !u!1001 &2648394425365246279
@@ -79,6 +79,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504265795053747990, guid: fb53137598539204abd83cab1537abe7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504265795053747990, guid: fb53137598539204abd83cab1537abe7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504265795053747990, guid: fb53137598539204abd83cab1537abe7,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123818401138570257, guid: fb53137598539204abd83cab1537abe7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123818401138570257, guid: fb53137598539204abd83cab1537abe7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8832644600293077732, guid: fb53137598539204abd83cab1537abe7,
         type: 3}

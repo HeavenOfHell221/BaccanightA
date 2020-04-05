@@ -21,7 +21,7 @@ public class TargetFireball : Fireball
     private bool m_lookPlayer = true;
     #endregion
 
-    private void Start()
+    protected override void Start()
     {
         m_playerPosition = PlayerManager.Instance.PlayerReference.transform;
         StartCoroutine(MoveBack());
@@ -53,13 +53,9 @@ public class TargetFireball : Fireball
         {
             counter -= Time.fixedDeltaTime;
             Rigidbody.velocity *= m_DecreaseVelocityPercentage;
-            if(counter < m_timeBack / 3f)
-            {
-                m_lookPlayer = false;
-            }
             yield return null;
         }
- 
+        m_lookPlayer = false;
         yield return new WaitForSeconds(m_timeBeforeMove);
         Move();
     }

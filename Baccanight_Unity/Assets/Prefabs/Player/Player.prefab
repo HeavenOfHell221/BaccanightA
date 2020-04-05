@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bdec97c05e88b43874b50e5e26f8ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 7
+  m_speed: 6
   m_jumpForce: 12
   m_smoothSpeed: 0.6
   m_PlayerMotion: {fileID: 11400000, guid: 8d25be83bd41b1745b10d7b8110c1547, type: 2}
@@ -700,6 +700,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628665981492934880, guid: 3d08f050cf1c7904a8c864e32a3fdb03,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 44.06006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628665981492934880, guid: 3d08f050cf1c7904a8c864e32a3fdb03,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -39.750122
       objectReference: {fileID: 0}
     - target: {fileID: 9082762136579586544, guid: 3d08f050cf1c7904a8c864e32a3fdb03,
         type: 3}

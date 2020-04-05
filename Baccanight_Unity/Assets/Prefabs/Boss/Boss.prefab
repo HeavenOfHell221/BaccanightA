@@ -114,7 +114,6 @@ GameObject:
   - component: {fileID: 1387102921752016282}
   - component: {fileID: 8198711157667756216}
   - component: {fileID: 6955683734697834229}
-  - component: {fileID: 3406688546381294025}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -155,6 +154,7 @@ MonoBehaviour:
   m_movementController: {fileID: 6955683734697834229}
   m_rigidbody: {fileID: 8198711157667756216}
   m_animator: {fileID: 2785219362762407428}
+  m_distanceStartBattle: 0
 --- !u!50 &8198711157667756216
 Rigidbody2D:
   serializedVersion: 4
@@ -191,32 +191,6 @@ MonoBehaviour:
   m_speed: 5
   m_jumpForce: 0
   m_smoothSpeed: 0.5
---- !u!61 &3406688546381294025
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2785219362792485491}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -10.425353, y: -0.25303936}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 31.458006, y: 17.69251}
-  m_EdgeRadius: 0
 --- !u!1 &4646928656004282013
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,16 +234,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345904b2ff1965e46929bb18749ce53e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_collider: {fileID: 3406688546381294025}
+  m_collider: {fileID: 0}
   m_fireball: {fileID: 2441063828811152664, guid: 019f4c71f287c6a48aae31601a8c766f,
     type: 3}
-  m_DistanceMinPlayer: 5
-  m_isContinuously: 1
-  m_cooldown: 0.6
-  m_isSalve: 1
-  m_numberPerSalve:
-    Min: 2
-    Max: 8
+  m_distanceToPlayer:
+    Min: 4
+    Max: 10
+  m_numberPerSalve1: 5
+  m_cooldownBetweenSalve1: 1.5
+  m_cooldownBetweenFireball1: 0.4
+  m_numberTotalSalve1: 4
+  m_numberPerSalve2: 8
+  m_cooldownBetweenSalve2: 0.75
+  m_cooldownBetweenFireball2: 0.3
+  m_numberTotalSalve2: 5
 --- !u!1 &7056046087152244989
 GameObject:
   m_ObjectHideFlags: 0

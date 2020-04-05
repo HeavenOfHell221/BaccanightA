@@ -15,4 +15,4 @@ MonoBehaviour:
   m_maxHealth: 6
   m_currentHealth: 6
   m_isDead: 0
-  m_isInvincible: 0
+  m_isInvincible: 1

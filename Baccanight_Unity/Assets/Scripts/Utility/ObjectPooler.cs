@@ -55,7 +55,12 @@ public class ObjectPooler : SingletonBehaviour<ObjectPooler>
 			if (objectRequested == null)
 			{
 				objectRequested = SpawnObject();
-			}
+                //Debug.Log("New object in ObjectPooler");
+            }
+            /*else
+            {
+                Debug.Log("Active pool");
+            }*/
 
 			ActiveObject(objectRequested, position, rotation);
 			return objectRequested;

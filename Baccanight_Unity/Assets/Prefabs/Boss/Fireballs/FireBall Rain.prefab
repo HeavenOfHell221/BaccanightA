@@ -61,6 +61,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3504265795053747990, guid: fb53137598539204abd83cab1537abe7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504265795053747990, guid: fb53137598539204abd83cab1537abe7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8832644600293077732, guid: fb53137598539204abd83cab1537abe7,
         type: 3}
       propertyPath: OnEnterDetect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
