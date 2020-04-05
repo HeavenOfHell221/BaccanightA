@@ -73,7 +73,7 @@ MonoBehaviour:
   OnEnterDetect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5966130191969783111}
         m_MethodName: OnPlayerEnter
         m_Mode: 0
         m_Arguments:
@@ -90,7 +90,7 @@ MonoBehaviour:
   OnExitDetect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5966130191969783111}
         m_MethodName: OnPlayerExit
         m_Mode: 0
         m_Arguments:

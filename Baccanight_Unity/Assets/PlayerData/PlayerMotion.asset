@@ -18,4 +18,4 @@ MonoBehaviour:
   m_canJump: 0
   m_pushObject: 0
   m_flipSprite: 1
-  m_useWings: 1
+  m_useWings: 0
