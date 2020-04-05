@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallAttack : BossAttack
+public class RainAttack : BossAttack
 {
     #region Inspector
     [Header("Attributes")]
     [Space(5)]
 
-    public GameObject m_wallball;
+    public GameObject m_rainball;
     public int maxNumberOfBall;
     public Vector3 initialSpawn;
     [SerializeField] [Range(0f, 1f)] private float m_ballPourcentage;
@@ -39,7 +39,7 @@ public class WallAttack : BossAttack
     public void Start()
     {
         m_loopToDo = m_loopToBeDone;
-        m_wallball.GetComponent<WallFireball>().SetSpeed(m_ballSpeedFlat);
+        m_rainball.GetComponent<RainFireball>().SetSpeed(m_ballSpeedFlat);
     }
 
     [ContextMenu("Handle Wall Ball")]
@@ -110,7 +110,7 @@ public class WallAttack : BossAttack
             if ((m_line & 1) == 1)
             {
                 m_line >>= 1;
-                Instantiate(m_wallball, spawn, new Quaternion());
+                Instantiate(m_rainball, spawn, new Quaternion());
                 spawn += Vector3.right;
             }
             else
@@ -125,7 +125,7 @@ public class WallAttack : BossAttack
     public void UpgradeAttack()
     {
         m_cooldown = m_newCooldown;
-        m_wallball.GetComponent<WallFireball>().SetSpeed(m_upgradeSpeedRelative * m_ballSpeedFlat);
+        m_rainball.GetComponent<RainFireball>().SetSpeed(m_upgradeSpeedRelative * m_ballSpeedFlat);
         m_loopToDo = m_newLoopToBeDone;
     }
 }

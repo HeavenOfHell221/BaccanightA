@@ -331,6 +331,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7056046087152244989, guid: 55e902f716038dd4eab0d9ecca53d66e,
+        type: 3}
+      propertyPath: m_Name
+      value: Attack RainFireball
+      objectReference: {fileID: 0}
     - target: {fileID: 8304388828785144982, guid: 55e902f716038dd4eab0d9ecca53d66e,
         type: 3}
       propertyPath: m_Size.x

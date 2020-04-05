@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallFireball : MonoBehaviour
+public class RainFireball : MonoBehaviour
 {
     #region Inpsector
 #pragma warning disable 0649

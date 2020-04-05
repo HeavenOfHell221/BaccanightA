@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2c1227cd8c29141bc8e7aedb6f8ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_wallball: {fileID: 2844782505183477794, guid: a96bd68c960b6ae46a9eb4e607078c80,
+  m_rainball: {fileID: 2844782505183477794, guid: a96bd68c960b6ae46a9eb4e607078c80,
     type: 3}
   maxNumberOfBall: 20
   initialSpawn: {x: 0, y: 0, z: 0}
