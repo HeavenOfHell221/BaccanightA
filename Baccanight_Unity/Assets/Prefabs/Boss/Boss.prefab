@@ -236,8 +236,13 @@ MonoBehaviour:
   m_collider: {fileID: 8304388828785144982}
   m_fireball: {fileID: 624625549323400389, guid: a5e7f4e9190a979418eeca830473fdc8,
     type: 3}
-  m_cooldown: 0.3
   m_DistanceMinPlayer: 5
+  m_isContinuously: 1
+  m_cooldown: 0.6
+  m_isSalve: 1
+  m_numberPerSalve:
+    Min: 3
+    Max: 5
 --- !u!61 &8304388828785144982
 BoxCollider2D:
   m_ObjectHideFlags: 0
