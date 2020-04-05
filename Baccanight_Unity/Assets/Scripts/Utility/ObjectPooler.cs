@@ -17,7 +17,7 @@ public class ObjectPooler : SingletonBehaviour<ObjectPooler>
 
 		public GameObject SpawnObject()
 		{
-            GameObject obj = Instantiate(m_PrefabToPool);
+            GameObject obj = Instantiate(m_PrefabToPool, Instance.gameObject.transform);
             obj.SetActive(false);
             return obj;
 		}
@@ -71,7 +71,7 @@ public class ObjectPooler : SingletonBehaviour<ObjectPooler>
 		poolDictionary = new Dictionary<GameObject, Pool>();
 	}
 
-	public GameObject SpawnFromPool(GameObject prefab, Vector3 position, Quaternion rotation)
+	public GameObject SpawnFromPool(GameObject prefab, Vector3 position, Quaternion rotation = new Quaternion())
 	{
 		if (!poolDictionary.ContainsKey(prefab))
 		{

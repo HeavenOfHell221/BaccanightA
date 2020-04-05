@@ -88,14 +88,14 @@ public abstract class MovementControllerGround : MovementController
 		{
 			ApplyMovement();
             ApplyJump();
-		}
+		}   
 	}
 
     virtual protected void Update()
     {
         CheckGround();
 
-        if(!Input.GetButton(GameConstants.k_Jump) && m_jumpTrigger)
+        if (!Input.GetButton(GameConstants.k_Jump) && m_jumpTrigger)
         {
             if(m_jumpNumberCounter < m_jumpSteps && m_jumpNumberCounter > m_jumpThreshold)
             {

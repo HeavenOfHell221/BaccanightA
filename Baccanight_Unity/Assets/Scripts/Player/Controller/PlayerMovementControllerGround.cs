@@ -18,14 +18,14 @@ public class PlayerMovementControllerGround : MovementControllerGround
 
     override protected void FixedUpdate()
 	{
-		base.FixedUpdate();
-
         if (m_PlayerMotion)
         {
             m_PlayerMotion.Motion = Move;
             m_PlayerMotion.IsGrounded = IsGrounded;
             m_PlayerMotion.IsRoofed = IsRoofed;
         }
+
+		base.FixedUpdate();
 
 		m_move = Vector2.zero;
 	}

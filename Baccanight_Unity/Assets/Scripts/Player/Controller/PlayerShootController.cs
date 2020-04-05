@@ -30,7 +30,7 @@ public class PlayerShootController : MonoBehaviour
         if (m_playerMotion.UseWings && m_arrow && (Time.time - m_lastShoot) > m_cooldown)
         {
             m_lastShoot = Time.time;
-            ObjectPooler.Instance.SpawnFromPool(m_arrow, m_fire.position, Quaternion.identity);
+            ObjectPooler.Instance.SpawnFromPool(m_arrow, m_fire.position);
         }
     }
 }

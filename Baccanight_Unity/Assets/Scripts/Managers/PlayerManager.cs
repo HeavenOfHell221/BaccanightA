@@ -22,17 +22,26 @@ public class PlayerManager : SingletonBehaviour<PlayerManager>
     public GameObject LastCamera { get; set; }
     #endregion
 
+    protected override void Awake()
+    {
+        base.Awake();
+        PlayerReference = GameObject.FindGameObjectWithTag("Player");
+    }
+
     public IEnumerator SetCameraReference(GameObject camera)
     {
-        LastCamera = CameraReference;
-        CameraReference = camera;
-        camera.SetActive(true);
-
-        yield return null;
-
-        if (LastCamera)
+        if(camera)
         {
-            LastCamera.SetActive(false);
+            LastCamera = CameraReference;
+            CameraReference = camera;
+            camera.SetActive(true);
+
+            yield return null;
+
+            if (LastCamera && LastCamera != camera)
+            {
+                LastCamera.SetActive(false);
+            }
         }
     }
 
@@ -52,5 +61,11 @@ public class PlayerManager : SingletonBehaviour<PlayerManager>
         {
             playerSucces.Reset();
         }
+    }
+
+    [ContextMenu("Get Player GameObject")]
+    public void GetPlayer()
+    {
+        PlayerReference = GameObject.FindGameObjectWithTag("Player");
     }
 }

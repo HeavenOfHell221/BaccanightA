@@ -199,7 +199,7 @@ MonoBehaviour:
         m_CallState: 2
   Layers:
     serializedVersion: 2
-    m_Bits: 2560
+    m_Bits: 512
 --- !u!1001 &1841340311418068365
 PrefabInstance:
   m_ObjectHideFlags: 0
