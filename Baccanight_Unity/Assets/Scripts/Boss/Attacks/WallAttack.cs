@@ -1,0 +1,87 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class WallAttack : BossAttack
+{
+    #region Inspector
+    public GameObject m_wallball;
+    public int maxNumberOfBall;
+    public Vector3 initialSpawn;
+    #endregion
+
+    [SerializeField] [Range(0.1f, 2f)] private float m_cooldown;
+    [SerializeField] [Range(0f, 1f)] private float m_ballPourcentage;
+    [SerializeField] [Range(0, 10)] private int m_voidSpace;
+
+    private int line;
+
+    [ContextMenu("Handle Wall Ball")]
+    public override void StartAttack()
+    {
+        IsStarted = true;
+        StartCoroutine(HandleAttack());
+    } 
+
+    public override IEnumerator HandleAttack()
+    {
+        InProgress = true;
+        CreateLine();
+        //Debug.Log(line);
+        TransformLine();
+        InProgress = false;
+
+        yield return new WaitForSeconds(m_cooldown);
+        StartCoroutine(HandleAttack());
+    }
+
+    public override void EndAttack()
+    {
+        IsFinish = true;
+    }
+
+    private void CreateLine()
+    {
+        bool atLeastOneSpace = false;
+        int currentLine = 1;
+        for (int i = 1; i < maxNumberOfBall;)
+        {
+            float test = Random.Range(0f, 1f);
+            if (test <= m_ballPourcentage)
+            {
+                currentLine <<= 1;
+                currentLine++;
+                i++;
+            }
+            else
+            {
+                atLeastOneSpace = true;
+                currentLine <<= m_voidSpace;
+                i += m_voidSpace;
+            }
+        }
+        if (!atLeastOneSpace)
+        {
+            //ajouter un espace au milieu de la ligne (1111111111111111 -> 1111111001111111)
+        }
+        line = currentLine;
+    }
+
+    private void TransformLine()
+    {
+        Vector3 spawn = initialSpawn;
+        while (line != 0) {
+            if ((line & 1) == 1)
+            {
+                line >>= 1;
+                Instantiate(m_wallball, spawn, new Quaternion());
+                spawn += Vector3.right;
+            }
+            else
+            {
+                line >>= m_voidSpace;
+                spawn += (Vector3.right * m_voidSpace);
+            }
+        }
+    }
+}
