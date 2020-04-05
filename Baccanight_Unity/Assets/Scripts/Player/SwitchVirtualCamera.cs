@@ -8,7 +8,9 @@ public class SwitchVirtualCamera : MonoBehaviour
     #region Inspector
 #pragma warning disable 0649
     [SerializeField] private GameObject m_camera;
-    [SerializeField] [Range(3, 10)] private float m_orthographicSize = 6;
+    [SerializeField] [Range(3f, 12f)] private float m_orthographicSize = 6;
+    [SerializeField] private bool m_cameraFollowPlayer = true;
+    [SerializeField] Transform m_transformFollow;
 #pragma warning restore 0649
     #endregion
 
@@ -25,8 +27,15 @@ public class SwitchVirtualCamera : MonoBehaviour
 
     public void CameraSwitch(GameObject player)
     {
-        m_CVCamera.Follow = player.transform;
-        m_CVCamera.LookAt = player.transform.Find("Look");
+        if (m_cameraFollowPlayer)
+        { 
+            m_CVCamera.Follow = player.transform;
+            m_CVCamera.LookAt = player.transform.Find("Look");
+        }
+        else
+        {
+            m_CVCamera.Follow = m_transformFollow;
+        }
         StartCoroutine(PlayerManager.Instance.SetCameraReference(m_camera));
     }
 

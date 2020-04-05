@@ -336,6 +336,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Attack RainFireball
       objectReference: {fileID: 0}
+    - target: {fileID: 7669349831863623881, guid: 55e902f716038dd4eab0d9ecca53d66e,
+        type: 3}
+      propertyPath: m_numberPerSalve.Min
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669349831863623881, guid: 55e902f716038dd4eab0d9ecca53d66e,
+        type: 3}
+      propertyPath: m_numberPerSalve.Max
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8304388828785144982, guid: 55e902f716038dd4eab0d9ecca53d66e,
         type: 3}
       propertyPath: m_Size.x
@@ -365,10 +375,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virtual Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 3491104464322172901, guid: 136b7a19367561d4da20c8f561f21d9d,
+        type: 3}
+      propertyPath: m_BiasY
+      value: -0.000000074505806
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491104464322172901, guid: 136b7a19367561d4da20c8f561f21d9d,
+        type: 3}
+      propertyPath: m_ScreenX
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491104464322172901, guid: 136b7a19367561d4da20c8f561f21d9d,
+        type: 3}
+      propertyPath: m_BiasX
+      value: -0.000000014901161
+      objectReference: {fileID: 0}
     - target: {fileID: 5696840304383215844, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
       propertyPath: m_orthographicSize
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7086591902802012128, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
@@ -554,15 +579,20 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -29.20288
       objectReference: {fileID: 0}
+    - target: {fileID: 1526417344016115016, guid: 2ea7d6a54d8663445b54c40f8ecd65fa,
+        type: 3}
+      propertyPath: orthographic size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2697420166612076223, guid: 2ea7d6a54d8663445b54c40f8ecd65fa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 5.13
       objectReference: {fileID: 0}
     - target: {fileID: 2697420166612076223, guid: 2ea7d6a54d8663445b54c40f8ecd65fa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.17
       objectReference: {fileID: 0}
     - target: {fileID: 2697420166612076223, guid: 2ea7d6a54d8663445b54c40f8ecd65fa,
         type: 3}

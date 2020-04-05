@@ -5,6 +5,7 @@ using UnityEngine;
 public class RainAttack : BossAttack
 {
     #region Inspector
+#pragma warning disable 0649
     [Header("Attributes")]
     [Space(5)]
 
@@ -27,6 +28,7 @@ public class RainAttack : BossAttack
     [SerializeField] [Range(1f, 2f)] private float m_upgradeSpeedRelative;
     [SerializeField] [Range(0.1f, 2f)] private float m_newCooldown;
     [SerializeField] [Range(1, 10)] private int m_newLoopToBeDone;
+#pragma warning restore 0649
     #endregion
 
     #region Variables
@@ -110,7 +112,9 @@ public class RainAttack : BossAttack
             if ((m_line & 1) == 1)
             {
                 m_line >>= 1;
-                Instantiate(m_rainball, spawn, new Quaternion());
+                //Instantiate(m_rainball, spawn, new Quaternion());
+                GameObject fireball = ObjectPooler.Instance.SpawnFromPool(m_rainball, spawn);
+                fireball.transform.rotation = Quaternion.AngleAxis(90f, Vector3.forward);
                 spawn += Vector3.right;
             }
             else

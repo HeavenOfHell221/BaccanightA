@@ -318,21 +318,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3581663790083676993, guid: caad4dabb3c096c4b8eeda96caeb7116,
-        type: 3}
-      propertyPath: m_CellGap.x
-      value: -0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3581663790083676993, guid: caad4dabb3c096c4b8eeda96caeb7116,
-        type: 3}
-      propertyPath: m_CellGap.y
-      value: -0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3581663790083676993, guid: caad4dabb3c096c4b8eeda96caeb7116,
-        type: 3}
-      propertyPath: m_CellGap.z
-      value: -0.001
-      objectReference: {fileID: 0}
     - target: {fileID: 3581663790083676998, guid: caad4dabb3c096c4b8eeda96caeb7116,
         type: 3}
       propertyPath: m_Name

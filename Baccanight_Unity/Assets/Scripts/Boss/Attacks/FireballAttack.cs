@@ -25,6 +25,11 @@ public class FireballAttack : BossAttack
     private Transform m_player;
     private int m_numberFireball = 1;
 
+    private void Start()
+    {
+        m_collider.isTrigger = true;
+    }
+
     [ContextMenu("Handle Fire Ball")]
     public override void StartAttack()
     {
