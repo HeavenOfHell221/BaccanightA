@@ -321,5 +321,7 @@ MonoBehaviour:
   m_voidSpace: 2
   m_ballSpeedFlat: 15
   m_cooldown: 2
+  m_loopToBeDone: 3
   m_upgradeSpeedRelative: 1.5
   m_newCooldown: 1
+  m_newLoopToBeDone: 5

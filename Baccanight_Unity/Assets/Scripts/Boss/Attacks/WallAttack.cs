@@ -19,23 +19,32 @@ public class WallAttack : BossAttack
 
     [SerializeField] [Range(0.1f, 25f)] private float m_ballSpeedFlat;
     [SerializeField] [Range(0.1f, 2f)] private float m_cooldown;
+    [SerializeField] [Range(1, 10)] private int m_loopToBeDone;
 
     [Header("Upgraded Modifier")]
     [Space(5)]
 
     [SerializeField] [Range(1f, 2f)] private float m_upgradeSpeedRelative;
     [SerializeField] [Range(0.1f, 2f)] private float m_newCooldown;
+    [SerializeField] [Range(1, 10)] private int m_newLoopToBeDone;
     #endregion
 
-    
+    #region Variables
 
-    private int line;
+    private int m_loopToDo;
+    private int m_line;
+    #endregion
+
+    public void Start()
+    {
+        m_loopToDo = m_loopToBeDone;
+        m_wallball.GetComponent<WallFireball>().SetSpeed(m_ballSpeedFlat);
+    }
 
     [ContextMenu("Handle Wall Ball")]
     public override void StartAttack()
     {
         IsStarted = true;
-        m_wallball.GetComponent<WallFireball>().SetSpeed(m_ballSpeedFlat);
         StartCoroutine(HandleAttack());
     } 
 
@@ -46,9 +55,14 @@ public class WallAttack : BossAttack
         //Debug.Log(line);
         TransformLine();
         InProgress = false;
-
+        m_loopToDo--;
         yield return new WaitForSeconds(m_cooldown);
-        StartCoroutine(HandleAttack());
+        if (m_loopToDo != 0)
+        {
+            StartCoroutine(HandleAttack());
+        }
+        else EndAttack();
+       
     }
 
     public override void EndAttack()
@@ -81,22 +95,22 @@ public class WallAttack : BossAttack
             //ajouter un espace au milieu de la ligne (1111111111111111 -> 1111111001111111)
             
         }
-        line = currentLine;
+        m_line = currentLine;
     }
 
     private void TransformLine()
     {
         Vector3 spawn = initialSpawn;
-        while (line != 0) {
-            if ((line & 1) == 1)
+        while (m_line != 0) {
+            if ((m_line & 1) == 1)
             {
-                line >>= 1;
+                m_line >>= 1;
                 Instantiate(m_wallball, spawn, new Quaternion());
                 spawn += Vector3.right;
             }
             else
             {
-                line >>= m_voidSpace;
+                m_line >>= m_voidSpace;
                 spawn += (Vector3.right * m_voidSpace);
             }
         }
@@ -107,5 +121,6 @@ public class WallAttack : BossAttack
     {
         m_cooldown = m_newCooldown;
         m_wallball.GetComponent<WallFireball>().SetSpeed(m_upgradeSpeedRelative * m_ballSpeedFlat);
+        m_loopToDo = m_newLoopToBeDone;
     }
 }
