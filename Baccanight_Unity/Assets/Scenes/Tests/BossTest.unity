@@ -261,6 +261,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1648821277539219780, guid: 55e902f716038dd4eab0d9ecca53d66e,
+        type: 3}
+      propertyPath: initialSpawn.x
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1648821277539219780, guid: 55e902f716038dd4eab0d9ecca53d66e,
+        type: 3}
+      propertyPath: initialSpawn.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2785219362792485491, guid: 55e902f716038dd4eab0d9ecca53d66e,
         type: 3}
       propertyPath: m_Name

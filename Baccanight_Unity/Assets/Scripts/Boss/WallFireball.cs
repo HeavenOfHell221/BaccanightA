@@ -40,4 +40,9 @@ public class WallFireball : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public void SetSpeed(float sp)
+    {
+        m_speed = sp;
+    }
 }

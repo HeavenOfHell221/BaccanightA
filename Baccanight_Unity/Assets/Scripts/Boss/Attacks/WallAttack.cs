@@ -5,14 +5,29 @@ using UnityEngine;
 public class WallAttack : BossAttack
 {
     #region Inspector
+    [Header("Attributes")]
+    [Space(5)]
+
     public GameObject m_wallball;
     public int maxNumberOfBall;
     public Vector3 initialSpawn;
-    #endregion
-
-    [SerializeField] [Range(0.1f, 2f)] private float m_cooldown;
     [SerializeField] [Range(0f, 1f)] private float m_ballPourcentage;
     [SerializeField] [Range(0, 10)] private int m_voidSpace;
+
+    [Header("Normal")]
+    [Space(5)]
+
+    [SerializeField] [Range(0.1f, 25f)] private float m_ballSpeedFlat;
+    [SerializeField] [Range(0.1f, 2f)] private float m_cooldown;
+
+    [Header("Upgraded Modifier")]
+    [Space(5)]
+
+    [SerializeField] [Range(1f, 2f)] private float m_upgradeSpeedRelative;
+    [SerializeField] [Range(0.1f, 2f)] private float m_newCooldown;
+    #endregion
+
+    
 
     private int line;
 
@@ -20,6 +35,7 @@ public class WallAttack : BossAttack
     public override void StartAttack()
     {
         IsStarted = true;
+        m_wallball.GetComponent<WallFireball>().SetSpeed(m_ballSpeedFlat);
         StartCoroutine(HandleAttack());
     } 
 
@@ -63,6 +79,7 @@ public class WallAttack : BossAttack
         if (!atLeastOneSpace)
         {
             //ajouter un espace au milieu de la ligne (1111111111111111 -> 1111111001111111)
+            
         }
         line = currentLine;
     }
@@ -83,5 +100,12 @@ public class WallAttack : BossAttack
                 spawn += (Vector3.right * m_voidSpace);
             }
         }
+    }
+
+    [ContextMenu("Upgrade")]
+    public void UpgradeAttack()
+    {
+        m_cooldown = m_newCooldown;
+        m_wallball.GetComponent<WallFireball>().SetSpeed(m_upgradeSpeedRelative * m_ballSpeedFlat);
     }
 }
