@@ -13,6 +13,7 @@ TagManager:
   - Pool
   - ConfinerCamera
   - LookAt
+  - BossHealth
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Player
   - PostProcess
   - Boss
-  - 
+  - ProjectilePlayer
   - 
   - 
   - 

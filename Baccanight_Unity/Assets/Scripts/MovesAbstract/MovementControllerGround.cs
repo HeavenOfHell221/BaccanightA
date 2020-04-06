@@ -11,7 +11,10 @@ public abstract class MovementControllerGround : MovementController
 
     [Header("Movement Controller Ground", order = 1)]
 
-	[SerializeField]
+    [SerializeField]
+    protected float m_jumpForce;
+
+    [SerializeField]
 	private PhysicsMaterial2D m_GroundPhysicMaterial;
 
 	[SerializeField]
@@ -191,11 +194,11 @@ public abstract class MovementControllerGround : MovementController
         return false;
 	}
 
-	override protected void ApplyMovement()
+	public override void ApplyMovement()
 	{
 		if (Mathf.Abs(Move.x) > GameConstants.LimitDicretePosition)
 		{
-            float velocityX = Mathf.Lerp(Rigidbody.velocity.x, Move.x * m_speed, m_smoothSpeed);
+            float velocityX = Mathf.Lerp(Rigidbody.velocity.x, Move.x * Speed, m_smoothSpeed);
             Rigidbody.velocity = new Vector2(velocityX, 
                 Rigidbody.velocity.y < -m_maxFallSpeed ? -m_maxFallSpeed : 
                 Rigidbody.velocity.y > m_maxJumpSpeed ? m_maxJumpSpeed : Rigidbody.velocity.y);

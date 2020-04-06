@@ -47,6 +47,7 @@ public class FireballAttack : BossAttack
         m_cooldownBetweenFireball = m_cooldownBetweenFireball1;
     }
 
+    [ContextMenu("Start Attack")]
     public override void StartAttack()
     {
         base.StartAttack();
@@ -91,11 +92,13 @@ public class FireballAttack : BossAttack
             Random.Range((center.y - extents.y), (center.y + extents.y)),
             0f);
             dist = Vector2.Distance(spawnPosition, m_player.position);
+
         } while (dist < m_distanceToPlayer.Min || dist > m_distanceToPlayer.Max);
 
         ObjectPooler.Instance.SpawnFromPool(m_fireball, spawnPosition);    
     }
 
+    [ContextMenu("Upgrade Attack")]
     public override void UpgradeAttack()
     {
         base.UpgradeAttack();

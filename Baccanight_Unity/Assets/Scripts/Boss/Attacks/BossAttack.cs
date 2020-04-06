@@ -13,33 +13,35 @@ public abstract class BossAttack : MonoBehaviour
     #endregion
 
     #region Inspector
-    public bool IsStarted { get; private set; }
-    public bool IsFinish { get; private set; }
-    public bool IsCanceled { get; private set; }
-    public bool IsUpgraded { get; private set; }
+    public bool IsStarted { get; private set; } = false;
+    public bool IsFinish { get; private set; } = false;
+    public bool IsCanceled { get; private set; } = false;
+    public bool IsUpgraded { get; private set; }= false;
     #endregion
    
     protected abstract IEnumerator HandleAttack();
 
-    [ContextMenu("Start Attack")]
     public virtual void StartAttack()
     {
         IsStarted = true;
+        IsFinish = false;
+        IsCanceled = false;
     }
 
-    [ContextMenu("End Attack")]
     protected virtual void EndAttack()
     {
+        IsStarted = false;
         IsFinish = true;
+        IsCanceled = false;
     }
 
-    [ContextMenu("Cancel Attack")]
-    protected virtual void CancelAttack()
+    public virtual void CancelAttack()
     {
+        IsStarted = false;
+        IsFinish = false;
         IsCanceled = true;
     }
 
-    [ContextMenu("Upgrade Attack")]
     public virtual void UpgradeAttack()
     {
         IsUpgraded = true;

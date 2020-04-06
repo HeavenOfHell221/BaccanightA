@@ -13,7 +13,6 @@ public class EventScriptTrigger : MonoBehaviour
     [SerializeField] private GameObjectEvent OnStayDetect;
     [SerializeField] private GameObjectEvent OnExitDetect;
     [SerializeField] private LayerMask Layers;
-
 #pragma warning restore 0649
 	#endregion
 

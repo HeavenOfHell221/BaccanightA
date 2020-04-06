@@ -10,14 +10,11 @@ public abstract class MovementController : MonoBehaviour
 	#region Inspector
 #pragma warning disable 0649
 
-	[Header("Movement Controller", order = 0)]
+	[Header("Movement Controller basic", order = 0)]
 
 	[Range(0f, 20f)]
 	[SerializeField]
-	protected float m_speed = 10f;
-
-    [SerializeField]
-    protected float m_jumpForce;
+	private float m_speed = 10f;
 
     [Range(.1f, 1f)]
 	[SerializeField]
@@ -37,6 +34,7 @@ public abstract class MovementController : MonoBehaviour
 	#region Getters / Setters
 	public Rigidbody2D Rigidbody { get; protected set; }
 	public Vector2 Move { get => m_move; set => m_move = value; }
+    public float Speed { get => m_speed; set => m_speed = value; }
 	#endregion
 
 	private void Awake()
@@ -50,17 +48,7 @@ public abstract class MovementController : MonoBehaviour
 		Rigidbody.velocity = Vector2.zero;
 	}
 
-	public void DestinationToMove(Vector2 destination)
-	{
-		m_destination = destination;
-		m_move = (destination - new Vector2(Rigidbody.transform.position.x, Rigidbody.transform.position.y));
-		if (m_move.magnitude > 1f)
-		{
-			m_move.Normalize();
-		}
-	}
-
     abstract public void OnMove(Vector2 motion);
 
-	abstract protected void ApplyMovement();
+	abstract public void ApplyMovement();
 }

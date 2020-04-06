@@ -28,6 +28,12 @@ public class MinMaxVector2
     public Vector2 Min;
     public Vector2 Max;
 
+    public MinMaxVector2(Vector2 min, Vector2 max)
+    {
+        Min = min;
+        Max = max;
+    }
+
     public Vector2 GetValueFromRatio(float ratio) => Vector2.Lerp(Min, Max, ratio);
 }
 

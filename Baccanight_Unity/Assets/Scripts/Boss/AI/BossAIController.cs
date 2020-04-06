@@ -6,45 +6,82 @@ public class BossAIController : MonoBehaviour
 {
     #region Inspector attributes
 #pragma warning disable 0649
-    [Header("General")]
-    [SerializeField] private Transform m_transformToFlip;
-    [SerializeField] private MovementController m_movementController;
+    [Header("Components")]
+    [Space(5)]
+    [SerializeField] private BossMovementControllerAir m_movementC;
     [SerializeField] private Rigidbody2D m_rigidbody;
     [SerializeField] private Animator m_animator;
+    [SerializeField] private PatrolPath m_patrolPath;
+    [SerializeField] private HealthBoss m_health;
+
+    [Header("Attributes")]
+    [Space(5)]
     [SerializeField] private float m_distanceStartBattle;
+    [SerializeField] private float m_distanceToNextNode;
 #pragma warning restore 0649
     #endregion
 
     #region BossAttack
 #pragma warning disable 0649
+    [Header("Attacks")]
+    [Space(5)]
     [SerializeField] private BossAttack m_startBattle;
     [SerializeField] private BossAttack[] m_basicAttacks; // Les 4 attaques de base
     [SerializeField] private BossAttack m_advancedAttack; // La 5ème attaque 
     [SerializeField] private BossAttack m_finalAttack; // La 6ème attaques
+    [SerializeField] private float[] m_timesBetweenAttack;
 #pragma warning restore 0649
     #endregion
 
     #region Variables
-    private Transform m_player;
+    private Transform m_player = null;
+    private bool m_isEnraged = false;
+    private BossAttack m_currentAttack = null;
+    private float m_timeBetweenAttack;
+    private int m_timeBetweenAttackIndex = 0;
     #endregion
 
     #region Getters / Setters
-    public BossActionType CurrentState { get; private set; }
+    public BossActionType CurrentState; /*{ get; private set; }*/
     #endregion
 
     private void Start()
     {
         CurrentState = BossActionType.Idle;
         m_player = PlayerManager.Instance.PlayerReference.transform;
+        m_timeBetweenAttack = m_timesBetweenAttack[m_timeBetweenAttackIndex];
     }
 
     private void Update()
     {
-        UpdateIABehaviour();
+        UpdateStates();
     }
 
-    private void UpdateIABehaviour()
+    private void UpdateStates()
     {
+        switch (CurrentState)
+        {
+            case BossActionType.Idle:
+                if (DistanceFromPlayer() < m_distanceStartBattle)
+                {
+                    UpdateIABehaviour(BossActionType.StartBattle);
+                }
+                break;
+            default:
+                break;
+        }
+
+        if (m_currentAttack && m_currentAttack.IsFinish)
+        {
+            m_currentAttack = null;
+            UpdateIABehaviour(BossActionType.Attacking);
+        }
+    }
+
+    private void UpdateIABehaviour(BossActionType newState)
+    {
+        CurrentState = newState;
+
         switch(CurrentState)
         {
             case BossActionType.Idle:
@@ -54,7 +91,7 @@ public class BossAIController : MonoBehaviour
                 HandleMovingState();
                 break;
             case BossActionType.Attacking:
-                HandleAttackingState();
+                StartCoroutine(HandleAttackingState(m_timeBetweenAttack));
                 break;
             case BossActionType.Dying:
                 HandleDyingState();
@@ -71,12 +108,19 @@ public class BossAIController : MonoBehaviour
             case BossActionType.CounterAttack:
                 HandleCounterAttackState();
                 break;
+            default:
+                break;
         }
     }
 
     private void HandleStartBattleState()
     {
-        /* Cri de guerre, puis le combat commence */
+
+        /* 
+         * Cri de guerre  
+        */
+
+        UpdateIABehaviour(BossActionType.Attacking);
     }
 
     private void HandleCounterAttackState()
@@ -86,15 +130,16 @@ public class BossAIController : MonoBehaviour
 
     private void HandleIdleState()
     {
-        if(DistanceFromPlayer() < m_distanceStartBattle)
-        {
-            CurrentState = BossActionType.StartBattle;
-        }
+        
     }
 
     private void HandleMovingState()
     {
-
+        if (m_movementC.DistanceFromDestination(m_movementC.Destination) < m_distanceToNextNode)
+        {
+            m_movementC.NewDestination(m_patrolPath.GetNextPathNode());
+            m_movementC.ApplyMovement();
+        }
     }
 
     private void HandleStuningState()
@@ -102,14 +147,33 @@ public class BossAIController : MonoBehaviour
 
     }
 
-    private void HandleAttackingState()
+    private IEnumerator HandleAttackingState(float m_timeWait)
     {
-
+        yield return new WaitForSeconds(m_timeWait);
+        if(m_currentAttack == null)
+        {
+            m_currentAttack = m_basicAttacks[Random.Range(0, m_basicAttacks.Length)];
+            m_currentAttack.StartAttack();
+        }
     }
 
-    private void HandleEnragingState()
+    [ContextMenu("Enraging State")]
+    public void HandleEnragingState()
     {
+        if(m_currentAttack)
+        {
+            m_currentAttack.CancelAttack();
+        }
 
+        CurrentState = BossActionType.Enraging;
+
+        foreach(var attack in m_basicAttacks)
+        {
+            if(attack)
+            {
+                attack.UpgradeAttack();
+            }
+        }
     }
 
     private void HandleDyingState()
@@ -119,19 +183,35 @@ public class BossAIController : MonoBehaviour
 
     private void Flip()
     {
-        m_transformToFlip.rotation = new Quaternion(
-            m_transformToFlip.rotation.x,
-            m_transformToFlip.rotation.y == 0f ? 180f : 0f,
-            m_transformToFlip.rotation.z,
-            m_transformToFlip.rotation.w);
+        transform.rotation = new Quaternion(
+            transform.rotation.x,
+            transform.rotation.y == 0f ? 180f : 0f,
+            transform.rotation.z,
+            transform.rotation.w);
     }
         
 
     private float DistanceFromPlayer()
     {
-        return Vector2.Distance(transform.position, m_player.position);
+        if (m_player)
+        {
+            return Vector2.Distance(transform.position, m_player.position);
+        }
+
+        return float.MaxValue;
     }
 
+    private void HandleDirectionToPlayer()
+    {
+        if(m_player)
+        {
 
+        }
+    }
 
+    public void UpgradeSpeedAttack()
+    {
+        m_timeBetweenAttackIndex++;
+        m_timeBetweenAttack = m_timesBetweenAttack[m_timeBetweenAttackIndex];
+    }
 }
