@@ -11,5 +11,6 @@ public enum BossActionType
     Stuning,
     Enraging,
     Dying,
+    CounterAttack,
     StartBattle,
 }

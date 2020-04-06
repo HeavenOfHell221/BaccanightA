@@ -155,6 +155,10 @@ MonoBehaviour:
   m_rigidbody: {fileID: 8198711157667756216}
   m_animator: {fileID: 2785219362762407428}
   m_distanceStartBattle: 0
+  m_startBattle: {fileID: 0}
+  m_basicAttacks: []
+  m_advancedAttack: {fileID: 0}
+  m_finalAttack: {fileID: 0}
 --- !u!50 &8198711157667756216
 Rigidbody2D:
   serializedVersion: 4

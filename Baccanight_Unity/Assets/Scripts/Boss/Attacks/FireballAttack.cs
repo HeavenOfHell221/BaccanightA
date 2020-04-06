@@ -41,19 +41,22 @@ public class FireballAttack : BossAttack
     private void Start()
     {
         m_collider.isTrigger = true;
+        m_numberPerSalve = m_numberPerSalve1;
+        m_numberTotalSalve = m_numberTotalSalve1;
+        m_cooldown = m_cooldownBetweenSalve1;
+        m_cooldownBetweenFireball = m_cooldownBetweenFireball1;
     }
 
     public override void StartAttack()
     {
+        base.StartAttack();
         m_player = PlayerManager.Instance.PlayerReference.transform;
         m_numberSalveRemaining = m_numberTotalSalve;
-        IsStarted = true;
-        InProgress = true;
 
         StartCoroutine(HandleAttack());
     }
 
-    public override IEnumerator HandleAttack()
+    protected override IEnumerator HandleAttack()
     {
         for (int i = 0; i < m_numberPerSalve; i++)
         {
@@ -61,9 +64,7 @@ public class FireballAttack : BossAttack
             yield return new WaitForSeconds(m_cooldownBetweenFireball);
         }
 
-        InProgress = false;
         yield return new WaitForSeconds(m_cooldown);
-        InProgress = true;
 
         if (m_numberSalveRemaining > 1)
         {
@@ -95,29 +96,12 @@ public class FireballAttack : BossAttack
         ObjectPooler.Instance.SpawnFromPool(m_fireball, spawnPosition);    
     }
 
-    public override void EndAttack()
+    public override void UpgradeAttack()
     {
-        InProgress = false;
-        IsFinish = true;
-    }
-
-    [ContextMenu("First attack")]
-    public void FirstAttack()
-    {
-        m_numberPerSalve = m_numberPerSalve1;
-        m_numberTotalSalve = m_numberTotalSalve1;
-        m_cooldown = m_cooldownBetweenSalve1;
-        m_cooldownBetweenFireball = m_cooldownBetweenFireball1;
-        StartAttack();
-    }
-
-    [ContextMenu("Second attack")]
-    public void SecondAttack()
-    {
+        base.UpgradeAttack();
         m_numberPerSalve = m_numberPerSalve2;
         m_numberTotalSalve = m_numberTotalSalve2;
         m_cooldownBetweenFireball = m_cooldownBetweenFireball2;
         m_cooldown = m_cooldownBetweenSalve2;
-        StartAttack();
     }
 }

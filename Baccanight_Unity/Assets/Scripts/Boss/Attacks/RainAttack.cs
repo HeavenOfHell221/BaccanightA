@@ -41,24 +41,20 @@ public class RainAttack : BossAttack
     public void Start()
     {
         m_loopToDo = m_loopToBeDone;
-        m_rainball.GetComponent<RainFireball>().SetSpeed(m_ballSpeedFlat);
+        m_rainball.GetComponent<RainFireball>().Speed = m_ballSpeedFlat;
     }
 
-    [ContextMenu("Handle Wall Ball")]
     public override void StartAttack()
     {
-        IsStarted = true;
+        base.StartAttack();
         m_loopDone = m_loopToDo;
         StartCoroutine(HandleAttack());
     } 
 
-    public override IEnumerator HandleAttack()
+    protected override IEnumerator HandleAttack()
     {
-        InProgress = true;
         CreateLine();
-        //Debug.Log(line);
         TransformLine();
-        InProgress = false;
         m_loopDone--;
         yield return new WaitForSeconds(m_cooldown);
         if (m_loopDone > 0)
@@ -70,11 +66,6 @@ public class RainAttack : BossAttack
             EndAttack();
         }
        
-    }
-
-    public override void EndAttack()
-    {
-        IsFinish = true;
     }
 
     private void CreateLine()
@@ -125,11 +116,11 @@ public class RainAttack : BossAttack
         }
     }
 
-    [ContextMenu("Upgrade")]
-    public void UpgradeAttack()
+    public override void UpgradeAttack()
     {
+        base.UpgradeAttack();
         m_cooldown = m_newCooldown;
-        m_rainball.GetComponent<RainFireball>().SetSpeed(m_upgradeSpeedRelative * m_ballSpeedFlat);
+        m_rainball.GetComponent<RainFireball>().Speed = m_upgradeSpeedRelative * m_ballSpeedFlat;
         m_loopToDo = m_newLoopToBeDone;
     }
 }

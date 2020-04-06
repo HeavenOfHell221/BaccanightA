@@ -15,8 +15,7 @@ public abstract class Fireball : MonoBehaviour
 
     #region Getters / Setters
     public Rigidbody2D Rigidbody { get; private set; }
-    public float Speed { get => m_speed; private set => m_speed = value; }
-    public void SetSpeed(float speed) => m_speed = speed;
+    public float Speed { get => m_speed; set => m_speed = value; }
     #endregion
 
     protected abstract void Start();
