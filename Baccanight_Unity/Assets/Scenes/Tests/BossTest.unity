@@ -331,6 +331,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3711754511399344297, guid: 55e902f716038dd4eab0d9ecca53d66e,
+        type: 3}
+      propertyPath: m_ballSpeedFlat
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711754511399344297, guid: 55e902f716038dd4eab0d9ecca53d66e,
+        type: 3}
+      propertyPath: m_cooldownBetweenFireball
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3711754511399344297, guid: 55e902f716038dd4eab0d9ecca53d66e,
+        type: 3}
+      propertyPath: m_numberPerBurst
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7056046087152244989, guid: 55e902f716038dd4eab0d9ecca53d66e,
         type: 3}
       propertyPath: m_Name
@@ -346,6 +361,11 @@ PrefabInstance:
       propertyPath: m_numberPerSalve.Max
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7669349831863623881, guid: 55e902f716038dd4eab0d9ecca53d66e,
+        type: 3}
+      propertyPath: m_collider
+      value: 
+      objectReference: {fileID: 2100407165}
     - target: {fileID: 8304388828785144982, guid: 55e902f716038dd4eab0d9ecca53d66e,
         type: 3}
       propertyPath: m_Size.x
@@ -641,6 +661,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ea7d6a54d8663445b54c40f8ecd65fa, type: 3}
+--- !u!61 &2100407165 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2670940293561479155, guid: 2ea7d6a54d8663445b54c40f8ecd65fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2100407164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2112017886
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -48,6 +48,58 @@ MonoBehaviour:
   m_NextRelativeIndex: 1
   m_pingPongPatrol: 0
   m_actualNodeIndex: 0
+--- !u!1 &1884986263923870208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6031476335405082738}
+  - component: {fileID: 3711754511399344297}
+  m_Layer: 0
+  m_Name: Attack Explosion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6031476335405082738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884986263923870208}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4578759763621057657}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3711754511399344297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884986263923870208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7074fa4862f81a948929e7be697b5867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isStarted: 0
+  m_isUpgraded: 0
+  m_isCanceled: 0
+  m_isFinish: 0
+  m_explosionFireball: {fileID: 2393154031471152202, guid: 87b77fa6834073d4b944231d0b8ef411,
+    type: 3}
+  m_ballSpeedFlat: 4
+  m_numberPerBurst: 30
+  m_cooldownBetweenFireball: 0.3
 --- !u!1 &1902404225942783748
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,6 +665,7 @@ Transform:
   - {fileID: 840758733273303010}
   - {fileID: 9118919282083846672}
   - {fileID: 914277064294946548}
+  - {fileID: 6031476335405082738}
   m_Father: {fileID: 2785219362792485516}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
