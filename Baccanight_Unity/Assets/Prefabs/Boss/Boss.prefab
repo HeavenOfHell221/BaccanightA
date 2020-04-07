@@ -323,7 +323,7 @@ MonoBehaviour:
   - {fileID: 7124010123554813591}
   - {fileID: 6713312675449720397}
   - {fileID: 3711754511399344297}
-  m_counterAttackAttack: {fileID: 3711754511399344297}
+  m_counterAttackAttack: {fileID: 6451607651891197302}
   m_timesBetweenAttack:
   - 4
   - 3
@@ -365,6 +365,127 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 5
   m_smoothSpeed: 0.2
+--- !u!1 &3218674464805018773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8961290320682185432}
+  - component: {fileID: 6451607651891197302}
+  - component: {fileID: 3453815120920117653}
+  - component: {fileID: 7131463579652883245}
+  m_Layer: 11
+  m_Name: Attack Counter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8961290320682185432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3218674464805018773}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4578759763621057657}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6451607651891197302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3218674464805018773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5d4d7a1823084479f630cd3a5bf2ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_collider: {fileID: 3453815120920117653}
+  m_hitCollider: {fileID: 5022067854705185449}
+  m_layerCollision:
+    serializedVersion: 2
+    m_Bits: 256
+  m_layerHit:
+    serializedVersion: 2
+    m_Bits: 512
+  Rigidbody: {fileID: 8198711157667756216}
+  m_speed: 10
+  m_hitDamage: -1
+  m_cooldownBeforeAttack: 1.5
+  m_speedUpgrade: 20
+  m_hitDamageUpgrade: -1
+  m_cooldownBeforeAttackUpgrade: 1
+--- !u!61 &3453815120920117653
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3218674464805018773}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08956337, y: 0.07463837}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.49347, y: 6.1650505}
+  m_EdgeRadius: 0
+--- !u!114 &7131463579652883245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3218674464805018773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e720c47edf3bb684599a0ba90f5bfdef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnterDetect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6451607651891197302}
+        m_MethodName: OnEnterPlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnStayDetect:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExitDetect:
+    m_PersistentCalls:
+      m_Calls: []
+  Layers:
+    serializedVersion: 2
+    m_Bits: 768
 --- !u!1 &3699801160254558526
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +771,7 @@ Transform:
   - {fileID: 9118919282083846672}
   - {fileID: 914277064294946548}
   - {fileID: 6031476335405082738}
+  - {fileID: 8961290320682185432}
   m_Father: {fileID: 2785219362792485516}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
