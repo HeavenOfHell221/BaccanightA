@@ -8,10 +8,14 @@ public abstract class BossAttack : MonoBehaviour
 #pragma warning disable 0649
     [Header("States")]
     [Space(5)]
-    [SerializeField] private bool m_isStarted = false;
+    /*[SerializeField] private bool m_isStarted = false;
     [SerializeField] private bool m_isUpgraded = false;
     [SerializeField] private bool m_isCanceled = false;
-    [SerializeField] private bool m_isFinish = false;
+    [SerializeField] private bool m_isFinish = false;*/
+    private bool m_isStarted = false;
+    private bool m_isUpgraded = false;
+    private bool m_isCanceled = false;
+    private bool m_isFinish = false;
 #pragma warning restore 0649
     #endregion
 

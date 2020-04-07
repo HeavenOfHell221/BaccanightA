@@ -91,10 +91,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7074fa4862f81a948929e7be697b5867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isStarted: 0
-  m_isUpgraded: 0
-  m_isCanceled: 0
-  m_isFinish: 0
   m_explosionFireball: {fileID: 2393154031471152202, guid: 87b77fa6834073d4b944231d0b8ef411,
     type: 3}
   m_ballSpeedFlat: 4
@@ -144,10 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f778c3fbf40b1ae499c729dd2e2e12fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isStarted: 0
-  m_isUpgraded: 0
-  m_isCanceled: 0
-  m_isFinish: 0
   m_fireLaserBoss: {fileID: 2560410359399655079}
   m_layerMask:
     serializedVersion: 2
@@ -330,8 +322,8 @@ MonoBehaviour:
   - {fileID: 1648821277539219780}
   - {fileID: 7124010123554813591}
   - {fileID: 6713312675449720397}
-  - {fileID: 6713312675449720397}
-  m_counterAttackAttack: {fileID: 6713312675449720397}
+  - {fileID: 3711754511399344297}
+  m_counterAttackAttack: {fileID: 3711754511399344297}
   m_timesBetweenAttack:
   - 4
   - 3
@@ -417,10 +409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f3606fb3a381147966e18529b99d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isStarted: 0
-  m_isUpgraded: 0
-  m_isCanceled: 0
-  m_isFinish: 0
   m_counterAttackEvent:
     m_PersistentCalls:
       m_Calls:
@@ -500,10 +488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345904b2ff1965e46929bb18749ce53e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isStarted: 0
-  m_isUpgraded: 0
-  m_isCanceled: 0
-  m_isFinish: 0
   m_collider: {fileID: 0}
   m_fireball: {fileID: 2441063828811152664, guid: 019f4c71f287c6a48aae31601a8c766f,
     type: 3}
@@ -742,10 +726,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2c1227cd8c29141bc8e7aedb6f8ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isStarted: 0
-  m_isUpgraded: 0
-  m_isCanceled: 0
-  m_isFinish: 0
   m_rainball: {fileID: 6145874302824446642, guid: bed636783384078428c7e9e5818b6c43,
     type: 3}
   maxNumberOfBall: 20
