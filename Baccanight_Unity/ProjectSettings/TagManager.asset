@@ -15,6 +15,7 @@ TagManager:
   - LookAt
   - BossHealth
   - BossShield
+  - Statue
   layers:
   - Default
   - TransparentFX
