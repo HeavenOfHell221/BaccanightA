@@ -18,6 +18,7 @@ public class FireballAttack : BossAttack
     [SerializeField] [Range(0.1f, 3f)] private float m_cooldownBetweenBurst = 1.5f;
     [SerializeField] [Range(0.05f, 0.5f)] private float m_cooldownBetweenFireball = 0.4f;
     [SerializeField] [Range(2, 10)] private int m_numberTotalBurst = 4;
+    [SerializeField] [Range(5f, 20f)] private float m_speedFireball;
 
     [Header("Phase 2")]
     [Space(5)]
@@ -25,6 +26,7 @@ public class FireballAttack : BossAttack
     [SerializeField] [Range(0.1f, 3f)] private float m_cooldownBetweenBurstUpgrade = 1;
     [SerializeField] [Range(0.05f, 0.5f)] private float m_cooldownBetweenFireballUpgrade = 0.3f;
     [SerializeField] [Range(2, 10)] private int m_numberTotalBurstUpgrade = 5;
+    [SerializeField] [Range(5f, 20f)] private float m_speedFireballUpgrade;
 
 #pragma warning restore 0649
     #endregion
@@ -85,7 +87,8 @@ public class FireballAttack : BossAttack
 
         } while (dist < m_distanceToPlayer.Min || dist > m_distanceToPlayer.Max);
 
-        ObjectPooler.Instance.SpawnFromPool(m_fireball, spawnPosition);    
+        GameObject fireball = ObjectPooler.Instance.SpawnFromPool(m_fireball, spawnPosition);
+        fireball.GetComponent<TargetFireball>().Speed = m_speedFireball;
     }
 
     [ContextMenu("Upgrade Attack")]
@@ -96,6 +99,7 @@ public class FireballAttack : BossAttack
         m_numberTotalBurst = m_numberTotalBurstUpgrade;
         m_cooldownBetweenFireball = m_cooldownBetweenFireballUpgrade;
         m_cooldownBetweenBurst = m_cooldownBetweenBurstUpgrade;
+        m_speedFireball = m_speedFireballUpgrade;
     }
 
     [ContextMenu("Cancel Attack")]

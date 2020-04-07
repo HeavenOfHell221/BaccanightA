@@ -9,7 +9,8 @@ public abstract class Fireball : MonoBehaviour
     [Header("Generics Attributes", order = 0)]
     [Space(5)]
     [SerializeField] private float m_speed;
-    [SerializeField] protected float m_timeBeforeMove;
+    [SerializeField] [Range(0f, 0.5f)] protected float m_timeBeforeMove = 0.1f;
+    [SerializeField] [Range(0, -2)] protected int m_damage = -1;
 #pragma warning restore 0649
     #endregion
 
@@ -34,7 +35,7 @@ public abstract class Fireball : MonoBehaviour
 
     public virtual void OnEnterPlayer(GameObject player)
     {
-        player.GetComponent<Health>().ModifyHealth(-1, gameObject);
+        player.GetComponent<Health>().ModifyHealth(m_damage, gameObject);
         CancelInvoke();
         DesactiveObject();
     }

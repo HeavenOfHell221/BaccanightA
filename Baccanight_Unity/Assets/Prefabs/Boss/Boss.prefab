@@ -75,7 +75,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2560410359399655079}
   m_Father: {fileID: 4578759763621057657}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -95,8 +96,24 @@ MonoBehaviour:
   m_isUpgraded: 0
   m_isCanceled: 0
   m_isFinish: 0
+  m_fireLaserBoss: {fileID: 2560410359399655079}
+  m_layerMask:
+    serializedVersion: 2
+    m_Bits: 512
   m_chargingTime: 0.5
+  m_AttackDuration: 1
+  m_distance: 20
+  m_damage: -1
+  m_laserNumber:
+    Min: 1
+    Max: 2
   m_chargingTimeUpgrade: 0.3
+  m_AttackDurationUpgrade: 1
+  m_distanceUpgrade: 25
+  m_damageUpgrade: -1
+  m_laserNumberUpgrade:
+    Min: 2
+    Max: 3
 --- !u!1 &2785219362762407434
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +270,7 @@ MonoBehaviour:
   m_animator: {fileID: 2785219362762407428}
   m_patrolPath: {fileID: 7342933017519153731}
   m_health: {fileID: 9128026524433129773}
-  m_distanceStartBattle: 25
+  m_distanceStartBattle: 22
   m_distanceToNextNode: 0.2
   m_startBattle: {fileID: 0}
   m_basicAttacks:
@@ -261,12 +278,14 @@ MonoBehaviour:
   - {fileID: 1648821277539219780}
   - {fileID: 7124010123554813591}
   - {fileID: 6713312675449720397}
-  m_counterAttackAttack: {fileID: 0}
+  - {fileID: 6713312675449720397}
+  m_counterAttackAttack: {fileID: 6713312675449720397}
   m_timesBetweenAttack:
-  - 5
-  - 3.5
+  - 4
+  - 3
   - 2
   m_currentAttack: {fileID: 0}
+  m_currentState: 0
 --- !u!50 &8198711157667756216
 Rigidbody2D:
   serializedVersion: 4
@@ -437,16 +456,18 @@ MonoBehaviour:
   m_fireball: {fileID: 2441063828811152664, guid: 019f4c71f287c6a48aae31601a8c766f,
     type: 3}
   m_distanceToPlayer:
-    Min: 4
-    Max: 10
-  m_numberPerBurst: 4
+    Min: 5
+    Max: 12
+  m_numberPerBurst: 3
   m_cooldownBetweenBurst: 1.5
   m_cooldownBetweenFireball: 0.4
-  m_numberTotalBurst: 4
-  m_numberPerBurstUpgrade: 6
+  m_numberTotalBurst: 3
+  m_speedFireball: 13
+  m_numberPerBurstUpgrade: 5
   m_cooldownBetweenBurstUpgrade: 1
   m_cooldownBetweenFireballUpgrade: 0.3
-  m_numberTotalBurstUpgrade: 5
+  m_numberTotalBurstUpgrade: 4
+  m_speedFireballUpgrade: 15
 --- !u!1 &4789808942558009787
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,8 +512,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b481e35a6a3732544ba98a6452c2f27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHealth: 1000
-  m_currentHealth: 1000
+  m_maxHealth: 1500
+  m_currentHealth: 1500
+  m_invincibleDuration: 3
   m_FirstSwitchPhase:
     m_PersistentCalls:
       m_Calls:
@@ -513,11 +535,11 @@ MonoBehaviour:
   m_DeathPhase:
     m_PersistentCalls:
       m_Calls: []
-  m_UpgradeAttacks:
+  m_UpgradeSpeedBetweenTwoAttacks:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1387102921752016282}
-        m_MethodName: UpgradeSpeedAttack
+        m_MethodName: UpgradeSpeedBetweenTwoAttacks
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -593,6 +615,36 @@ Transform:
   - {fileID: 914277064294946548}
   m_Father: {fileID: 2785219362792485516}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6845643201061629007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2560410359399655079}
+  m_Layer: 11
+  m_Name: Laser point
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2560410359399655079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6845643201061629007}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: -0.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 914277064294946548}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7056046087152244989
 GameObject:

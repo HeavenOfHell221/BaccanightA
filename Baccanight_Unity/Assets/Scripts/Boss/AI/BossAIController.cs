@@ -7,7 +7,7 @@ public class BossAIController : MonoBehaviour
     #region Inspector attributes
 #pragma warning disable 0649
     [Header("Components")]
-    [Space(5)]
+    [Space(10)]
     [SerializeField] private BossMovementControllerAir m_movementC;
     [SerializeField] private Rigidbody2D m_rigidbody;
     [SerializeField] private Animator m_animator;
@@ -15,7 +15,7 @@ public class BossAIController : MonoBehaviour
     [SerializeField] private HealthBoss m_health;
 
     [Header("Attributes")]
-    [Space(5)]
+    [Space(10)]
     [SerializeField] [Range(15, 30)] private float m_distanceStartBattle;
     [SerializeField] [Range(0.01f, 1f)] private float m_distanceToNextNode;
 #pragma warning restore 0649
@@ -24,26 +24,32 @@ public class BossAIController : MonoBehaviour
     #region BossAttack
 #pragma warning disable 0649
     [Header("Attacks")]
-    [Space(5)]
+    [Space(10)]
     [SerializeField] private BossAttack m_startBattle;
+    [Space(5)]
     [SerializeField] private BossAttack[] m_basicAttacks; // Les 6 attaques de base (seulement 4 dispo au début du fight)
+    [Space(5)]
     [SerializeField] private BossAttack m_counterAttackAttack; // La contre-attaque pendant l'attaque "Shield"
+    [Space(5)]
     [SerializeField] [Range(1, 6)] private float[] m_timesBetweenAttack;
+
+    [Header("Variables")]
+    [Space(10)]
+    [SerializeField] private BossAttack m_currentAttack = null;
+    [SerializeField] private BossActionType m_currentState = BossActionType.Idle;
 #pragma warning restore 0649
     #endregion
 
     #region Variables
-    [Header("Variables")]
-    [Space(5)]
-    [SerializeField] private BossAttack m_currentAttack = null;
     private Transform m_player = null; // Transform du joueur
     private float m_timeBetweenAttack; // cooldown entre deux attaques
     private int m_timeBetweenAttackIndex = 0; // Index pour le tableau des cooldowns entre deux attaques
     private int m_basicAttackPossible = 4;
+    private bool m_battleHasStart = false;
     #endregion
 
     #region Getters / Setters
-    public BossActionType CurrentState { get; private set; } = BossActionType.Idle; 
+    public BossActionType CurrentState { get => m_currentState; private set => m_currentState = value; }  
     #endregion
 
     private void Start()
@@ -60,15 +66,22 @@ public class BossAIController : MonoBehaviour
 
     private void UpdateStates()
     {
+        float distanceFromPlayer = DistanceFromPlayer();
+
         switch (CurrentState)
         {
             case BossActionType.Idle:
-                if (DistanceFromPlayer() < m_distanceStartBattle)
+                if (distanceFromPlayer < m_distanceStartBattle)
                 {
                     UpdateIABehaviour(BossActionType.StartBattle);
                 }
                 break;
             default:
+                if (distanceFromPlayer > m_distanceStartBattle)
+                {
+                    m_health.IsInvincible = true;
+                    UpdateIABehaviour(BossActionType.Idle);
+                }
                 break;
         }
 
@@ -130,33 +143,38 @@ public class BossAIController : MonoBehaviour
 
     private void HandleStartBattleState()
     {
+        if(!m_battleHasStart)
+        {
+            m_battleHasStart = true;
 
-        /* 
-         * 
-         * Animation : Cri de guerre  
-         * 
-         */
+           /* 
+            * Animation : Cri de guerre  
+            */
+        }
 
-        UpdateIABehaviour(BossActionType.Attacking);
+        m_health.IsInvincible = false;
+
+        StartCoroutine(NextAttack(m_timeBetweenAttack));
     }
 
     private void HandleCounterAttackState()
     {
-        /*
-        
         if(m_currentAttack)
         {
             m_currentAttack.CancelAttack();
         }
+
         m_currentAttack = m_counterAttackAttack;
         m_counterAttackAttack.StartAttack();
-        
-        */
     }
 
     private void HandleIdleState()
     {
-        
+        if(m_currentAttack)
+        {
+            m_currentAttack.CancelAttack();
+            m_currentAttack = null;
+        }
     }
 
     private void HandleMovingState()
@@ -184,26 +202,38 @@ public class BossAIController : MonoBehaviour
 
     private void HandleEnragingState()
     {
+        // Cancel de l'attaque en cours
         if(m_currentAttack)
         {
             m_currentAttack.CancelAttack();
+            m_currentAttack = null;
         }
 
-        /*
-         *
-         * Enragement
-         * 
-         */
-
-        for(int i = 0; i < m_basicAttackPossible; i++)
+        // Amélioration des attaques
+        for (int i = 0; i < m_basicAttackPossible; i++)
         {
-            if(m_basicAttacks[i] && !m_basicAttacks[i].IsUpgraded)
+            if (m_basicAttacks[i] && !m_basicAttacks[i].IsUpgraded)
             {
                 m_basicAttacks[i].UpgradeAttack();
             }
         }
 
+        // Nouvelle attaque disponible
         m_basicAttackPossible++;
+
+        UpgradeSpeedBetweenTwoAttacks();
+
+        StartCoroutine(_HandleEnragingState());
+    }
+
+    private IEnumerator _HandleEnragingState()
+    {
+        while(m_health.IsInvincible)
+        {
+            yield return null;
+        }
+
+        StartCoroutine(NextAttack(m_timeBetweenAttack));
     }
 
     private void HandleDyingState()
@@ -240,7 +270,7 @@ public class BossAIController : MonoBehaviour
         }
     }
 
-    public void UpgradeSpeedAttack()
+    public void UpgradeSpeedBetweenTwoAttacks()
     {
         if (m_timeBetweenAttackIndex < m_basicAttacks.Length)
         {

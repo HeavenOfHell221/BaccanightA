@@ -15,13 +15,7 @@ public class ArrowDetection : Arrow
         }
         else if (target.tag == "BossShield")
         {
-            ShieldAttack shield = target.GetComponent<ShieldAttack>();
-            
-            if(shield)
-            {
-                shield.CounterAttackEvent.Invoke(BossActionType.CounterAttack);
-            }
-            
+            target.GetComponent<ShieldAttack>().CounterAttackEvent.Invoke(BossActionType.CounterAttack);
         }
     }
 }

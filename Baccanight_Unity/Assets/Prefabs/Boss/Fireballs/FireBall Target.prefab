@@ -44,9 +44,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 10
   m_timeBeforeMove: 0.1
+  m_damage: -1
   m_backward: {fileID: 3189087833982937265}
   m_DecreaseVelocityPercentage: 0.96
-  m_forceBack: 10
+  m_forceBack: 12
   m_timeBack: 0.5
 --- !u!1001 &2648394425365246279
 PrefabInstance:

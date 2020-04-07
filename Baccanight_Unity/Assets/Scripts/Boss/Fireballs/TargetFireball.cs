@@ -9,9 +9,9 @@ public class TargetFireball : Fireball
     [Header("Move Back", order = 1)]
     [Space(5)]
     [SerializeField] private Transform m_backward;
-    [SerializeField] private float m_DecreaseVelocityPercentage = 0.97f;
-    [SerializeField] private float m_forceBack;
-    [SerializeField] private float m_timeBack;
+    [SerializeField] [Range(0.9f, 0.97f)] private float m_DecreaseVelocityPercentage = 0.96f;
+    [SerializeField] [Range(5f, 15f)] private float m_forceBack = 10f;
+    [SerializeField] [Range(0.4f, 0.8f)] private float m_timeBack = 0.5f;
 #pragma warning restore 0649
     #endregion
 
