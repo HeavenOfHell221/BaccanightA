@@ -44,6 +44,7 @@ public class RainAttack : BossAttack
         m_rainball.GetComponent<RainFireball>().Speed = m_ballSpeedFlat;
     }
 
+    [ContextMenu("Start Attack")]
     public override void StartAttack()
     {
         base.StartAttack();
@@ -56,16 +57,16 @@ public class RainAttack : BossAttack
         CreateLine();
         TransformLine();
         m_loopDone--;
+
         yield return new WaitForSeconds(m_cooldown);
-        if (m_loopDone > 0)
+        if (m_loopDone > 0 && !IsCanceled)
         {
             StartCoroutine(HandleAttack());
         }
         else
-        { 
+        {
             EndAttack();
         }
-       
     }
 
     private void CreateLine()
@@ -103,7 +104,6 @@ public class RainAttack : BossAttack
             if ((m_line & 1) == 1)
             {
                 m_line >>= 1;
-                //Instantiate(m_rainball, spawn, new Quaternion());
                 GameObject fireball = ObjectPooler.Instance.SpawnFromPool(m_rainball, spawn);
                 fireball.transform.rotation = Quaternion.AngleAxis(90f, Vector3.forward);
                 spawn += Vector3.right;
@@ -116,11 +116,19 @@ public class RainAttack : BossAttack
         }
     }
 
+    [ContextMenu("Upgrade Attack")]
     public override void UpgradeAttack()
     {
         base.UpgradeAttack();
         m_cooldown = m_newCooldown;
         m_rainball.GetComponent<RainFireball>().Speed = m_upgradeSpeedRelative * m_ballSpeedFlat;
         m_loopToDo = m_newLoopToBeDone;
+    }
+
+    [ContextMenu("Cancel Attack")]
+    public override void CancelAttack()
+    {
+        StopAllCoroutines();
+        base.CancelAttack(); 
     }
 }

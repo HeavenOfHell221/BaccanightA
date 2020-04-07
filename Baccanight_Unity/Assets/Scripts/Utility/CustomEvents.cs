@@ -7,6 +7,9 @@ using UnityEngine.Events;
 [System.Serializable]
 public class Vector2Event : UnityEvent<Vector2> { }
 
+[System.Serializable]
+public class BossStateEvent : UnityEvent<BossActionType> { }
+
 /// <summary>
 /// A boolean unity event.
 /// </summary>

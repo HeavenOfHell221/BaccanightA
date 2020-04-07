@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arrow : MonoBehaviour
+public abstract class Arrow : MonoBehaviour
 {
     #region Inspector
 #pragma warning disable 0649
+    [Header("Arrow")]
+    [Space(5)]
+    [SerializeField] protected Rigidbody2D m_rigidbody;
     [SerializeField] private float m_arrowSpeedX;
-    [SerializeField] private Rigidbody2D m_rigidbody;
     [SerializeField] private PlayerMotion m_playerMotion;
     [SerializeField] private float m_angleMaxY;
-    [SerializeField] [Range(0f, -10f)] private float m_damage;
+    [SerializeField] [Range(0f, -10f)] protected float m_damage;
 
 #pragma warning restore 0649
     #endregion
@@ -51,18 +53,7 @@ public class Arrow : MonoBehaviour
         StartCoroutine(Disable(10f));
     }
 
-    public void OnEnter(GameObject target)
-    {
-        m_rigidbody.velocity = Vector2.zero;
-        StartCoroutine(Disable(1f));
-
-        if(target.tag == "BossHealth")
-        {
-            target.GetComponent<HealthBoss>().ModifyHealth(m_damage);
-        }
-    }
-
-    private IEnumerator Disable(float time)
+    protected IEnumerator Disable(float time)
     {
         yield return new WaitForSeconds(time);
         m_rigidbody.velocity = Vector2.zero;

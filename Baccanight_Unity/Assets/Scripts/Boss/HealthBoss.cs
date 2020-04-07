@@ -5,14 +5,27 @@ using UnityEngine.Events;
 
 public class HealthBoss : MonoBehaviour
 {
-    [SerializeField] private float m_maxHealth = 800f;
-    [SerializeField] private UnityEvent m_FirstSwitchPhase;
+    #region Inspector
+#pragma warning disable 0649
+    [Header("Health")]
+    [Space(5)]
+    [SerializeField] [Range(0, 2000)] private float m_maxHealth = 1000f;
+    [SerializeField] [Range(0, 2000)] private float m_currentHealth = 1000f;
+
+    [Header("Events")]
+    [Space(5)]
+    [SerializeField] private BossStateEvent m_FirstSwitchPhase;
     [SerializeField] private UnityEvent m_SecondSwitchPhase;
     [SerializeField] private UnityEvent m_DeathPhase;
+    [SerializeField] private UnityEvent m_UpgradeAttacks;
+#pragma warning restore 0649
+    #endregion
 
-    public float CurrentHealth {get; private set; }
+    public float CurrentHealth {get => m_currentHealth; private set => m_currentHealth = value; }
     public bool IsDead { get; private set; } = false;
     public float Ratio => CurrentHealth / m_maxHealth;
+
+    private bool m_isEnraging = false;
 
     private void Start()
     {
@@ -30,20 +43,21 @@ public class HealthBoss : MonoBehaviour
 
         CurrentHealth = Mathf.Clamp(CurrentHealth += deltaHealth, 0f, m_maxHealth);
 
-        if (lastRatio >= 0.5f && Ratio < 0.5f)
+        if (lastRatio >= 0.5f && Ratio < 0.5f && !m_isEnraging)
         {
-            m_FirstSwitchPhase.Invoke();
+            m_FirstSwitchPhase.Invoke(BossActionType.Enraging);
+            m_UpgradeAttacks.Invoke();
+            m_isEnraging = true;
         }
         else if (lastRatio >= 0.1f && Ratio < 0.1f)
         {
             m_SecondSwitchPhase.Invoke();
+            m_UpgradeAttacks.Invoke();
         }
-        else if(Ratio <= 0f)
+        else if (Ratio <= 0f)
         {
             m_DeathPhase.Invoke();
             IsDead = true;
         }
     }
-
-
 }

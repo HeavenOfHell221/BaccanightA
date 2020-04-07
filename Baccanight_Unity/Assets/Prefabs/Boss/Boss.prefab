@@ -1,77 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1292235486882824407
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6169496331597190736}
-  - component: {fileID: 6893298272063121841}
-  - component: {fileID: 4330517735964072955}
-  m_Layer: 11
-  m_Name: Detection Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6169496331597190736
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292235486882824407}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2785219362792485516}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &6893298272063121841
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292235486882824407}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.1405477, y: -0.28109455}
-  m_Size: {x: 4.2791653, y: 5.184915}
-  m_Direction: 0
---- !u!114 &4330517735964072955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292235486882824407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e720c47edf3bb684599a0ba90f5bfdef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnEnterDetect:
-    m_PersistentCalls:
-      m_Calls: []
-  OnStayDetect:
-    m_PersistentCalls:
-      m_Calls: []
-  OnExitDetect:
-    m_PersistentCalls:
-      m_Calls: []
-  Layers:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!1 &1696298150717134063
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2785219362792485516}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7342933017519153731
 MonoBehaviour:
@@ -120,6 +48,55 @@ MonoBehaviour:
   m_NextRelativeIndex: 1
   m_pingPongPatrol: 0
   m_actualNodeIndex: 0
+--- !u!1 &1902404225942783748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 914277064294946548}
+  - component: {fileID: 6713312675449720397}
+  m_Layer: 11
+  m_Name: Attack Laser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &914277064294946548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902404225942783748}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4578759763621057657}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6713312675449720397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902404225942783748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f778c3fbf40b1ae499c729dd2e2e12fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isStarted: 0
+  m_isUpgraded: 0
+  m_isCanceled: 0
+  m_isFinish: 0
+  m_chargingTime: 0.5
+  m_chargingTimeUpgrade: 0.3
 --- !u!1 &2785219362762407434
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,10 +230,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2785219362762407435}
-  - {fileID: 4578759763621057657}
   - {fileID: 378064343751228736}
-  - {fileID: 6169496331597190736}
   - {fileID: 7831792060756295898}
+  - {fileID: 4578759763621057657}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -277,19 +253,20 @@ MonoBehaviour:
   m_animator: {fileID: 2785219362762407428}
   m_patrolPath: {fileID: 7342933017519153731}
   m_health: {fileID: 9128026524433129773}
-  m_distanceStartBattle: 20
+  m_distanceStartBattle: 25
   m_distanceToNextNode: 0.2
   m_startBattle: {fileID: 0}
   m_basicAttacks:
   - {fileID: 7669349831863623881}
   - {fileID: 1648821277539219780}
-  m_advancedAttack: {fileID: 0}
-  m_finalAttack: {fileID: 0}
+  - {fileID: 7124010123554813591}
+  - {fileID: 6713312675449720397}
+  m_counterAttackAttack: {fileID: 0}
   m_timesBetweenAttack:
   - 5
   - 3.5
   - 2
-  CurrentState: 0
+  m_currentAttack: {fileID: 0}
 --- !u!50 &8198711157667756216
 Rigidbody2D:
   serializedVersion: 4
@@ -325,6 +302,90 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 5
   m_smoothSpeed: 0.2
+--- !u!1 &3699801160254558526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9118919282083846672}
+  - component: {fileID: 7124010123554813591}
+  - component: {fileID: 4465020418736641229}
+  m_Layer: 11
+  m_Name: Attack Shield
+  m_TagString: BossShield
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9118919282083846672
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3699801160254558526}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4578759763621057657}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7124010123554813591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3699801160254558526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25f3606fb3a381147966e18529b99d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isStarted: 0
+  m_isUpgraded: 0
+  m_isCanceled: 0
+  m_isFinish: 0
+  m_counterAttackEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1387102921752016282}
+        m_MethodName: UpdateIABehaviour
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_collider: {fileID: 4465020418736641229}
+  m_health: {fileID: 9128026524433129773}
+  m_durationAttack: 5
+  m_healAmount: 10
+  m_durationAttackUpgrade: 5
+  m_healAmountUpgrade: 20
+--- !u!70 &4465020418736641229
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3699801160254558526}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 8, y: 10}
+  m_Direction: 0
 --- !u!1 &4646928656004282013
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,20 +429,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345904b2ff1965e46929bb18749ce53e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_isStarted: 0
+  m_isUpgraded: 0
+  m_isCanceled: 0
+  m_isFinish: 0
   m_collider: {fileID: 0}
   m_fireball: {fileID: 2441063828811152664, guid: 019f4c71f287c6a48aae31601a8c766f,
     type: 3}
   m_distanceToPlayer:
     Min: 4
     Max: 10
-  m_numberPerSalve1: 5
-  m_cooldownBetweenSalve1: 1.5
-  m_cooldownBetweenFireball1: 0.4
-  m_numberTotalSalve1: 4
-  m_numberPerSalve2: 8
-  m_cooldownBetweenSalve2: 0.75
-  m_cooldownBetweenFireball2: 0.3
-  m_numberTotalSalve2: 5
+  m_numberPerBurst: 4
+  m_cooldownBetweenBurst: 1.5
+  m_cooldownBetweenFireball: 0.4
+  m_numberTotalBurst: 4
+  m_numberPerBurstUpgrade: 6
+  m_cooldownBetweenBurstUpgrade: 1
+  m_cooldownBetweenFireballUpgrade: 0.3
+  m_numberTotalBurstUpgrade: 5
 --- !u!1 &4789808942558009787
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +457,7 @@ GameObject:
   m_Component:
   - component: {fileID: 378064343751228736}
   - component: {fileID: 9128026524433129773}
-  - component: {fileID: 8778541363010785071}
+  - component: {fileID: 5022067854705185449}
   m_Layer: 11
   m_Name: Health and HitBox
   m_TagString: BossHealth
@@ -412,7 +477,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2785219362792485516}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9128026524433129773
 MonoBehaviour:
@@ -427,12 +492,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxHealth: 1000
+  m_currentHealth: 1000
   m_FirstSwitchPhase:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1387102921752016282}
-        m_MethodName: HandleEnragingState
-        m_Mode: 1
+        m_MethodName: UpdateIABehaviour
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -440,19 +506,14 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1387102921752016282}
-        m_MethodName: UpgradeSpeedAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   m_SecondSwitchPhase:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeathPhase:
+    m_PersistentCalls:
+      m_Calls: []
+  m_UpgradeAttacks:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1387102921752016282}
@@ -466,11 +527,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_DeathPhase:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!70 &8778541363010785071
-CapsuleCollider2D:
+--- !u!60 &5022067854705185449
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -482,9 +540,26 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1405477, y: -0.28109455}
-  m_Size: {x: 4.2791653, y: 5.184915}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.0869246, y: 2.287003}
+      - {x: -1.6478021, y: 2.066847}
+      - {x: -2.640983, y: -1.5836012}
+      - {x: -2.3088245, y: -2.2957807}
+      - {x: -0.58362854, y: -2.8142066}
+      - {x: 0.8506628, y: -2.81277}
+      - {x: 2.3683515, y: -2.076973}
+      - {x: 2.3611817, y: -0.96312654}
 --- !u!1 &4916922483592584000
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,8 +589,10 @@ Transform:
   m_Children:
   - {fileID: 6656666617072696873}
   - {fileID: 840758733273303010}
+  - {fileID: 9118919282083846672}
+  - {fileID: 914277064294946548}
   m_Father: {fileID: 2785219362792485516}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7056046087152244989
 GameObject:
@@ -560,6 +637,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2c1227cd8c29141bc8e7aedb6f8ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_isStarted: 0
+  m_isUpgraded: 0
+  m_isCanceled: 0
+  m_isFinish: 0
   m_rainball: {fileID: 6145874302824446642, guid: bed636783384078428c7e9e5818b6c43,
     type: 3}
   maxNumberOfBall: 20

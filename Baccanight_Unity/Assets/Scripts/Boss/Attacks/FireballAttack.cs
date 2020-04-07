@@ -14,37 +14,27 @@ public class FireballAttack : BossAttack
 
     [Header("Phase 1")]
     [Space(5)]
-    [SerializeField] [Range(1, 10)] private int m_numberPerSalve1;
-    [SerializeField] [Range(0.1f, 3f)] private float m_cooldownBetweenSalve1;
-    [SerializeField] [Range(0.05f, 0.5f)] private float m_cooldownBetweenFireball1;
-    [SerializeField] [Range(2, 10)] private int m_numberTotalSalve1;
+    [SerializeField] [Range(1, 10)] private int m_numberPerBurst = 4;
+    [SerializeField] [Range(0.1f, 3f)] private float m_cooldownBetweenBurst = 1.5f;
+    [SerializeField] [Range(0.05f, 0.5f)] private float m_cooldownBetweenFireball = 0.4f;
+    [SerializeField] [Range(2, 10)] private int m_numberTotalBurst = 4;
 
     [Header("Phase 2")]
     [Space(5)]
-    [SerializeField] [Range(1, 10)] private int m_numberPerSalve2;
-    [SerializeField] [Range(0.1f, 3f)] private float m_cooldownBetweenSalve2;
-    [SerializeField] [Range(0.05f, 0.5f)] private float m_cooldownBetweenFireball2;
-    [SerializeField] [Range(2, 10)] private int m_numberTotalSalve2;
+    [SerializeField] [Range(1, 10)] private int m_numberPerBurstUpgrade = 6;
+    [SerializeField] [Range(0.1f, 3f)] private float m_cooldownBetweenBurstUpgrade = 1;
+    [SerializeField] [Range(0.05f, 0.5f)] private float m_cooldownBetweenFireballUpgrade = 0.3f;
+    [SerializeField] [Range(2, 10)] private int m_numberTotalBurstUpgrade = 5;
 
 #pragma warning restore 0649
     #endregion
 
     private Transform m_player;
-    private int m_numberSalveRemaining;
-    
-    private int m_numberPerSalve;
-    private float m_cooldown;
-    private int m_numberTotalSalve;
-    private float m_cooldownBetweenFireball;
-
+    private int m_numberBurstRemaining;
 
     private void Start()
     {
         m_collider.isTrigger = true;
-        m_numberPerSalve = m_numberPerSalve1;
-        m_numberTotalSalve = m_numberTotalSalve1;
-        m_cooldown = m_cooldownBetweenSalve1;
-        m_cooldownBetweenFireball = m_cooldownBetweenFireball1;
     }
 
     [ContextMenu("Start Attack")]
@@ -52,24 +42,24 @@ public class FireballAttack : BossAttack
     {
         base.StartAttack();
         m_player = PlayerManager.Instance.PlayerReference.transform;
-        m_numberSalveRemaining = m_numberTotalSalve;
+        m_numberBurstRemaining = m_numberTotalBurst;
 
         StartCoroutine(HandleAttack());
     }
 
     protected override IEnumerator HandleAttack()
     {
-        for (int i = 0; i < m_numberPerSalve; i++)
+        for (int i = 0; i < m_numberPerBurst; i++)
         {
             StartCoroutine(SpawnFireball());
             yield return new WaitForSeconds(m_cooldownBetweenFireball);
         }
 
-        yield return new WaitForSeconds(m_cooldown);
+        yield return new WaitForSeconds(!IsCanceled ? m_cooldownBetweenBurst : 0f);
 
-        if (m_numberSalveRemaining > 1)
+        if (m_numberBurstRemaining > 1)
         {
-            m_numberSalveRemaining--;
+            m_numberBurstRemaining--;
             StartCoroutine(HandleAttack());
         }
         else
@@ -102,9 +92,16 @@ public class FireballAttack : BossAttack
     public override void UpgradeAttack()
     {
         base.UpgradeAttack();
-        m_numberPerSalve = m_numberPerSalve2;
-        m_numberTotalSalve = m_numberTotalSalve2;
-        m_cooldownBetweenFireball = m_cooldownBetweenFireball2;
-        m_cooldown = m_cooldownBetweenSalve2;
+        m_numberPerBurst = m_numberPerBurstUpgrade;
+        m_numberTotalBurst = m_numberTotalBurstUpgrade;
+        m_cooldownBetweenFireball = m_cooldownBetweenFireballUpgrade;
+        m_cooldownBetweenBurst = m_cooldownBetweenBurstUpgrade;
+    }
+
+    [ContextMenu("Cancel Attack")]
+    public override void CancelAttack()
+    {
+        StopAllCoroutines();
+        base.CancelAttack();
     }
 }
