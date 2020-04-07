@@ -165,8 +165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 7
-  m_jumpForce: 12
   m_smoothSpeed: 0.6
+  m_jumpForce: 12
   m_GroundPhysicMaterial: {fileID: 6200000, guid: d2690fcbea4980d4ea71f26b6df4b614,
     type: 2}
   m_AirPhysicMaterial: {fileID: 6200000, guid: f04310e341f8a0147970dd592a98f917, type: 2}
@@ -349,7 +349,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 6
-  m_jumpForce: 12
   m_smoothSpeed: 0.6
   m_PlayerMotion: {fileID: 11400000, guid: 8d25be83bd41b1745b10d7b8110c1547, type: 2}
 --- !u!1 &4289441053761476380
@@ -719,7 +718,7 @@ PrefabInstance:
     - target: {fileID: 9082762136579586544, guid: 3d08f050cf1c7904a8c864e32a3fdb03,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d08f050cf1c7904a8c864e32a3fdb03, type: 3}

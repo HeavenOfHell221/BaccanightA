@@ -51,8 +51,32 @@ public class PlayerAnimatorController : MonoBehaviour
         m_Animator.SetBool("IsPushObject", m_playerMotion.IsPushObject);
         m_Animator.SetBool("UseWings", m_playerMotion.UseWings);
 
+        
 
-        if(!m_playerMotion.UseWings)
+        GameObject boss = GameObject.FindGameObjectWithTag("Boss");
+
+        if (boss)
+        {
+            if(boss.transform.position.x < transform.position.x)
+            {
+                m_player.transform.rotation = new Quaternion(
+                   m_player.transform.rotation.x,
+                   180f,
+                   m_player.transform.rotation.z,
+                   m_player.transform.rotation.w);
+                m_playerMotion.FlipSprite = false;
+            }
+            else if(boss.transform.position.x > transform.position.x)
+            {
+                m_player.transform.rotation = new Quaternion(
+                   m_player.transform.rotation.x,
+                   0f,
+                   m_player.transform.rotation.z,
+                   m_player.transform.rotation.w);
+                m_playerMotion.FlipSprite = true;
+            }
+        }
+        else
         {
             bool lastFlip = m_playerMotion.FlipSprite;
             m_playerMotion.FlipSprite = m_playerMotion.Motion.x > 0.1f ? true : m_playerMotion.Motion.x < -0.1f ? false : m_playerMotion.FlipSprite;

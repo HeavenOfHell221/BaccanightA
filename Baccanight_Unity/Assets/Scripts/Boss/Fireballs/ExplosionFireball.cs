@@ -32,4 +32,10 @@ public class ExplosionFireball : Fireball
         Vector3 direction = new Vector3(directionX, directionY, 0f);
         Rigidbody.AddForce(direction * Speed, ForceMode2D.Impulse);
     }
+
+    private void Update()
+    {
+        float angle = Mathf.Atan2(Rigidbody.velocity.y, Rigidbody.velocity.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
 }

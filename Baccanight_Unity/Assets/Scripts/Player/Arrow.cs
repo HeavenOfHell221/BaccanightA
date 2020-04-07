@@ -31,20 +31,23 @@ public abstract class Arrow : MonoBehaviour
 
     private void Flip()
     {
-        if (!m_playerMotion.FlipSprite)
-        {
-            m_speed.x *= -1;
-            transform.rotation = new Quaternion(
-            transform.rotation.x,
-            180f,
-            transform.rotation.z,
-            transform.rotation.w);
-        }
+        m_speed.x *= -1;
+        transform.rotation = new Quaternion(
+        transform.rotation.x,
+        180f,
+        transform.rotation.z,
+        transform.rotation.w);
     }
 
     private void ApplySpeed()
     {
         m_speed = new Vector2(m_arrowSpeedX, Random.Range(-m_angleMaxY, m_angleMaxY));
+
+        if(!m_playerMotion.FlipSprite)
+        {
+            Flip();
+        }
+
         m_rigidbody.velocity = m_speed;
 
         float angle = Mathf.Atan2(m_rigidbody.velocity.y, m_rigidbody.velocity.x) * Mathf.Rad2Deg;

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 5
   m_timeBeforeMove: 0.1
+  m_damage: -1
   m_MinDirectionX: -0.75
   m_MaxDirectionX: 0
   m_MinDirectionY: 0.25
@@ -99,6 +100,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439014131523691833, guid: fb53137598539204abd83cab1537abe7,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8832644600293077732, guid: fb53137598539204abd83cab1537abe7,
         type: 3}
