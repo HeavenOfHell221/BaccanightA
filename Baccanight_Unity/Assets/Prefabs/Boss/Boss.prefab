@@ -93,9 +93,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_explosionFireball: {fileID: 2393154031471152202, guid: 87b77fa6834073d4b944231d0b8ef411,
     type: 3}
-  m_ballSpeedFlat: 4
-  m_numberPerBurst: 30
-  m_cooldownBetweenFireball: 0.3
+  m_ballSpeedFlat: 5
+  m_numberPerBurst: 100
+  m_cooldownBetweenFireball: 0.05
 --- !u!1 &1902404225942783748
 GameObject:
   m_ObjectHideFlags: 0
