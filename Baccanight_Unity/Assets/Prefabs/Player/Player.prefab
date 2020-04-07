@@ -91,7 +91,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851043499719964773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.89, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1851043499308263473}
@@ -715,6 +715,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HUD Player Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082762136579586544, guid: 3d08f050cf1c7904a8c864e32a3fdb03,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d08f050cf1c7904a8c864e32a3fdb03, type: 3}
