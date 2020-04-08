@@ -144,6 +144,7 @@ MonoBehaviour:
   m_layerMask:
     serializedVersion: 2
     m_Bits: 512
+  m_IA: {fileID: 1387102921752016282}
   m_chargingTime: 0.5
   m_AttackDuration: 1
   m_distance: 20
@@ -375,8 +376,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8961290320682185432}
   - component: {fileID: 6451607651891197302}
-  - component: {fileID: 3453815120920117653}
   - component: {fileID: 7131463579652883245}
+  - component: {fileID: 4980925878964473162}
+  - component: {fileID: 3159434460367787447}
   m_Layer: 11
   m_Name: Attack Counter
   m_TagString: Untagged
@@ -410,48 +412,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5d4d7a1823084479f630cd3a5bf2ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_collider: {fileID: 3453815120920117653}
-  m_hitCollider: {fileID: 5022067854705185449}
-  m_layerCollision:
-    serializedVersion: 2
-    m_Bits: 256
-  m_layerHit:
-    serializedVersion: 2
-    m_Bits: 512
-  Rigidbody: {fileID: 8198711157667756216}
+  m_collider: {fileID: 3159434460367787447}
+  m_rigidbody: {fileID: 8198711157667756216}
+  m_health: {fileID: 9128026524433129773}
   m_speed: 10
   m_hitDamage: -1
-  m_cooldownBeforeAttack: 1.5
+  m_cooldownBeforeAttack: 1
   m_speedUpgrade: 20
   m_hitDamageUpgrade: -1
-  m_cooldownBeforeAttackUpgrade: 1
---- !u!61 &3453815120920117653
-BoxCollider2D:
+  m_cooldownBeforeAttackUpgrade: 0.5
+--- !u!114 &7131463579652883245
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3218674464805018773}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.08956337, y: 0.07463837}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 6.49347, y: 6.1650505}
-  m_EdgeRadius: 0
---- !u!114 &7131463579652883245
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e720c47edf3bb684599a0ba90f5bfdef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnterDetect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6451607651891197302}
+        m_MethodName: OnEnterStage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnStayDetect:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExitDetect:
+    m_PersistentCalls:
+      m_Calls: []
+  Layers:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &4980925878964473162
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -485,7 +490,23 @@ MonoBehaviour:
       m_Calls: []
   Layers:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 512
+--- !u!70 &3159434460367787447
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3218674464805018773}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 7, y: 8}
+  m_Direction: 0
 --- !u!1 &3699801160254558526
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +585,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 8, y: 10}
+  m_Size: {x: 7, y: 8}
   m_Direction: 0
 --- !u!1 &4646928656004282013
 GameObject:
@@ -669,8 +690,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b481e35a6a3732544ba98a6452c2f27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHealth: 1500
-  m_currentHealth: 1500
+  m_maxHealth: 1000
+  m_currentHealth: 1000
   m_invincibleDuration: 3
   m_FirstSwitchPhase:
     m_PersistentCalls:
@@ -691,7 +712,18 @@ MonoBehaviour:
       m_Calls: []
   m_DeathPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1387102921752016282}
+        m_MethodName: UpdateIABehaviour
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_UpgradeSpeedBetweenTwoAttacks:
     m_PersistentCalls:
       m_Calls:
@@ -732,8 +764,11 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 1.0869246, y: 2.287003}
-      - {x: -1.6478021, y: 2.066847}
-      - {x: -2.640983, y: -1.5836012}
+      - {x: 0.61956006, y: 1.8875244}
+      - {x: -1.5426979, y: 1.9916707}
+      - {x: -1.9801483, y: 0.50107265}
+      - {x: -2.027676, y: -0.012638718}
+      - {x: -2.5320637, y: -1.486784}
       - {x: -2.3088245, y: -2.2957807}
       - {x: -0.58362854, y: -2.8142066}
       - {x: 0.8506628, y: -2.81277}

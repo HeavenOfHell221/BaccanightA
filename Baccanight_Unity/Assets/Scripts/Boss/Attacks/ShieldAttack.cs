@@ -49,17 +49,16 @@ public class ShieldAttack : BossAttack
 
     protected override IEnumerator HandleAttack()
     {
+        if(IsUpgraded)
+        {
+            EndAttack();
+        }
 
         float duration = m_durationAttack;
         float time;
 
         while(duration > 0f)
         {
-            if (IsCanceled)
-            {
-                break;
-            }
-
             time = Time.deltaTime;
             duration -= time;
 
@@ -72,6 +71,7 @@ public class ShieldAttack : BossAttack
             yield return null;
         }
 
+        m_collider.enabled = false;
         EndAttack();
     }
 
@@ -86,12 +86,6 @@ public class ShieldAttack : BossAttack
     {
         StopAllCoroutines();
         base.CancelAttack();
-        m_collider.enabled = false;
-    }
-
-    protected override void EndAttack()
-    {
-        base.EndAttack();
         m_collider.enabled = false;
     }
 }

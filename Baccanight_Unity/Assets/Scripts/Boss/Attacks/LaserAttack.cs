@@ -10,6 +10,7 @@ public class LaserAttack : BossAttack
     [Space(5)]
     [SerializeField] private Transform m_fireLaserBoss;
     [SerializeField] private LayerMask m_layerMask;
+    [SerializeField] private BossAIController m_IA;
 
     [Header("Phase 1")]
     [Space(5)]
@@ -85,7 +86,7 @@ public class LaserAttack : BossAttack
     {
         while(!IsFinish)
         {
-            RaycastHit2D raycast = Physics2D.Raycast(m_fireLaserBoss.position, Vector2.left, m_distance, m_layerMask);
+            RaycastHit2D raycast = Physics2D.Raycast(m_fireLaserBoss.position, (m_IA.FlipRight ? Vector2.right : Vector2.left), m_distance, m_layerMask);
 
             if (raycast.collider)
             {
@@ -93,12 +94,12 @@ public class LaserAttack : BossAttack
                 if (other.tag == "Player")
                 {
                     other.GetComponent<Health>().ModifyHealth(m_damage, gameObject);
-                    Debug.DrawRay(m_fireLaserBoss.position, Vector2.left * m_distance, Color.red);
+                    Debug.DrawRay(m_fireLaserBoss.position, (m_IA.FlipRight ? Vector2.right : Vector2.left) * m_distance, Color.red);
                 } 
             }
             else
             {
-                Debug.DrawRay(m_fireLaserBoss.position, Vector2.left * m_distance, Color.green);
+                Debug.DrawRay(m_fireLaserBoss.position, (m_IA.FlipRight ? Vector2.right : Vector2.left) * m_distance, Color.green);
             }
 
             yield return null;

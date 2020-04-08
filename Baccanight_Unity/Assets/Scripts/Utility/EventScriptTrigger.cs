@@ -18,7 +18,11 @@ public class EventScriptTrigger : MonoBehaviour
 
 	private void Start()
 	{
-		GetComponent<Collider2D>().isTrigger = true;
+        Collider2D[] cols = GetComponents<Collider2D>();
+        foreach(var c in cols)
+        {
+            c.isTrigger = true;
+        }
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)

@@ -6,16 +6,28 @@ public class ArrowDetection : Arrow
 {
     public void OnArrowEnter(GameObject target)
     {
+        switch(target.tag)
+        {
+            case "Stage":
+                StopArrow();
+                break;
+            case "BossHealth":
+                target.GetComponent<HealthBoss>().ModifyHealth(m_damage);
+                PlayerManager.Instance.CameraReference.GetComponent<ShakeObject>().Shake();
+                StopArrow();
+                break;
+            case "BossShield":
+                target.GetComponent<ShieldAttack>().CounterAttackEvent.Invoke(BossActionType.CounterAttack);
+                StopArrow();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void StopArrow()
+    {
         m_rigidbody.velocity = Vector2.zero;
         StartCoroutine(Disable(1f));
-
-        if (target.tag == "BossHealth")
-        {
-            target.GetComponent<HealthBoss>().ModifyHealth(m_damage);
-        }
-        else if (target.tag == "BossShield")
-        {
-            target.GetComponent<ShieldAttack>().CounterAttackEvent.Invoke(BossActionType.CounterAttack);
-        }
     }
 }

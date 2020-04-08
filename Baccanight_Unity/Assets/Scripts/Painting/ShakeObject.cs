@@ -1,46 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class ShakeObject : MonoBehaviour
 {
-    #region Inspector
-    [SerializeField]
-    private float m_maxValue = 1f;
+    [SerializeField] [Range(0f, 0.5f)] private float m_duration = 0.2f;
+    [SerializeField] [Range(0f, 2f)] private float m_amplitude = 1f;
+    [SerializeField] [Range(0f, 2f)] private float m_frenquency = 1f;
+    [SerializeField] private CinemachineVirtualCamera vcam = null;
 
-    [SerializeField]
-    private float m_speedLerp = 0.05f;
-
-    [SerializeField]
-    private float m_timeWaitBeforeStartCoroutine = 0.1f;
-
-    [SerializeField]
-    private float m_distanceMinBeforeNext = 0.1f;
-    #endregion
+    private CinemachineBasicMultiChannelPerlin noise;
+    private bool m_shakeTrigger = false;
+    private bool m_shakeCurrently = false;
 
     private void Start()
     {
-        StartCoroutine(Shake());
+        noise = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
-    private IEnumerator Shake()
+    [ContextMenu("Shake")]
+    public void Shake()
     {
-        Vector3 originalPos = transform.localPosition;
-        float x = Random.Range(-m_maxValue, m_maxValue);
-        float y = Random.Range(-m_maxValue, m_maxValue);
-        Vector3 destinationPos = new Vector3(x, y, 0f);
-        float t = 0.0f;
+        m_shakeTrigger = true;
 
-        while (Vector3.Distance(transform.localPosition, destinationPos) > m_distanceMinBeforeNext)
-        { 
-            transform.localPosition = Vector3.Lerp(originalPos, destinationPos, t);
-            t += m_speedLerp * Time.deltaTime;
-            yield return null;
+        if (!m_shakeCurrently)
+        {
+            StartCoroutine(_ProcessShake());
         }
-
-        yield return new WaitForSeconds(m_timeWaitBeforeStartCoroutine);
-
-        StartCoroutine(Shake());
     }
-        
+
+    private IEnumerator _ProcessShake()
+    {
+        m_shakeTrigger = false;
+        m_shakeCurrently = true;
+
+        Noise(m_amplitude, m_frenquency);
+
+        yield return new WaitForSeconds(m_duration);
+
+        if(m_shakeTrigger)
+        {
+            StartCoroutine(_ProcessShake());     
+        }
+        else
+        {
+            Noise(0, 0);
+            m_shakeCurrently = false;
+        }     
+    }
+
+    private void Noise(float amplitudeGain, float frequencyGain)
+    {
+        noise.m_AmplitudeGain = amplitudeGain;
+        noise.m_FrequencyGain = frequencyGain;
+    }
 }
