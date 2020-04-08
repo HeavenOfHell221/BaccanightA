@@ -24,7 +24,7 @@ public abstract class Fireball : MonoBehaviour
     protected void OnEnable()
     {
         Start();
-        Invoke("DesactiveObject", 6f);
+        Invoke("DesactiveObject", 10f);
     }
 
     protected void Awake()
@@ -35,7 +35,9 @@ public abstract class Fireball : MonoBehaviour
 
     public virtual void OnEnterPlayer(GameObject player)
     {
-        player.GetComponent<Health>().ModifyHealth(m_damage, gameObject); 
+        player.GetComponent<Health>().ModifyHealth(m_damage, gameObject);
+        CancelInvoke();
+        DesactiveObject();
     }
 
     private void DesactiveObject()

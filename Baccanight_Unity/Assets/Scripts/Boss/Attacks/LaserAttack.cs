@@ -11,6 +11,8 @@ public class LaserAttack : BossAttack
     [SerializeField] private Transform m_fireLaserBoss;
     [SerializeField] private LayerMask m_layerMask;
     [SerializeField] private BossAIController m_IA;
+    [SerializeField] private GameObject m_Model_1;
+    [SerializeField] private GameObject m_Model_2;
 
     [Header("Phase 1")]
     [Space(5)]
@@ -30,6 +32,13 @@ public class LaserAttack : BossAttack
 #pragma warning restore 0649
     #endregion
 
+    private int m_numberLaserRemaining;
+
+    private void Awake()
+    {
+        m_Model_1.SetActive(false);
+        m_Model_2.SetActive(false);
+    }
 
 
     [ContextMenu("Start Attack")]
@@ -37,25 +46,29 @@ public class LaserAttack : BossAttack
     {
         base.StartAttack();
 
-        float number = m_laserNumber.GetRandomValue();
-
-        for(int i = 0; i < number; i++)
-        {
-            StartCoroutine(HandleAttack());
-        }
+        m_numberLaserRemaining = m_laserNumber.GetRandomValue();
+        StartCoroutine(HandleAttack());
     }
 
     protected override IEnumerator HandleAttack()
     {
+        m_numberLaserRemaining--;
         LaserWarning();
 
         yield return new WaitForSeconds(m_chargingTime);
 
         SpawnLaser();
 
-        yield return new WaitForSeconds(m_AttackDuration);
+        yield return new WaitForSeconds(m_AttackDuration + 1f);
 
-        EndAttack();
+        if(m_numberLaserRemaining > 0)
+        {
+            StartCoroutine(HandleAttack());
+        }
+        else
+        {
+            EndAttack();
+        }    
     }
 
     [ContextMenu("Upgrade Attack")]
@@ -72,21 +85,32 @@ public class LaserAttack : BossAttack
         base.CancelAttack();
     }
 
+    protected override void EndAttack()
+    {
+        base.EndAttack();
+       
+    }
+
     private void LaserWarning()
     {
-
+        m_Model_1.SetActive(true);
     }
 
     private void SpawnLaser()
     {
-        StartCoroutine(LaserDetection());
+        StartCoroutine(HandleLaser());
     }
 
-    private IEnumerator LaserDetection()
+    private IEnumerator HandleLaser()
     {
-        while(!IsFinish)
+        m_Model_2.SetActive(true);
+        SpriteRenderer sprite = m_Model_2.GetComponent<SpriteRenderer>();
+        Vector2 size = sprite.size;
+        float timeElapsed = 0f;
+
+        while (timeElapsed < m_AttackDuration)
         {
-            RaycastHit2D raycast = Physics2D.Raycast(m_fireLaserBoss.position, (m_IA.FlipRight ? Vector2.right : Vector2.left), m_distance, m_layerMask);
+            RaycastHit2D raycast = Physics2D.Raycast(m_fireLaserBoss.position, (!m_IA.FlipRight ? Vector2.right : Vector2.left), m_distance, m_layerMask);
 
             if (raycast.collider)
             {
@@ -94,15 +118,23 @@ public class LaserAttack : BossAttack
                 if (other.tag == "Player")
                 {
                     other.GetComponent<Health>().ModifyHealth(m_damage, gameObject);
-                    Debug.DrawRay(m_fireLaserBoss.position, (m_IA.FlipRight ? Vector2.right : Vector2.left) * m_distance, Color.red);
+                    Debug.DrawRay(m_fireLaserBoss.position, (!m_IA.FlipRight ? Vector2.right : Vector2.left) * m_distance, Color.red);
                 } 
             }
-            else
-            {
-                Debug.DrawRay(m_fireLaserBoss.position, (m_IA.FlipRight ? Vector2.right : Vector2.left) * m_distance, Color.green);
-            }
+            Debug.DrawRay(m_fireLaserBoss.position, (!m_IA.FlipRight ? Vector2.right : Vector2.left) * m_distance, Color.green);
+
+            if(size.y < m_distance)
+                size.y += 1f;
+            sprite.size = size;
+
+            timeElapsed += Time.deltaTime;
 
             yield return null;
         }
+
+        size.y = 1;
+        sprite.size = size;
+        m_Model_1.SetActive(false);
+        m_Model_2.SetActive(false);
     }
 }

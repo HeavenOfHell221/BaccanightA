@@ -151,7 +151,7 @@ public class BossAIController : MonoBehaviour
             Fence fence = GameObject.FindGameObjectWithTag("Fence").GetComponent<Fence>();
             fence.CloseFence();
 
-            m_spawnBoss.SetActive(true);
+            //m_spawnBoss.SetActive(true);
         }
 
         m_health.IsInvincible = false;
