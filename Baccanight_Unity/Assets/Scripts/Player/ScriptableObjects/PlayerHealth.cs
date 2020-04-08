@@ -6,7 +6,7 @@ public class PlayerHealth : ScriptableObject
 	#region Inspector
 #pragma warning disable 0649
 	[SerializeField]
-	private int m_maxHealth = 50;
+	private int m_maxHealth = 6;
 
 	[SerializeField]
 	private int m_currentHealth;
@@ -33,7 +33,7 @@ public class PlayerHealth : ScriptableObject
 
 	public void Reset()
 	{
-		m_maxHealth = 50;
+		m_maxHealth = 6;
 		m_currentHealth = m_maxHealth;
 		m_isDead = false;
 		m_isInvincible = false;
