@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -33,6 +34,8 @@ public class HealthBoss : MonoBehaviour
 
     private bool m_isEnraging = false;
 
+    public event Action<float> OnHealthPctChanged = delegate { };
+
     private void Start()
     {
         CurrentHealth = m_maxHealth;
@@ -49,6 +52,8 @@ public class HealthBoss : MonoBehaviour
         float lastRatio = Ratio;
 
         CurrentHealth = Mathf.Clamp(CurrentHealth += deltaHealth, 0f, m_maxHealth);
+
+        OnHealthPctChanged(CurrentHealth / m_maxHealth);
 
         if (lastRatio >= 0.5f && Ratio < 0.5f && !m_isEnraging)
         {
