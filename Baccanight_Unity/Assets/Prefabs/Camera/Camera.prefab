@@ -51,7 +51,7 @@ MonoBehaviour:
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 0
-  m_StandbyUpdate: 2
+  m_StandbyUpdate: 0
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
@@ -98,10 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062ad40cf75d1ba41bdef18077f87117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_duration: 0.15
-  m_amplitude: 1.25
-  m_frenquency: 1
-  vcam: {fileID: 1156242589567242914}
 --- !u!1 &6675375803320295977
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LookaheadTime: 0.2
   m_LookaheadSmoothing: 8
-  m_LookaheadIgnoreY: 0
+  m_LookaheadIgnoreY: 1
   m_XDamping: 1.5
   m_YDamping: 1
   m_ZDamping: 1

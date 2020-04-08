@@ -34,6 +34,6 @@ public class PlayerMotion : ScriptableObject
         m_isRoofed = false;
         m_pushObject = false;
         m_flipSprite = true;
-        m_useWings = false;
+        m_useWings = true;
 	}
 }
