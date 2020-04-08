@@ -13,6 +13,7 @@ public class BossAIController : MonoBehaviour
     [SerializeField] private Animator m_animator;
     [SerializeField] private PatrolPath m_patrolPath;
     [SerializeField] private HealthBoss m_health;
+    [SerializeField] private GameObject m_spawnBoss;
 
     [Header("Attributes")]
     [Space(10)]
@@ -78,11 +79,6 @@ public class BossAIController : MonoBehaviour
                 }
                 break;
             default:
-                if (distanceFromPlayer > m_distanceStartBattle)
-                {
-                    m_health.IsInvincible = true;
-                    UpdateIABehaviour(BossActionType.Idle);
-                }
                 break;
         }
 
@@ -148,9 +144,14 @@ public class BossAIController : MonoBehaviour
         {
             m_battleHasStart = true;
 
-           /* 
-            * Animation : Cri de guerre  
-            */
+            /* 
+             * Animation : Cri de guerre  
+             */
+
+            Fence fence = GameObject.FindGameObjectWithTag("Fence").GetComponent<Fence>();
+            fence.CloseFence();
+
+            m_spawnBoss.SetActive(true);
         }
 
         m_health.IsInvincible = false;

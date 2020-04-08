@@ -18,7 +18,7 @@ public class CounterAttack : BossAttack
     [Header("Phase 1")]
     [Space(5)]
     [SerializeField] [Range(1, 30)] private int m_speed = 10;
-    [SerializeField] [Range(1, 3)] private int m_hitDamage = -1;
+    //[SerializeField] [Range(1, 3)] private int m_hitDamage = -1;
     [SerializeField] [Range(0.1f, 3f)] private float m_cooldownBeforeAttack = 1.5f;
 
     [Header("Phase 2")]
@@ -78,10 +78,10 @@ public class CounterAttack : BossAttack
     // Quand le collider entre dans un objet ayant pour layer "Player". Je précise ça car c'est pas forcément le joueur..
     // Dans notre cas si car j'ai mis ce layer qu'a un seul gameobject mais c'est un détail à pas oublier :D
     // C'est pour ça que j'appelle pas le GameObject en paramètre "player".
-    public void OnEnterPlayer(GameObject other)
+    /*public void OnEnterPlayer(GameObject other)
     {
         other.GetComponent<Health>().ModifyHealth(m_hitDamage, gameObject);       
-    }
+    }*/
 
     protected override IEnumerator HandleAttack()
     {
@@ -148,7 +148,7 @@ public class CounterAttack : BossAttack
         base.UpgradeAttack();
         m_speed = m_speedUpgrade;
         m_cooldownBeforeAttack = m_cooldownBeforeAttackUpgrade;
-        m_hitDamage = m_hitDamageUpgrade;
+        //m_hitDamage = m_hitDamageUpgrade;
     }
 
     [ContextMenu("Cancel Attack")]

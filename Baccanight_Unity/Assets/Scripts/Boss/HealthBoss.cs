@@ -15,6 +15,7 @@ public class HealthBoss : MonoBehaviour
     [Header("Attributes")]
     [Space(5)]
     [SerializeField] [Range(0.5f, 5f)] private float m_invincibleDuration;
+    [SerializeField] [Range(0, -3)] private int m_damageCollision;
 
     [Header("Events")]
     [Space(5)]
@@ -73,5 +74,10 @@ public class HealthBoss : MonoBehaviour
         IsInvincible = true;
         yield return new WaitForSecondsRealtime(m_invincibleDuration);
         IsInvincible = false;
+    }
+
+    public void OnEnterPlayer(GameObject other)
+    {
+        other.GetComponent<Health>().ModifyHealth(m_damageCollision, gameObject);       
     }
 }

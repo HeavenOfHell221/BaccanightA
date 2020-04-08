@@ -18,6 +18,7 @@ TagManager:
   - Statue
   - Boss
   - Stage
+  - Fence
   layers:
   - Default
   - TransparentFX
