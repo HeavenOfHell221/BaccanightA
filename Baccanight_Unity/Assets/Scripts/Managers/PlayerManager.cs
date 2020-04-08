@@ -19,13 +19,14 @@ public class PlayerManager : SingletonBehaviour<PlayerManager>
     public GameObject PlayerReference { get; set; }
     public InputController PlayerInputController { get; set; }
     public GameObject CameraReference { get; private set; }
+    public ShakeCamera ShakeCamera { get; private set; }
     public GameObject LastCamera { get; set; }
     #endregion
 
     protected override void Awake()
     {
         base.Awake();
-        PlayerReference = GameObject.FindGameObjectWithTag("Player");
+        //PlayerReference = GameObject.FindGameObjectWithTag("Player");
     }
 
     public IEnumerator SetCameraReference(GameObject camera)
@@ -35,6 +36,7 @@ public class PlayerManager : SingletonBehaviour<PlayerManager>
             LastCamera = CameraReference;
             CameraReference = camera;
             camera.SetActive(true);
+            ShakeCamera = camera.GetComponent<ShakeCamera>();
 
             yield return null;
 
@@ -61,11 +63,5 @@ public class PlayerManager : SingletonBehaviour<PlayerManager>
         {
             playerSucces.Reset();
         }
-    }
-
-    [ContextMenu("Get Player GameObject")]
-    public void GetPlayer()
-    {
-        PlayerReference = GameObject.FindGameObjectWithTag("Player");
     }
 }
