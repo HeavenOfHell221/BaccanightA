@@ -10,6 +10,7 @@ public class HealthBarBoss : MonoBehaviour
     [SerializeField]
     private Image yellowBar;
 
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -18,12 +19,13 @@ public class HealthBarBoss : MonoBehaviour
 
     private void HandleHealthChanged(float pct)
     {
+        StopAllCoroutines();
+
         StartCoroutine(ChangeToPct(pct));
     }
 
     private IEnumerator ChangeToPct(float pct)
     {
-        Debug.Log("Should be changed");
         redBar.fillAmount = pct;
 
         yield return new WaitForSeconds(0.5f);
