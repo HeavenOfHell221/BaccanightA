@@ -20,7 +20,7 @@ public class HealthBoss : MonoBehaviour
     [Space(5)]
     [SerializeField] private BossStateEvent m_FirstSwitchPhase;
     [SerializeField] private UnityEvent m_SecondSwitchPhase;
-    [SerializeField] private UnityEvent m_DeathPhase;
+    [SerializeField] private BossStateEvent m_DeathPhase;
     [SerializeField] private UnityEvent m_UpgradeSpeedBetweenTwoAttacks;
 #pragma warning restore 0649
     #endregion
@@ -63,7 +63,7 @@ public class HealthBoss : MonoBehaviour
         }
         else if (Ratio <= 0f)
         {
-            m_DeathPhase.Invoke();
+            m_DeathPhase.Invoke(BossActionType.Dying);
             IsDead = true;
         }
     }

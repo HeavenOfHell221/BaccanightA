@@ -17,6 +17,7 @@ TagManager:
   - BossShield
   - Statue
   - Boss
+  - Stage
   layers:
   - Default
   - TransparentFX

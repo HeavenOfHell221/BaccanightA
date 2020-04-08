@@ -49,7 +49,8 @@ public class BossAIController : MonoBehaviour
     #endregion
 
     #region Getters / Setters
-    public BossActionType CurrentState { get => m_currentState; private set => m_currentState = value; }  
+    public BossActionType CurrentState { get => m_currentState; private set => m_currentState = value; }
+    public bool FlipRight { get; private set; } = true;
     #endregion
 
     private void Start()
@@ -238,7 +239,7 @@ public class BossAIController : MonoBehaviour
 
     private void HandleDyingState()
     {
-
+        Destroy(gameObject);
     }
 
     private float DistanceFromPlayer()
@@ -260,10 +261,12 @@ public class BossAIController : MonoBehaviour
             if(m_player.position.x > transform.position.x)
             {
                 rotationY = 180f;
+                FlipRight = false;
             }
             else if(m_player.position.x < transform.position.x)
             {
                 rotationY = 0f;
+                FlipRight = true;
             }
 
             transform.rotation = new Quaternion(transform.rotation.x, rotationY, transform.rotation.z, transform.rotation.w);

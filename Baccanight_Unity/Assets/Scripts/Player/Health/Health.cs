@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private PlayerHealth m_health;
     [SerializeField] private PlayerState m_state;
+    [SerializeField] private float m_timeTimeScaleNull;
     [SerializeField] private float m_timeInvincibleFrame;
     [SerializeField] private LifeEvent m_onDamaged;
     [SerializeField] private LifeEvent m_onHealed;
@@ -45,7 +46,7 @@ public class Health : MonoBehaviour
             m_health.IsDead = true;
             m_state.State = GamePlayerState.inDie;
         }
-        else
+        else if(!m_health.IsInvincible)
         {
             StartCoroutine(InvincibleFrame());
         }
@@ -54,7 +55,10 @@ public class Health : MonoBehaviour
     private IEnumerator InvincibleFrame()
     {
         m_health.IsInvincible = true;
-        yield return new WaitForSecondsRealtime(m_timeInvincibleFrame);
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(m_timeTimeScaleNull);
+        Time.timeScale = 1f;
+        yield return new WaitForSecondsRealtime(m_timeInvincibleFrame - m_timeTimeScaleNull);
         m_health.IsInvincible = false;
     }
 }
