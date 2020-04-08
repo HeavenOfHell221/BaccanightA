@@ -147,17 +147,19 @@ MonoBehaviour:
   m_IA: {fileID: 1387102921752016282}
   m_Model_1: {fileID: 8851498159590956479}
   m_Model_2: {fileID: 7014930926289981009}
-  m_chargingTime: 0.5
+  m_chargingTime: 1
   m_AttackDuration: 1
-  m_distance: 20
+  m_distance: 25
   m_damage: -1
+  m_timeBtwLaser: 1
   m_laserNumber:
     Min: 2
     Max: 2
-  m_chargingTimeUpgrade: 0.3
+  m_chargingTimeUpgrade: 0.6
   m_AttackDurationUpgrade: 1
-  m_distanceUpgrade: 25
+  m_distanceUpgrade: 30
   m_damageUpgrade: -1
+  m_timeBtwLaserUpgrade: 0.6
   m_laserNumberUpgrade:
     Min: 2
     Max: 3

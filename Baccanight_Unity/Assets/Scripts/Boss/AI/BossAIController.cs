@@ -231,6 +231,7 @@ public class BossAIController : MonoBehaviour
     private IEnumerator _HandleEnragingState()
     {
         m_animator.SetTrigger("Enraged");
+        PlayerManager.Instance.ShakeCamera.Shake(3f, 1f, 1f);
 
         while(m_health.IsInvincible)
         {

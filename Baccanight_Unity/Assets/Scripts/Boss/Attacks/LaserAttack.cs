@@ -18,8 +18,9 @@ public class LaserAttack : BossAttack
     [Space(5)]
     [SerializeField] [Range(0.1f, 2f)] private float m_chargingTime;
     [SerializeField] [Range(0.1f, 2f)] private float m_AttackDuration;
-    [SerializeField] [Range(10f, 30f)] private float m_distance;
+    [SerializeField] [Range(10f, 40f)] private float m_distance;
     [SerializeField] [Range(0, -2)] private int m_damage;
+    [SerializeField] private float m_timeBtwLaser; 
     [SerializeField] private MinMaxInt m_laserNumber;
 
     [Header("Phase 2")]
@@ -28,6 +29,7 @@ public class LaserAttack : BossAttack
     [SerializeField] [Range(0.1f, 2f)] private float m_AttackDurationUpgrade;
     [SerializeField] [Range(10f, 30f)] private float m_distanceUpgrade;
     [SerializeField] [Range(0, -2)] private int m_damageUpgrade;
+    [SerializeField] private float m_timeBtwLaserUpgrade;
     [SerializeField] private MinMaxInt m_laserNumberUpgrade;
 #pragma warning restore 0649
     #endregion
@@ -59,7 +61,7 @@ public class LaserAttack : BossAttack
 
         SpawnLaser();
 
-        yield return new WaitForSeconds(m_AttackDuration + 1f);
+        yield return new WaitForSeconds(m_AttackDuration + m_timeBtwLaser);
 
         if(m_numberLaserRemaining > 0)
         {
@@ -76,19 +78,25 @@ public class LaserAttack : BossAttack
     {
         base.UpgradeAttack();
         m_chargingTime = m_chargingTimeUpgrade;
-    }
+        m_AttackDuration = m_AttackDurationUpgrade;
+        m_distance = m_distanceUpgrade;
+        m_damage = m_damageUpgrade;
+        m_timeBtwLaser = m_timeBtwLaserUpgrade;
+        m_laserNumber = m_laserNumberUpgrade;
+}
 
     [ContextMenu("Cancel Attack")]
     public override void CancelAttack()
     {
         StopAllCoroutines();
         base.CancelAttack();
+        m_Model_1.SetActive(false);
+        m_Model_2.SetActive(false);
     }
 
     protected override void EndAttack()
     {
-        base.EndAttack();
-       
+        base.EndAttack();      
     }
 
     private void LaserWarning()
@@ -106,6 +114,8 @@ public class LaserAttack : BossAttack
         m_Model_2.SetActive(true);
         SpriteRenderer sprite = m_Model_2.GetComponent<SpriteRenderer>();
         Vector2 size = sprite.size;
+        size.y = 1;
+        sprite.size = size;
         float timeElapsed = 0f;
 
         while (timeElapsed < m_AttackDuration)
@@ -118,10 +128,10 @@ public class LaserAttack : BossAttack
                 if (other.tag == "Player")
                 {
                     other.GetComponent<Health>().ModifyHealth(m_damage, gameObject);
-                    Debug.DrawRay(m_fireLaserBoss.position, (!m_IA.FlipRight ? Vector2.right : Vector2.left) * m_distance, Color.red);
+                    //Debug.DrawRay(m_fireLaserBoss.position, (!m_IA.FlipRight ? Vector2.right : Vector2.left) * m_distance, Color.red);
                 } 
             }
-            Debug.DrawRay(m_fireLaserBoss.position, (!m_IA.FlipRight ? Vector2.right : Vector2.left) * m_distance, Color.green);
+            //Debug.DrawRay(m_fireLaserBoss.position, (!m_IA.FlipRight ? Vector2.right : Vector2.left) * m_distance, Color.green);
 
             if(size.y < m_distance)
                 size.y += 1f;
@@ -131,9 +141,6 @@ public class LaserAttack : BossAttack
 
             yield return null;
         }
-
-        size.y = 1;
-        sprite.size = size;
         m_Model_1.SetActive(false);
         m_Model_2.SetActive(false);
     }
