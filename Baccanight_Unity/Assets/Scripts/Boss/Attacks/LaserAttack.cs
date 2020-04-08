@@ -16,16 +16,16 @@ public class LaserAttack : BossAttack
 
     [Header("Phase 1")]
     [Space(5)]
-    [SerializeField] [Range(0.1f, 1f)] private float m_chargingTime;
-    [SerializeField] [Range(0.1f, 1f)] private float m_AttackDuration;
+    [SerializeField] [Range(0.1f, 2f)] private float m_chargingTime;
+    [SerializeField] [Range(0.1f, 2f)] private float m_AttackDuration;
     [SerializeField] [Range(10f, 30f)] private float m_distance;
     [SerializeField] [Range(0, -2)] private int m_damage;
     [SerializeField] private MinMaxInt m_laserNumber;
 
     [Header("Phase 2")]
     [Space(5)]
-    [SerializeField] [Range(0.1f, 1f)] private float m_chargingTimeUpgrade;
-    [SerializeField] [Range(0.1f, 1f)] private float m_AttackDurationUpgrade;
+    [SerializeField] [Range(0.1f, 2f)] private float m_chargingTimeUpgrade;
+    [SerializeField] [Range(0.1f, 2f)] private float m_AttackDurationUpgrade;
     [SerializeField] [Range(10f, 30f)] private float m_distanceUpgrade;
     [SerializeField] [Range(0, -2)] private int m_damageUpgrade;
     [SerializeField] private MinMaxInt m_laserNumberUpgrade;

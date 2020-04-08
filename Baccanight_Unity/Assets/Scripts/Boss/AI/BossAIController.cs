@@ -230,6 +230,8 @@ public class BossAIController : MonoBehaviour
 
     private IEnumerator _HandleEnragingState()
     {
+        m_animator.SetTrigger("Enraged");
+
         while(m_health.IsInvincible)
         {
             yield return null;
