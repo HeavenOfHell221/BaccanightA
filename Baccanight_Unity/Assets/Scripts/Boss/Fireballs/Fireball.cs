@@ -35,9 +35,7 @@ public abstract class Fireball : MonoBehaviour
 
     public virtual void OnEnterPlayer(GameObject player)
     {
-        player.GetComponent<Health>().ModifyHealth(m_damage, gameObject);
-        CancelInvoke();
-        DesactiveObject();
+        player.GetComponent<Health>().ModifyHealth(m_damage, gameObject); 
     }
 
     private void DesactiveObject()
