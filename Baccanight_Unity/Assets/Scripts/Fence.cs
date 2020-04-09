@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fence : MonoBehaviour
 {
-    [SerializeField] private bool m_isOpen = true;
+    [SerializeField] private bool m_isOpen = false;
     [SerializeField] private Collider2D m_collider;
 
     public void Start()

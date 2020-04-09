@@ -263,6 +263,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2866324463935039879, guid: caad4dabb3c096c4b8eeda96caeb7116,
+        type: 3}
+      propertyPath: m_ChunkCullingBounds.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3581663790083676992, guid: caad4dabb3c096c4b8eeda96caeb7116,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1442,6 +1447,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[3].Array.data[3].y
       value: -0.99900013
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616127943134072801, guid: caad4dabb3c096c4b8eeda96caeb7116,
+        type: 3}
+      propertyPath: m_allwaysOpen
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caad4dabb3c096c4b8eeda96caeb7116, type: 3}
