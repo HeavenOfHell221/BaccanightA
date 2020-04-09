@@ -8,11 +8,12 @@ public class LaserAttack : BossAttack
 #pragma warning disable 0649
     [Header("General")]
     [Space(5)]
-    [SerializeField] private Transform m_fireLaserBoss;
+    [SerializeField] private Transform[] m_fireLaserBossPoints;
     [SerializeField] private LayerMask m_layerMask;
     [SerializeField] private BossAIController m_IA;
     [SerializeField] private GameObject m_Model_1;
     [SerializeField] private GameObject m_Model_2;
+    [SerializeField] private GameObject m_Model_3;
 
     [Header("Phase 1")]
     [Space(5)]
@@ -35,11 +36,13 @@ public class LaserAttack : BossAttack
     #endregion
 
     private int m_numberLaserRemaining;
+    private Transform m_currentPoint;
 
     private void Awake()
     {
         m_Model_1.SetActive(false);
         m_Model_2.SetActive(false);
+        m_Model_3.SetActive(false);
     }
 
 
@@ -47,7 +50,6 @@ public class LaserAttack : BossAttack
     public override void StartAttack()
     {
         base.StartAttack();
-
         m_numberLaserRemaining = m_laserNumber.GetRandomValue();
         StartCoroutine(HandleAttack());
     }
@@ -55,6 +57,8 @@ public class LaserAttack : BossAttack
     protected override IEnumerator HandleAttack()
     {
         m_numberLaserRemaining--;
+        m_currentPoint = GetRandomPointSpawn();
+
         LaserWarning();
 
         yield return new WaitForSeconds(m_chargingTime);
@@ -92,6 +96,7 @@ public class LaserAttack : BossAttack
         base.CancelAttack();
         m_Model_1.SetActive(false);
         m_Model_2.SetActive(false);
+        m_Model_3.SetActive(false);
     }
 
     protected override void EndAttack()
@@ -101,6 +106,7 @@ public class LaserAttack : BossAttack
 
     private void LaserWarning()
     {
+        m_Model_1.transform.position = m_currentPoint.position;
         m_Model_1.SetActive(true);
     }
 
@@ -111,7 +117,10 @@ public class LaserAttack : BossAttack
 
     private IEnumerator HandleLaser()
     {
+        bool playerIsHit = false;
+        m_Model_2.transform.position = m_currentPoint.position;
         m_Model_2.SetActive(true);
+
         SpriteRenderer sprite = m_Model_2.GetComponent<SpriteRenderer>();
         Vector2 size = sprite.size;
         size.y = 1;
@@ -120,28 +129,40 @@ public class LaserAttack : BossAttack
 
         while (timeElapsed < m_AttackDuration)
         {
-            RaycastHit2D raycast = Physics2D.Raycast(m_fireLaserBoss.position, (!m_IA.FlipRight ? Vector2.right : Vector2.left), m_distance, m_layerMask);
-
-            if (raycast.collider)
+            if(!playerIsHit)
             {
-                GameObject other = raycast.collider.gameObject;
-                if (other.tag == "Player")
+                RaycastHit2D raycast = Physics2D.Raycast(m_currentPoint.position, (!m_IA.FlipRight ? Vector2.right : Vector2.left), size.y + 1, m_layerMask);
+
+                if (raycast.collider)
                 {
-                    other.GetComponent<Health>().ModifyHealth(m_damage, gameObject);
-                    //Debug.DrawRay(m_fireLaserBoss.position, (!m_IA.FlipRight ? Vector2.right : Vector2.left) * m_distance, Color.red);
-                } 
+                    GameObject other = raycast.collider.gameObject;
+                    if (other.tag == "Player")
+                    {
+                        other.GetComponent<Health>().ModifyHealth(m_damage, gameObject);
+                        playerIsHit = true;
+                        m_Model_3.transform.position = raycast.point;
+                        m_Model_3.SetActive(true);
+                    }
+                }
             }
-            //Debug.DrawRay(m_fireLaserBoss.position, (!m_IA.FlipRight ? Vector2.right : Vector2.left) * m_distance, Color.green);
-
-            if(size.y < m_distance)
+            
+            if (size.y < m_distance && !playerIsHit)
+            {
                 size.y += 1f;
-            sprite.size = size;
-
+                sprite.size = size;
+            }
+  
             timeElapsed += Time.deltaTime;
 
             yield return null;
         }
         m_Model_1.SetActive(false);
         m_Model_2.SetActive(false);
+        m_Model_3.SetActive(false);
+    }
+
+    private Transform GetRandomPointSpawn()
+    {
+        return m_fireLaserBossPoints[Random.Range(0, m_fireLaserBossPoints.Length)];
     }
 }

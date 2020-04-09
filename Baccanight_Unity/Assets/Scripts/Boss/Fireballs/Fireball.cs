@@ -21,16 +21,16 @@ public abstract class Fireball : MonoBehaviour
 
     protected abstract void Start();
     protected abstract void Move();
-    protected void OnEnable()
+    protected virtual void OnEnable()
     {
         Start();
-        Invoke("DesactiveObject", 10f);
+        Invoke("DesactiveObject", 6f);
     }
 
     protected void Awake()
     {
         Rigidbody = GetComponent<Rigidbody2D>();
-        Invoke("DesactiveObject", 10f);
+        Invoke("DesactiveObject", 6f);
     }
 
     public virtual void OnEnterPlayer(GameObject player)
@@ -42,6 +42,7 @@ public abstract class Fireball : MonoBehaviour
 
     private void DesactiveObject()
     {
+        CancelInvoke();
         Rigidbody.velocity = Vector2.zero;
         gameObject.SetActive(false);     
     }

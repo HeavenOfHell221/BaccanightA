@@ -26,6 +26,7 @@ public class RainFireball : Fireball
 
     protected override void Move()
     {
+        Rigidbody.velocity = Vector2.zero;
         Vector3 direction = Vector3.down;
         Rigidbody.AddForce(direction * Speed, ForceMode2D.Impulse);
     }
