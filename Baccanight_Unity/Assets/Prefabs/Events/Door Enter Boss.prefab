@@ -10,7 +10,7 @@ Animator:
   m_GameObject: {fileID: 2612263904584594593}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eb3e5946c84938145a15daf13e497274, type: 2}
+  m_Controller: {fileID: 9100000, guid: 29e49e23c8a18e84f8627956effeaae4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -156,19 +156,13 @@ PrefabInstance:
     - target: {fileID: 3333501458789985108, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3333501458789985108, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3333501458789985109, guid: 9a2db3a21b476d84a8a49ef338945a6d,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8066981835553427677, guid: ee150764200bfa942bbbd19b24a035a5,
-        type: 3}
     - target: {fileID: 3333501458789985109, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_Color.r
@@ -184,6 +178,22 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3333501458789985109, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333501458789985109, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333501458789985109, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6034755106238789113, guid: d54df5c88ba495942b9d58f226e534b2,
+        type: 3}
     - target: {fileID: 3333501458789985111, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -222,12 +232,12 @@ PrefabInstance:
     - target: {fileID: 6960760059307179749, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.53
+      value: 3.55
       objectReference: {fileID: 0}
     - target: {fileID: 8256006628926705241, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.49
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8965001196865225390, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
