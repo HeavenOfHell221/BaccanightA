@@ -36,7 +36,7 @@ public class HealthBoss : MonoBehaviour
 
     public event Action<float> OnHealthPctChanged = delegate { };
 
-    private void Start()
+    private void Awake()
     {
         CurrentHealth = m_maxHealth;
         IsInvincible = true;
@@ -51,16 +51,15 @@ public class HealthBoss : MonoBehaviour
 
         float lastRatio = Ratio;
 
-        CurrentHealth = Mathf.Clamp(CurrentHealth += deltaHealth, 0f, m_maxHealth);
+        OnHealthPctChanged(Ratio);
 
-        OnHealthPctChanged(CurrentHealth / m_maxHealth);
+        CurrentHealth = Mathf.Clamp(CurrentHealth += deltaHealth, 0f, m_maxHealth);
 
         if (lastRatio >= 0.5f && Ratio < 0.5f && !m_isEnraging)
         {
             StartCoroutine(InvincibleFrame());
             m_isEnraging = true;
-            m_FirstSwitchPhase.Invoke(BossActionType.Enraging);
-            //m_UpgradeSpeedBetweenTwoAttacks.Invoke();    
+            m_FirstSwitchPhase.Invoke(BossActionType.Enraging);   
         }
         else if (lastRatio >= 0.1f && Ratio < 0.1f)
         {

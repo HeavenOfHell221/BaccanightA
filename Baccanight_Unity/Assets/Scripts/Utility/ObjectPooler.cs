@@ -17,16 +17,17 @@ public class ObjectPooler : SingletonBehaviour<ObjectPooler>
 
 		public GameObject SpawnObject()
 		{
-            GameObject obj = Instantiate(m_PrefabToPool, Instance.gameObject.transform);
+            GameObject obj = Instantiate(m_PrefabToPool);
             obj.SetActive(false);
             return obj;
 		}
 
-		private void ActiveObject(GameObject obj, Vector3 position, Quaternion rotation)
+		private void ActiveObject(GameObject obj, Vector3 position, Quaternion rotation, Transform parent)
 		{
 			obj.transform.position = position;
 			obj.transform.rotation = rotation;
 			obj.SetActive(true);
+            obj.transform.SetParent(parent, true);
 
 			if (m_Pool.Contains(obj))
 			{
@@ -55,14 +56,9 @@ public class ObjectPooler : SingletonBehaviour<ObjectPooler>
 			if (objectRequested == null)
 			{
 				objectRequested = SpawnObject();
-                //Debug.Log("New object in ObjectPooler");
             }
-            /*else
-            {
-                Debug.Log("Active pool");
-            }*/
 
-			ActiveObject(objectRequested, position, rotation);
+            ActiveObject(objectRequested, position, rotation, Instance.transform);
 			return objectRequested;
 		}
 	}

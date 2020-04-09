@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerHealth
   m_EditorClassIdentifier: 
   m_maxHealth: 6
-  m_currentHealth: 3
+  m_currentHealth: 4
   m_isDead: 0
   m_isInvincible: 0

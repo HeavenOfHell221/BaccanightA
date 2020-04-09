@@ -701,25 +701,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4628665981492934880, guid: 3d08f050cf1c7904a8c864e32a3fdb03,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 44.06006
-      objectReference: {fileID: 0}
-    - target: {fileID: 4628665981492934880, guid: 3d08f050cf1c7904a8c864e32a3fdb03,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -39.750122
-      objectReference: {fileID: 0}
     - target: {fileID: 9082762136579586544, guid: 3d08f050cf1c7904a8c864e32a3fdb03,
         type: 3}
       propertyPath: m_Name
       value: HUD Player Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 9082762136579586544, guid: 3d08f050cf1c7904a8c864e32a3fdb03,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d08f050cf1c7904a8c864e32a3fdb03, type: 3}
