@@ -17,13 +17,13 @@ public class CounterAttack : BossAttack
 
     [Header("Phase 1")]
     [Space(5)]
-    [SerializeField] [Range(1, 30)] private int m_speed = 10;
+    [SerializeField] [Range(1, 40)] private int m_speed = 10;
     //[SerializeField] [Range(1, 3)] private int m_hitDamage = -1;
     [SerializeField] [Range(0.1f, 3f)] private float m_cooldownBeforeAttack = 1.5f;
 
     [Header("Phase 2")]
     [Space(5)]
-    [SerializeField] [Range(1, 30)] private int m_speedUpgrade = 20;
+    [SerializeField] [Range(1, 40)] private int m_speedUpgrade = 20;
     [SerializeField] [Range(1, 3)] private int m_hitDamageUpgrade = -1;
     [SerializeField] [Range(0.1f, 3f)] private float m_cooldownBeforeAttackUpgrade = 1.0f;
     #endregion

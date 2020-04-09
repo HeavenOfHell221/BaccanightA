@@ -36,12 +36,13 @@ public class RainAttack : BossAttack
     private int m_loopToDo;
     private int m_loopDone;
     private int m_line;
+    private float m_currentSpeed;
     #endregion
 
     public void Start()
     {
         m_loopToDo = m_loopToBeDone;
-        m_rainball.GetComponent<RainFireball>().Speed = m_ballSpeedFlat;
+        m_currentSpeed = m_ballSpeedFlat;
     }
 
     [ContextMenu("Start Attack")]
@@ -105,6 +106,7 @@ public class RainAttack : BossAttack
             {
                 m_line >>= 1;
                 GameObject fireball = ObjectPooler.Instance.SpawnFromPool(m_rainball, spawn);
+                fireball.GetComponent<RainFireball>().Speed = m_currentSpeed;
                 fireball.transform.rotation = Quaternion.AngleAxis(90f, Vector3.forward);
                 spawn += Vector3.right;
             }
@@ -121,7 +123,7 @@ public class RainAttack : BossAttack
     {
         base.UpgradeAttack();
         m_cooldown = m_newCooldown;
-        m_rainball.GetComponent<RainFireball>().Speed = m_upgradeSpeedRelative * m_ballSpeedFlat;
+        m_currentSpeed = m_upgradeSpeedRelative * m_ballSpeedFlat;
         m_loopToDo = m_newLoopToBeDone;
     }
 

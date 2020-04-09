@@ -14,21 +14,45 @@ public class ExplosionFireball : Fireball
     [SerializeField] [Range(0f, 3f)] private float m_MinDirectionY = 0.25f;
     [SerializeField] [Range(0f, 3f)] private float m_MaxDirectionY = 1.5f;
 
+    private bool m_explosionLeft = true;
+
     protected override void Start()
     {
-        StartCoroutine(_Move());
+        GameObject player = PlayerManager.Instance.PlayerReference;
+        if(player.transform.position.x > transform.position.x)
+        {
+            m_explosionLeft = false;
+        }
+        Move();
     }
 
-    private IEnumerator _Move()
+    protected override void OnEnable()
     {
-        yield return new WaitForSeconds(m_timeBeforeMove);
+        base.OnEnable();
+        GameObject player = PlayerManager.Instance.PlayerReference;
+        if (player.transform.position.x > transform.position.x)
+        {
+            m_explosionLeft = false;
+        }
         Move();
     }
 
     protected override void Move()
     {
-        float directionX = Random.Range(m_MinDirectionX, m_MaxDirectionX);
-        float directionY = Random.Range(m_MinDirectionY, m_MaxDirectionY);
+        Rigidbody.velocity = Vector2.zero;
+        float directionX;
+        float directionY= Random.Range(m_MinDirectionY, m_MaxDirectionY);
+
+        if (m_explosionLeft)
+        {
+            directionX = Random.Range(m_MinDirectionX, m_MaxDirectionX);
+        }
+        else
+        {
+            directionX = Random.Range(m_MaxDirectionX * -1, m_MinDirectionX * -1);
+        }
+
+       
         Vector3 direction = new Vector3(directionX, directionY, 0f);
         Rigidbody.AddForce(direction * Speed, ForceMode2D.Impulse);
     }

@@ -19,11 +19,6 @@ public class ExplosionAttack : BossAttack
 #pragma warning restore 0649
     #endregion
 
-    public void Start()
-    {
-        m_explosionFireball.GetComponent<ExplosionFireball>().Speed = m_ballSpeedFlat;
-    }
-
     [ContextMenu("Start Attack")]
     public override void StartAttack()
     {
@@ -35,7 +30,8 @@ public class ExplosionAttack : BossAttack
     {
         for (int i = 0; i < m_numberPerBurst; i++)
         {
-            ObjectPooler.Instance.SpawnFromPool(m_explosionFireball, transform.position);
+            GameObject obj = ObjectPooler.Instance.SpawnFromPool(m_explosionFireball, transform.position);
+            obj.GetComponent<ExplosionFireball>().Speed = m_ballSpeedFlat;
             yield return new WaitForSeconds(m_cooldownBetweenFireball);
         }
 

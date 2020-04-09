@@ -279,7 +279,7 @@ public class BossAIController : MonoBehaviour
 
     public void UpgradeSpeedBetweenTwoAttacks()
     {
-        if (m_timeBetweenAttackIndex < m_basicAttacks.Length)
+        if (m_timeBetweenAttackIndex < m_basicAttacks.Length - 1)
         {
             m_timeBetweenAttackIndex++;
             m_timeBetweenAttack = m_timesBetweenAttack[m_timeBetweenAttackIndex];
