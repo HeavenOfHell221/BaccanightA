@@ -405,7 +405,7 @@ MonoBehaviour:
   - {fileID: 8557690994360776125}
   m_layerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 768
   m_IA: {fileID: 1387102921752016282}
   m_Model_1: {fileID: 8851498159590956479}
   m_Model_2: {fileID: 7014930926289981009}
@@ -420,8 +420,8 @@ MonoBehaviour:
     Max: 2
   m_chargingTimeUpgrade: 0.4
   m_AttackDurationUpgrade: 1
-  m_distanceUpgrade: 25
-  m_damageUpgrade: -1
+  m_distanceUpgrade: 20
+  m_damageUpgrade: -2
   m_timeBtwLaserUpgrade: 0.3
   m_laserNumberUpgrade:
     Min: 2
@@ -872,6 +872,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7124010123554813591}
+        m_MethodName: CancelAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_collider: {fileID: 4465020418736641229}
   m_model: {fileID: 6479289121203216061}
   m_health: {fileID: 9128026524433129773}
@@ -1022,7 +1033,7 @@ MonoBehaviour:
   m_cooldownBetweenFireball: 0.4
   m_numberTotalBurst: 3
   m_speedFireball: 13
-  m_numberPerBurstUpgrade: 5
+  m_numberPerBurstUpgrade: 4
   m_cooldownBetweenBurstUpgrade: 1
   m_cooldownBetweenFireballUpgrade: 0.3
   m_numberTotalBurstUpgrade: 4
@@ -1512,7 +1523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6075900487205185007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -1.9, z: 0}
+  m_LocalPosition: {x: -2, y: -2.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 914277064294946548}
@@ -1625,7 +1636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6845643201061629007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 1.1, z: 0}
+  m_LocalPosition: {x: -2, y: 1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 914277064294946548}
@@ -1758,15 +1769,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_rainball: {fileID: 6145874302824446642, guid: bed636783384078428c7e9e5818b6c43,
     type: 3}
-  maxNumberOfBall: 25
-  initialSpawn: {x: -20, y: 10, z: 0}
-  m_ballPourcentage: 0.8
+  maxNumberOfBall: 27
+  initialSpawn: {x: -24, y: 10, z: 0}
+  m_ballPourcentage: 0.75
   m_voidSpace: 2
   m_ballSpeedFlat: 15
-  m_cooldown: 2
+  m_cooldown: 1.3
   m_loopToBeDone: 3
-  m_upgradeSpeedRelative: 1.4
-  m_newCooldown: 1.3
+  m_upgradeSpeedRelative: 1.5
+  m_newCooldown: 1
   m_newLoopToBeDone: 5
 --- !u!1 &7885270596368210938
 GameObject:

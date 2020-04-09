@@ -89,10 +89,21 @@ public class BossAIController : MonoBehaviour
         }
     }
 
-    private IEnumerator NextAttack(float timeWait)
+    private IEnumerator NextAttack(float timeWait, int attackID = -1)
     {
         yield return new WaitForSeconds(timeWait);
-        UpdateIABehaviour(BossActionType.Attacking);
+
+        if(attackID != -1)
+        {
+            CurrentState = BossActionType.Attacking;
+            HandleAttackingState(attackID);
+        }
+        else
+        {
+            UpdateIABehaviour(BossActionType.Attacking);
+        }
+
+        
     }
 
     public void UpdateIABehaviour(BossActionType newState)
@@ -193,24 +204,17 @@ public class BossAIController : MonoBehaviour
 
     }
 
-    private void HandleAttackingState()
+    private void HandleAttackingState(int attackID = -1)
     { 
         if(m_currentAttack == null)
         {
-            m_currentAttack = m_basicAttacks[Random.Range(0, m_basicAttackPossible)];
+            m_currentAttack = m_basicAttacks[attackID == -1 ? Random.Range(0, m_basicAttackPossible) : attackID];
             m_currentAttack.StartAttack();
         }
     }
 
     private void HandleEnragingState()
     {
-        // Cancel de l'attaque en cours
-        if(m_currentAttack)
-        {
-            m_currentAttack.CancelAttack();
-            m_currentAttack = null;
-        }
-
         // Amélioration des attaques
         for (int i = 0; i < m_basicAttackPossible; i++)
         {
@@ -230,6 +234,12 @@ public class BossAIController : MonoBehaviour
 
     private IEnumerator _HandleEnragingState()
     {
+        if(m_currentAttack)
+        {
+            m_currentAttack.CancelAttack();
+            m_currentAttack = null;
+        }
+
         m_animator.SetTrigger("Enraged");
         PlayerManager.Instance.ShakeCamera.Shake(3f, 1f, 1f);
 
@@ -238,7 +248,7 @@ public class BossAIController : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(NextAttack(m_timeBetweenAttack));
+        StartCoroutine(NextAttack(0.8f, 4));
     }
 
     private void HandleDyingState()

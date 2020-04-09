@@ -52,12 +52,12 @@ public class ShieldAttack : BossAttack
 
     protected override IEnumerator HandleAttack()
     {
-        if(IsUpgraded)
+        yield return new WaitForSeconds(1f);
+
+        if (IsUpgraded)
         {
             EndAttack();
         }
-
-        yield return new WaitForSeconds(1f);
 
         m_collider.enabled = true;
 

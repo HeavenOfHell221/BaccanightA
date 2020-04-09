@@ -117,7 +117,7 @@ public class LaserAttack : BossAttack
 
     private IEnumerator HandleLaser()
     {
-        bool playerIsHit = false;
+        bool hit = false;
         m_Model_2.transform.position = m_currentPoint.position;
         m_Model_2.SetActive(true);
 
@@ -129,7 +129,7 @@ public class LaserAttack : BossAttack
 
         while (timeElapsed < m_AttackDuration)
         {
-            if(!playerIsHit)
+            if(!hit)
             {
                 RaycastHit2D raycast = Physics2D.Raycast(m_currentPoint.position, (!m_IA.FlipRight ? Vector2.right : Vector2.left), size.y + 1, m_layerMask);
 
@@ -138,15 +138,15 @@ public class LaserAttack : BossAttack
                     GameObject other = raycast.collider.gameObject;
                     if (other.tag == "Player")
                     {
-                        other.GetComponent<Health>().ModifyHealth(m_damage, gameObject);
-                        playerIsHit = true;
-                        m_Model_3.transform.position = raycast.point;
-                        m_Model_3.SetActive(true);
+                        other.GetComponent<Health>().ModifyHealth(m_damage, gameObject);    
                     }
+                    hit = true;
+                    m_Model_3.transform.position = raycast.point;
+                    m_Model_3.SetActive(true);
                 }
             }
             
-            if (size.y < m_distance && !playerIsHit)
+            if (size.y < m_distance && !hit)
             {
                 size.y += 1f;
                 sprite.size = size;
