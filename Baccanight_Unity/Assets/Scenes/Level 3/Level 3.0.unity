@@ -163,6 +163,16 @@ PrefabInstance:
       propertyPath: maxNumberOfBall
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7585565651246710859, guid: d6126ff5d4c35ba41b550e1cad053571,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.501
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585565651246710859, guid: d6126ff5d4c35ba41b550e1cad053571,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -43.143
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6126ff5d4c35ba41b550e1cad053571, type: 3}
 --- !u!1001 &844244891
