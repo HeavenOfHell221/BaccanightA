@@ -685,9 +685,10 @@ MonoBehaviour:
   m_rigidbody: {fileID: 8198711157667756216}
   m_health: {fileID: 9128026524433129773}
   m_speed: 15
+  m_hitDamage: -1
   m_cooldownBeforeAttack: 0.66
-  m_speedUpgrade: 25
-  m_hitDamageUpgrade: -1
+  m_speedUpgrade: 20
+  m_hitDamageUpgrade: -2
   m_cooldownBeforeAttackUpgrade: 0.4
 --- !u!114 &7131463579652883245
 MonoBehaviour:

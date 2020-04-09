@@ -38,10 +38,10 @@ public class Health : MonoBehaviour
             m_onHealed.Invoke(deltaLife, source);
         }
 
-        HandleDeath();
+        HandleDeath(deltaLife);
     }
 
-    public void HandleDeath()
+    public void HandleDeath(int deltaLife)
     {
         if (m_health.CurrentHealth <= 0)
         {
@@ -49,20 +49,23 @@ public class Health : MonoBehaviour
             m_state.State = GamePlayerState.inDie;
         }
 
-        if (!m_health.IsInvincible)
+        if (!m_health.IsInvincible && deltaLife < 0)
         {
-            StartCoroutine(InvincibleFrame());
+            StartCoroutine(InvincibleFrame(deltaLife));
         }
     }
 
-    private IEnumerator InvincibleFrame()
+    private IEnumerator InvincibleFrame(int deltaLife)
     {
-        PlayerManager.Instance.ShakeCamera.Shake(2f, 1f, TimeScaleNull);
+        deltaLife *= -1;
+        float timeScaleNull = TimeScaleNull * deltaLife;
+
+        PlayerManager.Instance.ShakeCamera.Shake(2f * deltaLife, 1f, timeScaleNull);
         m_health.IsInvincible = true;
         Time.timeScale = 0f;
-        yield return new WaitForSecondsRealtime(m_timeTimeScaleNull);
+        yield return new WaitForSecondsRealtime(timeScaleNull);
         Time.timeScale = 1f;
-        yield return new WaitForSecondsRealtime(m_timeInvincibleFrame - m_timeTimeScaleNull);
+        yield return new WaitForSecondsRealtime(m_timeInvincibleFrame - timeScaleNull);
         m_health.IsInvincible = false;
     }
 }

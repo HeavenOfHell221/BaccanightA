@@ -27,23 +27,32 @@ public class HealthBarBoss : MonoBehaviour
 
     private void Update()
     {
+        // Lerp de la barre rouge
         m_redBar.fillAmount = Mathf.Lerp(m_redBar.fillAmount, m_actualRatio , m_redDeltaFillAmount * Time.deltaTime);
 
+        // Si le joueur n'a pas touché le boss pendant un temps
+        // On commence à update la barre jaune
         if(m_lastUpdateLife + m_timeBeforeUpdateYellowBar < Time.time)
         {
             m_updateYellowBar = true;
             m_redBarrFillAmountBeforeUpdateYellowBar = m_redBar.fillAmount;
         }
 
+        // Si on doit update la barre jaune      
         if(m_updateYellowBar)
         {
+            // On le lerp
             m_yellowBar.fillAmount = Mathf.Lerp(m_yellowBar.fillAmount, m_actualRatio, m_redDeltaFillAmount * Time.deltaTime);
+
+            // Si la barre jaune a atteint la barre rouge, on arrête de la baisser
             if(m_yellowBar.fillAmount <= m_redBarrFillAmountBeforeUpdateYellowBar)
             {
                 m_updateYellowBar = false;
             }
         }
 
+        // Si on a trop baisser la barre jaune, on la remonte jusqu'a la barre rouge
+        // Ou si le boss régénère des points de vie
         if(m_yellowBar.fillAmount < m_redBar.fillAmount)
         {
             m_yellowBar.fillAmount = m_redBar.fillAmount;
@@ -52,21 +61,7 @@ public class HealthBarBoss : MonoBehaviour
 
     private void HandleHealthChanged(float ratio)
     {
-        /* StopAllCoroutines();
-
-         StartCoroutine(ChangeToPct(pct));*/
-
         m_actualRatio = ratio;
         m_lastUpdateLife = Time.time;
-    }
-
-    private IEnumerator ChangeToPct(float pct)
-    {
-        m_redBar.fillAmount = pct;
-
-        yield return new WaitForSeconds(0.5f);
-        m_yellowBar.fillAmount = pct;
-
-        yield return null;
     }
 }
