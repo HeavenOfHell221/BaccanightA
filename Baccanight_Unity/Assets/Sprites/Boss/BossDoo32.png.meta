@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: d49b8363d104be54ebca0a81aaf5593e
+guid: 4dc64c64da11c5842a2560d13108798c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2578063155263324930
-    second: BossDoor32_0
+      213: -2109748195462745481
+    second: BossDoo32_0
   - first:
-      213: 1111151260075237533
-    second: BossDoor32_1
+      213: -4443558309354721100
+    second: BossDoo32_1
   - first:
-      213: -1395077687305441108
-    second: BossDoor32_2
+      213: 3440824655854342160
+    second: BossDoo32_2
   - first:
-      213: 4763172149422049935
-    second: BossDoor32_3
+      213: 7766475815217765207
+    second: BossDoo32_3
   - first:
-      213: -658586405900142229
-    second: BossDoor32_4
+      213: 2811824338776731962
+    second: BossDoo32_4
   - first:
-      213: -1102383145238294119
-    second: BossDoor32_5
+      213: 1372517319398347528
+    second: BossDoo32_5
   - first:
-      213: 3693458106327624175
-    second: BossDoor32_6
+      213: -2155698882027066261
+    second: BossDoo32_6
   - first:
-      213: -2815709626174396728
-    second: BossDoor32_7
+      213: -263417610341082711
+    second: BossDoo32_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -110,169 +110,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BossDoor32_0
+      name: BossDoo32_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 3840
-        width: 1920
-        height: 1920
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2034ef1d7ce17c320800000000000000
-      internalID: 2578063155263324930
+      spriteID: 772fbe3b13ba8b2e0800000000000000
+      internalID: -2109748195462745481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BossDoor32_1
+      name: BossDoo32_1
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 3840
-        width: 1920
-        height: 1920
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9023841f2a9b6f00800000000000000
-      internalID: 1111151260075237533
+      spriteID: 4b03d28b24f4552c0800000000000000
+      internalID: -4443558309354721100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BossDoor32_2
+      name: BossDoo32_2
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 3840
-        width: 1920
-        height: 1920
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca0f51e1c30b3ace0800000000000000
-      internalID: -1395077687305441108
+      spriteID: 0109a925bc340cf20800000000000000
+      internalID: 3440824655854342160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BossDoor32_3
+      name: BossDoo32_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 1920
-        width: 1920
-        height: 1920
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8ac55265df2a1240800000000000000
-      internalID: 4763172149422049935
+      spriteID: 75b97bafa9018cb60800000000000000
+      internalID: 7766475815217765207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BossDoor32_4
+      name: BossDoo32_4
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 1920
-        width: 1920
-        height: 1920
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b69bb66372b3cd6f0800000000000000
-      internalID: -658586405900142229
+      spriteID: a31b593a65b950720800000000000000
+      internalID: 2811824338776731962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BossDoor32_5
+      name: BossDoo32_5
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 1920
-        width: 1920
-        height: 1920
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99191bdbe5c83b0f0800000000000000
-      internalID: -1102383145238294119
+      spriteID: 8035fc6ea392c0310800000000000000
+      internalID: 1372517319398347528
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BossDoor32_6
+      name: BossDoo32_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1920
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe9e174349cc14330800000000000000
-      internalID: 3693458106327624175
+      spriteID: b6ce116c94b6512e0800000000000000
+      internalID: -2155698882027066261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BossDoor32_7
+      name: BossDoo32_7
       rect:
         serializedVersion: 2
-        x: 1920
+        x: 32
         y: 0
-        width: 1920
-        height: 1920
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c62a3563079ce8d0800000000000000
-      internalID: -2815709626174396728
+      spriteID: 9a9990c3417285cf0800000000000000
+      internalID: -263417610341082711
       vertices: []
       indices: 
       edges: []
