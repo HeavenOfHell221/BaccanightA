@@ -1,0 +1,487 @@
+fileFormatVersion: 2
+guid: 2d381fe43586c5a419d66674e5007da5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8025587258855422983
+    second: BossDoor64v_2_0
+  - first:
+      213: 5982583104464960085
+    second: BossDoor64v_2_1
+  - first:
+      213: 5269436276363700833
+    second: BossDoor64v_2_2
+  - first:
+      213: 6517320915762332371
+    second: BossDoor64v_2_3
+  - first:
+      213: -5790984234357925022
+    second: BossDoor64v_2_4
+  - first:
+      213: 1427914287908689058
+    second: BossDoor64v_2_5
+  - first:
+      213: -6925665149815445620
+    second: BossDoor64v_2_6
+  - first:
+      213: 5570960441897401340
+    second: BossDoor64v_2_7
+  - first:
+      213: 6652043974104951239
+    second: BossDoor64v_2_8
+  - first:
+      213: 8452011821624516370
+    second: BossDoor64v_2_9
+  - first:
+      213: 2482478957494592351
+    second: BossDoor64v_2_10
+  - first:
+      213: -7693925346114373395
+    second: BossDoor64v_2_11
+  - first:
+      213: 5768929327941554673
+    second: BossDoor64v_2_12
+  - first:
+      213: 4853629958124530984
+    second: BossDoor64v_2_13
+  - first:
+      213: 3742974878657727349
+    second: BossDoor64v_2_14
+  - first:
+      213: -3710587346903192875
+    second: BossDoor64v_2_15
+  - first:
+      213: -977477128828311838
+    second: BossDoor64v_2_16
+  - first:
+      213: -3129549615300341171
+    second: BossDoor64v_2_17
+  - first:
+      213: -1195374995122831156
+    second: BossDoor64v_2_18
+  - first:
+      213: -46746518979991717
+    second: BossDoor64v_2_19
+  - first:
+      213: -7539217777091927007
+    second: BossDoor64v_2_20
+  - first:
+      213: 8844607116064668925
+    second: BossDoor64v_2_21
+  - first:
+      213: -9167243093378993319
+    second: BossDoor64v_2_22
+  - first:
+      213: 5438793765401111704
+    second: BossDoor64v_2_23
+  - first:
+      213: -5563144264316965155
+    second: BossDoor64v_2_24
+  - first:
+      213: -2242782273022415924
+    second: BossDoor64v_2_25
+  - first:
+      213: 4266353030622671012
+    second: BossDoor64v_2_26
+  - first:
+      213: 2075778561947965231
+    second: BossDoor64v_2_27
+  - first:
+      213: 7834032205923072313
+    second: BossDoor64v_2_28
+  - first:
+      213: 1215444311865289750
+    second: BossDoor64v_2_29
+  - first:
+      213: 6436067774478589222
+    second: BossDoor64v_2_30
+  - first:
+      213: -5695585905562136326
+    second: BossDoor64v_2_31
+  - first:
+      213: -6209403625461438711
+    second: BossDoor64v_2_32
+  - first:
+      213: 3765875686685558860
+    second: BossDoor64v_2_33
+  - first:
+      213: 4737159867683389470
+    second: BossDoor64v_2_34
+  - first:
+      213: 8638662742443427158
+    second: BossDoor64v_2_35
+  - first:
+      213: -6363825655670410088
+    second: BossDoor64v_2_36
+  - first:
+      213: 8293318603651554057
+    second: BossDoor64v_2_37
+  - first:
+      213: 5104173262207569176
+    second: BossDoor64v_2_38
+  - first:
+      213: 5528335536236039171
+    second: BossDoor64v_2_39
+  - first:
+      213: -6717896952402342681
+    second: BossDoor64v_2_40
+  - first:
+      213: -7763255389992282870
+    second: BossDoor64v_2_41
+  - first:
+      213: -6640036242806214323
+    second: BossDoor64v_2_42
+  - first:
+      213: -5990366881399909110
+    second: BossDoor64v_2_43
+  - first:
+      213: 9218348147158400038
+    second: BossDoor64v_2_44
+  - first:
+      213: 7645599771947961618
+    second: BossDoor64v_2_45
+  - first:
+      213: 7451814637936227902
+    second: BossDoor64v_2_46
+  - first:
+      213: 109506529730899632
+    second: BossDoor64v_2_47
+  - first:
+      213: -6779022277428211220
+    second: BossDoor64v_2_48
+  - first:
+      213: 4101015218473822416
+    second: BossDoor64v_2_49
+  - first:
+      213: -8940048374079613381
+    second: BossDoor64v_2_50
+  - first:
+      213: -8463742887593954891
+    second: BossDoor64v_2_51
+  - first:
+      213: -1102254381894921103
+    second: BossDoor64v_2_52
+  - first:
+      213: 3076829707826554695
+    second: BossDoor64v_2_53
+  - first:
+      213: -8455988384947225087
+    second: BossDoor64v_2_54
+  - first:
+      213: 4853434607358570440
+    second: BossDoor64v_2_55
+  - first:
+      213: -4692236903009067260
+    second: BossDoor64v_2_56
+  - first:
+      213: -166893945981646816
+    second: BossDoor64v_2_57
+  - first:
+      213: 3984400580991859860
+    second: BossDoor64v_2_58
+  - first:
+      213: 5712195743724902477
+    second: BossDoor64v_2_59
+  - first:
+      213: 7537314544348783467
+    second: BossDoor64v_2_60
+  - first:
+      213: -5427519685523079990
+    second: BossDoor64v_2_61
+  - first:
+      213: -5106018026045378924
+    second: BossDoor64v_2_62
+  - first:
+      213: -3233044178256222428
+    second: BossDoor64v_2_63
+  - first:
+      213: -286442365558731994
+    second: BossDoor64v_2_64
+  - first:
+      213: -7774389980213793199
+    second: BossDoor64v_2_65
+  - first:
+      213: -1852149349444777930
+    second: BossDoor64v_2_66
+  - first:
+      213: 1622986697862094664
+    second: BossDoor64v_2_67
+  - first:
+      213: 5059069986711608784
+    second: BossDoor64v_2_68
+  - first:
+      213: -3139192399772891594
+    second: BossDoor64v_2_69
+  - first:
+      213: -2529226127334880844
+    second: BossDoor64v_2_70
+  - first:
+      213: 7974853699526536047
+    second: BossDoor64v_2_71
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 96
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BossDoor64v_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c7afd271d906f60800000000000000
+      internalID: 8025587258855422983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossDoor64v_2_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55a33ece2a7660350800000000000000
+      internalID: 5982583104464960085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossDoor64v_2_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a273bef5cc02940800000000000000
+      internalID: 5269436276363700833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossDoor64v_2_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2cc37b7dc227a50800000000000000
+      internalID: 6517320915762332371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossDoor64v_2_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26b5533558a42afa0800000000000000
+      internalID: -5790984234357925022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossDoor64v_2_5
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a4908cba78f0d310800000000000000
+      internalID: 1427914287908689058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossDoor64v_2_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c87a2ff6d3813ef90800000000000000
+      internalID: -6925665149815445620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossDoor64v_2_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb3c057107005d40800000000000000
+      internalID: 5570960441897401340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
