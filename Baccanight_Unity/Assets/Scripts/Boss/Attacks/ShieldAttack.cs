@@ -14,6 +14,7 @@ public class ShieldAttack : BossAttack
     [Header("Attributes")]
     [Space(5)]
     [SerializeField] private Collider2D m_collider;
+    [SerializeField] private GameObject m_model;
     [SerializeField] private HealthBoss m_health;
 
     [Header("Phase 1")]
@@ -37,13 +38,15 @@ public class ShieldAttack : BossAttack
     {
         m_collider.isTrigger = true;
         m_collider.enabled = false;
+        m_model.SetActive(false);
     }
 
     [ContextMenu("Start Attack")]
     public override void StartAttack()
     {
         base.StartAttack();
-        m_collider.enabled = true;
+        
+        m_model.SetActive(true);
         StartCoroutine(HandleAttack());
     }
 
@@ -53,6 +56,10 @@ public class ShieldAttack : BossAttack
         {
             EndAttack();
         }
+
+        yield return new WaitForSeconds(1f);
+
+        m_collider.enabled = true;
 
         float duration = m_durationAttack;
         float time;
@@ -72,6 +79,7 @@ public class ShieldAttack : BossAttack
         }
 
         m_collider.enabled = false;
+        m_model.SetActive(false);
         EndAttack();
     }
 
@@ -87,5 +95,6 @@ public class ShieldAttack : BossAttack
         StopAllCoroutines();
         base.CancelAttack();
         m_collider.enabled = false;
+        m_model.SetActive(false);
     }
 }
