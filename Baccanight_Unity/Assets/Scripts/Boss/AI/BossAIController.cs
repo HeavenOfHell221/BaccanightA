@@ -207,7 +207,7 @@ public class BossAIController : MonoBehaviour
 
     private void HandleAttackingState(int attackID = -1)
     {
-        StartCoroutine(_HandleAttackingState());
+        StartCoroutine(_HandleAttackingState(attackID));
     }
 
     private IEnumerator _HandleAttackingState(int attackID = -1)

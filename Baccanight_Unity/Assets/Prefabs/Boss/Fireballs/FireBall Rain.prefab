@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 15
   m_timeBeforeMove: 0.1
+  m_damage: -1
 --- !u!1001 &5794463874331686637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64,12 +65,12 @@ PrefabInstance:
     - target: {fileID: 3504265795053747990, guid: fb53137598539204abd83cab1537abe7,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 3504265795053747990, guid: fb53137598539204abd83cab1537abe7,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 8832644600293077732, guid: fb53137598539204abd83cab1537abe7,
         type: 3}
