@@ -13,7 +13,7 @@ public class ExplosionAttack : BossAttack
     [Header("Attributes")]
     [Space(5)]
     [SerializeField] [Range(0.1f, 25f)] private float m_ballSpeedFlat;
-    [SerializeField] [Range(20, 100)] private int m_numberPerBurst = 50;
+    [SerializeField] [Range(20, 200)] private int m_numberPerBurst = 50;
     [SerializeField] [Range(0.05f, 0.5f)] private float m_cooldownBetweenFireball = 0.1f;
 
 #pragma warning restore 0649
@@ -30,7 +30,7 @@ public class ExplosionAttack : BossAttack
     {
         for (int i = 0; i < m_numberPerBurst; i++)
         {
-            GameObject obj = ObjectPooler.Instance.SpawnFromPool(m_explosionFireball, transform.position);
+            GameObject obj = ObjectPooler.Instance.SpawnFromPool(m_explosionFireball, transform.position, Quaternion.identity);
             obj.GetComponent<ExplosionFireball>().Speed = m_ballSpeedFlat;
             yield return new WaitForSeconds(m_cooldownBetweenFireball);
         }

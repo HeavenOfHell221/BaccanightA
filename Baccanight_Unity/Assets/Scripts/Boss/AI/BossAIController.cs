@@ -47,6 +47,7 @@ public class BossAIController : MonoBehaviour
     private int m_timeBetweenAttackIndex = 0; // Index pour le tableau des cooldowns entre deux attaques
     private int m_basicAttackPossible = 4;
     private bool m_battleHasStart = false;
+    public LinkedList<BossAttack> m_lastAttacks = new LinkedList<BossAttack>();
     #endregion
 
     #region Getters / Setters
@@ -205,10 +206,41 @@ public class BossAIController : MonoBehaviour
     }
 
     private void HandleAttackingState(int attackID = -1)
+    {
+        StartCoroutine(_HandleAttackingState());
+    }
+
+    private IEnumerator _HandleAttackingState(int attackID = -1)
     { 
-        if(m_currentAttack == null)
+        if (m_currentAttack == null)
         {
-            m_currentAttack = m_basicAttacks[attackID == -1 ? Random.Range(0, m_basicAttackPossible) : attackID];
+            BossAttack newAttack = m_basicAttacks[attackID == -1 ? Random.Range(0, m_basicAttackPossible) : attackID];
+
+            // Si y'a pas encore 2 attaques de déjà faites
+            if (m_lastAttacks.Count < 2)
+            {
+                m_lastAttacks.AddFirst(newAttack);
+            }
+            else
+            {
+                // Si le boss veut faire 3 fois la même attaque d'affilé
+                if (newAttack == m_lastAttacks.First.Value && newAttack == m_lastAttacks.First.Next.Value)
+                {
+                    yield return null;
+                    HandleAttackingState(); // On reprend une attaque au hasard
+                }
+                else
+                {
+                    // On décale l'attaque en position 0 en 1
+                    m_lastAttacks.First.Next.Value = m_lastAttacks.First.Value;
+                    // On ajoute la nouvelle attaque en position 0
+                    m_lastAttacks.AddFirst(newAttack);
+                }
+
+                //Debug.Log(m_lastAttacks.First.Value.name + " | " + m_lastAttacks.First.Next.Value.name);
+            }
+
+            m_currentAttack = newAttack;
             m_currentAttack.StartAttack();
         }
     }

@@ -76,8 +76,7 @@ public class RainAttack : BossAttack
         int currentLine = 1;
         for (int i = 1; i < maxNumberOfBall;)
         {
-            float test = Random.Range(0f, 1f);
-            if (test <= m_ballPourcentage)
+            if (Random.Range(0f, 1f) <= m_ballPourcentage)
             {
                 currentLine <<= 1;
                 currentLine++;
@@ -105,7 +104,7 @@ public class RainAttack : BossAttack
             if ((m_line & 1) == 1)
             {
                 m_line >>= 1;
-                GameObject fireball = ObjectPooler.Instance.SpawnFromPool(m_rainball, spawn);
+                GameObject fireball = ObjectPooler.Instance.SpawnFromPool(m_rainball, spawn, Quaternion.identity);
                 fireball.GetComponent<RainFireball>().Speed = m_currentSpeed;
                 fireball.transform.rotation = Quaternion.AngleAxis(90f, Vector3.forward);
                 spawn += Vector3.right;

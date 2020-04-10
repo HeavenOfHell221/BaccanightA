@@ -14,13 +14,11 @@ public class CounterAttack : BossAttack
     [Header("Phase 1")]
     [Space(5)]
     [SerializeField] [Range(1, 40)] private int m_speed = 10;
-    [SerializeField] [Range(0, -3)] private int m_hitDamage = -1;
     [SerializeField] [Range(0.1f, 3f)] private float m_cooldownBeforeAttack = 1.5f;
 
     [Header("Phase 2")]
     [Space(5)]
     [SerializeField] [Range(1, 40)] private int m_speedUpgrade = 20;
-    [SerializeField] [Range(0, -3)] private int m_hitDamageUpgrade = -1;
     [SerializeField] [Range(0.1f, 3f)] private float m_cooldownBeforeAttackUpgrade = 1.0f;
     #endregion
 
@@ -65,7 +63,6 @@ public class CounterAttack : BossAttack
         m_collider.enabled = true;
     }
 
-    [ContextMenu("End Attack")]
     protected override void EndAttack()
     {
         ResetAttributes();
@@ -78,7 +75,6 @@ public class CounterAttack : BossAttack
         base.UpgradeAttack();
         m_speed = m_speedUpgrade;
         m_cooldownBeforeAttack = m_cooldownBeforeAttackUpgrade;
-        m_hitDamage = m_hitDamageUpgrade;
     }
 
     [ContextMenu("Cancel Attack")]

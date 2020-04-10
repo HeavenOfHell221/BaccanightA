@@ -72,7 +72,7 @@ public class ObjectPooler : SingletonBehaviour<ObjectPooler>
 		poolDictionary = new Dictionary<GameObject, Pool>();
 	}
 
-	public GameObject SpawnFromPool(GameObject prefab, Vector3 position, Quaternion rotation = new Quaternion())
+	public GameObject SpawnFromPool(GameObject prefab, Vector3 position, Quaternion rotation)
 	{
 		if (!poolDictionary.ContainsKey(prefab))
 		{

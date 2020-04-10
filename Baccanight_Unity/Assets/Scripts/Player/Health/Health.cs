@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float m_timeInvincibleFrame;
     [SerializeField] private LifeEvent m_onDamaged;
     [SerializeField] private LifeEvent m_onHealed;
+    [SerializeField] private UnityEvent m_onRespawn;
 
     public bool IsInvincible { get => m_health.IsInvincible; }
     public float TimeScaleNull { get => m_timeTimeScaleNull; }
@@ -47,6 +49,7 @@ public class Health : MonoBehaviour
         {
             m_health.IsDead = true;
             m_state.State = GamePlayerState.inDie;
+            StartCoroutine(PlayerRespawn());
         }
 
         if (!m_health.IsInvincible && deltaLife < 0)
@@ -67,5 +70,12 @@ public class Health : MonoBehaviour
         Time.timeScale = 1f;
         yield return new WaitForSecondsRealtime(m_timeInvincibleFrame - timeScaleNull);
         m_health.IsInvincible = false;
+    }
+
+    private IEnumerator PlayerRespawn()
+    {
+        yield return StartCoroutine(LevelManager.Instance.ReloadScene());
+        m_health.Reset();
+        m_onRespawn.Invoke();
     }
 }

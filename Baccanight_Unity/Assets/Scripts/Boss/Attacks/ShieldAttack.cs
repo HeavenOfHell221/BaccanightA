@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class ShieldAttack : BossAttack
 {
@@ -15,17 +16,20 @@ public class ShieldAttack : BossAttack
     [Space(5)]
     [SerializeField] private Collider2D m_collider;
     [SerializeField] private GameObject m_model;
+    [SerializeField] private Light2D[] m_lights;
     [SerializeField] private HealthBoss m_health;
 
     [Header("Phase 1")]
     [Space(5)]
-    [SerializeField] [Range(1f, 10f)] private float m_durationAttack;
+    [SerializeField] [Range(1f, 10f)] private float m_durationHeal;
     [SerializeField] [Range(0f, 50f)] private float m_healAmount;
+    [SerializeField] [Range(0.2f, 2f)] private float m_durationWarning;
 
     [Header("Phase 2")]
     [Space(5)]
-    [SerializeField] [Range(1f, 10f)] private float m_durationAttackUpgrade;
+    [SerializeField] [Range(1f, 10f)] private float m_durationHealUpgrade;
     [SerializeField] [Range(0f, 50f)] private float m_healAmountUpgrade;
+    [SerializeField] [Range(0.2f, 2f)] private float m_durationWarningUpgrade;
 
 #pragma warning restore 0649
     #endregion
@@ -37,8 +41,7 @@ public class ShieldAttack : BossAttack
     private void Start()
     {
         m_collider.isTrigger = true;
-        m_collider.enabled = false;
-        m_model.SetActive(false);
+        DesactivateObjects();
     }
 
     [ContextMenu("Start Attack")]
@@ -52,16 +55,21 @@ public class ShieldAttack : BossAttack
 
     protected override IEnumerator HandleAttack()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(m_durationWarning);
+
+        foreach(var light in m_lights)
+        {
+            light.enabled = true;
+        }
+
+        m_collider.enabled = true;
 
         if (IsUpgraded)
         {
             EndAttack();
         }
 
-        m_collider.enabled = true;
-
-        float duration = m_durationAttack;
+        float duration = m_durationHeal;
         float time;
 
         while(duration > 0f)
@@ -78,8 +86,7 @@ public class ShieldAttack : BossAttack
             yield return null;
         }
 
-        m_collider.enabled = false;
-        m_model.SetActive(false);
+        DesactivateObjects();
         EndAttack();
     }
 
@@ -87,6 +94,9 @@ public class ShieldAttack : BossAttack
     public override void UpgradeAttack()
     {
         base.UpgradeAttack();
+        m_durationHeal = m_durationHealUpgrade;
+        m_durationWarning = m_durationWarningUpgrade;
+        m_healAmount = m_healAmountUpgrade;
     }
 
     [ContextMenu("Cancel Attack")]
@@ -94,7 +104,25 @@ public class ShieldAttack : BossAttack
     {
         StopAllCoroutines();
         base.CancelAttack();
+        DesactivateObjects();
+    }
+
+    private void DesactivateObjects()
+    {
         m_collider.enabled = false;
         m_model.SetActive(false);
+        foreach (var light in m_lights)
+        {
+            light.enabled = false;
+        }
+    }
+
+    public void HandleArrowHit()
+    {
+        if(m_collider.enabled)
+        {
+            CancelAttack();
+            CounterAttackEvent.Invoke(BossActionType.CounterAttack);
+        }
     }
 }

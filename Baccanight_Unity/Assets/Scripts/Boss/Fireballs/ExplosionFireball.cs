@@ -6,13 +6,13 @@ public class ExplosionFireball : Fireball
 {
     [Header("Range Direction X")]
     [Space(5)]
-    [SerializeField] [Range(-3f, 0f)] private float m_MinDirectionX = -0.75f;
-    [SerializeField] [Range(-3f, 0f)] private float m_MaxDirectionX = 0f;
+    [SerializeField] [Range(0f, 3f)] private float m_MinDirectionX;
+    [SerializeField] [Range(0f, 3f)] private float m_MaxDirectionX;
 
     [Header("Range Direction Y")]
     [Space(5)]
-    [SerializeField] [Range(0f, 3f)] private float m_MinDirectionY = 0.25f;
-    [SerializeField] [Range(0f, 3f)] private float m_MaxDirectionY = 1.5f;
+    [SerializeField] [Range(0f, 3f)] private float m_MinDirectionY;
+    [SerializeField] [Range(0f, 3f)] private float m_MaxDirectionY;
 
     private bool m_explosionLeft = true;
 
@@ -41,9 +41,9 @@ public class ExplosionFireball : Fireball
     {
         Rigidbody.velocity = Vector2.zero;
         float directionX;
-        float directionY= Random.Range(m_MinDirectionY, m_MaxDirectionY);
+        float directionY = Random.Range(m_MinDirectionY, m_MaxDirectionY);
 
-        if (m_explosionLeft)
+        if (!m_explosionLeft)
         {
             directionX = Random.Range(m_MinDirectionX, m_MaxDirectionX);
         }

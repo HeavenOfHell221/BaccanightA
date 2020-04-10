@@ -6,6 +6,6 @@ public class ReloadLevel : MonoBehaviour
 {
     public void Reload()
     {
-        LevelManager.Instance.ReloadScene();
+        StartCoroutine(LevelManager.Instance.ReloadScene());
     }
 }

@@ -118,9 +118,9 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         m_changeSceneInProgress = false;
     }
 
-    public void ReloadScene()
+    public IEnumerator ReloadScene()
     {
-        StartCoroutine(TeleportPlayer(m_sceneActive, m_door.GetDoorId()));
+        yield return StartCoroutine(TeleportPlayer(m_sceneActive, m_door.GetDoorId()));
     }
 
     public bool IsIdValid(int idBehindDoor, int idLevelAimed)

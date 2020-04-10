@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_rigidbody: {fileID: 2546145947217007058}
-  m_arrowSpeedX: 23
+  m_arrowSpeedX: 26
   m_playerMotion: {fileID: 11400000, guid: 8d25be83bd41b1745b10d7b8110c1547, type: 2}
   m_angleMaxY: 0.5
   m_damage: -3
