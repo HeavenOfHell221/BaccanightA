@@ -16,8 +16,6 @@ public class InputController : MonoBehaviour
 
 	#region Gameplay Events
 
-	private float m_MoveThreshold = .2f;
-
     [SerializeField] private Vector2Event m_OnMove;
     [SerializeField] private UnityEvent m_OnJump;
 	[SerializeField] private UnityEvent m_OnInteract;

@@ -24,11 +24,41 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203545812333320483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -0.4, z: 0}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 914277064294946548}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &364710895810104298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7818606887542857432}
+  m_Layer: 11
+  m_Name: Laser point 3 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7818606887542857432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364710895810104298}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: -3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 914277064294946548}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1408128883461010639
 GameObject:
@@ -348,8 +378,8 @@ MonoBehaviour:
   m_explosionFireball: {fileID: 2393154031471152202, guid: 87b77fa6834073d4b944231d0b8ef411,
     type: 3}
   m_ballSpeedFlat: 5
-  m_numberPerBurst: 120
-  m_cooldownBetweenFireball: 0.1
+  m_numberPerBurst: 60
+  m_cooldownBetweenFireball: 0.05
 --- !u!1 &1902404225942783748
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,10 +411,9 @@ Transform:
   - {fileID: 2560410359399655079}
   - {fileID: 1270313004260221198}
   - {fileID: 8557690994360776125}
-  - {fileID: 4808775587244571871}
-  - {fileID: 4901192141076184906}
   - {fileID: 8426275205252980596}
   - {fileID: 4811749133817748293}
+  - {fileID: 7818606887542857432}
   m_Father: {fileID: 4578759763621057657}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -404,10 +433,9 @@ MonoBehaviour:
   - {fileID: 2560410359399655079}
   - {fileID: 1270313004260221198}
   - {fileID: 8557690994360776125}
-  - {fileID: 4808775587244571871}
-  - {fileID: 4901192141076184906}
   - {fileID: 8426275205252980596}
   - {fileID: 4811749133817748293}
+  - {fileID: 7818606887542857432}
   m_layerMask:
     serializedVersion: 2
     m_Bits: 768
@@ -418,22 +446,22 @@ MonoBehaviour:
     type: 3}
   m_collisionBeam: {fileID: 7230077560877081797, guid: fea44bdeae227e641b7ac92600681e6f,
     type: 3}
-  m_chargingTime: 0.66
+  m_chargingTime: 0.7
   m_AttackDuration: 0.8
-  m_distance: 20
+  m_distance: 21
   m_damage: -1
   m_timeBtwLaser: 0.4
   m_laserNumber:
     Min: 2
     Max: 4
-  m_chargingTimeUpgrade: 0.5
-  m_AttackDurationUpgrade: 0.96
+  m_chargingTimeUpgrade: 0.55
+  m_AttackDurationUpgrade: 0.9
   m_distanceUpgrade: 22
   m_damageUpgrade: -1
   m_timeBtwLaserUpgrade: 0.4
   m_laserNumberUpgrade:
     Min: 3
-    Max: 6
+    Max: 5
 --- !u!1 &2785219362762407434
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +620,6 @@ MonoBehaviour:
   m_animator: {fileID: 2785219362762407428}
   m_patrolPath: {fileID: 7342933017519153731}
   m_health: {fileID: 9128026524433129773}
-  m_spawnBoss: {fileID: 0}
   m_distanceStartBattle: 22
   m_distanceToNextNode: 0.2
   m_startBattle: {fileID: 0}
@@ -604,9 +631,9 @@ MonoBehaviour:
   - {fileID: 3711754511399344297}
   m_counterAttackAttack: {fileID: 6451607651891197302}
   m_timesBetweenAttack:
-  - 3
   - 2
   - 1.5
+  - 1
   m_currentAttack: {fileID: 0}
   m_currentState: 0
 --- !u!50 &8198711157667756216
@@ -692,10 +719,10 @@ MonoBehaviour:
   m_collider: {fileID: 3159434460367787447}
   m_rigidbody: {fileID: 8198711157667756216}
   m_health: {fileID: 9128026524433129773}
-  m_speed: 12
-  m_cooldownBeforeAttack: 0.75
-  m_speedUpgrade: 17
-  m_cooldownBeforeAttackUpgrade: 0.5
+  m_speed: 22
+  m_cooldownBeforeAttack: 0.8
+  m_speedUpgrade: 35
+  m_cooldownBeforeAttackUpgrade: 0.55
 --- !u!114 &7131463579652883245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,8 +771,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 7.2, y: 9}
+  m_Offset: {x: 0, y: -0.14}
+  m_Size: {x: 6, y: 7}
   m_Direction: 0
 --- !u!1 &3477494417866188633
 GameObject:
@@ -930,11 +957,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4269030193724479576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 3.008, z: 0}
+  m_LocalPosition: {x: -2, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 914277064294946548}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4414100483194542837
 GameObject:
@@ -1480,11 +1507,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5135586095667645912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -3.85, z: 0}
+  m_LocalPosition: {x: -2, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 914277064294946548}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5672482518273246726
 GameObject:
@@ -1583,7 +1610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6075900487205185007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -2.4, z: 0}
+  m_LocalPosition: {x: -2, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 914277064294946548}
@@ -1696,7 +1723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6845643201061629007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 1.6, z: 0}
+  m_LocalPosition: {x: -2, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 914277064294946548}
@@ -1749,74 +1776,14 @@ MonoBehaviour:
     type: 3}
   maxNumberOfBall: 26
   initialSpawn: {x: -24, y: 10, z: 0}
-  m_ballPourcentage: 0.7
+  m_ballPourcentage: 0.75
   m_voidSpace: 2
   m_ballSpeedFlat: 15
   m_cooldown: 1.5
   m_loopToBeDone: 3
-  m_upgradeSpeedRelative: 1.5
-  m_newCooldown: 1.2
+  m_upgradeSpeedRelative: 1.4
+  m_newCooldown: 1.1
   m_newLoopToBeDone: 5
---- !u!1 &7379532439301510315
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4901192141076184906}
-  m_Layer: 11
-  m_Name: Laser point 0
-  m_TagString: Untagged
-  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4901192141076184906
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7379532439301510315}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 4.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 914277064294946548}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7766771143270573403
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4808775587244571871}
-  m_Layer: 11
-  m_Name: Laser point 4
-  m_TagString: Untagged
-  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4808775587244571871
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7766771143270573403}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -5.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 914277064294946548}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7885270596368210938
 GameObject:
   m_ObjectHideFlags: 0

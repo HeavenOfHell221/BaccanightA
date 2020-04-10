@@ -13,7 +13,7 @@ public class ArrowDetection : Arrow
                 break;
             case "BossHealth":
                 target.GetComponent<HealthBoss>().ModifyHealth(m_damage);
-                PlayerManager.Instance.ShakeCamera.Shake(0.75f, 1f, 0.15f);
+                PlayerManager.Instance.ShakeCamera.Shake(1f, 1f, 0.15f);
                 StopArrow();
                 break;
             case "BossShield":

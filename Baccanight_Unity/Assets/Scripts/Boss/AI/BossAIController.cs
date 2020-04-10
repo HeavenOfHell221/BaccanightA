@@ -13,7 +13,7 @@ public class BossAIController : MonoBehaviour
     [SerializeField] private Animator m_animator;
     [SerializeField] private PatrolPath m_patrolPath;
     [SerializeField] private HealthBoss m_health;
-    [SerializeField] private GameObject m_spawnBoss;
+    //[SerializeField] private GameObject m_spawnBoss;
 
     [Header("Attributes")]
     [Space(10)]

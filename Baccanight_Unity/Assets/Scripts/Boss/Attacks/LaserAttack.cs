@@ -123,7 +123,11 @@ public class LaserAttack : BossAttack
         bool hit = false;
         float timeElapsed = 0f;
         float deltaPerFrame = 1;
-        
+        float distanceBtwTwoRaycast = 0.25f;
+        RaycastHit2D raycastTop;
+        RaycastHit2D raycastBottom;
+        Vector2 hitPos = spawnPointPos;
+
         /* Resize Model_2 */
         Vector2 size = laser.RendererLaserBeam.size;
         size.y = 1;
@@ -138,28 +142,51 @@ public class LaserAttack : BossAttack
         {
             if(!hit)
             {
-                RaycastHit2D raycast = Physics2D.Raycast(
-                    spawnPointPos, 
+                raycastTop = Physics2D.Raycast(
+                    new Vector2(spawnPointPos.x, spawnPointPos.y + distanceBtwTwoRaycast), 
                     m_IA.FlipRight ? Vector2.left : Vector2.right, 
                     size.y < m_distance ? size.y + 1 : size.y,
                     m_layerMask);
 
-                //Debug.DrawRay(spawnPointPos, (m_IA.FlipRight ? Vector2.left : Vector2.right) * (size.y + 1), Color.red, Time.deltaTime, false);
+                raycastBottom = Physics2D.Raycast(
+                    new Vector2(spawnPointPos.x, spawnPointPos.y - distanceBtwTwoRaycast),
+                    m_IA.FlipRight ? Vector2.left : Vector2.right,
+                    size.y < m_distance ? size.y + 1 : size.y,
+                    m_layerMask);
 
-                if (raycast.collider)
+                Debug.DrawRay(new Vector2(spawnPointPos.x, spawnPointPos.y + distanceBtwTwoRaycast), (m_IA.FlipRight ? Vector2.left : Vector2.right) * (size.y + 1), Color.red, Time.deltaTime, false);
+                Debug.DrawRay(new Vector2(spawnPointPos.x, spawnPointPos.y - distanceBtwTwoRaycast), (m_IA.FlipRight ? Vector2.left : Vector2.right) * (size.y + 1), Color.blue, Time.deltaTime, false);
+
+
+                if (raycastTop.collider)
                 {
-                    GameObject other = raycast.collider.gameObject;
+                    GameObject other = raycastTop.collider.gameObject;
 
                     if (other.tag == "Player")
                     {
-                        other.GetComponent<Health>().ModifyHealth(m_damage, gameObject);    
+                        other.GetComponent<Health>().ModifyHealth(m_damage, gameObject);                    
                     }
-
+                    hitPos = raycastTop.point;
                     hit = true;
-                    laser.CollisionBeam.transform.position = raycast.point;
-                    laser.CollisionBeam.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, m_IA.FlipRight ? 90f : -90));
-                    laser.CollisionBeam.SetActive(true);
                 }
+
+                if(!hit && raycastBottom.collider)
+                {
+                    GameObject other = raycastBottom.collider.gameObject;
+                    if (other.tag == "Player")
+                    {
+                        other.GetComponent<Health>().ModifyHealth(m_damage, gameObject);                       
+                    }
+                    hitPos = raycastBottom.point;
+                    hit = true;     
+                }
+            }
+
+            if(hit)
+            {
+                laser.CollisionBeam.transform.position = new Vector2(hitPos.x, spawnPointPos.y);
+                laser.CollisionBeam.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, m_IA.FlipRight ? 90f : -90));
+                laser.CollisionBeam.SetActive(true);
             }
             
             if (size.y < m_distance && !hit)

@@ -61,7 +61,7 @@ public class HealthBoss : MonoBehaviour
             m_isEnraging = true;
             m_FirstSwitchPhase.Invoke(BossActionType.Enraging);   
         }
-        else if (lastRatio >= 0.1f && Ratio < 0.1f)
+        else if (lastRatio >= 0.25f && Ratio < 0.25f)
         {
             m_UpgradeSpeedBetweenTwoAttacks.Invoke();
             m_SecondSwitchPhase.Invoke();

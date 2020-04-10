@@ -291,7 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerMotion: {fileID: 11400000, guid: 8d25be83bd41b1745b10d7b8110c1547, type: 2}
   m_arrow: {fileID: 3298689659147394698, guid: daaedf5b4effe3a48bdc1b250695a055, type: 3}
-  m_cooldown: 0.25
+  m_cooldown: 0.2
   m_fire: {fileID: 1349584073448261983}
 --- !u!114 &5746767297165005067
 MonoBehaviour:
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_health: {fileID: 11400000, guid: d16ca2a153cc2c84ab0d889ad4db5bbc, type: 2}
   m_state: {fileID: 11400000, guid: 60a73ace185f3b24e82f4d18dc44a284, type: 2}
-  m_timeTimeScaleNull: 0.25
+  m_timeTimeScaleNull: 0.33
   m_timeInvincibleFrame: 1
   m_onDamaged:
     m_PersistentCalls:

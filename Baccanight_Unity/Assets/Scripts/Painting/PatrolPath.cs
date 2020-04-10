@@ -22,6 +22,8 @@ public class PatrolPath : MonoBehaviour
 
     void Awake()
     {
+        m_actualNodeIndex = m_StartNodeIndex;
+
         if(m_nodeParent)
         {
             for (int i = 0; i < m_nodeParent.transform.childCount; i++)
