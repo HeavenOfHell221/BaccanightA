@@ -243,6 +243,39 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1869562104130180727, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
+        type: 3}
+      propertyPath: m_text
+      value: "Fais attention, une force mal\xE9fique t\u2019emp\xEAche de sauter.
+        Mais tu peux toujours grimper aux \xE9chelles !\r\nLe r\xE9sident qui vivait
+        ici a mis beaucoup de bazar\u2026 Peux-tu m'aider \xE0 tout ranger s'il te
+        pla\xEEt.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869562104130180727, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 91
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869562104130180727, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869562104130180727, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869562104130180727, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869562104130180727, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2034667168856867701, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
         type: 3}
       propertyPath: m_fenceManager
@@ -277,6 +310,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827198917304414677, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827198917304414677, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07e2e51393e977c44a5f6d5cfebce1f3, type: 3}
