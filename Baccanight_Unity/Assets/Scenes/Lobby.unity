@@ -263,10 +263,63 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 998594707381648804, guid: caad4dabb3c096c4b8eeda96caeb7116,
+        type: 3}
+      propertyPath: m_text
+      value: "Cela fait si longtemps que nous n\u2019avons pas crois\xE9 quelqu\u2019un\u2026
+        Oh, mais tu dois \xEAtre Apollon !! Nous t\u2019avons appel\xE9 car nous
+        avons besoin de ton aide\u2026 Il faut sauver l\u2019art !\r\nFais vite !
+        J\u2019entends mes amis en danger...\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 998594707381648804, guid: caad4dabb3c096c4b8eeda96caeb7116,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 92
+      objectReference: {fileID: 0}
+    - target: {fileID: 998594707381648804, guid: caad4dabb3c096c4b8eeda96caeb7116,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 219
+      objectReference: {fileID: 0}
+    - target: {fileID: 998594707381648804, guid: caad4dabb3c096c4b8eeda96caeb7116,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 998594707381648804, guid: caad4dabb3c096c4b8eeda96caeb7116,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 998594707381648804, guid: caad4dabb3c096c4b8eeda96caeb7116,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 998594707381648804, guid: caad4dabb3c096c4b8eeda96caeb7116,
+        type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 998594707381648804, guid: caad4dabb3c096c4b8eeda96caeb7116,
+        type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 998594707381648804, guid: caad4dabb3c096c4b8eeda96caeb7116,
+        type: 3}
+      propertyPath: m_overflowMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 998594707381648804, guid: caad4dabb3c096c4b8eeda96caeb7116,
+        type: 3}
+      propertyPath: m_isTextTruncated
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2866324463935039879, guid: caad4dabb3c096c4b8eeda96caeb7116,
         type: 3}
       propertyPath: m_ChunkCullingBounds.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3581663790083676992, guid: caad4dabb3c096c4b8eeda96caeb7116,
         type: 3}
@@ -1472,6 +1525,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_allwaysOpen
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374669513259948550, guid: caad4dabb3c096c4b8eeda96caeb7116,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374669513259948550, guid: caad4dabb3c096c4b8eeda96caeb7116,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839629131929541000, guid: caad4dabb3c096c4b8eeda96caeb7116,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839629131929541000, guid: caad4dabb3c096c4b8eeda96caeb7116,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.66
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caad4dabb3c096c4b8eeda96caeb7116, type: 3}
