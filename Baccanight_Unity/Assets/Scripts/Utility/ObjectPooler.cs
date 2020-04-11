@@ -46,7 +46,7 @@ public class ObjectPooler : SingletonBehaviour<ObjectPooler>
 				{
 					break;
 				}
-				else if (!obj.activeInHierarchy) // S'il y a un objet non actif, on le récupère et on n'agrandit pas la pool
+				else if (!obj.activeSelf) // S'il y a un objet non actif, on le récupère et on n'agrandit pas la pool
 				{
 					objectRequested = obj;
 					break;
