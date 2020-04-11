@@ -60,6 +60,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 6
+  m_timeWait: 0.1
+  m_canMove: 1
 --- !u!114 &3717822762896733823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,12 +74,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eea4cac1c6c14949aef077440a9a069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_pathNodes: []
+  m_nodeParent: {fileID: 0}
   m_StartNodeIndex: 0
   m_NextRelativeIndex: 1
   m_pingPongPatrol: 0
   m_actualNodeIndex: 0
---- !u!114 &6181430451335432457
+--- !u!114 &4953809784507989888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

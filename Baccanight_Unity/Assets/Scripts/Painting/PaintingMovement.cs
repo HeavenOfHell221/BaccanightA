@@ -60,6 +60,8 @@ public class PaintingMovement : MonoBehaviour
     public void RemovePlayerInChildren(GameObject player)
     {
         player.transform.SetParent(GameObject.FindGameObjectWithTag("PlayerAndCam").transform, true);
-        player.transform.localScale = new Vector3(1, 1, 1); 
+        player.transform.localScale = new Vector3(1, 1, 1);
+        player.transform.localRotation = new Quaternion(0f, player.transform.localRotation.y,
+            0f, player.transform.localRotation.w);
     }
 }
