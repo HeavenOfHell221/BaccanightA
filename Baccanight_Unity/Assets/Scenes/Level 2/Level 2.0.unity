@@ -201,7 +201,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fenceManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1147367025}
     - target: {fileID: 2034667168856867701, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
         type: 3}
       propertyPath: m_statueExpected
@@ -234,6 +234,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07e2e51393e977c44a5f6d5cfebce1f3, type: 3}
+--- !u!1 &1147367025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8922226056025191758, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1147367024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1147367026 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2089330775846891614, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
