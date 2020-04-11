@@ -11,7 +11,8 @@ public class Piedestal : MonoBehaviour
     {
         if(obj.tag == "Statue")
         {
-            //Debug.Log("Statue !");
+            //Debug.Log("Statue");
+            obj.transform.position = transform.position + Vector3.up;
             if (obj == m_statueExpected)
             {
                 m_isUnlocked = true;
