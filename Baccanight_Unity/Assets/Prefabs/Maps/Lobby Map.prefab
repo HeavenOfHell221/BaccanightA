@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1008516682091858265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6750923765403601787}
+  - component: {fileID: 6519083994183441135}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6750923765403601787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008516682091858265}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8685025357508010390}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6519083994183441135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008516682091858265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e939eec2d89c042993c9d3d955c24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_playerFragment: {fileID: 11400000, guid: c99805020b76fd346aa872328fdd2789, type: 2}
+  m_doorLevel_1: {fileID: 4230674218987542494}
+  m_doorLevel_2: {fileID: 1339292496928852609}
+  m_light_00: {fileID: 21300000, guid: d104989cd846bca44aeabfc92007349c, type: 3}
+  m_light_01: {fileID: 21300000, guid: 703381c1948afa74abd5e7e1b7277627, type: 3}
+  m_light_10: {fileID: 21300000, guid: bd1d2b337a57c5d42994970eee4ebab5, type: 3}
+  m_light_11: {fileID: 21300000, guid: ff5d6759044e0974c89a366d3f970c24, type: 3}
 --- !u!60 &5425537226807424049
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -676,7 +726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8685025357508010390}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Lights fragments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -695,6 +745,7 @@ Transform:
   m_Children:
   - {fileID: 1040210378746020072}
   - {fileID: 8199439968173463106}
+  - {fileID: 6750923765403601787}
   m_Father: {fileID: 9000851305990207720}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12414,15 +12465,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6339997596770257434}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &3865377052932582906 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7086591902802012128, guid: 136b7a19367561d4da20c8f561f21d9d,
-    type: 3}
-  m_PrefabInstance: {fileID: 6339997596770257434}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1436891634170500928 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4903557346588155226, guid: 136b7a19367561d4da20c8f561f21d9d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6339997596770257434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3865377052932582906 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7086591902802012128, guid: 136b7a19367561d4da20c8f561f21d9d,
     type: 3}
   m_PrefabInstance: {fileID: 6339997596770257434}
   m_PrefabAsset: {fileID: 0}

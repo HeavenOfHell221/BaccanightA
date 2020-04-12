@@ -197,11 +197,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1317753378037432156, guid: b108f1e22f1b225479ce05098b284cbd,
-        type: 3}
-      propertyPath: m_LevelIdAimed
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1379342956568669317, guid: b108f1e22f1b225479ce05098b284cbd,
         type: 3}
       propertyPath: m_Name
@@ -261,16 +256,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5902435962301631542, guid: b108f1e22f1b225479ce05098b284cbd,
-        type: 3}
-      propertyPath: m_DoorId
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5902435962301631542, guid: b108f1e22f1b225479ce05098b284cbd,
-        type: 3}
-      propertyPath: m_LevelIdAimed
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b108f1e22f1b225479ce05098b284cbd, type: 3}

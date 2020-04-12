@@ -110,12 +110,12 @@ public class PlayerAnimatorController : MonoBehaviour
         while(timeElapsed < duration)
         {
             colorSprite = sprite.color;
-            colorSprite.a = colorSprite.a == 1f ? 0.2f : 1f;
+            colorSprite.a = colorSprite.a == 1f ? 0.1f : 1f;
             sprite.color = colorSprite;
 
             yield return new WaitForSecondsRealtime(0.1f);
 
-            timeElapsed += Time.unscaledDeltaTime;
+            timeElapsed += (Time.unscaledDeltaTime + 0.1f);
 
             yield return null;
         }

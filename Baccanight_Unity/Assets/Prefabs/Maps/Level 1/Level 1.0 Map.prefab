@@ -20500,12 +20500,32 @@ PrefabInstance:
     - target: {fileID: 3344587023588351930, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_Size.x
-      value: 7.2689176
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 3344587023588351930, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_Size.y
-      value: 2.0737822
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3445271755500306399, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_text
+      value: "Portrait d'un homme dit l'Homme \xE0 la main sur le coeur"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3445271755500306399, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 54
+      objectReference: {fileID: 0}
+    - target: {fileID: 3445271755500306399, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3445271755500306399, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3642531987787275762, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -20667,6 +20687,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_text
+      value: "Oh te voil\xE0 ! Tu auras besoin d\u2019aide pour sauter de tableau
+        en tableau, appuie sur la touche espace pour sauter.\r\nBonne chance !\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 86
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8303854961449737274, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -21643,7 +21694,7 @@ PrefabInstance:
     - target: {fileID: 3333501458674323916, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_DoorId
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3333501458674323916, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}

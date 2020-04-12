@@ -198,41 +198,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 757485080039124951, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_text
-      value: "Oh te voil\xE0 ! Tu auras besoin d\u2019aide pour sauter de tableau
-        en tableau, appuie sur la touche espace pour sauter.\r\nBonne chance !\r\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 757485080039124951, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: 86
-      objectReference: {fileID: 0}
-    - target: {fileID: 757485080039124951, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 130
-      objectReference: {fileID: 0}
-    - target: {fileID: 757485080039124951, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 757485080039124951, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 757485080039124951, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 2977428749001497146, guid: c879433634ac61f49b16f7cb3896daf2,
         type: 3}
       propertyPath: m_Name
       value: Level 1 Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977428749001497148, guid: c879433634ac61f49b16f7cb3896daf2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977428749001497148, guid: c879433634ac61f49b16f7cb3896daf2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977428749001497148, guid: c879433634ac61f49b16f7cb3896daf2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977428749001497148, guid: c879433634ac61f49b16f7cb3896daf2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977428749001497148, guid: c879433634ac61f49b16f7cb3896daf2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977428749001497148, guid: c879433634ac61f49b16f7cb3896daf2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977428749001497148, guid: c879433634ac61f49b16f7cb3896daf2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2977428749001497148, guid: c879433634ac61f49b16f7cb3896daf2,
         type: 3}
@@ -253,41 +257,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5509165708444755984, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_text
-      value: "Portrait d'un homme dit l'Homme \xE0 la main sur le coeur"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5509165708444755984, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 54
-      objectReference: {fileID: 0}
-    - target: {fileID: 5509165708444755984, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5509165708444755984, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5606472741173168245, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5606472741173168245, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6728167078374253848, guid: c879433634ac61f49b16f7cb3896daf2,
-        type: 3}
-      propertyPath: m_DoorId
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c879433634ac61f49b16f7cb3896daf2, type: 3}

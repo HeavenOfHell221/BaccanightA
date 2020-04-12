@@ -128,16 +128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1131788919901397111, guid: a165e166be7abc84b89a740d9e374a56,
-        type: 3}
-      propertyPath: m_LevelIdAimed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131788919901397111, guid: a165e166be7abc84b89a740d9e374a56,
-        type: 3}
-      propertyPath: m_DoorId
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2042138929050301948, guid: a165e166be7abc84b89a740d9e374a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -197,16 +187,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level 1.1 Map
-      objectReference: {fileID: 0}
-    - target: {fileID: 7661746336421519440, guid: a165e166be7abc84b89a740d9e374a56,
-        type: 3}
-      propertyPath: m_DoorId
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7661746336421519440, guid: a165e166be7abc84b89a740d9e374a56,
-        type: 3}
-      propertyPath: m_LevelIdAimed
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a165e166be7abc84b89a740d9e374a56, type: 3}
