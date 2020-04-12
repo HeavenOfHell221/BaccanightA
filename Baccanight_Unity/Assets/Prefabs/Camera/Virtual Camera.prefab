@@ -154,6 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_camera: {fileID: 4586374340053696589}
   m_orthographicSize: 6
+  m_cameraFollowPlayer: 1
+  m_transformFollow: {fileID: 0}
 --- !u!114 &5286958646240322397
 MonoBehaviour:
   m_ObjectHideFlags: 0

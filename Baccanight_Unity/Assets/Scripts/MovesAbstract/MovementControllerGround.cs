@@ -196,7 +196,7 @@ public abstract class MovementControllerGround : MovementController
 
 	public override void ApplyMovement()
 	{
-		if (Mathf.Abs(Move.x) > GameConstants.LimitDicretePosition)
+        /*if (Mathf.Abs(Move.x) > GameConstants.LimitDicretePosition)
 		{
             float velocityX = Mathf.Lerp(Rigidbody.velocity.x, Move.x * Speed, m_smoothSpeed);
             Rigidbody.velocity = new Vector2(velocityX, 
@@ -208,6 +208,11 @@ public abstract class MovementControllerGround : MovementController
             Rigidbody.velocity = new Vector2(0f,
                 Rigidbody.velocity.y < -m_maxFallSpeed ? -m_maxFallSpeed :
                 Rigidbody.velocity.y > m_maxJumpSpeed ? m_maxJumpSpeed : Rigidbody.velocity.y);
-        }
-	}
+        }*/
+
+        float velocityX = Move.x * Speed;
+        Rigidbody.velocity = new Vector2(velocityX, 
+            Rigidbody.velocity.y < -m_maxFallSpeed ? -m_maxFallSpeed :
+            Rigidbody.velocity.y > m_maxJumpSpeed ? m_maxJumpSpeed : Rigidbody.velocity.y);
+    }
 }
