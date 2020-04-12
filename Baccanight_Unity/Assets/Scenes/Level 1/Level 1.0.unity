@@ -254,6 +254,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5509165708444755984, guid: c879433634ac61f49b16f7cb3896daf2,
+        type: 3}
+      propertyPath: m_text
+      value: "Portrait d'un homme dit l'Homme \xE0 la main sur le coeur"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509165708444755984, guid: c879433634ac61f49b16f7cb3896daf2,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509165708444755984, guid: c879433634ac61f49b16f7cb3896daf2,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509165708444755984, guid: c879433634ac61f49b16f7cb3896daf2,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5606472741173168245, guid: c879433634ac61f49b16f7cb3896daf2,
         type: 3}
       propertyPath: m_Size.x

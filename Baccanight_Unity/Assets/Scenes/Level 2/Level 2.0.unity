@@ -321,6 +321,26 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6846977194725020080, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
+        type: 3}
+      propertyPath: m_text
+      value: Le Port de Bordeaux
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846977194725020080, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846977194725020080, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846977194725020080, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8633777810008072093, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
         type: 3}
       propertyPath: m_LocalPosition.x
