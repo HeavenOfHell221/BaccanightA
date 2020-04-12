@@ -13,13 +13,31 @@ public class Statue : MonoBehaviour
 
     public void OnEnterPlayer()
     {
-        m_playerMotion.IsPushObject = true;
+        if (!Input.GetButton(GameConstants.k_Interact))
+        {
+            m_playerMotion.IsPushObject = true;
+        }
+    }
+
+    public void OnStayPlayer()
+    {
+        if (Input.GetButton(GameConstants.k_Interact))
+        {
+            gameObject.layer = LayerMask.NameToLayer("Props");
+            m_playerMotion.IsPushObject = false;
+        }
+        else
+        {
+            gameObject.layer = LayerMask.NameToLayer("Default");
+            m_playerMotion.IsPushObject = true;
+        }
     }
 
     public void OnExitPlayer()
     {
         m_playerMotion.IsPushObject = false;
     }
+
 
     private void FixedUpdate()
     {
