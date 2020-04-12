@@ -321,6 +321,12 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8922226056025191759, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
+        type: 3}
+      propertyPath: m_openGrille
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a1b942857a49b3408456b977650fc70,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07e2e51393e977c44a5f6d5cfebce1f3, type: 3}
 --- !u!1 &1147367025 stripped
@@ -335,3 +341,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1147367024}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1147367027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147367025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b1ff30015325b43bec6dfc3f5ee687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
