@@ -14,7 +14,8 @@ public class Fence : MonoBehaviour
 
     public void OpenFence()
     {
-        m_collider.enabled = false;
+        //m_collider.enabled = false;
+        transform.position += Vector3.up * 3;
     }
 
     public void CloseFence()
