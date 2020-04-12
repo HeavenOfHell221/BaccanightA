@@ -34,7 +34,7 @@ PrefabInstance:
     - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_succesForOpenDoor
-      value: Boss 1
+      value: level 3.0
       objectReference: {fileID: 0}
     - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}

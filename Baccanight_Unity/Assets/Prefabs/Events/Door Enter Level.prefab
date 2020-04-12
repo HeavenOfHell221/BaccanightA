@@ -143,6 +143,7 @@ MonoBehaviour:
   m_playerSucces: {fileID: 11400000, guid: 5a28f0d5b1fe2834996b1143220efde4, type: 2}
   m_succesForOpenDoor: 
   m_allwaysOpen: 0
+  m_fadeText: {fileID: 3397448212897451955}
 --- !u!61 &5612893509172908107
 BoxCollider2D:
   m_ObjectHideFlags: 0

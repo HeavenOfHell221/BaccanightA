@@ -12,6 +12,8 @@ public class DoorRequirement : MonoBehaviour
     private string m_succesForOpenDoor;
     [SerializeField]
     private bool m_allwaysOpen;
+    [SerializeField]
+    private FadeText m_fadeText;
 #pragma warning restore 0649
     #endregion
 
@@ -22,20 +24,23 @@ public class DoorRequirement : MonoBehaviour
     
     void Start() 
     {
+        m_fadeText.enabled = false;
         m_DoorCollider = gameObject.GetComponent<BoxCollider2D>();
-        StartCoroutine(TestDoor());
+        StartCoroutine(TestDoor());     
     }
 
     public void OpenDoor()
     {
         m_DoorCollider.enabled = true;
         //Affichage de porte Ouverte
+        m_fadeText.enabled = true;
     }
 
     public void CloseDoor()
     {
         m_DoorCollider.enabled = false;
         //Affichage de porte fermée
+        m_fadeText.enabled = false;
     }
     private IEnumerator TestDoor()
     {

@@ -25,17 +25,24 @@ public class FadeText : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (((1 << other.gameObject.layer) & Layers) != 0)
+        if (enabled)
         {
-            FadeIn();
+            if (((1 << other.gameObject.layer) & Layers) != 0)
+            {
+                FadeIn();
+            }
         }
+        
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (((1 << other.gameObject.layer) & Layers) != 0)
+        if (enabled)
         {
-            FadeOut();
+            if (((1 << other.gameObject.layer) & Layers) != 0)
+            {
+                FadeOut();
+            }
         }
     }
 
