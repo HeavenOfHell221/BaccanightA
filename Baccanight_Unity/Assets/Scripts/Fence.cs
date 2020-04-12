@@ -10,6 +10,7 @@ public class Fence : MonoBehaviour
 
     public void Start()
     {
+
         m_collider.enabled = !m_isOpen;
     }
 
