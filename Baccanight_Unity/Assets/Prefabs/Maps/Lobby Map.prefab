@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerFragment: {fileID: 11400000, guid: c99805020b76fd346aa872328fdd2789, type: 2}
+  m_playerOpenLevel: {fileID: 11400000, guid: 5b684fdf51f96ac40aff73d99b197752, type: 2}
   m_doorLevel_1: {fileID: 4230674218987542494}
   m_doorLevel_2: {fileID: 1339292496928852609}
   m_light_00: {fileID: 21300000, guid: d104989cd846bca44aeabfc92007349c, type: 3}

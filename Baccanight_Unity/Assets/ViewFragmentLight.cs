@@ -5,6 +5,7 @@ using UnityEngine;
 public class ViewFragmentLight : MonoBehaviour
 {
     [SerializeField] private PlayerSucces m_playerFragment;
+    [SerializeField] private PlayerSucces m_playerOpenLevel;
     [SerializeField] private SpriteRenderer m_doorLevel_1;
     [SerializeField] private SpriteRenderer m_doorLevel_2;
 
@@ -18,6 +19,7 @@ public class ViewFragmentLight : MonoBehaviour
         if(m_playerFragment.HaveSucces("Fragment 1") && m_playerFragment.HaveSucces("Fragment 2"))
         {
             m_doorLevel_1.sprite = m_light_11;
+            m_playerOpenLevel.SetSucces("Level 2.0", true);
         }
         else if(m_playerFragment.HaveSucces("Fragment 1") && !m_playerFragment.HaveSucces("Fragment 2"))
         {
@@ -36,6 +38,7 @@ public class ViewFragmentLight : MonoBehaviour
         if (m_playerFragment.HaveSucces("Fragment 3") && m_playerFragment.HaveSucces("Fragment 4"))
         {
             m_doorLevel_2.sprite = m_light_11;
+            m_playerOpenLevel.SetSucces("Level 3.0", true);
         }
         else if (m_playerFragment.HaveSucces("Fragment 3") && !m_playerFragment.HaveSucces("Fragment 4"))
         {
