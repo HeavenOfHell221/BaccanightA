@@ -51,8 +51,6 @@ public class PlayerAnimatorController : MonoBehaviour
         m_Animator.SetBool("IsPushObject", m_playerMotion.IsPushObject);
         m_Animator.SetBool("UseWings", m_playerMotion.UseWings);
 
-        
-
         GameObject boss = GameObject.FindGameObjectWithTag("Boss");
 
         if (boss)
@@ -78,13 +76,7 @@ public class PlayerAnimatorController : MonoBehaviour
         }
         else
         {
-            bool lastFlip = m_playerMotion.FlipSprite;
-            m_playerMotion.FlipSprite = m_playerMotion.Motion.x > 0.1f ? true : m_playerMotion.Motion.x < -0.1f ? false : m_playerMotion.FlipSprite;
-
-            if (lastFlip != m_playerMotion.FlipSprite)
-            {
-                Flip();
-            }
+            Flip();
         }
 	}
 
@@ -92,9 +84,11 @@ public class PlayerAnimatorController : MonoBehaviour
     {
         m_player.transform.rotation = new Quaternion(
             m_player.transform.rotation.x,
-            m_player.transform.rotation.y == 0f ? 180f : 0f,
+            m_playerMotion.Motion.x > 0.1f ? 0f : m_playerMotion.Motion.x < -0.1f ? 180f : m_player.transform.rotation.y,
             m_player.transform.rotation.z,
             m_player.transform.rotation.w);
+
+        m_playerMotion.FlipSprite = m_player.transform.rotation.y == 0f ? true : false;
     }
 
     public void SpriteBlinking(float duration)
