@@ -544,7 +544,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 16.979057, y: 5.4818935}
+  m_Offset: {x: 16.984196, y: 5.4950237}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -555,7 +555,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 49.958115, y: 20.952572}
+  m_Size: {x: 49.947838, y: 20.978834}
   m_EdgeRadius: 0
 --- !u!1 &7733157857542213220
 GameObject:
@@ -11754,7 +11754,7 @@ PrefabInstance:
     - target: {fileID: 9076038382244685567, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[0].Y
-      value: -49943924
+      value: -49943932
       objectReference: {fileID: 0}
     - target: {fileID: 9076038382244685567, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
@@ -11764,27 +11764,27 @@ PrefabInstance:
     - target: {fileID: 9076038382244685567, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[1].Y
-      value: 159581792
+      value: 159844416
       objectReference: {fileID: 0}
     - target: {fileID: 9076038382244685567, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[2].X
-      value: -80000000
+      value: -79897232
       objectReference: {fileID: 0}
     - target: {fileID: 9076038382244685567, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[2].Y
-      value: 159581499
+      value: 159844123
       objectReference: {fileID: 0}
     - target: {fileID: 9076038382244685567, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[3].X
-      value: -79999707
+      value: -79896939
       objectReference: {fileID: 0}
     - target: {fileID: 9076038382244685567, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[3].Y
-      value: -49943924
+      value: -49943932
       objectReference: {fileID: 0}
     - target: {fileID: 9076038382244685567, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
@@ -11794,7 +11794,7 @@ PrefabInstance:
     - target: {fileID: 9076038382244685567, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[0].y
-      value: -4.9943924
+      value: -4.9943933
       objectReference: {fileID: 0}
     - target: {fileID: 9076038382244685567, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
@@ -11804,27 +11804,27 @@ PrefabInstance:
     - target: {fileID: 9076038382244685567, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[1].y
-      value: 15.958179
+      value: 15.984442
       objectReference: {fileID: 0}
     - target: {fileID: 9076038382244685567, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[2].x
-      value: -8
+      value: -7.989723
       objectReference: {fileID: 0}
     - target: {fileID: 9076038382244685567, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[2].y
-      value: 15.95812
+      value: 15.984383
       objectReference: {fileID: 0}
     - target: {fileID: 9076038382244685567, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[3].x
-      value: -7.999942
+      value: -7.989665
       objectReference: {fileID: 0}
     - target: {fileID: 9076038382244685567, guid: 136b7a19367561d4da20c8f561f21d9d,
         type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[3].y
-      value: -4.9943924
+      value: -4.9943933
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 136b7a19367561d4da20c8f561f21d9d, type: 3}
