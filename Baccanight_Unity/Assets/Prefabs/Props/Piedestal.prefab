@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 968242473499980738}
   - component: {fileID: 8156445311382421375}
   - component: {fileID: 1870038239590517631}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Detection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5261009489160748823}
   - component: {fileID: 6483466096664853834}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 9051556489694980714}
   - component: {fileID: 3672831656633320952}
   - component: {fileID: 7918250851156179052}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Piedestal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,6 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7a90dd54d8c8747b548b9dc063e23d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_statueExpected: {fileID: 0}
+  m_fenceManager: {fileID: 0}
 --- !u!50 &3672831656633320952
 Rigidbody2D:
   serializedVersion: 4

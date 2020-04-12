@@ -37,8 +37,7 @@ public class ViewFragmentLight : MonoBehaviour
 
         if (m_playerFragment.HaveSucces("Fragment 3") && m_playerFragment.HaveSucces("Fragment 4"))
         {
-            m_doorLevel_2.sprite = m_light_11;
-            m_playerOpenLevel.SetSucces("Level 3.0", true);
+            m_doorLevel_2.sprite = m_light_11;    
         }
         else if (m_playerFragment.HaveSucces("Fragment 3") && !m_playerFragment.HaveSucces("Fragment 4"))
         {
@@ -51,6 +50,11 @@ public class ViewFragmentLight : MonoBehaviour
         else
         {
             m_doorLevel_2.sprite = m_light_00;
+        }
+
+        if(m_playerFragment.HaveAllSucces())
+        {
+            m_playerOpenLevel.SetSucces("Level 3.0", true);
         }
     }
 }
