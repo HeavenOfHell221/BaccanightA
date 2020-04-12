@@ -30,7 +30,7 @@ public class Fence : MonoBehaviour
             yield return new WaitForFixedUpdate(); // C'est ici qu'il faut le mettre, sinon tu rappelles la couroutine dans la même frame et ça devient
                                // un while infini... Infini car tu as fais un lerp "smooth", le transform.position va ce rapprocher
                                // de plus en plus lentement de m_endMarker mais (en théorie) tu l'atteindra jamais. x)
-                               // Après, j'ai mis WaitForFixedUpdate pour le peut importe le nombre de FPS du jeu, le lerp aille à la 
+                               // Après, j'ai mis WaitForFixedUpdate, comme ça peut importe le nombre de FPS du jeu, le lerp ira à la 
                                // même vitesse. (yield return null; c'est bien mais à 60FPS tu appelles 60x Move()/s, à 300FPS tu l'appelles
                                // 300x/s... Quand c'est visible pour le joueur, ou quand c'est de la physique c'est fixedUpdate. :p
 
