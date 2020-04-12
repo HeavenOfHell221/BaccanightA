@@ -341,6 +341,11 @@ PrefabInstance:
       propertyPath: m_textInfo.wordCount
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7475405048427173718, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
+        type: 3}
+      propertyPath: m_allwaysOpen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8633777810008072093, guid: 07e2e51393e977c44a5f6d5cfebce1f3,
         type: 3}
       propertyPath: m_LocalPosition.x

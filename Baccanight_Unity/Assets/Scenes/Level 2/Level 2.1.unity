@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1490789627046757753, guid: 8be454db1210a524591f583db7272e2f,
+        type: 3}
+      propertyPath: m_allwaysOpen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2290088219474003512, guid: 8be454db1210a524591f583db7272e2f,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -227,6 +232,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734837234851881492, guid: 8be454db1210a524591f583db7272e2f,
+        type: 3}
+      propertyPath: m_allwaysOpen
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6430958528238780927, guid: 8be454db1210a524591f583db7272e2f,
         type: 3}
