@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     [SerializeField] private LifeEvent m_onDamaged;
     [SerializeField] private LifeEvent m_onHealed;
     [SerializeField] private UnityEvent m_onRespawn;
+    [SerializeField] private FloatEvent m_BlinkSprite;
 
     public bool IsInvincible { get => m_health.IsInvincible; }
     public float TimeScaleNull { get => m_timeTimeScaleNull; }
@@ -34,6 +35,7 @@ public class Health : MonoBehaviour
         if (deltaLife < 0)
         {  
             m_onDamaged.Invoke(deltaLife, source);
+            m_BlinkSprite.Invoke(m_timeInvincibleFrame);
         }
         else if(deltaLife > 0)
         {
@@ -65,7 +67,7 @@ public class Health : MonoBehaviour
 
         PlayerManager.Instance.ShakeCamera.Shake(2f * deltaLife, 1f, timeScaleNull);
         m_health.IsInvincible = true;
-        Time.timeScale = 0f;
+        Time.timeScale = 0.0f;
         yield return new WaitForSecondsRealtime(timeScaleNull);
         Time.timeScale = 1f;
         yield return new WaitForSecondsRealtime(m_timeInvincibleFrame - timeScaleNull);

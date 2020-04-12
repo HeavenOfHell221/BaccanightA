@@ -96,4 +96,32 @@ public class PlayerAnimatorController : MonoBehaviour
             m_player.transform.rotation.z,
             m_player.transform.rotation.w);
     }
+
+    public void SpriteBlinking(float duration)
+    {
+        StartCoroutine(_SpriteBlinking(duration));
+    }
+
+    private IEnumerator _SpriteBlinking(float duration)
+    {
+        float timeElapsed = 0.0f;
+        Color colorSprite;
+
+        while(timeElapsed < duration)
+        {
+            colorSprite = sprite.color;
+            colorSprite.a = colorSprite.a == 1f ? 0.2f : 1f;
+            sprite.color = colorSprite;
+
+            yield return new WaitForSecondsRealtime(0.1f);
+
+            timeElapsed += Time.unscaledDeltaTime;
+
+            yield return null;
+        }
+
+        colorSprite = sprite.color;
+        colorSprite.a = 1f;
+        sprite.color = colorSprite;
+    }
 }

@@ -55,7 +55,7 @@ public class ShieldAttack : BossAttack
 
     protected override IEnumerator HandleAttack()
     {
-        yield return new WaitForSeconds(m_durationWarning);
+        yield return new WaitForSecondsRealtime(m_durationWarning);
 
         foreach(var light in m_lights)
         {

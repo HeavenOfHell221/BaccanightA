@@ -20,7 +20,7 @@ public class RainFireball : Fireball
 
     private IEnumerator _Move()
     {
-        yield return new WaitForSeconds(m_timeBeforeMove);
+        yield return new WaitForSecondsRealtime(m_timeBeforeMove);
         Move();
     }
 

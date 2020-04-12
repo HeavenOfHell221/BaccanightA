@@ -92,7 +92,7 @@ public class BossAIController : MonoBehaviour
 
     private IEnumerator NextAttack(float timeWait, int attackID = -1)
     {
-        yield return new WaitForSeconds(timeWait);
+        yield return new WaitForSecondsRealtime(timeWait);
 
         if(attackID != -1)
         {

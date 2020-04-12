@@ -43,7 +43,7 @@ public class TargetFireball : Fireball
 
     private IEnumerator MoveBack()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
 
         Vector3 direction = (m_backward.position - transform.position).normalized;
         Rigidbody.AddForce(direction * m_forceBack, ForceMode2D.Impulse);
@@ -56,7 +56,7 @@ public class TargetFireball : Fireball
             yield return null;
         }
         m_lookPlayer = false;
-        yield return new WaitForSeconds(m_timeBeforeMove);
+        yield return new WaitForSecondsRealtime(m_timeBeforeMove);
         Move();
     }
 

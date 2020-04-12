@@ -28,11 +28,11 @@ public class HealthBarBoss : MonoBehaviour
     private void Update()
     {
         // Lerp de la barre rouge
-        m_redBar.fillAmount = Mathf.Lerp(m_redBar.fillAmount, m_actualRatio , m_redDeltaFillAmount * Time.deltaTime);
+        m_redBar.fillAmount = Mathf.Lerp(m_redBar.fillAmount, m_actualRatio , m_redDeltaFillAmount * Time.unscaledDeltaTime);
 
         // Si le joueur n'a pas touché le boss pendant un temps
         // On commence à update la barre jaune
-        if(m_lastUpdateLife + m_timeBeforeUpdateYellowBar < Time.time)
+        if(m_lastUpdateLife + m_timeBeforeUpdateYellowBar < Time.unscaledTime)
         {
             m_updateYellowBar = true;
             m_redBarrFillAmountBeforeUpdateYellowBar = m_redBar.fillAmount;
@@ -42,7 +42,7 @@ public class HealthBarBoss : MonoBehaviour
         if(m_updateYellowBar)
         {
             // On le lerp
-            m_yellowBar.fillAmount = Mathf.Lerp(m_yellowBar.fillAmount, m_actualRatio, m_redDeltaFillAmount * Time.deltaTime);
+            m_yellowBar.fillAmount = Mathf.Lerp(m_yellowBar.fillAmount, m_actualRatio, m_redDeltaFillAmount * Time.unscaledDeltaTime);
 
             // Si la barre jaune a atteint la barre rouge, on arrête de la baisser
             if(m_yellowBar.fillAmount <= m_redBarrFillAmountBeforeUpdateYellowBar)
@@ -62,6 +62,6 @@ public class HealthBarBoss : MonoBehaviour
     private void HandleHealthChanged(float ratio)
     {
         m_actualRatio = ratio;
-        m_lastUpdateLife = Time.time;
+        m_lastUpdateLife = Time.unscaledTime;
     }
 }

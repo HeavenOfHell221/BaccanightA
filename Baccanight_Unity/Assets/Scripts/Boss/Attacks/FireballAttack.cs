@@ -54,10 +54,10 @@ public class FireballAttack : BossAttack
         for (int i = 0; i < m_numberPerBurst; i++)
         {
             StartCoroutine(SpawnFireball());
-            yield return new WaitForSeconds(m_cooldownBetweenFireball);
+            yield return new WaitForSecondsRealtime(m_cooldownBetweenFireball);
         }
 
-        yield return new WaitForSeconds(!IsCanceled ? m_cooldownBetweenBurst : 0f);
+        yield return new WaitForSecondsRealtime(!IsCanceled ? m_cooldownBetweenBurst : 0f);
 
         if (m_numberBurstRemaining > 1)
         {

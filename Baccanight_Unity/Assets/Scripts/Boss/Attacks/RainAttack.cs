@@ -59,7 +59,7 @@ public class RainAttack : BossAttack
         TransformLine();
         m_loopDone--;
 
-        yield return new WaitForSeconds(m_cooldown);
+        yield return new WaitForSecondsRealtime(m_cooldown);
         if (m_loopDone > 0 && !IsCanceled)
         {
             StartCoroutine(HandleAttack());

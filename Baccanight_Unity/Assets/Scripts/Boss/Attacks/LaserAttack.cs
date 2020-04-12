@@ -20,26 +20,34 @@ public class LaserAttack : BossAttack
             GameObject laserBeam_miniPrefab, GameObject initialCharge_miniPrefab, Vector3 initialPos)
         {
             InitialPosition = initialPos;
-            InitialCharge = ObjectPooler.Instance.SpawnFromPool(initialChargePrefab, initialPos, Quaternion.identity);
-            LaserBeam = ObjectPooler.Instance.SpawnFromPool(laserBeamPrefab, initialPos, Quaternion.identity);
-            CollisionBeam = ObjectPooler.Instance.SpawnFromPool(CollisionBeamPrefab, initialPos, Quaternion.identity);
-
-            LaserBeam_Mini = ObjectPooler.Instance.SpawnFromPool(laserBeam_miniPrefab, initialPos, Quaternion.identity);
-            InitialCharge_Mini = ObjectPooler.Instance.SpawnFromPool(initialCharge_miniPrefab, initialPos, Quaternion.identity);
+            InitialCharge = Instantiate(initialChargePrefab, initialPos, Quaternion.identity, ObjectPooler.Instance.transform);
+            LaserBeam = Instantiate(laserBeamPrefab, initialPos, Quaternion.identity, ObjectPooler.Instance.transform);
+            CollisionBeam = Instantiate(CollisionBeamPrefab, initialPos, Quaternion.identity, ObjectPooler.Instance.transform);
+            LaserBeam_Mini = Instantiate(laserBeam_miniPrefab, initialPos, Quaternion.identity, ObjectPooler.Instance.transform);
+            InitialCharge_Mini = Instantiate(initialCharge_miniPrefab, initialPos, Quaternion.identity, ObjectPooler.Instance.transform);
 
             RendererLaserBeam = LaserBeam.GetComponent<SpriteRenderer>();
             RendererLaserBeam_Mini = LaserBeam_Mini.GetComponent<SpriteRenderer>();
 
-            DesactiveGameObject();
+            DesactiveObjects();
         }
 
-        public void DesactiveGameObject()
+        public void DesactiveObjects()
         {
-            InitialCharge.SetActive(false);
-            LaserBeam.SetActive(false);
-            CollisionBeam.SetActive(false);
-            LaserBeam_Mini.SetActive(false);
-            InitialCharge_Mini.SetActive(false);
+           if(InitialCharge) InitialCharge.SetActive(false);
+           if(LaserBeam) LaserBeam.SetActive(false);
+           if(CollisionBeam) CollisionBeam.SetActive(false);
+           if(LaserBeam_Mini) LaserBeam_Mini.SetActive(false);
+           if(InitialCharge_Mini) InitialCharge_Mini.SetActive(false);
+        }
+
+        public void DestroyObjects()
+        {
+            if (InitialCharge) Destroy(InitialCharge);
+            if (LaserBeam) Destroy(LaserBeam);
+            if (CollisionBeam) Destroy(CollisionBeam);
+            if (LaserBeam_Mini) Destroy(LaserBeam_Mini);
+            if (InitialCharge_Mini) Destroy(InitialCharge_Mini);
         }
     }
 
@@ -113,11 +121,11 @@ public class LaserAttack : BossAttack
 
         StartCoroutine(LaserWarning(laser));
 
-        yield return new WaitForSeconds(m_chargingTime);
+        yield return new WaitForSecondsRealtime(m_chargingTime);
 
         StartCoroutine(HandleLaser(laser));
 
-        yield return new WaitForSeconds(m_timeBtwLaser);
+        yield return new WaitForSecondsRealtime(m_timeBtwLaser);
 
         // s'il reste des laser à spawn
         if(m_numberLaserRemaining > 0)
@@ -174,7 +182,7 @@ public class LaserAttack : BossAttack
                 laser.RendererLaserBeam_Mini.size = size;
             }
 
-            timeElapsed += Time.deltaTime;
+            timeElapsed += Time.unscaledDeltaTime;
 
             yield return null;
         }
@@ -186,7 +194,7 @@ public class LaserAttack : BossAttack
         /* Start */
         bool hitStage = false; // Est-ce qu'on a hit le stage
         bool hitPlayer = false;
-        bool collisionBeamHasSpawn = false;
+        bool collisionBeamSpawn = false;
         float timeElapsed = 0f; // Durée écoulée
         float distanceBtwTwoRaycast = 0.25f; // Distance (en y) avec le centre du laser
         RaycastHit2D raycastTop;
@@ -196,6 +204,7 @@ public class LaserAttack : BossAttack
         laser.InitialCharge.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, m_IA.FlipRight ? -90f : 90));
         laser.InitialCharge.SetActive(true);
         laser.InitialCharge_Mini.SetActive(false);
+        //laser.InitialCharge_Mini = null;
 
         Vector2 size = laser.RendererLaserBeam.size;
         size.x = 1;
@@ -261,17 +270,17 @@ public class LaserAttack : BossAttack
                 }
             }
 
-            if(!collisionBeamHasSpawn)
+            if(!collisionBeamSpawn)
             {
                 if((hitStage && !hitPlayer && size.x < m_distance) || (!hitStage && hitPlayer && size.x < m_distance))
                 {  
-                    collisionBeamHasSpawn = true;
+                    collisionBeamSpawn = true;
                 }
             }
   
-            if (size.x < m_distance)
+            if (size.x < m_distance && !laser.CollisionBeam.activeSelf)
             {
-                if (collisionBeamHasSpawn)
+                if (collisionBeamSpawn)
                 {
                     size.x += (Vector2.Distance(hitPos, laser.InitialPosition) - size.x);
                 }
@@ -283,21 +292,21 @@ public class LaserAttack : BossAttack
                 laser.RendererLaserBeam.size = size;
             }
 
-            if(collisionBeamHasSpawn)
+            if(collisionBeamSpawn && !laser.CollisionBeam.activeSelf)
             {
-                /* Le laser est arrêté par le stage */
                 laser.CollisionBeam.transform.position = new Vector2(m_IA.FlipRight ? laser.InitialPosition.x - size.x : laser.InitialPosition.x + size.x, laser.InitialPosition.y);
                 laser.CollisionBeam.transform.rotation = Quaternion.Euler(new Vector3(0f, m_IA.FlipRight ? 0f : 180f, 0f));
                 laser.CollisionBeam.SetActive(true);
                 laser.LaserBeam_Mini.SetActive(false);
+                //laser.LaserBeam_Mini = null;
             }
   
-            timeElapsed += Time.deltaTime;
+            timeElapsed += Time.unscaledDeltaTime;
 
             yield return null;
         }
 
-        laser.DesactiveGameObject();
+        laser.DestroyObjects();
     }
 
     private Transform GetRandomPointSpawn()
@@ -324,17 +333,12 @@ public class LaserAttack : BossAttack
 
         foreach(var laser in m_lasers)
         {
-            laser.DesactiveGameObject();
+            laser.DestroyObjects();
         }
     }
 
     protected override void EndAttack()
     {
         base.EndAttack();
-
-        /*foreach (var laser in m_lasers)
-        {
-            laser.DesactiveGameObject();
-        }*/
     }
 }

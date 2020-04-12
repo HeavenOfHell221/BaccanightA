@@ -47,7 +47,7 @@ public class CounterAttack : BossAttack
 
     protected override IEnumerator HandleAttack()
     {
-        yield return new WaitForSeconds(m_cooldownBeforeAttack);
+        yield return new WaitForSecondsRealtime(m_cooldownBeforeAttack);
 
         m_health.IsInvincible = true; // Pour rendre la contre-attaque plus drole, le joueur peut pas lui faire de dégâts ? 
                                       // A voir, tu peux retirer si tu trouves ça trop.
@@ -59,7 +59,7 @@ public class CounterAttack : BossAttack
     {    
         Vector3 direction = (m_player.position - transform.position).normalized;
         m_rigidbody.velocity = direction * m_speed;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
         m_collider.enabled = true;
     }
 

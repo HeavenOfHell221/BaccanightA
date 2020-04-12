@@ -100,7 +100,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         CinemachineBrain brain = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CinemachineBrain>();       
         brain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
         LevelLoaderStart();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
 
         PlayerManager.Instance.ResetCameraReference();
 
@@ -111,7 +111,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         SetDoors(doorId);
         m_sceneActive = build;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
         brain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.EaseInOut;
 
         m_playerState.State = GamePlayerState.inGame;

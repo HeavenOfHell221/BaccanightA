@@ -32,7 +32,7 @@ public class ExplosionAttack : BossAttack
         {
             GameObject obj = ObjectPooler.Instance.SpawnFromPool(m_explosionFireball, transform.position, Quaternion.identity);
             obj.GetComponent<ExplosionFireball>().Speed = m_ballSpeedFlat;
-            yield return new WaitForSeconds(m_cooldownBetweenFireball);
+            yield return new WaitForSecondsRealtime(m_cooldownBetweenFireball);
         }
 
         EndAttack();
