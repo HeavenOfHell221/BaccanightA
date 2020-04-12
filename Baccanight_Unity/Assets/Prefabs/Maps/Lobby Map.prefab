@@ -12887,6 +12887,36 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3344587023588351930, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3344587023588351930, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3445271755500306399, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_text
+      value: Le Port de Bordeaux
+      objectReference: {fileID: 0}
+    - target: {fileID: 3445271755500306399, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3445271755500306399, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3445271755500306399, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3642531987787275762, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
@@ -12935,7 +12965,7 @@ PrefabInstance:
     - target: {fileID: 3888421352201821236, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.65999997
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 6898311020807586648, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -13036,27 +13066,35 @@ PrefabInstance:
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 59
+      value: 219
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 13
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 12
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
-      value: -1
+      value: 92
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_text
+      value: "Cela fait si longtemps que nous n\u2019avons pas crois\xE9 quelqu\u2019un\u2026
+        Oh, mais tu dois \xEAtre Apollon !! Nous t\u2019avons appel\xE9 car nous
+        avons besoin de ton aide\u2026 Il faut sauver l\u2019art !\r\nFais vite !
+        J\u2019entends mes amis en danger...\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 8303854961449737274, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
