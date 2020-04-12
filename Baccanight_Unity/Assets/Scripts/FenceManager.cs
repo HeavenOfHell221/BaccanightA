@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class FenceManager : MonoBehaviour
 {
+    [SerializeField] [Range(0, 2)] private int m_whichLevelIsThis;
+
     public GameObject m_fence ;
     public GameObject[] m_piedestalList;
     private Piedestal[] m_piedestalScriptList;
     private Fence m_fenceScript;
+    public PlayerSucces m_openGrilleSuccess;
 
     void Start()
     {
@@ -17,6 +20,11 @@ public class FenceManager : MonoBehaviour
             m_piedestalScriptList[i] = m_piedestalList[i].GetComponent<Piedestal>();
         }
         m_fenceScript = m_fence.GetComponent<Fence>();
+        
+        if (m_openGrilleSuccess.HaveSucces("Grille2" + m_whichLevelIsThis))
+        {
+            m_fenceScript.OpenFence();
+        }
     }
 
     public void CheckForFence()
@@ -31,7 +39,11 @@ public class FenceManager : MonoBehaviour
         }
         if(cmp == m_piedestalList.Length)
         {
-            m_fenceScript.OpenFence();
+            if (!m_openGrilleSuccess.HaveSucces("Grille2" + m_whichLevelIsThis))
+            {
+                m_openGrilleSuccess.SetSucces("Grille2" + m_whichLevelIsThis, true);
+                m_fenceScript.OpenFence();
+            }
         }
     }
 }

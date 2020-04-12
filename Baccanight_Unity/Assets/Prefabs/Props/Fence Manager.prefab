@@ -44,9 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7cc9d0886f7d740b992bf03e23cdcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_whichLevelIsThis: 0
   m_fence: {fileID: 3355686989500987985}
   m_piedestalList:
   - {fileID: 0}
+  m_openGrilleSuccess: {fileID: 11400000, guid: 6a1b942857a49b3408456b977650fc70,
+    type: 2}
 --- !u!1001 &1352716343965877931
 PrefabInstance:
   m_ObjectHideFlags: 0
