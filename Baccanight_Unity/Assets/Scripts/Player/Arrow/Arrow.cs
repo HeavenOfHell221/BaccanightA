@@ -60,7 +60,7 @@ public abstract class Arrow : MonoBehaviour
 
     protected IEnumerator Disable(float time)
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSecondsRealtime(time);
         m_isStopping = false;
         m_rigidbody.velocity = Vector2.zero;
         gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);

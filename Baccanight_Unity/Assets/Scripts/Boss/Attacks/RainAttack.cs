@@ -66,7 +66,7 @@ public class RainAttack : BossAttack
         }
         else
         {
-            yield return new WaitForSecondsRealtime(3f);
+            yield return new WaitForSecondsRealtime(4f);
             EndAttack();
         }
     }

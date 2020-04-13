@@ -35,7 +35,7 @@ public class ExplosionAttack : BossAttack
             yield return new WaitForSecondsRealtime(m_cooldownBetweenFireball);
         }
 
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(2f);
 
         EndAttack();
     }

@@ -66,6 +66,7 @@ public class FireballAttack : BossAttack
         }
         else
         {
+            yield return new WaitForSecondsRealtime(1f);
             EndAttack();
         }
     }
