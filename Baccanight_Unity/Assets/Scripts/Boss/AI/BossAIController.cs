@@ -283,7 +283,7 @@ public class BossAIController : MonoBehaviour
 
     private void HandleDyingState()
     {
-        Destroy(gameObject);
+        //gameObject.SetActive(false);
     }
 
     private float DistanceFromPlayer()

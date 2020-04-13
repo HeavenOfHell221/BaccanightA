@@ -68,9 +68,9 @@ public class HealthBoss : MonoBehaviour
         }
         else if (Ratio <= 0f)
         {
-            m_DeathPhase.Invoke(BossActionType.Dying);
-            IsDead = true;
             StartCoroutine(_Death());
+            m_DeathPhase.Invoke(BossActionType.Dying);
+            IsDead = true;     
         }
     }
 
