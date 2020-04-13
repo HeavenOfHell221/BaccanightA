@@ -11,31 +11,49 @@ public class Statue : MonoBehaviour
     [SerializeField] private Rigidbody2D m_rigidbody2D;
     [SerializeField] private float m_maxSpeedY;
 
-    public void OnEnterPlayer()
+    public void OnEnter(GameObject other)
     {
-        if (!Input.GetButton(GameConstants.k_Interact))
+        if(other.tag == "Statue")
         {
-            m_playerMotion.IsPushObject = true;
+            m_rigidbody2D.mass = 5000;
+        }
+        else if(other.tag == "Player")
+        {
+            if (!Input.GetButton(GameConstants.k_Interact))
+            {
+                m_playerMotion.IsPushObject = true;
+            }
+        } 
+    }
+
+    public void OnStay(GameObject other)
+    {
+        if (other.tag == "Player")
+        {
+            if (Input.GetButton(GameConstants.k_Interact))
+            {
+                gameObject.layer = LayerMask.NameToLayer("Props");
+                m_playerMotion.IsPushObject = false;
+            }
+            else
+            {
+                gameObject.layer = LayerMask.NameToLayer("Default");
+                m_playerMotion.IsPushObject = true;
+            }
         }
     }
 
-    public void OnStayPlayer()
+    public void OnExit(GameObject other)
     {
-        if (Input.GetButton(GameConstants.k_Interact))
+        if (other.tag == "Player")
         {
-            gameObject.layer = LayerMask.NameToLayer("Props");
             m_playerMotion.IsPushObject = false;
-        }
-        else
-        {
             gameObject.layer = LayerMask.NameToLayer("Default");
-            m_playerMotion.IsPushObject = true;
         }
-    }
-
-    public void OnExitPlayer()
-    {
-        m_playerMotion.IsPushObject = false;
+        else if (other.tag == "Statue")
+        {
+            m_rigidbody2D.mass = 500;
+        }
     }
 
 
