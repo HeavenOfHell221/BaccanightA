@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5275441339724077143}
   - component: {fileID: 4551310370985298338}
   - component: {fileID: 7934862620168789624}
+  - component: {fileID: 3577262490966132441}
   m_Layer: 11
   m_Name: CollisionBeam
   m_TagString: Untagged
@@ -102,3 +103,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3577262490966132441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7230077560877081797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8881c3d9ebbfa4429db28d7394af617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_timeBeforeDestroy: 2

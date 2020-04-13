@@ -87,7 +87,7 @@ public class FireballAttack : BossAttack
 
         } while (dist < m_distanceToPlayer.Min || dist > m_distanceToPlayer.Max);
 
-        GameObject fireball = ObjectPooler.Instance.SpawnFromPool(m_fireball, spawnPosition, Quaternion.identity);
+        GameObject fireball = ObjectPooler.Instance.SpawnFromPool(m_fireball, spawnPosition, Quaternion.identity, transform);
         fireball.GetComponent<TargetFireball>().Speed = m_speedFireball;
     }
 

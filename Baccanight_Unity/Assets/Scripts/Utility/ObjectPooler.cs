@@ -37,7 +37,7 @@ public class ObjectPooler : SingletonBehaviour<ObjectPooler>
 			m_Pool.AddLast(obj);
 		}
 
-		public GameObject GetObject(Vector3 position, Quaternion rotation)
+		public GameObject GetObject(Vector3 position, Quaternion rotation, Transform parent)
 		{
 			GameObject objectRequested = null;
 			foreach (GameObject obj in m_Pool)
@@ -58,7 +58,7 @@ public class ObjectPooler : SingletonBehaviour<ObjectPooler>
 				objectRequested = SpawnObject();
             }
 
-            ActiveObject(objectRequested, position, rotation, Instance.transform);
+            ActiveObject(objectRequested, position, rotation, parent);
 			return objectRequested;
 		}
 	}
@@ -72,13 +72,13 @@ public class ObjectPooler : SingletonBehaviour<ObjectPooler>
 		poolDictionary = new Dictionary<GameObject, Pool>();
 	}
 
-	public GameObject SpawnFromPool(GameObject prefab, Vector3 position, Quaternion rotation)
+	public GameObject SpawnFromPool(GameObject prefab, Vector3 position, Quaternion rotation, Transform parent)
 	{
 		if (!poolDictionary.ContainsKey(prefab))
 		{
 			poolDictionary.Add(prefab, new Pool(prefab));
 		}
 
-		return poolDictionary[prefab].GetObject(position, rotation);
+		return poolDictionary[prefab].GetObject(position, rotation, parent);
 	}
 }

@@ -30,7 +30,7 @@ public class ExplosionAttack : BossAttack
     {
         for (int i = 0; i < m_numberPerBurst; i++)
         {
-            GameObject obj = ObjectPooler.Instance.SpawnFromPool(m_explosionFireball, transform.position, Quaternion.identity);
+            GameObject obj = ObjectPooler.Instance.SpawnFromPool(m_explosionFireball, transform.position, Quaternion.identity, transform);
             obj.GetComponent<ExplosionFireball>().Speed = m_ballSpeedFlat;
             yield return new WaitForSecondsRealtime(m_cooldownBetweenFireball);
         }

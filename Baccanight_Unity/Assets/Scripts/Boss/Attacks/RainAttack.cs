@@ -104,7 +104,7 @@ public class RainAttack : BossAttack
             if ((m_line & 1) == 1)
             {
                 m_line >>= 1;
-                GameObject fireball = ObjectPooler.Instance.SpawnFromPool(m_rainball, spawn, Quaternion.identity);
+                GameObject fireball = ObjectPooler.Instance.SpawnFromPool(m_rainball, spawn, Quaternion.identity, transform);
                 fireball.GetComponent<RainFireball>().Speed = m_currentSpeed;
                 fireball.transform.rotation = Quaternion.AngleAxis(90f, Vector3.forward);
                 spawn += Vector3.right;

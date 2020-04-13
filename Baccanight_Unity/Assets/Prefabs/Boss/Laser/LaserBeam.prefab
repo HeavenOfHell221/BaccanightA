@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1800777636464414232}
   - component: {fileID: 8654574344682801164}
   - component: {fileID: 3891747080579896843}
+  - component: {fileID: 260345880576496011}
   m_Layer: 11
   m_Name: LaserBeam
   m_TagString: Untagged
@@ -102,3 +103,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &260345880576496011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4144383265546649825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8881c3d9ebbfa4429db28d7394af617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_timeBeforeDestroy: 2
