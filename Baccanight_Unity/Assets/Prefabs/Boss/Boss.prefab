@@ -646,9 +646,9 @@ MonoBehaviour:
   m_rigidbody: {fileID: 8198711157667756216}
   m_health: {fileID: 9128026524433129773}
   m_speed: 24
-  m_cooldownBeforeAttack: 0.8
+  m_cooldownBeforeAttack: 0.65
   m_speedUpgrade: 40
-  m_cooldownBeforeAttackUpgrade: 0.55
+  m_cooldownBeforeAttackUpgrade: 0.45
 --- !u!114 &7131463579652883245
 MonoBehaviour:
   m_ObjectHideFlags: 0

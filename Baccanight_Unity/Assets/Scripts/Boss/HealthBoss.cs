@@ -51,9 +51,9 @@ public class HealthBoss : MonoBehaviour
 
         float lastRatio = Ratio;
 
-        OnHealthPctChanged(Ratio);
-
         CurrentHealth = Mathf.Clamp(CurrentHealth += deltaHealth, 0f, m_maxHealth);
+
+        OnHealthPctChanged(Ratio);
 
         if (lastRatio >= 0.5f && Ratio < 0.5f && !m_isEnraging)
         {
@@ -70,6 +70,7 @@ public class HealthBoss : MonoBehaviour
         {
             m_DeathPhase.Invoke(BossActionType.Dying);
             IsDead = true;
+            StartCoroutine(_Death());
         }
     }
 
@@ -83,5 +84,11 @@ public class HealthBoss : MonoBehaviour
     public void OnEnterPlayer(GameObject other)
     {
         other.GetComponent<Health>().ModifyHealth(m_damageCollision, gameObject);       
+    }
+
+    private IEnumerator _Death()
+    {
+        yield return new WaitForSeconds(2f);
+        LevelManager.Instance.ChangeScene(0, 2);
     }
 }

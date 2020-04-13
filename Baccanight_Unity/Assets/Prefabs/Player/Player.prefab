@@ -308,7 +308,7 @@ MonoBehaviour:
   m_health: {fileID: 11400000, guid: d16ca2a153cc2c84ab0d889ad4db5bbc, type: 2}
   m_state: {fileID: 11400000, guid: 60a73ace185f3b24e82f4d18dc44a284, type: 2}
   m_timeTimeScaleNull: 0.33
-  m_timeInvincibleFrame: 1
+  m_timeInvincibleFrame: 1.5
   m_onDamaged:
     m_PersistentCalls:
       m_Calls:

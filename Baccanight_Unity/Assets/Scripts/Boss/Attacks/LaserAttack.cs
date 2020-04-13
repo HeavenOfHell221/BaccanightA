@@ -134,6 +134,11 @@ public class LaserAttack : BossAttack
         }
         else
         {
+            while(m_lasers.Count != 0)
+            {
+                yield return null;
+            }
+
             EndAttack();
         }    
     }
@@ -307,6 +312,7 @@ public class LaserAttack : BossAttack
         }
 
         laser.DestroyObjects();
+        m_lasers.Remove(laser);
     }
 
     private Transform GetRandomPointSpawn()
