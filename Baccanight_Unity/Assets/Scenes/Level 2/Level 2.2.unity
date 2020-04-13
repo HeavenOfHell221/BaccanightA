@@ -252,6 +252,11 @@ PrefabInstance:
       propertyPath: m_allwaysOpen
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1979934545547724239, guid: b7ca342d4f34bb74bad1edc1de4d150c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2580176711106519296, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -452,6 +457,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6660722983182863163, guid: b7ca342d4f34bb74bad1edc1de4d150c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6783331349739124255, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_allwaysOpen
@@ -481,6 +491,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745655462174172591, guid: b7ca342d4f34bb74bad1edc1de4d150c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8129444331908749030, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
