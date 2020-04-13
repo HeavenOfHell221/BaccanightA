@@ -22156,6 +22156,11 @@ PrefabInstance:
       propertyPath: m_piedestalList.Array.data[3]
       value: 
       objectReference: {fileID: 4841765811066259646}
+    - target: {fileID: 1352716343847063578, guid: 3df1a5d6c125bdd478bd49a04cba7f33,
+        type: 3}
+      propertyPath: m_whichLevelIsThis
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1352716343847063579, guid: 3df1a5d6c125bdd478bd49a04cba7f33,
         type: 3}
       propertyPath: m_Name
