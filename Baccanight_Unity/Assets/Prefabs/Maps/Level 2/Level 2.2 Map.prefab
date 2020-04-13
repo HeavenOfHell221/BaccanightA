@@ -18949,7 +18949,7 @@ PrefabInstance:
     - target: {fileID: 3344587023588351930, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3445271755500306399, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -19070,22 +19070,22 @@ PrefabInstance:
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 34
+      value: 106
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 7
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -19095,12 +19095,18 @@ PrefabInstance:
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_text
-      value: "Attention, C n\u2019est pas \xE0 c\xF4t\xE9 de A"
+      value: Attention, Quand deux animaux terrestres doivent se partager le territoire,
+        ils n'aiment pas beaucoup cela
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textAlignment
       value: 514
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 89
       objectReference: {fileID: 0}
     - target: {fileID: 8303854961449737274, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -19905,7 +19911,7 @@ PrefabInstance:
     - target: {fileID: 3344587023588351930, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3445271755500306399, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -20026,7 +20032,7 @@ PrefabInstance:
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 46
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -20041,7 +20047,7 @@ PrefabInstance:
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -20051,8 +20057,7 @@ PrefabInstance:
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_text
-      value: " \xC9coute moi, l\u2019objet A est \xE0 c\xF4t\xE9 de l\u2019objet
-        B"
+      value: " \xC9coute moi, Les volants n'ont pas peur du pr\xE9dateur terrestre"
       objectReference: {fileID: 0}
     - target: {fileID: 8303854961449737274, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -20532,7 +20537,7 @@ PrefabInstance:
     - target: {fileID: 3344587023588351930, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3445271755500306399, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -20653,7 +20658,7 @@ PrefabInstance:
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 56
+      value: 66
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -20663,12 +20668,12 @@ PrefabInstance:
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -20678,7 +20683,8 @@ PrefabInstance:
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_text
-      value: "Un indice pour toi : l\u2019objet A est soit en 1, soit en 2."
+      value: "Un indice pour toi : Le pr\xE9dateur pr\xE9f\xE8re \xEAtre en peloton
+        de t\xEAte\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -20708,7 +20714,7 @@ PrefabInstance:
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_enableWordWrapping
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8303854961449737274, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -21451,7 +21457,7 @@ PrefabInstance:
     - target: {fileID: 3344587023588351930, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3445271755500306399, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -21572,22 +21578,22 @@ PrefabInstance:
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 49
+      value: 71
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
@@ -21597,7 +21603,8 @@ PrefabInstance:
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_text
-      value: "Sois attentif, l\u2019objet A est soit en 3, soit en 4"
+      value: "Sois attentif, En r\xE9alit\xE9 le pr\xE9dateur se trouve dans le peloton
+        de fin"
       objectReference: {fileID: 0}
     - target: {fileID: 8303854961449737274, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
