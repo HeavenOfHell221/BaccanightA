@@ -17,10 +17,10 @@ public class Piedestal : MonoBehaviour
             {
                 m_isUnlocked = true;
                 m_fenceManager.GetComponent<FenceManager>().CheckForFence();
-
-                obj.layer = LayerMask.NameToLayer("Props"); // Pour que le joueur le traverse et ne puisse pas le repousser
-                obj.GetComponentInChildren<EventScriptTrigger>().enabled = false; // Pour que l'animation du joueur qui pousse ne s'active pas
             }
+
+            obj.layer = LayerMask.NameToLayer("Props"); // Pour que le joueur le traverse et ne puisse pas le repousser
+            obj.GetComponentInChildren<EventScriptTrigger>().enabled = false; // Pour que l'animation du joueur qui pousse ne s'active pas
         }
     }
 
