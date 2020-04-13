@@ -41,6 +41,17 @@ public class ShakeCamera : MonoBehaviour
         m_shakeTrigger = false;
         IsShake = true;
 
+        while(!m_noise)
+        {
+            m_VirtualCamera = GetComponent<CinemachineVirtualCamera>();
+            if(m_VirtualCamera)
+            {
+                m_noise = m_VirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+            }
+
+            yield return null;
+        }
+
         Noise(amplitude, frequency);
 
         yield return new WaitForSecondsRealtime(duration);

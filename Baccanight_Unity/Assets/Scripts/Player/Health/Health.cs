@@ -42,7 +42,10 @@ public class Health : MonoBehaviour
             m_onHealed.Invoke(deltaLife, source);
         }
 
-        HandleDeath(deltaLife);
+        if (!m_health.IsDead)
+        {
+            HandleDeath(deltaLife);
+        }
     }
 
     public void HandleDeath(int deltaLife)
@@ -52,12 +55,12 @@ public class Health : MonoBehaviour
             m_health.IsDead = true;
             m_state.State = GamePlayerState.inDie;
             StartCoroutine(PlayerRespawn());
-        }
+        }  
 
         if (!m_health.IsInvincible && deltaLife < 0)
         {
             StartCoroutine(InvincibleFrame(deltaLife));
-        }
+        }      
     }
 
     private IEnumerator InvincibleFrame(int deltaLife)
