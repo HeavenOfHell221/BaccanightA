@@ -20010,7 +20010,7 @@ PrefabInstance:
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
         type: 3}
       propertyPath: m_text
-      value: Attention, Quand deux animaux terrestres doivent se partager le territoire,
+      value: Attention, quand deux animaux terrestres doivent se partager le territoire,
         ils n'aiment pas beaucoup cela
       objectReference: {fileID: 0}
     - target: {fileID: 7577110416236951576, guid: 81e296be173f4c14f85eabe1f51b105c,
