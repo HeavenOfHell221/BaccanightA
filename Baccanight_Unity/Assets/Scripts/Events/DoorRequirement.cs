@@ -13,7 +13,7 @@ public class DoorRequirement : MonoBehaviour
     [SerializeField]
     private bool m_allwaysOpen;
     [SerializeField]
-    private FadeText m_fadeText;
+    private FadeTextMeshProUGUI m_fadeText;
     [SerializeField] private SpriteRenderer m_renderer;
     [SerializeField] private Sprite m_open;
     [SerializeField] private Sprite m_close;

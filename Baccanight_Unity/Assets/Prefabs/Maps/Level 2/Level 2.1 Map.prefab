@@ -12308,6 +12308,11 @@ PrefabInstance:
       propertyPath: m_piedestalList.Array.data[1]
       value: 
       objectReference: {fileID: 8596830157659373480}
+    - target: {fileID: 1352716343847063578, guid: 3df1a5d6c125bdd478bd49a04cba7f33,
+        type: 3}
+      propertyPath: m_whichLevelIsThis
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1352716343847063579, guid: 3df1a5d6c125bdd478bd49a04cba7f33,
         type: 3}
       propertyPath: m_Name
@@ -12322,6 +12327,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 19.025047
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021430719640988635, guid: 3df1a5d6c125bdd478bd49a04cba7f33,
+        type: 3}
+      propertyPath: m_UsedByComposite
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021430719640988635, guid: 3df1a5d6c125bdd478bd49a04cba7f33,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7787867025718944092, guid: 3df1a5d6c125bdd478bd49a04cba7f33,
         type: 3}

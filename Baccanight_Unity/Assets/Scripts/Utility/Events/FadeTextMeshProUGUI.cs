@@ -2,7 +2,7 @@
 using TMPro;
 using UnityEngine;
 
-public class FadeText : MonoBehaviour
+public class FadeTextMeshProUGUI : MonoBehaviour
 {
     [SerializeField]
     private Collider2D m_collider;
