@@ -52,7 +52,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &6891192309997714884
@@ -72,6 +72,7 @@ MonoBehaviour:
   m_playerMotion: {fileID: 11400000, guid: 8d25be83bd41b1745b10d7b8110c1547, type: 2}
   m_angleMaxY: 0.75
   m_damage: -2.5
+  m_FX: {fileID: 9049579546878250398, guid: 82f6adee4fa04834499ea86afa5c459e, type: 3}
 --- !u!1 &3711034539309073814
 GameObject:
   m_ObjectHideFlags: 0

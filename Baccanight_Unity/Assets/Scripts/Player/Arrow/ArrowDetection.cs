@@ -2,13 +2,18 @@
 
 public class ArrowDetection : Arrow
 {
+    [SerializeField] GameObject m_FX;
+
     public void OnArrowEnter(GameObject target)
     {
+        if(target.layer == LayerMask.NameToLayer("Stage"))
+        {
+            StopArrow();
+            return;
+        }
+
         switch (target.tag)
         {
-            case "Stage":
-                StopArrow();
-                break;
             case "BossHealth":
                 target.GetComponent<HealthBoss>().ModifyHealth(m_damage);
                 PlayerManager.Instance.ShakeCamera.Shake(1f, 1f, 0.15f);
@@ -28,8 +33,9 @@ public class ArrowDetection : Arrow
 
     private void StopArrow()
     {
+        Instantiate(m_FX, transform.position, Quaternion.identity, null);
         m_isStopping = true;
         m_rigidbody.velocity = Vector2.zero;
-        StartCoroutine(Disable(1f));
+        StartCoroutine(Disable(0.1f));
     }
 }
