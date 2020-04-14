@@ -384,7 +384,7 @@ MonoBehaviour:
   m_chargingTimeUpgrade: 0.55
   m_AttackDurationUpgrade: 0.9
   m_damageUpgrade: -1
-  m_timeBtwLaserUpgrade: 0.4
+  m_timeBtwLaserUpgrade: 0.3
   m_laserNumberUpgrade:
     Min: 3
     Max: 5

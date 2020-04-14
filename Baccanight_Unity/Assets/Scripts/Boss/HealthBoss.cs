@@ -87,7 +87,7 @@ public class HealthBoss : MonoBehaviour
 
     private IEnumerator _Death()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSecondsRealtime(2f);
         LevelManager.Instance.ChangeScene(0, 2);
     }
 }

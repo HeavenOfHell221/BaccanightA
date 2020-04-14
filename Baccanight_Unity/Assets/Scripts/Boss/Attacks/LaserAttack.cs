@@ -119,15 +119,10 @@ public class LaserAttack : BossAttack
 
         m_lasers.Add(laser);
 
-        StartCoroutine(LaserWarning(laser));
+        yield return StartCoroutine(LaserWarning(laser));
 
-        yield return new WaitForSecondsRealtime(m_chargingTime);
+        yield return StartCoroutine(HandleLaser(laser));
 
-        StartCoroutine(HandleLaser(laser));
-
-        yield return new WaitForSecondsRealtime(m_timeBtwLaser);
-
-        // s'il reste des laser à spawn
         if (m_numberLaserRemaining > 0)
         {
             StartCoroutine(HandleAttack());
