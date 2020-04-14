@@ -58,8 +58,8 @@ public class DoorRequirement : MonoBehaviour
         }
         else
         {
+            yield return new WaitForSeconds(1f);
             StartCoroutine(TestDoor());
-        }
-         yield return new WaitForSeconds(0.5f);
+        }  
     }
 }
