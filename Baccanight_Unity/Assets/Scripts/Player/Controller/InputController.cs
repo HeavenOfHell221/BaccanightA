@@ -8,67 +8,67 @@ using UnityEngine.Events;
 public class InputController : MonoBehaviour
 {
 
-	#region Inspector
+    #region Inspector
 #pragma warning disable 0649
 
-	[SerializeField]
-	private PlayerState m_playerState;
+    [SerializeField]
+    private PlayerState m_playerState;
 
-	#region Gameplay Events
+    #region Gameplay Events
 
     [SerializeField] private Vector2Event m_OnMove;
     [SerializeField] private UnityEvent m_OnJump;
-	[SerializeField] private UnityEvent m_OnInteract;
-	[SerializeField] private UnityEvent m_OnAttackEnter;
-	[SerializeField] private UnityEvent m_OnAttackExit;
+    [SerializeField] private UnityEvent m_OnInteract;
+    [SerializeField] private UnityEvent m_OnAttackEnter;
+    [SerializeField] private UnityEvent m_OnAttackExit;
     [SerializeField] private UnityEvent m_OnAttackContinue;
     [SerializeField] private UnityEvent m_OnEscape;
 
-	#endregion
+    #endregion
 
-	#region Menu Events
+    #region Menu Events
 
-	[SerializeField]
-	private UnityEvent m_OnCancel;
+    [SerializeField]
+    private UnityEvent m_OnCancel;
 
-	[SerializeField]
-	private UnityEvent m_OnSubmit;
+    [SerializeField]
+    private UnityEvent m_OnSubmit;
 
-	#endregion
+    #endregion
 
 #pragma warning restore 0649
-	#endregion
+    #endregion
 
-	#region Getters / Setters
+    #region Getters / Setters
 
-	public Vector2Event OnMove => m_OnMove;
+    public Vector2Event OnMove => m_OnMove;
     public UnityEvent OnJump => m_OnJump;
-	public UnityEvent OnEscape => m_OnCancel;
-	public UnityEvent OnAttackEnter => m_OnAttackEnter;
-	public UnityEvent OnAttackExit => m_OnAttackExit;
+    public UnityEvent OnEscape => m_OnCancel;
+    public UnityEvent OnAttackEnter => m_OnAttackEnter;
+    public UnityEvent OnAttackExit => m_OnAttackExit;
     public UnityEvent OnAttackContinue => m_OnAttackContinue;
     public UnityEvent OnSubmit => m_OnSubmit;
-	public UnityEvent OnCancel => m_OnCancel;
+    public UnityEvent OnCancel => m_OnCancel;
     public UnityEvent OnInteract => m_OnInteract;
-	public static bool HaveGamePad { get; private set; }
+    public static bool HaveGamePad { get; private set; }
 
-	#endregion
+    #endregion
 
-	public void InitialyseGamePad()
-	{
-		if (Input.GetJoystickNames().Length > 0)
-		{
-			foreach (string joystick in Input.GetJoystickNames())
-			{
-				if (joystick.Length > 0)
-				{
-					HaveGamePad = true;
-					return;
-				}
-			}
-		}
-		HaveGamePad = false;
-	}
+    public void InitialyseGamePad()
+    {
+        if (Input.GetJoystickNames().Length > 0)
+        {
+            foreach (string joystick in Input.GetJoystickNames())
+            {
+                if (joystick.Length > 0)
+                {
+                    HaveGamePad = true;
+                    return;
+                }
+            }
+        }
+        HaveGamePad = false;
+    }
 
     private void Awake()
     {
@@ -77,14 +77,14 @@ public class InputController : MonoBehaviour
     }
 
     private void Start()
-	{
-		InitialyseGamePad();
-	}
+    {
+        InitialyseGamePad();
+    }
 
-	void Update()
-	{
+    void Update()
+    {
         UpdateInputs();
-	}
+    }
 
     private void UpdateInputs()
     {
@@ -106,45 +106,45 @@ public class InputController : MonoBehaviour
         }
     }
 
-	private void GetMotion()
-	{
-		float rawMotionX = Mathf.Clamp(Input.GetAxisRaw(GameConstants.k_AxisHorizontal), -1, 1);
+    private void GetMotion()
+    {
+        float rawMotionX = Mathf.Clamp(Input.GetAxisRaw(GameConstants.k_AxisHorizontal), -1, 1);
         float rawMotionY = Mathf.Clamp(Input.GetAxisRaw(GameConstants.k_AxisVertical), -1, 1);
 
         m_OnMove.Invoke(new Vector2(rawMotionX, rawMotionY));
-	}
+    }
 
     private void GetJumpDown()
-	{
-		if (Input.GetButtonDown(GameConstants.k_Jump))
-		{
-			m_OnJump.Invoke();
-		}
-	}
+    {
+        if (Input.GetButtonDown(GameConstants.k_Jump))
+        {
+            m_OnJump.Invoke();
+        }
+    }
 
-	private void GetInteractDown()
-	{
-		if (Input.GetButtonDown(GameConstants.k_Interact))
-		{
-			m_OnInteract.Invoke();
-		}
-	}
+    private void GetInteractDown()
+    {
+        if (Input.GetButtonDown(GameConstants.k_Interact))
+        {
+            m_OnInteract.Invoke();
+        }
+    }
 
-	private void GetAttackDown()
-	{
-		if (Input.GetButtonDown(GameConstants.k_Attack))
-		{
-			m_OnAttackEnter.Invoke();
-		}
-	}
+    private void GetAttackDown()
+    {
+        if (Input.GetButtonDown(GameConstants.k_Attack))
+        {
+            m_OnAttackEnter.Invoke();
+        }
+    }
 
-	private void GetAttackUp()
-	{
-		if (Input.GetButtonUp(GameConstants.k_Attack))
-		{
-			m_OnAttackExit.Invoke();
-		}
-	}
+    private void GetAttackUp()
+    {
+        if (Input.GetButtonUp(GameConstants.k_Attack))
+        {
+            m_OnAttackExit.Invoke();
+        }
+    }
 
     private void GetAttackContinue()
     {
@@ -155,27 +155,27 @@ public class InputController : MonoBehaviour
     }
 
     private void GetEscapeDown()
-	{
-		if (Input.GetButtonDown(GameConstants.k_Cancel))
-		{
-			m_OnEscape.Invoke();
-		}
-	}
+    {
+        if (Input.GetButtonDown(GameConstants.k_Cancel))
+        {
+            m_OnEscape.Invoke();
+        }
+    }
 
-	private void GetCancelDown()
-	{
-		if (Input.GetButtonDown(GameConstants.k_Cancel))
-		{
-			m_OnCancel.Invoke();
-		}
-	}
+    private void GetCancelDown()
+    {
+        if (Input.GetButtonDown(GameConstants.k_Cancel))
+        {
+            m_OnCancel.Invoke();
+        }
+    }
 
-	private void GetSubmitDown()
-	{
-		if (Input.GetButtonDown(GameConstants.k_Submit))
-		{
-			m_OnSubmit.Invoke();
-		}
-	}
+    private void GetSubmitDown()
+    {
+        if (Input.GetButtonDown(GameConstants.k_Submit))
+        {
+            m_OnSubmit.Invoke();
+        }
+    }
 }
 

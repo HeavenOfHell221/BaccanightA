@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Piedestal : MonoBehaviour
 {
@@ -13,7 +11,7 @@ public class Piedestal : MonoBehaviour
 
     public void CollisionEnter(GameObject obj)
     {
-        if(obj.tag == "Statue")
+        if (obj.tag == "Statue")
         {
             //Debug.Log("Statue");
             obj.transform.position = transform.position + Vector3.up;
@@ -32,7 +30,7 @@ public class Piedestal : MonoBehaviour
 
     private void Update()
     {
-        if(m_obj && m_isStatue)
+        if (m_obj && m_isStatue)
         {
             m_obj.layer = LayerMask.NameToLayer("Props");
         }

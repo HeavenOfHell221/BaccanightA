@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FireballAttack : BossAttack
@@ -10,7 +9,7 @@ public class FireballAttack : BossAttack
     [Space(5)]
     [SerializeField] private Collider2D m_collider;
     [SerializeField] private GameObject m_fireball;
-    [SerializeField] private MinMaxFloat m_distanceToPlayer; 
+    [SerializeField] private MinMaxFloat m_distanceToPlayer;
 
     [Header("Phase 1")]
     [Space(5)]

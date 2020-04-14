@@ -64,7 +64,7 @@ public class BossAIController : MonoBehaviour
     private void Update()
     {
         HandleDirectionToPlayer();
-        UpdateStates();      
+        UpdateStates();
     }
 
     private void UpdateStates()
@@ -94,7 +94,7 @@ public class BossAIController : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(timeWait);
 
-        if(attackID != -1)
+        if (attackID != -1)
         {
             CurrentState = BossActionType.Attacking;
             HandleAttackingState(attackID);
@@ -104,14 +104,14 @@ public class BossAIController : MonoBehaviour
             UpdateIABehaviour(BossActionType.Attacking);
         }
 
-        
+
     }
 
     public void UpdateIABehaviour(BossActionType newState)
     {
         CurrentState = newState;
 
-        switch(CurrentState)
+        switch (CurrentState)
         {
             case BossActionType.Idle:
                 HandleIdleState();
@@ -152,7 +152,7 @@ public class BossAIController : MonoBehaviour
 
     private void HandleStartBattleState()
     {
-        if(!m_battleHasStart)
+        if (!m_battleHasStart)
         {
             m_battleHasStart = true;
 
@@ -171,7 +171,7 @@ public class BossAIController : MonoBehaviour
 
     private void HandleCounterAttackState()
     {
-        if(m_currentAttack)
+        if (m_currentAttack)
         {
             m_currentAttack.CancelAttack();
         }
@@ -182,7 +182,7 @@ public class BossAIController : MonoBehaviour
 
     private void HandleIdleState()
     {
-        if(m_currentAttack)
+        if (m_currentAttack)
         {
             m_currentAttack.CancelAttack();
             m_currentAttack = null;
@@ -209,7 +209,7 @@ public class BossAIController : MonoBehaviour
     }
 
     private IEnumerator _HandleAttackingState(int attackID = -1)
-    { 
+    {
         if (m_currentAttack == null)
         {
             BossAttack newAttack = m_basicAttacks[attackID == -1 ? Random.Range(0, m_basicAttackPossible) : attackID];
@@ -264,7 +264,7 @@ public class BossAIController : MonoBehaviour
 
     private IEnumerator _HandleEnragingState()
     {
-        if(m_currentAttack)
+        if (m_currentAttack)
         {
             m_currentAttack.CancelAttack();
             m_currentAttack = null;
@@ -273,7 +273,7 @@ public class BossAIController : MonoBehaviour
         m_animator.SetTrigger("Enraged");
         PlayerManager.Instance.ShakeCamera.Shake(3f, 1f, 1f);
 
-        while(m_health.IsInvincible)
+        while (m_health.IsInvincible)
         {
             yield return null;
         }
@@ -300,14 +300,14 @@ public class BossAIController : MonoBehaviour
     {
         float rotationY = 0f;
 
-        if(m_player)
+        if (m_player)
         {
-            if(m_player.position.x > transform.position.x)
+            if (m_player.position.x > transform.position.x)
             {
                 rotationY = 180f;
                 FlipRight = false;
             }
-            else if(m_player.position.x < transform.position.x)
+            else if (m_player.position.x < transform.position.x)
             {
                 rotationY = 0f;
                 FlipRight = true;

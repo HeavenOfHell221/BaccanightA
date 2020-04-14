@@ -6,39 +6,39 @@
 /// </summary>
 public class EventScriptTrigger : MonoBehaviour
 {
-	#region Inspector
+    #region Inspector
 #pragma warning disable 0649
 
-	[SerializeField] private GameObjectEvent OnEnterDetect;
+    [SerializeField] private GameObjectEvent OnEnterDetect;
     [SerializeField] private GameObjectEvent OnStayDetect;
     [SerializeField] private GameObjectEvent OnExitDetect;
     [SerializeField] private LayerMask Layers;
 
     private Collider2D m_myCollider;
 #pragma warning restore 0649
-	#endregion
+    #endregion
 
-	private void Awake()
-	{
+    private void Awake()
+    {
         m_myCollider = GetComponent<Collider2D>();
         m_myCollider.isTrigger = true;
-	}
+    }
 
-	private void OnTriggerEnter2D(Collider2D other)
-	{
-		if (((1 << other.gameObject.layer) & Layers) != 0)
-		{
-			OnEnterDetect.Invoke(other.gameObject);
-		}
-	}
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (((1 << other.gameObject.layer) & Layers) != 0)
+        {
+            OnEnterDetect.Invoke(other.gameObject);
+        }
+    }
 
-	private void OnTriggerExit2D(Collider2D other)
-	{
-		if (((1 << other.gameObject.layer) & Layers) != 0)
-		{
-			OnExitDetect.Invoke(other.gameObject);
-		}
-	}
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (((1 << other.gameObject.layer) & Layers) != 0)
+        {
+            OnExitDetect.Invoke(other.gameObject);
+        }
+    }
 
     private void OnTriggerStay2D(Collider2D other)
     {

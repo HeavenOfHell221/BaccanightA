@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.Experimental.Rendering.Universal;
 
 public class ShieldAttack : BossAttack
@@ -48,7 +46,7 @@ public class ShieldAttack : BossAttack
     public override void StartAttack()
     {
         base.StartAttack();
-        
+
         m_model.SetActive(true);
         StartCoroutine(HandleAttack());
     }
@@ -57,7 +55,7 @@ public class ShieldAttack : BossAttack
     {
         yield return new WaitForSecondsRealtime(m_durationWarning);
 
-        foreach(var light in m_lights)
+        foreach (var light in m_lights)
         {
             light.enabled = true;
         }
@@ -72,12 +70,12 @@ public class ShieldAttack : BossAttack
         float duration = m_durationHeal;
         float time;
 
-        while(duration > 0f)
+        while (duration > 0f)
         {
             time = Time.deltaTime;
             duration -= time;
 
-            if(duration < 0f)
+            if (duration < 0f)
             {
                 time += duration;
             }
@@ -119,7 +117,7 @@ public class ShieldAttack : BossAttack
 
     public void HandleArrowHit()
     {
-        if(m_collider.enabled)
+        if (m_collider.enabled)
         {
             CancelAttack();
             CounterAttackEvent.Invoke(BossActionType.CounterAttack);

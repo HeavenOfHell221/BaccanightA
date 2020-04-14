@@ -8,7 +8,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2612263904584594593}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 29e49e23c8a18e84f8627956effeaae4, type: 2}
   m_CullingMode: 0
@@ -48,6 +48,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5b684fdf51f96ac40aff73d99b197752,
         type: 2}
+    - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_open
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_close
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_anim
+      value: 
+      objectReference: {fileID: 4000649555575874116}
     - target: {fileID: 1861780484333324930, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_Size.x
@@ -192,7 +212,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6034755106238789113, guid: d54df5c88ba495942b9d58f226e534b2,
+      objectReference: {fileID: -4050892930802984231, guid: 6254cb8089c673042a179d24dabc6218,
         type: 3}
     - target: {fileID: 3333501458789985111, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DoorTeleportation : MonoBehaviour
 {
@@ -9,7 +7,7 @@ public class DoorTeleportation : MonoBehaviour
 #pragma warning disable 0649
 
     [SerializeField]
-    private int m_DoorId; 
+    private int m_DoorId;
 
     [SerializeField]
     private bool m_RightToLeft; // pour placer le joueur=
@@ -38,10 +36,10 @@ public class DoorTeleportation : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             PlayerManager.Instance.PlayerInputController.OnInteract.AddListener(LevelManager.Instance.OnInteract);
-            LevelManager.Instance.BehindDoor(m_DoorId, m_LevelIdAimed);    
+            LevelManager.Instance.BehindDoor(m_DoorId, m_LevelIdAimed);
         }
     }
 

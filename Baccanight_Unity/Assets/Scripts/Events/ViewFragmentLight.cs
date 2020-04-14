@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ViewFragmentLight : MonoBehaviour
 {
@@ -16,16 +14,16 @@ public class ViewFragmentLight : MonoBehaviour
 
     private void Start()
     {
-        if(m_playerFragment.HaveSucces("Fragment 1") && m_playerFragment.HaveSucces("Fragment 2"))
+        if (m_playerFragment.HaveSucces("Fragment 1") && m_playerFragment.HaveSucces("Fragment 2"))
         {
             m_doorLevel_1.sprite = m_light_11;
             m_playerOpenLevel.SetSucces("Level 2.0", true);
         }
-        else if(m_playerFragment.HaveSucces("Fragment 1") && !m_playerFragment.HaveSucces("Fragment 2"))
+        else if (m_playerFragment.HaveSucces("Fragment 1") && !m_playerFragment.HaveSucces("Fragment 2"))
         {
             m_doorLevel_1.sprite = m_light_10;
         }
-        else if(!m_playerFragment.HaveSucces("Fragment 1") && m_playerFragment.HaveSucces("Fragment 2"))
+        else if (!m_playerFragment.HaveSucces("Fragment 1") && m_playerFragment.HaveSucces("Fragment 2"))
         {
             m_doorLevel_1.sprite = m_light_01;
         }
@@ -37,7 +35,7 @@ public class ViewFragmentLight : MonoBehaviour
 
         if (m_playerFragment.HaveSucces("Fragment 3") && m_playerFragment.HaveSucces("Fragment 4"))
         {
-            m_doorLevel_2.sprite = m_light_11;    
+            m_doorLevel_2.sprite = m_light_11;
         }
         else if (m_playerFragment.HaveSucces("Fragment 3") && !m_playerFragment.HaveSucces("Fragment 4"))
         {
@@ -52,7 +50,7 @@ public class ViewFragmentLight : MonoBehaviour
             m_doorLevel_2.sprite = m_light_00;
         }
 
-        if(m_playerFragment.HaveAllSucces())
+        if (m_playerFragment.HaveAllSucces())
         {
             m_playerOpenLevel.SetSucces("Level 3.0", true);
         }

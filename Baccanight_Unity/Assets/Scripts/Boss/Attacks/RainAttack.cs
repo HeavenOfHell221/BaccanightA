@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RainAttack : BossAttack
@@ -51,7 +50,7 @@ public class RainAttack : BossAttack
         base.StartAttack();
         m_loopDone = m_loopToDo;
         StartCoroutine(HandleAttack());
-    } 
+    }
 
     protected override IEnumerator HandleAttack()
     {
@@ -93,7 +92,7 @@ public class RainAttack : BossAttack
         if (!atLeastOneSpace)
         {
             //ajouter un espace au milieu de la ligne (1111111111111111 -> 1111111001111111)
-            
+
         }
         m_line = currentLine;
     }
@@ -101,7 +100,8 @@ public class RainAttack : BossAttack
     private void TransformLine()
     {
         Vector3 spawn = initialSpawn;
-        while (m_line != 0) {
+        while (m_line != 0)
+        {
             if ((m_line & 1) == 1)
             {
                 m_line >>= 1;
@@ -131,6 +131,6 @@ public class RainAttack : BossAttack
     public override void CancelAttack()
     {
         StopAllCoroutines();
-        base.CancelAttack(); 
+        base.CancelAttack();
     }
 }

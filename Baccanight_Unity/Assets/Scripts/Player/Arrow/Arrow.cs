@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Arrow : MonoBehaviour
@@ -45,7 +44,7 @@ public abstract class Arrow : MonoBehaviour
     {
         m_speed = new Vector2(m_arrowSpeedX, Random.Range(-m_angleMaxY, m_angleMaxY));
 
-        if(!m_playerMotion.FlipSprite)
+        if (!m_playerMotion.FlipSprite)
         {
             Flip();
         }

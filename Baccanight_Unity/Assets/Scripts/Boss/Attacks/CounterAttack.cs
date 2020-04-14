@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CounterAttack : BossAttack
@@ -41,8 +40,8 @@ public class CounterAttack : BossAttack
     // Quand le collider entre dans le stage
     // On arrête l'attaque. Dans EndAttack il y a la désactivation du collier et la vitesse du rigibody à zero.
     public void OnEnterStage()
-    {     
-        EndAttack();       
+    {
+        EndAttack();
     }
 
     protected override IEnumerator HandleAttack()
@@ -56,7 +55,7 @@ public class CounterAttack : BossAttack
     }
 
     private IEnumerator MoveTowardPlayer()
-    {    
+    {
         Vector3 direction = (m_player.position - transform.position).normalized;
         m_rigidbody.velocity = direction * m_speed;
         yield return new WaitForSecondsRealtime(0.1f);

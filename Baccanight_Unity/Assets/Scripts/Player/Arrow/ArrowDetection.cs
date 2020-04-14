@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ArrowDetection : Arrow
 {
@@ -32,6 +30,6 @@ public class ArrowDetection : Arrow
     {
         m_isStopping = true;
         m_rigidbody.velocity = Vector2.zero;
-        StartCoroutine(Disable(1f));    
+        StartCoroutine(Disable(1f));
     }
 }

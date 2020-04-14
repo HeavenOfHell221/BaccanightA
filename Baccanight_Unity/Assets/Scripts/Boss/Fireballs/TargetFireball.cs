@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetFireball : Fireball
@@ -49,7 +48,7 @@ public class TargetFireball : Fireball
         Rigidbody.AddForce(direction * m_forceBack, ForceMode2D.Impulse);
         float counter = m_timeBack;
 
-        while(counter > 0f)
+        while (counter > 0f)
         {
             counter -= Time.fixedDeltaTime;
             Rigidbody.velocity *= m_DecreaseVelocityPercentage;

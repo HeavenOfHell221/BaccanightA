@@ -1,7 +1,5 @@
-﻿ using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
-using Cinemachine;
 
 public class PlayerManager : SingletonBehaviour<PlayerManager>
 {
@@ -31,7 +29,7 @@ public class PlayerManager : SingletonBehaviour<PlayerManager>
 
     public IEnumerator SetCameraReference(GameObject camera)
     {
-        if(camera)
+        if (camera)
         {
             LastCamera = CameraReference;
             CameraReference = camera;
@@ -59,7 +57,7 @@ public class PlayerManager : SingletonBehaviour<PlayerManager>
         m_playerMotion.Reset();
         m_playerSound.Reset();
         m_playerState.Reset();
-        foreach(PlayerSucces playerSucces in m_playerSucces)
+        foreach (PlayerSucces playerSucces in m_playerSucces)
         {
             playerSucces.Reset();
         }

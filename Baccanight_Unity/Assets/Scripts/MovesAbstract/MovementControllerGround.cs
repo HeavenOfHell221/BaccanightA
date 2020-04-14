@@ -15,16 +15,16 @@ public abstract class MovementControllerGround : MovementController
     protected float m_jumpForce;
 
     [SerializeField]
-	private PhysicsMaterial2D m_GroundPhysicMaterial;
+    private PhysicsMaterial2D m_GroundPhysicMaterial;
 
-	[SerializeField]
-	private PhysicsMaterial2D m_AirPhysicMaterial;
+    [SerializeField]
+    private PhysicsMaterial2D m_AirPhysicMaterial;
 
-	[SerializeField]
-	protected Transform m_groundCheckLeft;
+    [SerializeField]
+    protected Transform m_groundCheckLeft;
 
-	[SerializeField]
-	protected Transform m_groundCheckRight;
+    [SerializeField]
+    protected Transform m_groundCheckRight;
 
     [SerializeField]
     protected Transform m_roofCheckLeft;
@@ -33,7 +33,7 @@ public abstract class MovementControllerGround : MovementController
     protected Transform m_roofCheckRight;
 
     [SerializeField]
-	protected LayerMask m_whatIsGround;
+    protected LayerMask m_whatIsGround;
 
     [SerializeField]
     private int m_jumpSteps = 20;
@@ -50,24 +50,24 @@ public abstract class MovementControllerGround : MovementController
     private float m_maxJumpSpeed = 10f;
 
 #pragma warning restore 0649
-	#endregion
+    #endregion
 
-	#region Variables
+    #region Variables
 
-	protected bool m_jumpTrigger = false;
-	protected bool m_isGrounded;
-	protected bool m_isGroundedLeft;
-	protected bool m_isGroundedRight;
+    protected bool m_jumpTrigger = false;
+    protected bool m_isGrounded;
+    protected bool m_isGroundedLeft;
+    protected bool m_isGroundedRight;
     protected bool m_isRoofed;
     protected bool m_isRoofedLeft;
     protected bool m_isRoofedRight;
     protected bool m_hasJump = false;
     protected int m_jumpNumberCounter;
-	#endregion
+    #endregion
 
-	#region Getters / Setters
+    #region Getters / Setters
 
-	public bool IsGrounded { get => m_isGrounded; set => m_isGrounded = value; }
+    public bool IsGrounded { get => m_isGrounded; set => m_isGrounded = value; }
     public bool IsRoofed { get => m_isRoofed; set => m_isRoofed = value; }
 
     #endregion
@@ -78,29 +78,29 @@ public abstract class MovementControllerGround : MovementController
     }
 
     public virtual void OnJump()
-	{
+    {
         if (IsGrounded)
         {
             m_jumpTrigger = true;
         }
     }
 
-	virtual protected void FixedUpdate()
-	{
+    virtual protected void FixedUpdate()
+    {
         CheckGround();
 
         if (m_canMove)
-		{
-			ApplyMovement();
+        {
+            ApplyMovement();
             ApplyJump();
-		}   
-	}
+        }
+    }
 
     virtual protected void Update()
     {
         if (!Input.GetButton(GameConstants.k_Jump) && m_jumpTrigger)
         {
-            if(m_jumpNumberCounter < m_jumpSteps && m_jumpNumberCounter > m_jumpThreshold)
+            if (m_jumpNumberCounter < m_jumpSteps && m_jumpNumberCounter > m_jumpThreshold)
             {
                 StopJumpSlow();
             }
@@ -125,10 +125,10 @@ public abstract class MovementControllerGround : MovementController
     }
 
     public void ApplyJump()
-	{        
-        if(m_jumpTrigger)
+    {
+        if (m_jumpTrigger)
         {
-            if(m_jumpNumberCounter < m_jumpSteps && CheckRoof())
+            if (m_jumpNumberCounter < m_jumpSteps && CheckRoof())
             {
                 Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, m_jumpForce);
                 m_jumpNumberCounter++;
@@ -140,8 +140,8 @@ public abstract class MovementControllerGround : MovementController
         }
     }
 
-	protected bool CheckGround()
-	{
+    protected bool CheckGround()
+    {
         IsGrounded = true;
         m_isGroundedLeft = CheckCollider(m_groundCheckLeft.position);
         m_isGroundedRight = CheckCollider(m_groundCheckRight.position);
@@ -154,16 +154,16 @@ public abstract class MovementControllerGround : MovementController
 
         // Changement du physicMaterial
         if (!IsGrounded)
-		{
-			Rigidbody.sharedMaterial = m_AirPhysicMaterial;
-		}
-		else
-		{
-			Rigidbody.sharedMaterial = m_GroundPhysicMaterial;
-		}
+        {
+            Rigidbody.sharedMaterial = m_AirPhysicMaterial;
+        }
+        else
+        {
+            Rigidbody.sharedMaterial = m_GroundPhysicMaterial;
+        }
 
         return IsGrounded;
-	}
+    }
 
     protected bool CheckRoof()
     {
@@ -180,22 +180,22 @@ public abstract class MovementControllerGround : MovementController
         return IsRoofed;
     }
 
-	protected bool CheckCollider(Vector3 groundCheckPosition)
-	{
-		//calcul de hitbox avec le sol
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckPosition, 0.1f, m_whatIsGround);
-		for (int i = 0; i < colliders.Length; i++)
-		{
-			if (colliders[i].gameObject != gameObject)
-			{
+    protected bool CheckCollider(Vector3 groundCheckPosition)
+    {
+        //calcul de hitbox avec le sol
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckPosition, 0.1f, m_whatIsGround);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject != gameObject)
+            {
                 return true;
-			}
-		}
+            }
+        }
         return false;
-	}
+    }
 
-	public override void ApplyMovement()
-	{
+    public override void ApplyMovement()
+    {
         /*if (Mathf.Abs(Move.x) > GameConstants.LimitDicretePosition)
 		{
             float velocityX = Mathf.Lerp(Rigidbody.velocity.x, Move.x * Speed, m_smoothSpeed);
@@ -211,7 +211,7 @@ public abstract class MovementControllerGround : MovementController
         }*/
 
         float velocityX = Move.x * Speed;
-        Rigidbody.velocity = new Vector2(velocityX, 
+        Rigidbody.velocity = new Vector2(velocityX,
             Rigidbody.velocity.y < -m_maxFallSpeed ? -m_maxFallSpeed :
             Rigidbody.velocity.y > m_maxJumpSpeed ? m_maxJumpSpeed : Rigidbody.velocity.y);
     }

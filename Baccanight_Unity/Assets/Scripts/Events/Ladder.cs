@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Ladder : MonoBehaviour
 {
@@ -20,11 +18,11 @@ public class Ladder : MonoBehaviour
             m_playerMovementControllerGround = player.GetComponent<PlayerMovementControllerGround>();
 
             m_gravityScale = m_rigidbody2D.gravityScale;
-            m_rigidbody2D.gravityScale = 0; 
+            m_rigidbody2D.gravityScale = 0;
             m_playerMovementControllerAir.enabled = true;
             m_playerMovementControllerGround.enabled = false;
         }
-        
+
     }
 
     public void OnPlayerExit(GameObject player)

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -33,11 +31,11 @@ public class Health : MonoBehaviour
         m_health.CurrentHealth = Mathf.Clamp(m_health.CurrentHealth += deltaLife, 0, m_health.MaxHealth);
 
         if (deltaLife < 0)
-        {  
+        {
             m_onDamaged.Invoke(deltaLife, source);
             m_BlinkSprite.Invoke(m_timeInvincibleFrame);
         }
-        else if(deltaLife > 0)
+        else if (deltaLife > 0)
         {
             m_onHealed.Invoke(deltaLife, source);
         }
@@ -55,12 +53,12 @@ public class Health : MonoBehaviour
             m_health.IsDead = true;
             m_state.State = GamePlayerState.inDie;
             StartCoroutine(PlayerRespawn());
-        }  
+        }
 
         if (!m_health.IsInvincible && deltaLife < 0)
         {
             StartCoroutine(InvincibleFrame(deltaLife));
-        }      
+        }
     }
 
     private IEnumerator InvincibleFrame(int deltaLife)
