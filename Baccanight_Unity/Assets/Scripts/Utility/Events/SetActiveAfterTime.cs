@@ -7,7 +7,7 @@ public class SetActiveAfterTime : MonoBehaviour
     public float m_timeBeforeSetActive = 1f;
     public bool m_active = false;
 
-    private void Start()
+    private void OnEnable()
     {
         Invoke("SetActiveObject", m_timeBeforeSetActive);
     }

@@ -33,7 +33,8 @@ public class ArrowDetection : Arrow
 
     private void StopArrow()
     {
-        Instantiate(m_FX, transform.position, Quaternion.identity, null);
+        //Instantiate(m_FX, transform.position, Quaternion.identity, null);
+        ObjectPooler.Instance.SpawnFromPool(m_FX, transform.position, Quaternion.identity, ObjectPooler.Instance.transform);
         m_isStopping = true;
         m_rigidbody.velocity = Vector2.zero;
         StartCoroutine(Disable(0.1f));
