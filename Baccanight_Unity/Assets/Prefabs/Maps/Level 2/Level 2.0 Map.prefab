@@ -15520,12 +15520,12 @@ PrefabInstance:
     - target: {fileID: 9049519319011921430, guid: c51df895581b98b4087a843d63d091ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.52
+      value: 6.49
       objectReference: {fileID: 0}
     - target: {fileID: 9049519319011921430, guid: c51df895581b98b4087a843d63d091ba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.42
+      value: -8.12
       objectReference: {fileID: 0}
     - target: {fileID: 9049519319011921430, guid: c51df895581b98b4087a843d63d091ba,
         type: 3}
@@ -15880,6 +15880,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_succesForOpenDoor
       value: Level 2.0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_allwaysOpen
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3010307678325461253, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}

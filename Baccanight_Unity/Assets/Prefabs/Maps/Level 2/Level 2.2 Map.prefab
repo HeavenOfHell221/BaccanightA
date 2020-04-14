@@ -20193,6 +20193,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7781092018627404547}
     m_Modifications:
+    - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_allwaysOpen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3010307678325461253, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -22008,6 +22013,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7781092018627404547}
     m_Modifications:
+    - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_allwaysOpen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3010307678325461253, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_textInfo.characterCount
