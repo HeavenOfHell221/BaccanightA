@@ -11835,6 +11835,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6926917437218313300}
     m_Modifications:
+    - target: {fileID: 191563087890262483, guid: da35a026fa99738468ce6e67d0960fa3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4131244340389266538, guid: da35a026fa99738468ce6e67d0960fa3,
         type: 3}
       propertyPath: m_IsActive
@@ -11843,7 +11848,22 @@ PrefabInstance:
     - target: {fileID: 4263667920444648816, guid: da35a026fa99738468ce6e67d0960fa3,
         type: 3}
       propertyPath: m_Size.y
-      value: 15
+      value: 15.183391
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263667920444648816, guid: da35a026fa99738468ce6e67d0960fa3,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.23484421
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263667920444648816, guid: da35a026fa99738468ce6e67d0960fa3,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.07869387
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263667920444648816, guid: da35a026fa99738468ce6e67d0960fa3,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.4016724
       objectReference: {fileID: 0}
     - target: {fileID: 4347130123194514682, guid: da35a026fa99738468ce6e67d0960fa3,
         type: 3}
@@ -11905,10 +11925,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7957975289101866977, guid: da35a026fa99738468ce6e67d0960fa3,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990401712427429623, guid: da35a026fa99738468ce6e67d0960fa3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990401712427429623, guid: da35a026fa99738468ce6e67d0960fa3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 9044619132608565500, guid: da35a026fa99738468ce6e67d0960fa3,
         type: 3}
       propertyPath: m_isOpen
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138330951062333431, guid: da35a026fa99738468ce6e67d0960fa3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138330951062333431, guid: da35a026fa99738468ce6e67d0960fa3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.324
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da35a026fa99738468ce6e67d0960fa3, type: 3}
