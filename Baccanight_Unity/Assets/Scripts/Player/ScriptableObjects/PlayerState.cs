@@ -1,36 +1,36 @@
 ﻿using UnityEngine;
 
-public enum GameState
+public enum GamePlayerState
 {
-	inMainMenu,
-	inPause,
-	inGame,
-	inDialog,
-	inDie
+    inMainMenu,
+    inPause,
+    inGame,
+    inDie,
+    inLoading
 }
 
 [CreateAssetMenu(fileName = "PlayerState", menuName = "AssetProject/PlayerState")]
 public class PlayerState : ScriptableObject
 {
-	#region Inspector
+    #region Inspector
 #pragma warning disable 0649
 
-	[SerializeField]
-	private GameState m_state = GameState.inMainMenu;
+    [SerializeField]
+    private GamePlayerState m_state = GamePlayerState.inMainMenu;
 
 #pragma warning restore 0649
     #endregion
 
     #region Getters / Setters
 
-    public GameState State { get => m_state; set => m_state = value; }
+    public GamePlayerState State { get => m_state; set => m_state = value; }
 
     #endregion
 
     public void Reset()
-	{
-		m_state = GameState.inMainMenu;
-	}
+    {
+        m_state = GamePlayerState.inMainMenu;
+    }
 }
 
 

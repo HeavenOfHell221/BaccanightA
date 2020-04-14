@@ -5,6 +5,20 @@ TagManager:
   serializedVersion: 2
   tags:
   - Door
+  - Fragment
+  - LevelLoader
+  - DialogBox
+  - Painting
+  - PlayerAndCam
+  - Pool
+  - ConfinerCamera
+  - LookAt
+  - BossHealth
+  - BossShield
+  - Statue
+  - Boss
+  - Stage
+  - Fence
   layers:
   - Default
   - TransparentFX
@@ -16,9 +30,9 @@ TagManager:
   - 
   - Stage
   - Player
-  - 
-  - 
-  - 
+  - PostProcess
+  - Boss
+  - Props
   - 
   - 
   - 

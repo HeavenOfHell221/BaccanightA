@@ -7,63 +7,48 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class MovementController : MonoBehaviour
 {
-	#region Inspector
+    #region Inspector
 #pragma warning disable 0649
 
-	[Header("Movement Controller", order = 0)]
+    [Header("Movement Controller basic", order = 0)]
 
-	[Range(0f, 20f)]
-	[SerializeField]
-	protected float m_speed = 10f;
-
+    [Range(0f, 20f)]
     [SerializeField]
-    protected float m_jumpForce;
+    private float m_speed = 10f;
 
-	[Range(.1f, 1f)]
-	[SerializeField]
-	protected float m_smoothSpeed;
+    [Range(.1f, 1f)]
+    [SerializeField]
+    protected float m_smoothSpeed;
 
 #pragma warning restore 0649
-	#endregion
+    #endregion
 
-	#region Variables
+    #region Variables
 
-	protected Vector2 m_move;
-	protected bool m_canMove = true;
-	protected Vector2 m_destination;
+    protected Vector2 m_move;
+    protected bool m_canMove = true;
+    protected Vector2 m_destination;
 
-	#endregion
+    #endregion
 
-	#region Getters / Setters
-	public Rigidbody2D MyRigidbody { get; protected set; }
-	public Vector2 Move { get => m_move; protected set => m_move = value; }
-	#endregion
+    #region Getters / Setters
+    public Rigidbody2D Rigidbody { get; protected set; }
+    public Vector2 Move { get => m_move; set => m_move = value; }
+    public float Speed { get => m_speed; set => m_speed = value; }
+    #endregion
 
-	private void Awake()
-	{
-		MyRigidbody = GetComponent<Rigidbody2D>();
-	}
+    private void Awake()
+    {
+        Rigidbody = GetComponent<Rigidbody2D>();
+    }
 
-	public void ActivateMovement(bool state)
-	{
-		m_canMove = state;
-		MyRigidbody.velocity = Vector2.zero;
-	}
+    public void ActivateMovement(bool state)
+    {
+        m_canMove = state;
+        Rigidbody.velocity = Vector2.zero;
+    }
 
-	public void DestinationToMove(Vector2 destination)
-	{
-		m_destination = destination;
-		m_move = (destination - new Vector2(MyRigidbody.transform.position.x, MyRigidbody.transform.position.y));
-		if (m_move.magnitude > 1f)
-		{
-			m_move.Normalize();
-		}
-	}
+    abstract public void OnMove(Vector2 motion);
 
-	public void OnMove(Vector2 motion)
-	{
-		Move = motion.normalized;
-	}
-
-	abstract protected void ApplyMovement();
+    abstract public void ApplyMovement();
 }
