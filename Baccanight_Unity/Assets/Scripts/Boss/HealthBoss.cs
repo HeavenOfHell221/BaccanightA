@@ -67,7 +67,7 @@ public class HealthBoss : MonoBehaviour
         }
         else if (Ratio <= 0f)
         {
-            StartCoroutine(_Death());
+            StartCoroutine(_Death(transform.parent.gameObject));
             m_DeathPhase.Invoke(BossActionType.Dying);
             IsDead = true;
         }
@@ -85,9 +85,12 @@ public class HealthBoss : MonoBehaviour
         other.GetComponent<Health>().ModifyHealth(m_damageCollision, gameObject);
     }
 
-    private IEnumerator _Death()
+    private IEnumerator _Death(GameObject boss)
     {
+        gameObject.transform.SetParent(null);
+        Destroy(boss);
         yield return new WaitForSecondsRealtime(2f);
-        LevelManager.Instance.ChangeScene(0, 2);
+        LevelManager.Instance.ChangeScene(0, 0);
+        Destroy(gameObject, 3f);
     }
 }

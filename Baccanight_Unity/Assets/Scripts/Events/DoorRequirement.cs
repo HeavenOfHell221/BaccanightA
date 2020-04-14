@@ -52,8 +52,6 @@ public class DoorRequirement : MonoBehaviour
     }
     private IEnumerator TestDoor()
     {
-        yield return new WaitForSeconds(0.5f);
-
         if (m_allwaysOpen || m_playerSucces.HaveSucces(m_succesForOpenDoor))
         {
             OpenDoor();
@@ -62,6 +60,6 @@ public class DoorRequirement : MonoBehaviour
         {
             StartCoroutine(TestDoor());
         }
-        
+         yield return new WaitForSeconds(0.5f);
     }
 }

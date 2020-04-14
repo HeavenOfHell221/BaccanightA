@@ -11505,7 +11505,7 @@ PrefabInstance:
     - target: {fileID: 2577355475851071219, guid: a3677d7b59329d640917e04b468768c4,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2577355475851071219, guid: a3677d7b59329d640917e04b468768c4,
         type: 3}
@@ -11562,12 +11562,27 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -42.76
       objectReference: {fileID: 0}
+    - target: {fileID: 2612263904584594593, guid: a3677d7b59329d640917e04b468768c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2612263904584594595, guid: a3677d7b59329d640917e04b468768c4,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 6034755106238789113, guid: d54df5c88ba495942b9d58f226e534b2,
         type: 3}
+    - target: {fileID: 2612263904584594595, guid: a3677d7b59329d640917e04b468768c4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307542216500653504, guid: a3677d7b59329d640917e04b468768c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5336095045528372308, guid: a3677d7b59329d640917e04b468768c4,
         type: 3}
       propertyPath: m_playerSucces
@@ -11578,6 +11593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_succesForOpenDoor
       value: Level 3.0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136179037051305022, guid: a3677d7b59329d640917e04b468768c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3677d7b59329d640917e04b468768c4, type: 3}

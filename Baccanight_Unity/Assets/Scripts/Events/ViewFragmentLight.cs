@@ -12,20 +12,34 @@ public class ViewFragmentLight : MonoBehaviour
     [SerializeField] private Sprite m_light_10;
     [SerializeField] private Sprite m_light_11;
 
+    [SerializeField] private GameObject m_fragment_1;
+    [SerializeField] private GameObject m_fragment_2;
+    [SerializeField] private GameObject m_fragment_3;
+    [SerializeField] private GameObject m_fragment_4;
+
     private void Start()
     {
+        m_fragment_1.SetActive(false);
+        m_fragment_2.SetActive(false);
+        m_fragment_3.SetActive(false);
+        m_fragment_4.SetActive(false);
+
         if (m_playerFragment.HaveSucces("Fragment 1") && m_playerFragment.HaveSucces("Fragment 2"))
         {
             m_doorLevel_1.sprite = m_light_11;
             m_playerOpenLevel.SetSucces("Level 2.0", true);
+            m_fragment_2.SetActive(true);
+            m_fragment_1.SetActive(true);
         }
         else if (m_playerFragment.HaveSucces("Fragment 1") && !m_playerFragment.HaveSucces("Fragment 2"))
         {
             m_doorLevel_1.sprite = m_light_10;
+            m_fragment_1.SetActive(true);
         }
         else if (!m_playerFragment.HaveSucces("Fragment 1") && m_playerFragment.HaveSucces("Fragment 2"))
         {
             m_doorLevel_1.sprite = m_light_01;
+            m_fragment_2.SetActive(true);
         }
         else
         {
@@ -36,14 +50,18 @@ public class ViewFragmentLight : MonoBehaviour
         if (m_playerFragment.HaveSucces("Fragment 3") && m_playerFragment.HaveSucces("Fragment 4"))
         {
             m_doorLevel_2.sprite = m_light_11;
+            m_fragment_3.SetActive(true);
+            m_fragment_4.SetActive(true);
         }
         else if (m_playerFragment.HaveSucces("Fragment 3") && !m_playerFragment.HaveSucces("Fragment 4"))
         {
             m_doorLevel_2.sprite = m_light_10;
+            m_fragment_3.SetActive(true);
         }
         else if (!m_playerFragment.HaveSucces("Fragment 3") && m_playerFragment.HaveSucces("Fragment 4"))
         {
             m_doorLevel_2.sprite = m_light_01;
+            m_fragment_4.SetActive(true);
         }
         else
         {

@@ -158,10 +158,6 @@ public class BossAIController : MonoBehaviour
         {
             m_battleHasStart = true;
 
-            /* 
-             * Animation : Cri de guerre  
-             */
-
             Fence fence = GameObject.FindGameObjectWithTag("Fence").GetComponent<Fence>();
             fence.CloseFence();
         }
