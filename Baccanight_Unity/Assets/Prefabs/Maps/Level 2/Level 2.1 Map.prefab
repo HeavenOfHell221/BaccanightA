@@ -11186,6 +11186,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 345440632756326319}
     m_Modifications:
+    - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_allwaysOpen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3010307678325461253, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -12058,6 +12063,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4613439047802764460}
     m_Modifications:
+    - target: {fileID: 1019677483639764184, guid: c51df895581b98b4087a843d63d091ba,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1019677483639764184, guid: c51df895581b98b4087a843d63d091ba,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.54
+      objectReference: {fileID: 0}
     - target: {fileID: 3827838170003768362, guid: c51df895581b98b4087a843d63d091ba,
         type: 3}
       propertyPath: m_Name
@@ -12066,12 +12081,12 @@ PrefabInstance:
     - target: {fileID: 9049519319011921430, guid: c51df895581b98b4087a843d63d091ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.46
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9049519319011921430, guid: c51df895581b98b4087a843d63d091ba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.54
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 9049519319011921430, guid: c51df895581b98b4087a843d63d091ba,
         type: 3}
@@ -12133,6 +12148,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 345440632756326319}
     m_Modifications:
+    - target: {fileID: -4607244094441628766, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_allwaysOpen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3010307678325461253, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_textInfo.characterCount
