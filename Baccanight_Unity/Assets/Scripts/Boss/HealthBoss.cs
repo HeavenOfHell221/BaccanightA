@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -27,7 +26,7 @@ public class HealthBoss : MonoBehaviour
 #pragma warning restore 0649
     #endregion
 
-    public float CurrentHealth {get => m_currentHealth; private set => m_currentHealth = value; }
+    public float CurrentHealth { get => m_currentHealth; private set => m_currentHealth = value; }
     public bool IsDead { get; private set; } = false;
     public float Ratio => CurrentHealth / m_maxHealth;
     public bool IsInvincible { get; set; } = false;
@@ -59,7 +58,7 @@ public class HealthBoss : MonoBehaviour
         {
             StartCoroutine(InvincibleFrame());
             m_isEnraging = true;
-            m_FirstSwitchPhase.Invoke(BossActionType.Enraging);   
+            m_FirstSwitchPhase.Invoke(BossActionType.Enraging);
         }
         else if (lastRatio >= 0.25f && Ratio < 0.25f)
         {
@@ -70,7 +69,7 @@ public class HealthBoss : MonoBehaviour
         {
             StartCoroutine(_Death());
             m_DeathPhase.Invoke(BossActionType.Dying);
-            IsDead = true;     
+            IsDead = true;
         }
     }
 
@@ -83,7 +82,7 @@ public class HealthBoss : MonoBehaviour
 
     public void OnEnterPlayer(GameObject other)
     {
-        other.GetComponent<Health>().ModifyHealth(m_damageCollision, gameObject);       
+        other.GetComponent<Health>().ModifyHealth(m_damageCollision, gameObject);
     }
 
     private IEnumerator _Death()

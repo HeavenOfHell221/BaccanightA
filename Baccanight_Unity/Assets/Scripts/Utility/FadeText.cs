@@ -1,7 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class FadeText : MonoBehaviour
 {
@@ -32,7 +31,7 @@ public class FadeText : MonoBehaviour
                 FadeIn();
             }
         }
-        
+
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -60,7 +59,7 @@ public class FadeText : MonoBehaviour
 
     private IEnumerator _FadeIn()
     {
-        while(m_textMeshPro.color.a < 1f)
+        while (m_textMeshPro.color.a < 1f)
         {
             Color color = m_textMeshPro.color;
             color.a = Mathf.Clamp(color.a += m_fadeSpeed, 0f, 1f);
@@ -71,7 +70,7 @@ public class FadeText : MonoBehaviour
 
     private IEnumerator _FadeOut(bool force)
     {
-        if(force)
+        if (force)
         {
             Color color = m_textMeshPro.color;
             color.a = 0f;

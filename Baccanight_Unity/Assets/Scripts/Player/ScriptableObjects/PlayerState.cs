@@ -2,9 +2,9 @@
 
 public enum GamePlayerState
 {
-	inMainMenu,
-	inPause,
-	inGame,
+    inMainMenu,
+    inPause,
+    inGame,
     inDie,
     inLoading
 }
@@ -12,11 +12,11 @@ public enum GamePlayerState
 [CreateAssetMenu(fileName = "PlayerState", menuName = "AssetProject/PlayerState")]
 public class PlayerState : ScriptableObject
 {
-	#region Inspector
+    #region Inspector
 #pragma warning disable 0649
 
-	[SerializeField]
-	private GamePlayerState m_state = GamePlayerState.inMainMenu;
+    [SerializeField]
+    private GamePlayerState m_state = GamePlayerState.inMainMenu;
 
 #pragma warning restore 0649
     #endregion
@@ -28,9 +28,9 @@ public class PlayerState : ScriptableObject
     #endregion
 
     public void Reset()
-	{
-		m_state = GamePlayerState.inMainMenu;
-	}
+    {
+        m_state = GamePlayerState.inMainMenu;
+    }
 }
 
 

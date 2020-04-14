@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class BossAttack : MonoBehaviour
@@ -28,7 +27,7 @@ public abstract class BossAttack : MonoBehaviour
     public bool IsCanceled { get => m_isCanceled; private set => m_isCanceled = value; }
     public bool IsUpgraded { get => m_isUpgraded; private set => m_isUpgraded = value; }
     #endregion
-   
+
     protected abstract IEnumerator HandleAttack();
 
     public virtual void StartAttack()

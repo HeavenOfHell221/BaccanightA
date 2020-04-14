@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RetrieveAllFragments : MonoBehaviour
@@ -27,16 +26,16 @@ public class RetrieveAllFragments : MonoBehaviour
     {
         bool test = true;
 
-        foreach(var fragment in m_fragments)
+        foreach (var fragment in m_fragments)
         {
-            if(!m_succesFragment.HaveSucces(fragment.FramentID))
+            if (!m_succesFragment.HaveSucces(fragment.FramentID))
             {
                 test = false;
             }
 
         }
 
-        if(test)
+        if (test)
         {
             m_succesFinishLevel.SetSucces(m_levelIDFinish, true);
         }

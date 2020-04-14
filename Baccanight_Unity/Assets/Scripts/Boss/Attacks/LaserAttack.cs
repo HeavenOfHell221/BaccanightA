@@ -34,11 +34,11 @@ public class LaserAttack : BossAttack
 
         public void DesactiveObjects()
         {
-           if(InitialCharge) InitialCharge.SetActive(false);
-           if(LaserBeam) LaserBeam.SetActive(false);
-           if(CollisionBeam) CollisionBeam.SetActive(false);
-           if(LaserBeam_Mini) LaserBeam_Mini.SetActive(false);
-           if(InitialCharge_Mini) InitialCharge_Mini.SetActive(false);
+            if (InitialCharge) InitialCharge.SetActive(false);
+            if (LaserBeam) LaserBeam.SetActive(false);
+            if (CollisionBeam) CollisionBeam.SetActive(false);
+            if (LaserBeam_Mini) LaserBeam_Mini.SetActive(false);
+            if (InitialCharge_Mini) InitialCharge_Mini.SetActive(false);
         }
 
         public void DestroyObjects()
@@ -71,9 +71,9 @@ public class LaserAttack : BossAttack
     [Header("Phase 1")]
     [Space(5)]
     [SerializeField] [Range(0.1f, 2f)] private float m_chargingTime;
-    [SerializeField] [Range(0.1f, 2f)] private float m_AttackDuration;  
+    [SerializeField] [Range(0.1f, 2f)] private float m_AttackDuration;
     [SerializeField] [Range(0, -2)] private int m_damage;
-    [SerializeField] [Range(0.1f, 2f)] private float m_timeBtwLaser; 
+    [SerializeField] [Range(0.1f, 2f)] private float m_timeBtwLaser;
     [SerializeField] private MinMaxInt m_laserNumber;
 
     [Header("Phase 2")]
@@ -98,7 +98,7 @@ public class LaserAttack : BossAttack
         m_lasers = new List<Laser>();
         m_currentPoint = null;
         m_numberLaserRemaining = m_laserNumber.GetRandomValue(); // Nombre de laser à lancer
-        StartCoroutine(HandleAttack());     
+        StartCoroutine(HandleAttack());
     }
 
     protected override IEnumerator HandleAttack()
@@ -114,8 +114,8 @@ public class LaserAttack : BossAttack
         } while (randomTransform == m_lastPoint);
 
         m_currentPoint = randomTransform;
-        
-        Laser laser = new Laser(m_initialCharge, m_laserBeam, m_collisionBeam, m_laserBeam_mini, m_initialCharge_mini,  m_currentPoint.position);
+
+        Laser laser = new Laser(m_initialCharge, m_laserBeam, m_collisionBeam, m_laserBeam_mini, m_initialCharge_mini, m_currentPoint.position);
 
         m_lasers.Add(laser);
 
@@ -128,19 +128,19 @@ public class LaserAttack : BossAttack
         yield return new WaitForSecondsRealtime(m_timeBtwLaser);
 
         // s'il reste des laser à spawn
-        if(m_numberLaserRemaining > 0)
+        if (m_numberLaserRemaining > 0)
         {
             StartCoroutine(HandleAttack());
         }
         else
         {
-            while(m_lasers.Count != 0)
+            while (m_lasers.Count != 0)
             {
                 yield return null;
             }
 
             EndAttack();
-        }    
+        }
     }
 
     private IEnumerator LaserWarning(Laser laser)
@@ -168,7 +168,7 @@ public class LaserAttack : BossAttack
                     size.x < m_distance - m_speedLaser ? size.x + m_speedLaserMini : size.x, // Distance
                     m_layerMask); // Layers
 
-            if(ray.collider)
+            if (ray.collider)
             {
                 hitPos = ray.point;
                 hit = true;
@@ -176,13 +176,13 @@ public class LaserAttack : BossAttack
 
             if (size.x < m_distance)
             {
-                if(hit)
+                if (hit)
                 {
                     size.x += (Vector2.Distance(hitPos, laser.InitialPosition) - size.x);
                 }
                 else
                 {
-                    size.x += m_speedLaserMini;     
+                    size.x += m_speedLaserMini;
                 }
                 laser.RendererLaserBeam_Mini.size = size;
             }
@@ -248,9 +248,9 @@ public class LaserAttack : BossAttack
                     {
                         other.GetComponent<Health>().ModifyHealth(m_damage, gameObject);
                         hitPlayer = true;
-                        
+
                     }
-                    else if(other.tag == "Fence" || other.tag == "Stage")
+                    else if (other.tag == "Fence" || other.tag == "Stage")
                     {
                         hitStage = true;
                     }
@@ -265,7 +265,7 @@ public class LaserAttack : BossAttack
                     {
                         other.GetComponent<Health>().ModifyHealth(m_damage, gameObject);
                         hitPlayer = true;
-                        
+
                     }
                     else if (other.tag == "Fence" || other.tag == "Stage")
                     {
@@ -275,14 +275,14 @@ public class LaserAttack : BossAttack
                 }
             }
 
-            if(!collisionBeamSpawn)
+            if (!collisionBeamSpawn)
             {
-                if((hitStage && !hitPlayer && size.x < m_distance) || (!hitStage && hitPlayer && size.x < m_distance))
-                {  
+                if ((hitStage && !hitPlayer && size.x < m_distance) || (!hitStage && hitPlayer && size.x < m_distance))
+                {
                     collisionBeamSpawn = true;
                 }
             }
-  
+
             if (size.x < m_distance && !laser.CollisionBeam.activeSelf)
             {
                 if (collisionBeamSpawn)
@@ -293,11 +293,11 @@ public class LaserAttack : BossAttack
                 {
                     size.x += m_speedLaser;
                 }
-                
+
                 laser.RendererLaserBeam.size = size;
             }
 
-            if(collisionBeamSpawn && !laser.CollisionBeam.activeSelf)
+            if (collisionBeamSpawn && !laser.CollisionBeam.activeSelf)
             {
                 laser.CollisionBeam.transform.position = new Vector2(m_IA.FlipRight ? laser.InitialPosition.x - size.x : laser.InitialPosition.x + size.x, laser.InitialPosition.y);
                 laser.CollisionBeam.transform.rotation = Quaternion.Euler(new Vector3(0f, m_IA.FlipRight ? 0f : 180f, 0f));
@@ -305,7 +305,7 @@ public class LaserAttack : BossAttack
                 laser.LaserBeam_Mini.SetActive(false);
                 //laser.LaserBeam_Mini = null;
             }
-  
+
             timeElapsed += Time.unscaledDeltaTime;
 
             yield return null;
@@ -337,7 +337,7 @@ public class LaserAttack : BossAttack
         StopAllCoroutines();
         base.CancelAttack();
 
-        foreach(var laser in m_lasers)
+        foreach (var laser in m_lasers)
         {
             laser.DestroyObjects();
         }

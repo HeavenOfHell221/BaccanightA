@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PaintingMovement : MonoBehaviour
@@ -12,7 +11,7 @@ public class PaintingMovement : MonoBehaviour
 
     [SerializeField]
     private bool m_canMove = true;
-    
+
     private PatrolPath m_path;
     private Vector3 m_destination;
 
@@ -37,7 +36,7 @@ public class PaintingMovement : MonoBehaviour
     private IEnumerator UpdateDestination()
     {
         float dist = Vector3.Distance(m_destination, transform.position);
-        if(dist < 0.1f)
+        if (dist < 0.1f)
         {
             yield return new WaitForSeconds(m_timeWait);
             m_destination = m_path.GetNextPathNode();
@@ -45,7 +44,7 @@ public class PaintingMovement : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         StartCoroutine(UpdateDestination());
     }
-    
+
     private void ApplyMovement()
     {
         Vector3 newPos = Vector3.MoveTowards(transform.position, m_destination, m_speed * Time.fixedDeltaTime);

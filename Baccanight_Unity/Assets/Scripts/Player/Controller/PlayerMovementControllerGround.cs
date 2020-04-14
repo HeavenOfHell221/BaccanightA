@@ -5,11 +5,11 @@
 /// </summary>
 public class PlayerMovementControllerGround : MovementControllerGround
 {
-	#region Inspector
+    #region Inspector
 #pragma warning disable 0649
 
-	[SerializeField]
-	private PlayerMotion m_PlayerMotion;
+    [SerializeField]
+    private PlayerMotion m_PlayerMotion;
 
     public PlayerMotion Motion { get => m_PlayerMotion; set => m_PlayerMotion = value; }
 
@@ -17,7 +17,7 @@ public class PlayerMovementControllerGround : MovementControllerGround
     #endregion
 
     override protected void FixedUpdate()
-	{
+    {
         if (m_PlayerMotion)
         {
             m_PlayerMotion.Motion = Move;
@@ -25,14 +25,14 @@ public class PlayerMovementControllerGround : MovementControllerGround
             m_PlayerMotion.IsRoofed = IsRoofed;
         }
 
-		base.FixedUpdate();
+        base.FixedUpdate();
 
-		m_move = Vector2.zero;
-	}
+        m_move = Vector2.zero;
+    }
 
     public override void OnJump()
     {
-        if(m_PlayerMotion.CanJump)
+        if (m_PlayerMotion.CanJump)
         {
             base.OnJump();
         }

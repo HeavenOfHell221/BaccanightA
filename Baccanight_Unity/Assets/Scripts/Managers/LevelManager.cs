@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Cinemachine;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Cinemachine;
 
 public class LevelManager : SingletonBehaviour<LevelManager>
 {
@@ -53,13 +52,13 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         {
             PlayerManager.Instance.PlayerInputController.OnInteract.RemoveListener(OnInteract);
             m_changeSceneInProgress = true;
-            ChangeScene(idBehind,idLevel);
+            ChangeScene(idBehind, idLevel);
         }
     }
 
     public void ChangeScene(int idBehindDoor, int idLevelAimed)
     {
-       
+
         StartCoroutine(TeleportPlayer(idLevelAimed, idBehindDoor));
         //BehindDoor(-1, -1);
     }
@@ -68,7 +67,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
     {
         m_levelLoader = GameObject.FindGameObjectWithTag("LevelLoader");
         DontDestroyOnLoad(m_levelLoader);
-        m_levelLoader.GetComponentInChildren<Animator>().SetTrigger("Start");     
+        m_levelLoader.GetComponentInChildren<Animator>().SetTrigger("Start");
     }
 
     private void SetDoors(int doorId)
@@ -97,7 +96,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
     public IEnumerator TeleportPlayer(int build, int doorId)
     {
         m_playerState.State = GamePlayerState.inLoading;
-        CinemachineBrain brain = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CinemachineBrain>();       
+        CinemachineBrain brain = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CinemachineBrain>();
         brain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
         LevelLoaderStart();
         yield return new WaitForSecondsRealtime(1f);

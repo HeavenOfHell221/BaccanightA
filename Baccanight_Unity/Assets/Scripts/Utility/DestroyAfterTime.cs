@@ -2,10 +2,10 @@
 
 public class DestroyAfterTime : MonoBehaviour
 {
-	public float m_timeBeforeDestroy = 1f;
+    public float m_timeBeforeDestroy = 1f;
 
-	private void Start()
-	{
-		Destroy(gameObject, m_timeBeforeDestroy);
-	}
+    private void Start()
+    {
+        Destroy(gameObject, m_timeBeforeDestroy);
+    }
 }

@@ -14,6 +14,10 @@ public class DoorRequirement : MonoBehaviour
     private bool m_allwaysOpen;
     [SerializeField]
     private FadeText m_fadeText;
+    [SerializeField] private SpriteRenderer m_renderer;
+    [SerializeField] private Sprite m_open;
+    [SerializeField] private Sprite m_close;
+    [SerializeField] private Animator m_anim;
 #pragma warning restore 0649
     #endregion
 
@@ -32,14 +36,18 @@ public class DoorRequirement : MonoBehaviour
     public void OpenDoor()
     {
         m_DoorCollider.enabled = true;
-        //Affichage de porte Ouverte
+        if(m_renderer)
+            m_renderer.sprite = m_open;
         m_fadeText.enabled = true;
+        if (m_anim)
+            m_anim.enabled = true;
     }
 
     public void CloseDoor()
     {
         m_DoorCollider.enabled = false;
-        //Affichage de porte fermée
+        if (m_renderer)
+            m_renderer.sprite = m_close;
         m_fadeText.enabled = false;
     }
     private IEnumerator TestDoor()

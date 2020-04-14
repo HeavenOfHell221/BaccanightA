@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ExplosionFireball : Fireball
 {
@@ -19,7 +17,7 @@ public class ExplosionFireball : Fireball
     protected override void Start()
     {
         GameObject player = PlayerManager.Instance.PlayerReference;
-        if(player.transform.position.x > transform.position.x)
+        if (player.transform.position.x > transform.position.x)
         {
             m_explosionLeft = false;
         }
@@ -52,7 +50,7 @@ public class ExplosionFireball : Fireball
             directionX = Random.Range(m_MaxDirectionX * -1, m_MinDirectionX * -1);
         }
 
-       
+
         Vector3 direction = new Vector3(directionX, directionY, 0f);
         Rigidbody.AddForce(direction * Speed, ForceMode2D.Impulse);
     }

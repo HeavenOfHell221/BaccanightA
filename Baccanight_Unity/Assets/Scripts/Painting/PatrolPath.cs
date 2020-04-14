@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class PatrolPath : MonoBehaviour
@@ -24,12 +23,12 @@ public class PatrolPath : MonoBehaviour
     {
         m_actualNodeIndex = m_StartNodeIndex;
 
-        if(m_nodeParent)
+        if (m_nodeParent)
         {
             for (int i = 0; i < m_nodeParent.transform.childCount; i++)
             {
                 m_pathNodes.Add(m_nodeParent.transform.GetChild(i));
-            }           
+            }
         }
 
         if (m_pathNodes.Count == 0)
@@ -88,17 +87,17 @@ public class PatrolPath : MonoBehaviour
         int closestNodeIndex = -1;
         float closestDist = float.MaxValue;
 
-        for(int i = 0; i < m_pathNodes.Count; i++)
+        for (int i = 0; i < m_pathNodes.Count; i++)
         {
             float dist = GetDistanceToNode(origin, i);
-            if(dist != -1f && dist < closestDist)
+            if (dist != -1f && dist < closestDist)
             {
                 closestNodeIndex = i;
                 closestDist = dist;
             }
         }
 
-        if(closestNodeIndex == -1)
+        if (closestNodeIndex == -1)
         {
             return Vector2.zero;
         }
@@ -106,6 +105,6 @@ public class PatrolPath : MonoBehaviour
         {
             m_actualNodeIndex = closestNodeIndex;
             return GetPathNodeByIndex(closestNodeIndex);
-        }  
+        }
     }
 }

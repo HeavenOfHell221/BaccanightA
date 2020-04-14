@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class Fireball : MonoBehaviour
 {
@@ -44,6 +42,6 @@ public abstract class Fireball : MonoBehaviour
     {
         CancelInvoke();
         Rigidbody.velocity = Vector2.zero;
-        gameObject.SetActive(false);     
+        gameObject.SetActive(false);
     }
 }

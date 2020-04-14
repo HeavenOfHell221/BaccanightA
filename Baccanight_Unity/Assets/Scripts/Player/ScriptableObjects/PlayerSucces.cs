@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -27,7 +26,7 @@ public class PlayerSucces : ScriptableObject
     {
         m_playerSucces = new Dictionary<string, Succes>();
 
-        foreach(Succes s in m_playerSuccesInit)
+        foreach (Succes s in m_playerSuccesInit)
         {
             Succes newSucces = new Succes(s.Key, s.Value);
             m_playerSucces.Add(newSucces.Key, newSucces);
@@ -47,9 +46,9 @@ public class PlayerSucces : ScriptableObject
     public bool HaveAllSucces()
     {
         var values = m_playerSucces.Values;
-        foreach(Succes succes in values)
+        foreach (Succes succes in values)
         {
-            if(!succes.Value)
+            if (!succes.Value)
             {
                 return false;
             }

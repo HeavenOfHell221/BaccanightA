@@ -8,46 +8,46 @@ using UnityEngine;
 public class PlayerAnimatorController : MonoBehaviour
 {
 
-	#region Inspector
+    #region Inspector
 #pragma warning disable 0649
 
-	[SerializeField]
-	private PlayerMotion m_playerMotion;
+    [SerializeField]
+    private PlayerMotion m_playerMotion;
 
     [SerializeField]
-	public Rigidbody2D m_playerRigidbody;
+    public Rigidbody2D m_playerRigidbody;
 
     [SerializeField]
     private GameObject m_player;
 
 #pragma warning restore 0649
-	#endregion
+    #endregion
 
-	#region Variables
+    #region Variables
 
-	SpriteRenderer sprite;
-	private Animator m_Animator;
-	#endregion
+    SpriteRenderer sprite;
+    private Animator m_Animator;
+    #endregion
 
-	void Start()
-	{
-		m_Animator = GetComponent<Animator>();
-		sprite = GetComponent<SpriteRenderer>();
-	}
+    void Start()
+    {
+        m_Animator = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
+    }
 
-	void Update()
-	{
-		UpdateAnimator();
-	}
+    void Update()
+    {
+        UpdateAnimator();
+    }
 
-	/// <summary>
-	/// Update the animator parameters
-	/// </summ  
-	public void UpdateAnimator()
-	{
-		m_Animator.SetBool("OnGround", m_playerMotion.IsGrounded);
-		m_Animator.SetFloat("SpeedOny", m_playerRigidbody.velocity.y);
-		m_Animator.SetFloat("SpeedOnx", Mathf.Abs(m_playerMotion.Motion.x));
+    /// <summary>
+    /// Update the animator parameters
+    /// </summ  
+    public void UpdateAnimator()
+    {
+        m_Animator.SetBool("OnGround", m_playerMotion.IsGrounded);
+        m_Animator.SetFloat("SpeedOny", m_playerRigidbody.velocity.y);
+        m_Animator.SetFloat("SpeedOnx", Mathf.Abs(m_playerMotion.Motion.x));
         m_Animator.SetBool("IsPushObject", m_playerMotion.IsPushObject);
         m_Animator.SetBool("UseWings", m_playerMotion.UseWings);
 
@@ -55,7 +55,7 @@ public class PlayerAnimatorController : MonoBehaviour
 
         if (boss)
         {
-            if(boss.transform.position.x < transform.position.x)
+            if (boss.transform.position.x < transform.position.x)
             {
                 m_player.transform.rotation = new Quaternion(
                    m_player.transform.rotation.x,
@@ -64,7 +64,7 @@ public class PlayerAnimatorController : MonoBehaviour
                    m_player.transform.rotation.w);
                 m_playerMotion.FlipSprite = false;
             }
-            else if(boss.transform.position.x > transform.position.x)
+            else if (boss.transform.position.x > transform.position.x)
             {
                 m_player.transform.rotation = new Quaternion(
                    m_player.transform.rotation.x,
@@ -78,7 +78,7 @@ public class PlayerAnimatorController : MonoBehaviour
         {
             Flip();
         }
-	}
+    }
 
     private void Flip()
     {
@@ -101,7 +101,7 @@ public class PlayerAnimatorController : MonoBehaviour
         float timeElapsed = 0.0f;
         Color colorSprite;
 
-        while(timeElapsed < duration)
+        while (timeElapsed < duration)
         {
             colorSprite = sprite.color;
             colorSprite.a = colorSprite.a == 1f ? 0.1f : 1f;

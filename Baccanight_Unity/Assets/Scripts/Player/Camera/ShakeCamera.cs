@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Cinemachine;
+using System.Collections;
 using UnityEngine;
-using Cinemachine;
 
 public class ShakeCamera : MonoBehaviour
 {
@@ -41,10 +40,10 @@ public class ShakeCamera : MonoBehaviour
         m_shakeTrigger = false;
         IsShake = true;
 
-        while(!m_noise)
+        while (!m_noise)
         {
             m_VirtualCamera = GetComponent<CinemachineVirtualCamera>();
-            if(m_VirtualCamera)
+            if (m_VirtualCamera)
             {
                 m_noise = m_VirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
             }
@@ -56,21 +55,21 @@ public class ShakeCamera : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(duration);
 
-        if(m_shakeTrigger)
+        if (m_shakeTrigger)
         {
-            StartCoroutine(_ProcessShake(m_currentAmplitude, m_currentFrequency, m_currentDuration));     
+            StartCoroutine(_ProcessShake(m_currentAmplitude, m_currentFrequency, m_currentDuration));
         }
         else
         {
             StopAllCoroutines();
             Noise(0f, 0f);
             IsShake = false;
-        }     
+        }
     }
 
     private void Noise(float amplitudeGain, float frequencyGain)
     {
         m_noise.m_AmplitudeGain = amplitudeGain;
-        m_noise.m_FrequencyGain = frequencyGain;        
+        m_noise.m_FrequencyGain = frequencyGain;
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerShootController : MonoBehaviour
 {
@@ -10,7 +8,7 @@ public class PlayerShootController : MonoBehaviour
 
     [SerializeField]
     private PlayerMotion m_playerMotion;
-        
+
     [SerializeField]
     private GameObject m_arrow;
 

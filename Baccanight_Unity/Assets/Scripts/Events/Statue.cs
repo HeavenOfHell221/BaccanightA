@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Statue : MonoBehaviour
 {
@@ -13,17 +11,17 @@ public class Statue : MonoBehaviour
 
     public void OnEnter(GameObject other)
     {
-        if(other.tag == "Statue")
+        if (other.tag == "Statue")
         {
             m_rigidbody2D.mass = 5000;
         }
-        else if(other.tag == "Player")
+        else if (other.tag == "Player")
         {
             if (!Input.GetButton(GameConstants.k_Interact))
             {
                 m_playerMotion.IsPushObject = true;
             }
-        } 
+        }
     }
 
     public void OnStay(GameObject other)
@@ -59,12 +57,12 @@ public class Statue : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(m_rigidbody2D.velocity.y > m_maxSpeedY)
+        if (m_rigidbody2D.velocity.y > m_maxSpeedY)
         {
             m_rigidbody2D.velocity = new Vector2(m_rigidbody2D.velocity.x, m_maxSpeedY);
         }
 
-        if(!CheckGround())
+        if (!CheckGround())
         {
             m_rigidbody2D.velocity = new Vector2(0f, m_rigidbody2D.velocity.y);
         }

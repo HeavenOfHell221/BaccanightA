@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Cinemachine;
 using UnityEngine;
-using Cinemachine;
 
 public class SwitchVirtualCamera : MonoBehaviour
 {
@@ -28,7 +26,7 @@ public class SwitchVirtualCamera : MonoBehaviour
     public void CameraSwitch(GameObject player)
     {
         if (m_cameraFollowPlayer)
-        { 
+        {
             m_CVCamera.Follow = player.transform;
             m_CVCamera.LookAt = player.transform.Find("Look");
         }
