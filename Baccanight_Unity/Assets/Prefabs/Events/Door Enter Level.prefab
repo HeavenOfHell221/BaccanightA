@@ -145,7 +145,7 @@ MonoBehaviour:
   m_allwaysOpen: 0
   m_fadeText: {fileID: 3397448212897451955}
   m_renderer: {fileID: 3333501458789985109}
-  m_open: {fileID: 21300000, guid: 9cd4d7076f2ed3f4fa7eb7ede4160764, type: 3}
+  m_open: {fileID: 21300000, guid: 7e502530762c23a458f86a67b2fc1671, type: 3}
   m_close: {fileID: 21300000, guid: 94b37dfb79c781d4fa1ee70cce6a289f, type: 3}
   m_anim: {fileID: 0}
 --- !u!61 &5612893509172908107
@@ -198,8 +198,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3333501458789985111}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.44, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 3333501458674323917}
