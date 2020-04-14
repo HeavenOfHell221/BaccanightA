@@ -91,7 +91,7 @@ public class InputController : MonoBehaviour
         switch (m_playerState.State)
         {
             case GamePlayerState.inGame:
-                GetEscapeDown();
+                GetCancelDown();
                 GetInteractDown();
                 GetAttackContinue();
                 GetMotion();
@@ -99,7 +99,9 @@ public class InputController : MonoBehaviour
                 break;
             case GamePlayerState.inMainMenu:
                 GetCancelDown();
-                GetSubmitDown();
+                break;
+            case GamePlayerState.inPause:
+                GetCancelDown();
                 break;
             default:
                 break;

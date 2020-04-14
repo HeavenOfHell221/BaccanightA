@@ -63,6 +63,8 @@ public class BossAIController : MonoBehaviour
 
     private void Update()
     {
+        if (GameConstants.GameIsPaused) return;
+
         HandleDirectionToPlayer();
         UpdateStates();
     }

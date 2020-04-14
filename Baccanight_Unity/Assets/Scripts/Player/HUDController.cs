@@ -12,10 +12,12 @@ public class HUDController : MonoBehaviour
             case GamePlayerState.inPause:
                 m_playerState.State = GamePlayerState.inGame;
                 m_pauseMenu.gameObject.SetActive(false);
+                GameConstants.GameIsPaused = false;
                 break;
             case GamePlayerState.inGame:
                 m_playerState.State = GamePlayerState.inPause;
                 m_pauseMenu.gameObject.SetActive(true);
+                GameConstants.GameIsPaused = true;
                 break;
             default: break;
         }

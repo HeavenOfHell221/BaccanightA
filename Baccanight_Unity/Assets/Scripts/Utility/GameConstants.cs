@@ -19,4 +19,5 @@
     public const int ScenePersistentPlayer = 1;
     public const int SceneLobby = 2;
 
+    public static bool GameIsPaused = false;
 }

@@ -271,6 +271,9 @@ MonoBehaviour:
         m_CallState: 2
   m_OnEscape:
     m_PersistentCalls:
+      m_Calls: []
+  m_OnCancel:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6214916660919486287}
         m_MethodName: OnEscape
@@ -283,9 +286,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnCancel:
-    m_PersistentCalls:
-      m_Calls: []
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -650,6 +650,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1851043499719964768}
     m_Modifications:
+    - target: {fileID: 468277623685020399, guid: 3d08f050cf1c7904a8c864e32a3fdb03,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 654176570132237033, guid: 3d08f050cf1c7904a8c864e32a3fdb03,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -755,10 +760,15 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4628665981492934880, guid: 3d08f050cf1c7904a8c864e32a3fdb03,
+    - target: {fileID: 1432949252939389882, guid: 3d08f050cf1c7904a8c864e32a3fdb03,
         type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.00024414062
+      propertyPath: m_textInfo.characterCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568120895199068091, guid: 3d08f050cf1c7904a8c864e32a3fdb03,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9082762136579586544, guid: 3d08f050cf1c7904a8c864e32a3fdb03,
         type: 3}
