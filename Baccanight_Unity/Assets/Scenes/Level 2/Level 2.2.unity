@@ -225,27 +225,33 @@ PrefabInstance:
     - target: {fileID: 348684053152100251, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 348684053152100251, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 348684053152100251, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 348684053152100251, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 348684053152100251, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 348684053152100251, guid: b7ca342d4f34bb74bad1edc1de4d150c,
+        type: 3}
+      propertyPath: m_text
+      value: "Sois attentif, En r\xE9alit\xE9 le pr\xE9dateur pr\xE9f\xE8re \xEAtre
+        premier ou, \xE0 la limite, second"
       objectReference: {fileID: 0}
     - target: {fileID: 1638256962606225712, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
@@ -653,6 +659,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129444331908749030, guid: b7ca342d4f34bb74bad1edc1de4d150c,
+        type: 3}
+      propertyPath: m_text
+      value: "Attention, deux animaux terrestres ne peuvent se partager le m\xEAme
+        territoire sous peine de bagarre"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129444331908749030, guid: b7ca342d4f34bb74bad1edc1de4d150c,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129444331908749030, guid: b7ca342d4f34bb74bad1edc1de4d150c,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 98
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129444331908749030, guid: b7ca342d4f34bb74bad1edc1de4d150c,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129444331908749030, guid: b7ca342d4f34bb74bad1edc1de4d150c,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129444331908749030, guid: b7ca342d4f34bb74bad1edc1de4d150c,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8213270020765977772, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
