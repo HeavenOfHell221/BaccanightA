@@ -994,8 +994,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b481e35a6a3732544ba98a6452c2f27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHealth: 1000
-  m_currentHealth: 1000
+  m_healthBar: {fileID: 4286381836376442998}
+  m_maxHealth: 700
+  m_currentHealth: 700
   m_invincibleDuration: 3
   m_damageCollision: -2
   m_FirstSwitchPhase:

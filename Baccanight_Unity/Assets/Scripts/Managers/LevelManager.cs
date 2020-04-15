@@ -89,7 +89,7 @@ public class LevelManager : SingletonBehaviour<LevelManager>
         }
         if (!testDoor)
         {
-            Debug.LogError("Aucune porte n'a été trouvé");
+            //Debug.LogError("Aucune porte n'a été trouvé");
         }
     }
 

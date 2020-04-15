@@ -2,15 +2,20 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class HealthBoss : MonoBehaviour
 {
     #region Inspector
 #pragma warning disable 0649
+    [SerializeField] private HealthBarBoss m_healthBar;
+
     [Header("Health")]
     [Space(5)]
     [SerializeField] [Range(0, 2000)] private float m_maxHealth = 1000f;
     [SerializeField] [Range(0, 2000)] private float m_currentHealth = 1000f;
+    [SerializeField] [Range(0f, 1f)] private float m_ratioEnraging = 0.5f;
+    [SerializeField] [Range(0f, 1f)] private float m_ratioThirdPhase = 0.2f;
 
     [Header("Attributes")]
     [Space(5)]
@@ -54,13 +59,13 @@ public class HealthBoss : MonoBehaviour
 
         OnHealthPctChanged(Ratio);
 
-        if (lastRatio >= 0.5f && Ratio < 0.5f && !m_isEnraging)
+        if (lastRatio >= m_ratioEnraging && Ratio < m_ratioEnraging && !m_isEnraging)
         {
             StartCoroutine(InvincibleFrame());
             m_isEnraging = true;
             m_FirstSwitchPhase.Invoke(BossActionType.Enraging);
         }
-        else if (lastRatio >= 0.25f && Ratio < 0.25f)
+        else if (lastRatio >= m_ratioThirdPhase && Ratio < m_ratioThirdPhase)
         {
             m_UpgradeSpeedBetweenTwoAttacks.Invoke();
             m_SecondSwitchPhase.Invoke();
@@ -87,10 +92,11 @@ public class HealthBoss : MonoBehaviour
 
     private IEnumerator _Death(GameObject boss)
     {
+        m_healthBar.enabled = false;
         gameObject.transform.SetParent(null);
         Destroy(boss);
-        yield return new WaitForSecondsRealtime(2f);
-        LevelManager.Instance.ChangeScene(0, 0);
+        yield return new WaitForSecondsRealtime(3f);
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
         Destroy(gameObject, 3f);
     }
 }
