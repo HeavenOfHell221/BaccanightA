@@ -260,27 +260,33 @@ PrefabInstance:
     - target: {fileID: 2580176711106519296, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 86
       objectReference: {fileID: 0}
     - target: {fileID: 2580176711106519296, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2580176711106519296, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2580176711106519296, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2580176711106519296, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2580176711106519296, guid: b7ca342d4f34bb74bad1edc1de4d150c,
+        type: 3}
+      propertyPath: m_text
+      value: "Un indice pour toi : Le f\xE9lin doit \xEAtre dernier ou avant-dernier
+        pour pouvoir chasser\n"
       objectReference: {fileID: 0}
     - target: {fileID: 3902029478385471777, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
@@ -380,27 +386,33 @@ PrefabInstance:
     - target: {fileID: 4780165399944381643, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: 4780165399944381643, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4780165399944381643, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4780165399944381643, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4780165399944381643, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780165399944381643, guid: b7ca342d4f34bb74bad1edc1de4d150c,
+        type: 3}
+      propertyPath: m_text
+      value: " \xC9coute moi, L'insecte n'a rien \xE0 craindre du grand roi de la
+        savane"
       objectReference: {fileID: 0}
     - target: {fileID: 5946625485165145805, guid: b7ca342d4f34bb74bad1edc1de4d150c,
         type: 3}
