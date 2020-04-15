@@ -49270,6 +49270,26 @@ PrefabInstance:
       propertyPath: m_succesForOpenDoor
       value: Level 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3010307678325461253, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_text
+      value: Entrer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010307678325461253, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010307678325461253, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010307678325461253, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3333501458674323916, guid: 9a2db3a21b476d84a8a49ef338945a6d,
         type: 3}
       propertyPath: m_DoorId
@@ -49344,6 +49364,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Door Enter Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944702612920460572, guid: 9a2db3a21b476d84a8a49ef338945a6d,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a2db3a21b476d84a8a49ef338945a6d, type: 3}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerSuccesInit:
   - Key: Fragment 1
-    Value: 0
+    Value: 1
   - Key: Fragment 2
     Value: 0
   - Key: Fragment 3
